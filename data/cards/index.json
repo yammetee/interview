@@ -1,0 +1,57 @@
+{
+  "source": {
+    "repo": "sudheerj/javascript-interview-questions",
+    "localPath": "external/sudheerj-javascript-interview-questions"
+  },
+  "topics": [
+    {
+      "id": "js-core-1",
+      "title": {
+        "en": "Scope, Hoisting, TDZ, Closures"
+      }
+    },
+    {
+      "id": "js-core-2",
+      "title": {
+        "en": "this, call, apply, bind"
+      }
+    },
+    {
+      "id": "prototypes",
+      "title": {
+        "en": "Prototype, Prototype Chain, Class"
+      }
+    },
+    {
+      "id": "async-js",
+      "title": {
+        "en": "Event Loop, Promise, async/await"
+      }
+    },
+    {
+      "id": "react",
+      "title": {
+        "en": "React, Rendering, Memoization"
+      }
+    },
+    {
+      "id": "browser",
+      "title": {
+        "en": "Browser, Networking, Storage"
+      }
+    }
+  ],
+  "counts": {
+    "cards": 477,
+    "tasks": 28,
+    "skippedDuplicateQuestions": 1
+  },
+  "files": [
+    "js-core-1.json",
+    "js-core-2.json",
+    "prototypes.json",
+    "async-js.json",
+    "react.json",
+    "browser.json"
+  ]
+}

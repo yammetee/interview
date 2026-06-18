@@ -1,0 +1,1044 @@
+{
+  "topic": {
+    "id": "dsa-string",
+    "title": {
+      "en": "String Algorithms"
+    }
+  },
+  "cards": [
+    {
+      "id": "sudheerj-dsa-string-string-001-longest-substring-without-repeating-characters",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/strings/1.longestSubstringWithoutRepeatingChars/longestSubstringWithoutRepeatingChars.js",
+        "documentationPath": "src/javascript/algorithms/strings/1.longestSubstringWithoutRepeatingChars/longestSubstringWithoutRepeatingChars.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/1.longestSubstringWithoutRepeatingChars/longestSubstringWithoutRepeatingChars.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/1.longestSubstringWithoutRepeatingChars/longestSubstringWithoutRepeatingChars.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "difficulty": "medium",
+      "question": {
+        "en": "How do you solve or implement `Longest substring without repeating characters`?",
+        "ru": "Как решить или реализовать задачу `Longest substring without repeating characters`?"
+      },
+      "answer": {
+        "en": "Description:\nGiven a string str, find the length of the longest substring without repeating characters.\nExamples\n\nExample 1: \nInput: s = \"abcabcbbaa\" \nOutput: 3 \nExplanation: The longest substring is \"abc\".\n\nExample 2: \nInput: s = \"aaaaaaa\" \nOutput: 1 \nExplanation: The longest substring is \"a\".\n\nExample 3: \nInput: s = \"pwwkew\" \nOutput: 3 \nExplanation: The longest substring is \"wke\".\nVisualization\n\nAlgorithm\n\nThis problem is efficiently solved using the sliding window technique with a Set to track unique characters in the current window.\n\n1. Initialize an empty Set to store unique characters.\n2. Use two pointers, left and right, to represent the current window.\n3. Move the right pointer through the string:\n- If the character at right is not in the Set, add it and update the maximum length.\n- If the character is already in the Set, remove characters from the left of the window (increment left and remove from Set) until the duplicate is removed.\n4. Continue until the end of the string.\n5. The maximum window size found is the answer.\n\nTime and Space complexity:\n- Time Complexity: O(n), where n is the length of the string (each character is visited at most twice).\n- Space Complexity: O(min(n, m)), where n is the length of the input string andm is the size of the character set (e.g., 26 for lowercase English letters).",
+        "ru": "Описание:\nДана строка str. Найдите длину самой длинной подстроки без повторяющихся символов.\nПримеры\n\nПример 1: \nВвод: s = \"abcabcbbaa\" \nВывод: 3 \nОбъяснение: Самая длинная подстрока — \"abc\".\n\nПример 2: \nВвод: s = \"aaaaaaa\" \nВывод: 1 \nОбъяснение: Самая длинная подстрока — \"a\".\n\nПример 3: \nВвод: s = \"pwwkew\" \nВывод: 3 \nОбъяснение: Самая длинная подстрока — \"wke\".\nВизуализация\n\nАлгоритм\n\nЭта проблема эффективно решается с помощью метода скользящего окна с набором для отслеживания уникальных символов в текущем окне.\n\n1. Инициализируйте пустой набор для хранения уникальных символов.\n2. Используйте два указателя left и right для обозначения текущего окна.\n3. Переместите указатель right по строке:\n- Если символа right нет в наборе, добавьте его и обновите максимальную длину.\n- Если персонаж уже есть в наборе, удалите символы из левой части окна (увеличьте left и удалите из набора), пока дубликат не будет удален.\n4. Продолжайте до конца строки.\n5. Ответом является найденный максимальный размер окна.\n\nСложность во времени и пространстве:\n- Временная сложность: O(n), где n — длина строки (каждый символ посещается не более двух раз).\n– Пространственная сложность: O(min(n, m)), где n — длина входной строки, а m — размер набора символов (например, 26 для строчных английских букв)."
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven a string `str`, find the length of the longest substring without repeating characters.\n\n## Examples\n\n**Example 1:**  \nInput: `s = \"abcabcbbaa\"`  \nOutput: `3`  \nExplanation: The longest substring is `\"abc\"`.\n\n**Example 2:**  \nInput: `s = \"aaaaaaa\"`  \nOutput: `1`  \nExplanation: The longest substring is `\"a\"`.\n\n**Example 3:**  \nInput: `s = \"pwwkew\"`  \nOutput: `3`  \nExplanation: The longest substring is `\"wke\"`.\n\n## Visualization\n\n![Screenshot](../../../../images/longest_substring_sliding_window.png)\n\n## Algorithm\n\nThis problem is efficiently solved using the **sliding window** technique with a Set to track unique characters in the current window.\n\n1. Initialize an empty Set to store unique characters.\n2. Use two pointers, `left` and `right`, to represent the current window.\n3. Move the `right` pointer through the string:\n    - If the character at `right` is not in the Set, add it and update the maximum length.\n    - If the character is already in the Set, remove characters from the left of the window (increment `left` and remove from Set) until the duplicate is removed.\n4. Continue until the end of the string.\n5. The maximum window size found is the answer.\n\n\n**Time and Space complexity:**\n\n- **Time Complexity:** O(n), where n is the length of the string (each character is visited at most twice).\n- **Space Complexity:** O(min(n, m)), where n is the length of the input string andm is the size of the character set (e.g., 26 for lowercase English letters).",
+        "ru": "**Описание:**\nДана строка `str`. Найдите длину самой длинной подстроки без повторяющихся символов.\n\n## Примеры\n\n**Пример 1:**  \nВвод: `s = \"abcabcbbaa\"`  \nВывод: `3`  \nОбъяснение: Самая длинная подстрока — `\"abc\"`.\n\n**Пример 2:**  \nВвод: `s = \"aaaaaaa\"`  \nВывод: `1`  \nОбъяснение: Самая длинная подстрока — `\"a\"`.\n\n**Пример 3:**  \nВвод: `s = \"pwwkew\"`  \nВывод: `3`  \nОбъяснение: Самая длинная подстрока — `\"wke\"`.\n\n## Визуализация\n\n![Скриншот](../../../../images/longest_substring_sliding_window.png)\n\n## Алгоритм\n\nЭта проблема эффективно решается с помощью метода **скользящего окна** с набором для отслеживания уникальных символов в текущем окне.\n\n1. Инициализируйте пустой набор для хранения уникальных символов.\n2. Используйте два указателя `left` и `right` для обозначения текущего окна.\n3. Переместите указатель `right` по строке:\n    - Если символа `right` нет в наборе, добавьте его и обновите максимальную длину.\n    - Если персонаж уже есть в наборе, удалите символы из левой части окна (увеличьте `left` и удалите из набора), пока дубликат не будет удален.\n4. Продолжайте до конца строки.\n5. Ответом является найденный максимальный размер окна.\n\n\n**Сложность во времени и пространстве:**\n\n- **Временная сложность:** O(n), где n — длина строки (каждый символ посещается не более двух раз).\n– **Пространственная сложность:** O(min(n, m)), где n — длина входной строки, а m — размер набора символов (например, 26 для строчных английских букв)."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-002-longest-repeating-character-replacement",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/strings/2.longestRepeatingCharReplacement/longestRepeatingCharReplacement.js",
+        "documentationPath": "src/javascript/algorithms/strings/2.longestRepeatingCharReplacement/longestRepeatingCharReplacement.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/2.longestRepeatingCharReplacement/longestRepeatingCharReplacement.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/2.longestRepeatingCharReplacement/longestRepeatingCharReplacement.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "difficulty": "medium",
+      "question": {
+        "en": "How do you solve or implement `Longest repeating character replacement`?",
+        "ru": "Как решить или реализовать задачу `Longest repeating character replacement`?"
+      },
+      "answer": {
+        "en": "Longest Repeating Character Replacement\n\nGiven a string str and an integer k, you can replace at most k characters in the string with any uppercase English letter. Return the length of the longest substring containing the same letter you can get after performing the above operations.\nExamples\n\nExample 1: \nInput: str = \"AAABABBAA\", k = 2 \nOutput: 6 \nExplanation: Replace the two 'B's in the middle with 'A' to get \"AAAAAAA\".\n\nExample 2: \nInput: str = \"BBBB\", k = 2 \nOutput: 4 \nExplanation: No replacements needed.\nVisualization\n\nThe sliding window moves over the string, expanding to the right and shrinking from the left as needed. The window always contains at most k characters that need to be replaced to make all characters in the window the same.\nYou can visualize this with a diagram showing the window over the string, highlighting the current window and the maximum window found.\n\n \nAlgorithm\n\nThis problem is efficiently solved using the sliding window technique:\n\n1. Use a fixed-size array to count the frequency of each character in the current window.\n2. Use two pointers (left and right) to represent the window.\n3. For each character at right, update its count and track the maximum frequency in the window.\n4. If the window size minus the max frequency exceeds k, shrink the window from the left.\n5. Update the maximum window size found.\nComplexity\n- Time Complexity: O(n), where n is the length of the string.\n- Space Complexity: O(1), since the character count array is always of size 26.",
+        "ru": "Замена самого длинного повторяющегося символа\n\nУчитывая строку str и целое число k, вы можете заменить не более символов k в строке любой заглавной английской буквой. Возвращает длину самой длинной подстроки, содержащей ту же букву, которую вы можете получить после выполнения вышеуказанных операций.\nПримеры\n\nПример 1: \nВвод: str = \"AAABABBAA\", k = 2 \nВывод: 6 \nПояснение: Замените две буквы «Б» посередине на «А», чтобы получить «ААААААА».\n\nПример 2: \nВвод: str = \"BBBB\", k = 2 \nВывод: 4 \nОбъяснение: Замены не требуются.\nВизуализация\n\nСкользящее окно перемещается по строке, расширяясь вправо и сжимаясь слева по мере необходимости. Окно всегда содержит не более k символов, которые необходимо заменить, чтобы все символы в окне стали одинаковыми.\nВы можете визуализировать это с помощью диаграммы, показывающей окно над строкой, выделяя текущее окно и найденное максимальное окно.\n\n \nАлгоритм\n\nЭта проблема эффективно решается с помощью техники скользящего окна:\n\n1. Используйте массив фиксированного размера для подсчета частоты каждого символа в текущем окне.\n2. Используйте два указателя (left и right) для обозначения окна.\n3. Для каждого символа по адресу right обновите его счетчик и отследите максимальную частоту в окне.\n4. Если размер окна за вычетом максимальной частоты превышает k, уменьшите окно слева.\n5. Обновите найденный максимальный размер окна.\nСложность\n\n– Временная сложность: O(n), где n — длина строки.\n- Пространственная сложность: O(1), поскольку размер массива символов всегда равен 26."
+      },
+      "explanation": {
+        "en": "# Longest Repeating Character Replacement\n\nGiven a string `str` and an integer `k`, you can replace at most `k` characters in the string with any uppercase English letter. Return the length of the longest substring containing the same letter you can get after performing the above operations.\n\n## Examples\n\n**Example 1:**  \nInput: `str = \"AAABABBAA\"`, `k = 2`  \nOutput: `6`  \nExplanation: Replace the two 'B's in the middle with 'A' to get \"AAAAAAA\".\n\n**Example 2:**  \nInput: `str = \"BBBB\"`, `k = 2`  \nOutput: `4`  \nExplanation: No replacements needed.\n\n## Visualization\n\nThe sliding window moves over the string, expanding to the right and shrinking from the left as needed. The window always contains at most `k` characters that need to be replaced to make all characters in the window the same.\nYou can visualize this with a diagram showing the window over the string, highlighting the current window and the maximum window found.\n\n![Screenshot](../../../../images/longest_repeating_char_replacement.png)\n\n\n\n## Algorithm\n\nThis problem is efficiently solved using the **sliding window** technique:\n\n1. Use a fixed-size array to count the frequency of each character in the current window.\n2. Use two pointers (`left` and `right`) to represent the window.\n3. For each character at `right`, update its count and track the maximum frequency in the window.\n4. If the window size minus the max frequency exceeds `k`, shrink the window from the left.\n5. Update the maximum window size found.\n\n\n## Complexity\n\n- **Time Complexity:** O(n), where n is the length of the string.\n- **Space Complexity:** O(1), since the character count array is always of size 26.",
+        "ru": "# Замена самого длинного повторяющегося символа\n\nУчитывая строку `str` и целое число `k`, вы можете заменить не более символов `k` в строке любой заглавной английской буквой. Возвращает длину самой длинной подстроки, содержащей ту же букву, которую вы можете получить после выполнения вышеуказанных операций.\n\n## Примеры\n\n**Пример 1:**  \nВвод: `str = \"AAABABBAA\"`, `k = 2`  \nВывод: `6`  \nПояснение: Замените две буквы «Б» посередине на «А», чтобы получить «ААААААА».\n\n**Пример 2:**  \nВвод: `str = \"BBBB\"`, `k = 2`  \nВывод: `4`  \nОбъяснение: Замены не требуются.\n\n## Визуализация\n\nСкользящее окно перемещается по строке, расширяясь вправо и сжимаясь слева по мере необходимости. Окно всегда содержит не более `k` символов, которые необходимо заменить, чтобы все символы в окне стали одинаковыми.\nВы можете визуализировать это с помощью диаграммы, показывающей окно над строкой, выделяя текущее окно и найденное максимальное окно.\n\n![Скриншот](../../../../images/longest_repeating_char_replacement.png)\n\n\n\n## Алгоритм\n\nЭта проблема эффективно решается с помощью техники **скользящего окна**:\n\n1. Используйте массив фиксированного размера для подсчета частоты каждого символа в текущем окне.\n2. Используйте два указателя (`left` и `right`) для обозначения окна.\n3. Для каждого символа по адресу `right` обновите его счетчик и отследите максимальную частоту в окне.\n4. Если размер окна за вычетом максимальной частоты превышает `k`, уменьшите окно слева.\n5. Обновите найденный максимальный размер окна.\n\n\n## Сложность\n\n– **Временная сложность:** O(n), где n — длина строки.\n- **Пространственная сложность:** O(1), поскольку размер массива символов всегда равен 26."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-003-minimum-window-substring",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/strings/3.minWindowSubstring/minWindowSubstring.js",
+        "documentationPath": "src/javascript/algorithms/strings/3.minWindowSubstring/minWindowSubstring.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/3.minWindowSubstring/minWindowSubstring.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/3.minWindowSubstring/minWindowSubstring.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "difficulty": "hard",
+      "question": {
+        "en": "How do you solve or implement `Minimum window substring`?",
+        "ru": "Как решить или реализовать задачу `Minimum window substring`?"
+      },
+      "answer": {
+        "en": "Description:\nGiven two strings str and subStr of lengths m and n respectively, return the minimum window \nsubstring of str such that every character in subStr (including duplicates) is included in the window. If there is no such substring available, just return the empty string(i.e,\"\").\nExamples\n\nExample 1: \nInput: str = \"ADOBECODEBANC\", subStr = \"ABC\" \nOutput: \"BANC\" \nExplanation: The minimum window substring \"BANC\" includes 'A', 'B', and 'C' from subStr.\n\nExample 2: \nInput: str = \"A\", subStr = \"A\" \nOutput: \"A\"\n\nExample 3: \nInput: str = \"a\", subStr = \"aa\" \nOutput: \"\"\nVisualization\n\nThe sliding window expands to include all required characters, then contracts to find the smallest valid window. You can visualize this with a diagram showing the window's movement over the string, highlighting the current and minimum windows found.\n\nAlgorithm\n\nThis problem is efficiently solved using the sliding window technique with two hash maps:\n\n1. Count the frequency of each character in subStr using a hash map.\n2. Use two pointers (left and right) to represent the current window in str.\n3. Expand the window by moving right and update the window's character counts.\n4. When the window contains all characters of subStr with the required frequency, try to shrink the window from the left to find the minimum.\n5. Track the minimum window found during the process.\n6. Return the minimum window substring, or \"\" if no such window exists.\nComplexity\n- Time Complexity: O(m + n), where m and n are the lengths of str and subStr.\n- Space Complexity: O(m + n), for the hash maps.",
+        "ru": "Описание:\nУчитывая две строки str и subStr длиной m и n соответственно, верните минимальное окно. \nподстроку str так, чтобы каждый символ subStr (включая дубликаты) был включен в окно. Если такой подстроки нет, просто верните пустую строку (т. е. «»).\nПримеры\n\nПример 1: \nВвод: str = \"ADOBECODEBANC\", subStr = \"ABC\" \nВывод: \"BANC\" \nОбъяснение: Подстрока минимального окна \"BANC\" включает «A», «B» и «C» из subStr.\n\nПример 2: \nВвод: str = \"A\", subStr = \"A\" \nВывод: \"A\"\n\nПример 3: \nВвод: str = \"a\", subStr = \"aa\" \nВыход: \"\"\nВизуализация\n\nСкользящее окно расширяется и включает в себя все необходимые символы, а затем сжимается, чтобы найти наименьшее допустимое окно. Вы можете визуализировать это с помощью диаграммы, показывающей движение окна по строке, выделяя текущее и минимальное найденные окна.\n\nАлгоритм\n\nЭта проблема эффективно решается с помощью техники скользящего окна с двумя хэш-картами:\n\n1. Подсчитайте частоту каждого символа в subStr, используя хеш-карту.\n2. Используйте два указателя (left и right) для представления текущего окна в str.\n3. Разверните окно, переместив right, и обновите количество символов в окне.\n4. Когда в окне появятся все символы subStr с необходимой частотой, попробуйте сжать окно слева, чтобы найти минимум.\n5. Отслеживайте минимальное окно, обнаруженное в процессе.\n6. Верните подстроку минимального окна или \"\", если такого окна не существует.\nСложность\n- Временная сложность: O(m + n), где m и n — длины str и subStr.\n- Пространственная сложность: O(m + n) для хэш-карт."
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven two strings `str` and `subStr` of lengths `m` and `n` respectively, return the minimum window \nsubstring of `str` such that every character in `subStr` (including duplicates) is included in the window. If there is no such substring available, just return the empty string(i.e,\"\").\n\n### Examples\n\n**Example 1:**  \nInput: `str = \"ADOBECODEBANC\"`, `subStr = \"ABC\"`  \nOutput: `\"BANC\"`  \nExplanation: The minimum window substring `\"BANC\"` includes 'A', 'B', and 'C' from `subStr`.\n\n**Example 2:**  \nInput: `str = \"A\"`, `subStr = \"A\"`  \nOutput: `\"A\"`\n\n**Example 3:**  \nInput: `str = \"a\"`, `subStr = \"aa\"`  \nOutput: `\"\"`\n\n## Visualization\n\nThe sliding window expands to include all required characters, then contracts to find the smallest valid window. You can visualize this with a diagram showing the window's movement over the string, highlighting the current and minimum windows found.\n\n![Screenshot](../../../../images/min_window_substring.png)\n\n## Algorithm\n\nThis problem is efficiently solved using the **sliding window** technique with two hash maps:\n\n1. Count the frequency of each character in `subStr` using a hash map.\n2. Use two pointers (`left` and `right`) to represent the current window in `str`.\n3. Expand the window by moving `right` and update the window's character counts.\n4. When the window contains all characters of `subStr` with the required frequency, try to shrink the window from the left to find the minimum.\n5. Track the minimum window found during the process.\n6. Return the minimum window substring, or `\"\"` if no such window exists.\n\n## Complexity\n\n- **Time Complexity:** O(m + n), where m and n are the lengths of `str` and `subStr`.\n- **Space Complexity:** O(m + n), for the hash maps.",
+        "ru": "**Описание:**\nУчитывая две строки `str` и `subStr` длиной `m` и `n` соответственно, верните минимальное окно. \nподстроку `str` так, чтобы каждый символ `subStr` (включая дубликаты) был включен в окно. Если такой подстроки нет, просто верните пустую строку (т. е. «»).\n\n### Примеры\n\n**Пример 1:**  \nВвод: `str = \"ADOBECODEBANC\"`, `subStr = \"ABC\"`  \nВывод: `\"BANC\"`  \nОбъяснение: Подстрока минимального окна `\"BANC\"` включает «A», «B» и «C» из `subStr`.\n\n**Пример 2:**  \nВвод: `str = \"A\"`, `subStr = \"A\"`  \nВывод: `\"A\"`\n\n**Пример 3:**  \nВвод: `str = \"a\"`, `subStr = \"aa\"`  \nВыход: `\"\"`\n\n## Визуализация\n\nСкользящее окно расширяется и включает в себя все необходимые символы, а затем сжимается, чтобы найти наименьшее допустимое окно. Вы можете визуализировать это с помощью диаграммы, показывающей движение окна по строке, выделяя текущее и минимальное найденные окна.\n\n![Скриншот](../../../../images/min_window_substring.png)\n\n## Алгоритм\n\nЭта проблема эффективно решается с помощью техники **скользящего окна** с двумя хэш-картами:\n\n1. Подсчитайте частоту каждого символа в `subStr`, используя хеш-карту.\n2. Используйте два указателя (`left` и `right`) для представления текущего окна в `str`.\n3. Разверните окно, переместив `right`, и обновите количество символов в окне.\n4. Когда в окне появятся все символы `subStr` с необходимой частотой, попробуйте сжать окно слева, чтобы найти минимум.\n5. Отслеживайте минимальное окно, обнаруженное в процессе.\n6. Верните подстроку минимального окна или `\"\"`, если такого окна не существует.\n\n## Сложность\n\n- **Временная сложность:** O(m + n), где m и n — длины `str` и `subStr`.\n- **Пространственная сложность:** O(m + n) для хэш-карт."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-004-valid-anagram",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/strings/4.validAnagram/validAnagram.js",
+        "documentationPath": "src/javascript/algorithms/strings/4.validAnagram/validAnagram.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/4.validAnagram/validAnagram.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/4.validAnagram/validAnagram.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "difficulty": "easy",
+      "question": {
+        "en": "How do you solve or implement `Valid anagram`?",
+        "ru": "Как решить или реализовать задачу `Valid anagram`?"
+      },
+      "answer": {
+        "en": "Description:\nGiven two strings str1 and str2, return true if str2 is an anagram of str1, and false otherwise.\n\nNote: An Anagram is defined as a word or phrase formed by rearranging the letters of a different word or phrase, using all the original letters exactly once.\nExamples\nExample 1:\nInput: str1 = \"anagram\", str2 = \"nagaram\"\nOutput: true\n\nExample 2:\nInput: str1 = \"rat\", str2 = \"cat\"\nOutput: false\n\nAlgorithmic Steps\nThis problem is solved with the help of frequency counting approach using an array. \n1. Frequency Array (for lowercase a-z)\n\n1. If the strings are not the same length, return false.\n2. Create an array of size 26 to count letter frequencies.\n3. For each character in both strings, increment for str1 and decrement for str2.\n4. If all counts are zero, the strings are anagrams.\n\nNote:There are other approaches as well to validate anagrams\n2. Hash Map (for any characters)\n\n1. If the strings are not the same length, return false.\n2. Count the frequency of each character in str1 using a map.\n3. Decrement the count for each character in str2.\n4. If any count goes negative or a character is missing, return false.\n5. If the map is empty at the end, the strings are anagrams.\n3. Sort and Compare\n\n1. If the strings are not the same length, return false.\n2. Sort both strings and compare them.\n\nTime and Space complexity:\nThis algorithm takes a time complexity of O(n), where n represents length of the string. This is because we are traversing the string at most once. \n\nAlso, it requires space complexity of O(1)(i.e, O(26)) due to no other data structure used except fixed 26 letter array for the character frequencies.\n\nThe complexity of all approaches can be summarized as below,\n\n| Approach | Time Complexity | Space Complexity |\n|------------------|----------------|-----------------|\n| Frequency Array | O(n) | O(1) |\n| Hash Map | O(n) | O(n) |\n| Sort & Compare | O(n log n) | O(n) |",
+        "ru": "Описание:\nУчитывая две строки str1 и str2, верните true, если str2 является анаграммой str1, и false в противном случае.\n\nПримечание. Анаграмма определяется как слово или фраза, образованная путем перестановки букв другого слова или фразы с использованием всех исходных букв ровно один раз.\nПримеры\nПример 1:\nВвод: str1 = «анаграмма», str2 = «нагарам».\nВывод: правда\n\nПример 2:\nВвод: str1 = «крыса», str2 = «кот».\nВывод: ложь\n\nАлгоритмические шаги\nЭта проблема решается с помощью подхода частотного подсчета с использованием массива. \n1. Массив частот (строчные буквы от a до z)\n\n1. Если строки разной длины, верните false.\n2. Создайте массив размером 26 для подсчета частот букв.\n3. Для каждого символа в обеих строках увеличьте значение для str1 и уменьшите для str2.\n4. Если все значения равны нулю, строки являются анаграммами.\n\nПримечание. Существуют и другие подходы для проверки анаграмм.\n2. Хэш-карта (для любых символов)\n\n1. Если строки разной длины, верните false.\n2. Подсчитайте частоту каждого символа в str1 с помощью карты.\n3. Уменьшите счетчик для каждого символа в str2.\n4. Если какой-либо счетчик становится отрицательным или отсутствует символ, верните false.\n5. Если карта в конце пуста, строки являются анаграммами.\n3. Сортировка и сравнение\n\n1. Если строки разной длины, верните false.\n2. Отсортируйте обе строки и сравните их.\n\nСложность во времени и пространстве:\nЭтот алгоритм требует временной сложности O(n), где n представляет длину строки. Это связано с тем, что мы проходим по строке не более одного раза. \n\nКроме того, для этого требуется пространственная сложность O(1) (т. е. O(26)), поскольку не используется никакая другая структура данных, кроме фиксированного 26-буквенного массива для частот символов.\n\nСложность всех подходов можно резюмировать следующим образом:\n\n| Подход | Временная сложность | Космическая сложность |\n|------------------|-----------------|-----------------|\n| Частотная матрица | О(п) | О(1) |\n| Хэш-карта | О(п) | О(п) |\n| Сортировать и сравнивать | O(n log n) | О(п) |"
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven two strings `str1` and `str2`, return `true` if `str2` is an anagram of `str1`, and `false` otherwise.\n\n**Note:** An Anagram is defined as a word or phrase formed by rearranging the letters of a different word or phrase, using all the original letters exactly once.\n\n### Examples\nExample 1:\nInput: str1 = \"anagram\", str2 = \"nagaram\"\nOutput: true\n\nExample 2:\nInput: str1 = \"rat\", str2 = \"cat\"\nOutput: false\n\n**Algorithmic Steps**\nThis problem is solved with the help of **frequency counting** approach using an array. \n\n#### 1. Frequency Array (for lowercase a-z)\n\n1. If the strings are not the same length, return `false`.\n2. Create an array of size 26 to count letter frequencies.\n3. For each character in both strings, increment for `str1` and decrement for `str2`.\n4. If all counts are zero, the strings are anagrams.\n\nNote:There are other approaches as well to validate anagrams\n\n#### 2. Hash Map (for any characters)\n\n1. If the strings are not the same length, return `false`.\n2. Count the frequency of each character in `str1` using a map.\n3. Decrement the count for each character in `str2`.\n4. If any count goes negative or a character is missing, return `false`.\n5. If the map is empty at the end, the strings are anagrams.\n\n#### 3. Sort and Compare\n\n1. If the strings are not the same length, return `false`.\n2. Sort both strings and compare them.\n\n\n**Time and Space complexity:**\nThis algorithm takes a time complexity of `O(n)`, where `n` represents length of the string. This is because we are traversing the string at most once. \n\nAlso, it requires space complexity of `O(1)`(i.e, `O(26)`) due to no other data structure used except fixed 26 letter array for the character frequencies.\n\nThe complexity of all approaches can be summarized as below,\n\n| Approach         | Time Complexity | Space Complexity |\n|------------------|----------------|-----------------|\n| Frequency Array  | O(n)           | O(1)            |\n| Hash Map         | O(n)           | O(n)            |\n| Sort & Compare   | O(n log n)     | O(n)            |",
+        "ru": "**Описание:**\nУчитывая две строки `str1` и `str2`, верните `true`, если `str2` является анаграммой `str1`, и `false` в противном случае.\n\n**Примечание.** Анаграмма определяется как слово или фраза, образованная путем перестановки букв другого слова или фразы с использованием всех исходных букв ровно один раз.\n\n### Примеры\nПример 1:\nВвод: str1 = «анаграмма», str2 = «нагарам».\nВывод: правда\n\nПример 2:\nВвод: str1 = «крыса», str2 = «кот».\nВывод: ложь\n\n**Алгоритмические шаги**\nЭта проблема решается с помощью подхода **частотного подсчета** с использованием массива. \n\n#### 1. Массив частот (строчные буквы от a до z)\n\n1. Если строки разной длины, верните `false`.\n2. Создайте массив размером 26 для подсчета частот букв.\n3. Для каждого символа в обеих строках увеличьте значение для `str1` и уменьшите для `str2`.\n4. Если все значения равны нулю, строки являются анаграммами.\n\nПримечание. Существуют и другие подходы для проверки анаграмм.\n\n#### 2. Хэш-карта (для любых символов)\n\n1. Если строки разной длины, верните `false`.\n2. Подсчитайте частоту каждого символа в `str1` с помощью карты.\n3. Уменьшите счетчик для каждого символа в `str2`.\n4. Если какой-либо счетчик становится отрицательным или отсутствует символ, верните `false`.\n5. Если карта в конце пуста, строки являются анаграммами.\n\n#### 3. Сортировка и сравнение\n\n1. Если строки разной длины, верните `false`.\n2. Отсортируйте обе строки и сравните их.\n\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм требует временной сложности `O(n)`, где `n` представляет длину строки. Это связано с тем, что мы проходим по строке не более одного раза. \n\nКроме того, для этого требуется пространственная сложность `O(1)` (т. е. `O(26)`), поскольку не используется никакая другая структура данных, кроме фиксированного 26-буквенного массива для частот символов.\n\nСложность всех подходов можно резюмировать следующим образом:\n\n| Подход | Временная сложность | Космическая сложность |\n|------------------|-----------------|-----------------|\n| Частотная матрица | О(п) | О(1) |\n| Хэш-карта | О(п) | О(п) |\n| Сортировать и сравнивать | O(n log n) | О(п) |"
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-006-valid-palindrome",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/strings/6.validPalindrome/validPalindrome.js",
+        "documentationPath": "src/javascript/algorithms/strings/6.validPalindrome/validPalindrome.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/6.validPalindrome/validPalindrome.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/6.validPalindrome/validPalindrome.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "difficulty": "easy",
+      "question": {
+        "en": "How do you solve or implement `Valid palindrome`?",
+        "ru": "Как решить или реализовать задачу `Valid palindrome`?"
+      },
+      "answer": {
+        "en": "Description:\n\nGiven a string str, return true if it is a palindrome, or false otherwise.\n\nNote: A palindrome is a string that reads the same backward as forward. Ignore non-alphanumeric characters and consider uppercase and lowercase letters as equal.\nExamples\n\nExample 1: \nInput: str = \"A man, a plan, a canal: Panama\" \nOutput: true\n\nExample 2: \nInput: str = \"Hello World\" \nOutput: false\n\nExample 3: \nInput: str = \" \" \nOutput: true\nAlgorithm steps\n\nThis problem is efficiently solved using the two-pointer technique by traversing over the input string.:\n\n1. Initialize two pointers, left at the start and right at the end of the string.\n2. Move left forward and right backward until both point to alphanumeric characters.\n3. Compare the characters at left and right (case-insensitive).\n4. If they are not equal, return false.\n5. Move both pointers towards the center and repeat.\n6. If all characters match, return true.\nComplexity\n- Time Complexity: O(n), where n is the length of the string. This is because we are traversing the string only once.\n- Space Complexity: O(1), as no extra data structures are used.",
+        "ru": "Описание:\n\nУчитывая строку str, верните true, если это палиндром, или false в противном случае.\n\nПримечание. Палиндром – это строка, которая читается как в прямом, так и в обратном направлении. Игнорируйте небуквенно-цифровые символы и считайте прописные и строчные буквы равными.\nПримеры\n\nПример 1: \nВвод: str = \"A man, a plan, a canal: Panama\" \nВывод: true\n\nПример 2: \nВвод: str = \"Hello World\" \nВывод: false\n\nПример 3: \nВвод: str = \" \" \nВывод: true\nШаги алгоритма\n\nЭта проблема эффективно решается с помощью метода двух указателей путем обхода входной строки:\n\n1. Инициализируйте два указателя: left в начале и right в конце строки.\n2. Переместите left вперед, а right назад, пока оба не укажут на буквенно-цифровые символы.\n3. Сравните символы left и right (без учета регистра).\n4. Если они не равны, верните false.\n5. Переместите оба указателя к центру и повторите.\n6. Если все символы совпадают, верните true.\nСложность\n\n– Временная сложность: O(n), где n — длина строки. Это потому, что мы проходим по строке только один раз.\n- Пространственная сложность: O(1), так как дополнительные структуры данных не используются."
+      },
+      "explanation": {
+        "en": "**Description:**\n\nGiven a string `str`, return `true` if it is a palindrome, or `false` otherwise.\n\n**Note:** A palindrome is a string that reads the same backward as forward. Ignore non-alphanumeric characters and consider uppercase and lowercase letters as equal.\n\n## Examples\n\n**Example 1:**  \nInput: `str = \"A man, a plan, a canal: Panama\"`  \nOutput: `true`\n\n**Example 2:**  \nInput: `str = \"Hello World\"`  \nOutput: `false`\n\n**Example 3:**  \nInput: `str = \" \"`  \nOutput: `true`\n\n## Algorithm steps\n\nThis problem is efficiently solved using the **two-pointer** technique by traversing over the input string.:\n\n1. Initialize two pointers, `left` at the start and `right` at the end of the string.\n2. Move `left` forward and `right` backward until both point to alphanumeric characters.\n3. Compare the characters at `left` and `right` (case-insensitive).\n4. If they are not equal, return `false`.\n5. Move both pointers towards the center and repeat.\n6. If all characters match, return `true`.\n\n## Complexity\n\n- **Time Complexity:** O(n), where n is the length of the string. This is because we are traversing the string only once.\n- **Space Complexity:** O(1), as no extra data structures are used.",
+        "ru": "**Описание:**\n\nУчитывая строку `str`, верните `true`, если это палиндром, или `false` в противном случае.\n\n**Примечание.** Палиндром – это строка, которая читается как в прямом, так и в обратном направлении. Игнорируйте небуквенно-цифровые символы и считайте прописные и строчные буквы равными.\n\n## Примеры\n\n**Пример 1:**  \nВвод: `str = \"A man, a plan, a canal: Panama\"`  \nВывод: `true`\n\n**Пример 2:**  \nВвод: `str = \"Hello World\"`  \nВывод: `false`\n\n**Пример 3:**  \nВвод: `str = \" \"`  \nВывод: `true`\n\n## Шаги алгоритма\n\nЭта проблема эффективно решается с помощью метода **двух указателей** путем обхода входной строки:\n\n1. Инициализируйте два указателя: `left` в начале и `right` в конце строки.\n2. Переместите `left` вперед, а `right` назад, пока оба не укажут на буквенно-цифровые символы.\n3. Сравните символы `left` и `right` (без учета регистра).\n4. Если они не равны, верните `false`.\n5. Переместите оба указателя к центру и повторите.\n6. Если все символы совпадают, верните `true`.\n\n## Сложность\n\n– **Временная сложность:** O(n), где n — длина строки. Это потому, что мы проходим по строке только один раз.\n- **Пространственная сложность:** O(1), так как дополнительные структуры данных не используются."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-007-longest-palindromic-substring",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/strings/7.longestPalindromicSubstring/longestPalindromicSubstring.js",
+        "documentationPath": "src/javascript/algorithms/strings/7.longestPalindromicSubstring/longestPalindromicSubstring.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/7.longestPalindromicSubstring/longestPalindromicSubstring.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/7.longestPalindromicSubstring/longestPalindromicSubstring.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "difficulty": "medium",
+      "question": {
+        "en": "How do you solve or implement `Longest palindromic substring`?",
+        "ru": "Как решить или реализовать задачу `Longest palindromic substring`?"
+      },
+      "answer": {
+        "en": "Description:\nGiven a string str, return the longest palindromic substring of str.\n\nNote: A palindrome is a string that reads the same backward as forward. If there are multiple palindromic substrings of the same length, return any one of them.\nExamples\n\nExample 1: \nInput: str = \"ababd\" \nOutput: \"aba\"\n\nExample 2: \nInput: str = \"dbbc\" \nOutput: \"bb\"\n\nExample 3: \nInput: str = \"babad\" \nOutput: \"bab\" (or \"aba\")\nVisualization\n\nAlgorithm\n\nThis problem is efficiently solved using the expand around center approach where we expand the input string at each position:\n\n1. If the string is empty or has length 1, return the string.\n2. For each character in the string, treat it as the center of a palindrome and expand outwards to check for the longest odd and even length palindromes.\n3. Use a helper function to expand around the center and return the bounds of the palindrome.\n4. Track the start and end indices of the longest palindrome found.\n5. Return the substring between the start and end indices.\nComplexity\n- Time Complexity: O(n²), where n is the length of the string (for each center, expand up to n).\n- Space Complexity: O(1), as no extra data structures are used.",
+        "ru": "Описание:\nУчитывая строку str, верните самую длинную палиндромную подстроку str.\n\nПримечание. Палиндром – это строка, которая читается как в прямом, так и в обратном направлении. Если существует несколько палиндромных подстрок одинаковой длины, верните любую из них.\nПримеры\n\nПример 1: \nВвод: str = \"ababd\" \nВывод: \"aba\"\n\nПример 2: \nВвод: str = \"dbbc\" \nВывод: \"bb\"\n\nПример 3: \nВвод: str = \"babad\" \nВыход: \"bab\" (или \"aba\")\nВизуализация\n\nАлгоритм\n\nЭта проблема эффективно решается с помощью подхода расширения вокруг центра, при котором мы расширяем входную строку в каждой позиции:\n\n1. Если строка пуста или имеет длину 1, верните строку.\n2. Для каждого символа в строке рассматривайте его как центр палиндрома и расширяйте его наружу, чтобы проверить наличие самых длинных палиндромов нечетной и четной длины.\n3. Используйте вспомогательную функцию, чтобы развернуть вокруг центра и вернуть границы палиндрома.\n4. Отследите начальный и конечный индексы самого длинного найденного палиндрома.\n5. Верните подстроку между начальным и конечным индексами.\nСложность\n\n– Временная сложность: O(n²), где n — длина строки (для каждого центра расширяется до n).\n- Пространственная сложность: O(1), так как дополнительные структуры данных не используются."
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven a string `str`, return the longest palindromic substring of `str`.\n\n**Note:** A palindrome is a string that reads the same backward as forward. If there are multiple palindromic substrings of the same length, return any one of them.\n\n## Examples\n\n**Example 1:**  \nInput: `str = \"ababd\"`  \nOutput: `\"aba\"`\n\n**Example 2:**  \nInput: `str = \"dbbc\"`  \nOutput: `\"bb\"`\n\n**Example 3:**  \nInput: `str = \"babad\"`  \nOutput: `\"bab\"` (or `\"aba\"`)\n\n## Visualization\n\n![Screenshot](../../../../images/longest_palindromic_substring.png)\n\n## Algorithm\n\nThis problem is efficiently solved using the **expand around center** approach where we expand the input string at each position:\n\n1. If the string is empty or has length 1, return the string.\n2. For each character in the string, treat it as the center of a palindrome and expand outwards to check for the longest odd and even length palindromes.\n3. Use a helper function to expand around the center and return the bounds of the palindrome.\n4. Track the start and end indices of the longest palindrome found.\n5. Return the substring between the start and end indices.\n\n## Complexity\n\n- **Time Complexity:** O(n²), where n is the length of the string (for each center, expand up to n).\n- **Space Complexity:** O(1), as no extra data structures are used.",
+        "ru": "**Описание:**\nУчитывая строку `str`, верните самую длинную палиндромную подстроку `str`.\n\n**Примечание.** Палиндром – это строка, которая читается как в прямом, так и в обратном направлении. Если существует несколько палиндромных подстрок одинаковой длины, верните любую из них.\n\n## Примеры\n\n**Пример 1:**  \nВвод: `str = \"ababd\"`  \nВывод: `\"aba\"`\n\n**Пример 2:**  \nВвод: `str = \"dbbc\"`  \nВывод: `\"bb\"`\n\n**Пример 3:**  \nВвод: `str = \"babad\"`  \nВыход: `\"bab\"` (или `\"aba\"`)\n\n## Визуализация\n\n![Скриншот](../../../../images/longest_palindromic_substring.png)\n\n## Алгоритм\n\nЭта проблема эффективно решается с помощью подхода **расширения вокруг центра**, при котором мы расширяем входную строку в каждой позиции:\n\n1. Если строка пуста или имеет длину 1, верните строку.\n2. Для каждого символа в строке рассматривайте его как центр палиндрома и расширяйте его наружу, чтобы проверить наличие самых длинных палиндромов нечетной и четной длины.\n3. Используйте вспомогательную функцию, чтобы развернуть вокруг центра и вернуть границы палиндрома.\n4. Отследите начальный и конечный индексы самого длинного найденного палиндрома.\n5. Верните подстроку между начальным и конечным индексами.\n\n## Сложность\n\n– **Временная сложность:** O(n²), где n — длина строки (для каждого центра расширяется до n).\n- **Пространственная сложность:** O(1), так как дополнительные структуры данных не используются."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-008-palindromic-substrings",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/strings/8.palindromicSubstrings/palindromicSubstrings.js",
+        "documentationPath": "src/javascript/algorithms/strings/8.palindromicSubstrings/palindromicSubstrings.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/8.palindromicSubstrings/palindromicSubstrings.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/8.palindromicSubstrings/palindromicSubstrings.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "difficulty": "medium",
+      "question": {
+        "en": "How do you solve or implement `Palindromic substrings`?",
+        "ru": "Как решить или реализовать задачу `Palindromic substrings`?"
+      },
+      "answer": {
+        "en": "Description:\nGiven a string str, return the number of substrings withinstr that are palindromes.\n\nNote: A palindrome is a string that reads the same backward as forward.\nExamples\n\nExample 1: \nInput: str = \"abcd\" \nOutput: 4 \nExplanation: Each character is a palindrome.\n\nExample 2: \nInput: str = \"aaa\" \nOutput: 6 \nExplanation: All substrings are palindromes: \"a\", \"a\", \"a\", \"aa\", \"aa\", \"aaa\".\n\nExample 3: \nInput: str = \"baaab\" \nOutput: 9\nAlgorithm\n\nThis problem is efficiently solved using the expand around center approach:\n\n1. If the string is empty, return 0.\n2. For each character in the string, treat it as the center of a palindrome and expand outwards to count all odd and even length palindromic substrings.\n3. Use a helper function to expand around the center and count palindromes.\n4. Sum the counts for all centers and return the total.\nComplexity\n- Time Complexity: O(n²)(i.e, O(n²) + O(n²)), where n is the length of the string (for each center, expand up to n). This is because finding both odd and event length palindrome takes O(n) +O(n) time complexity and it needs to be repeated on each character position which takes O(n).\n- Space Complexity: O(1), as no extra data structures are used.",
+        "ru": "Описание:\nДана строка str, верните количество подстрок внутри str, которые являются палиндромами.\n\nПримечание. Палиндром – это строка, которая читается как в прямом, так и в обратном направлении.\nПримеры\n\nПример 1: \nВвод: str = \"abcd\" \nВывод: 4 \nПояснение: Каждый символ является палиндромом.\n\nПример 2: \nВвод: str = \"aaa\" \nВывод: 6 \nПояснение: Все подстроки являются палиндромами: \"a\", \"a\", \"a\", \"aa\", \"aa\", \"aaa\".\n\nПример 3: \nВвод: str = \"baaab\" \nВывод: 9\nАлгоритм\n\nЭта проблема эффективно решается с помощью подхода расширения вокруг центра:\n\n1. Если строка пуста, верните 0.\n2. Для каждого символа в строке рассматривайте его как центр палиндрома и расширяйте его наружу, чтобы подсчитать все палиндромные подстроки нечетной и четной длины.\n3. Используйте вспомогательную функцию для расширения вокруг центра и подсчета палиндромов.\n4. Суммируйте значения для всех центров и верните общую сумму.\nСложность\n- Временная сложность: O(n²) (т. е. O(n²) + O(n²)), где n — длина строки (для каждого центра расширяется до n). Это связано с тем, что нахождение палиндрома как нечетной, так и длины события требует временной сложности O(n) +O(n), и его необходимо повторять для каждой позиции символа, которая занимает O (n).\n- Пространственная сложность: O(1), так как дополнительные структуры данных не используются."
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven a string `str`,  return the number of substrings within`str` that are palindromes.\n\n**Note:** A palindrome is a string that reads the same backward as forward.\n\n## Examples\n\n**Example 1:**  \nInput: `str = \"abcd\"`  \nOutput: `4`  \nExplanation: Each character is a palindrome.\n\n**Example 2:**  \nInput: `str = \"aaa\"`  \nOutput: `6`  \nExplanation: All substrings are palindromes: `\"a\"`, `\"a\"`, `\"a\"`, `\"aa\"`, `\"aa\"`, `\"aaa\"`.\n\n**Example 3:**  \nInput: `str = \"baaab\"`  \nOutput: `9`\n\n## Algorithm\n\nThis problem is efficiently solved using the **expand around center** approach:\n\n1. If the string is empty, return 0.\n2. For each character in the string, treat it as the center of a palindrome and expand outwards to count all odd and even length palindromic substrings.\n3. Use a helper function to expand around the center and count palindromes.\n4. Sum the counts for all centers and return the total.\n\n\n## Complexity\n\n- **Time Complexity:** O(n²)(i.e,  O(n²) +  O(n²)), where n is the length of the string (for each center, expand up to n). This is because finding both odd and event length palindrome takes `O(n) +O(n)` time complexity and it needs to be repeated on each character position which takes O(n).\n\n- **Space Complexity:** O(1), as no extra data structures are used.",
+        "ru": "**Описание:**\nДана строка `str`, верните количество подстрок внутри `str`, которые являются палиндромами.\n\n**Примечание.** Палиндром – это строка, которая читается как в прямом, так и в обратном направлении.\n\n## Примеры\n\n**Пример 1:**  \nВвод: `str = \"abcd\"`  \nВывод: `4`  \nПояснение: Каждый символ является палиндромом.\n\n**Пример 2:**  \nВвод: `str = \"aaa\"`  \nВывод: `6`  \nПояснение: Все подстроки являются палиндромами: `\"a\"`, `\"a\"`, `\"a\"`, `\"aa\"`, `\"aa\"`, `\"aaa\"`.\n\n**Пример 3:**  \nВвод: `str = \"baaab\"`  \nВывод: `9`\n\n## Алгоритм\n\nЭта проблема эффективно решается с помощью подхода **расширения вокруг центра**:\n\n1. Если строка пуста, верните 0.\n2. Для каждого символа в строке рассматривайте его как центр палиндрома и расширяйте его наружу, чтобы подсчитать все палиндромные подстроки нечетной и четной длины.\n3. Используйте вспомогательную функцию для расширения вокруг центра и подсчета палиндромов.\n4. Суммируйте значения для всех центров и верните общую сумму.\n\n\n## Сложность\n\n- **Временная сложность:** O(n²) (т. е. O(n²) + O(n²)), где n — длина строки (для каждого центра расширяется до n). Это связано с тем, что нахождение палиндрома как нечетной, так и длины события требует временной сложности `O(n) +O(n)`, и его необходимо повторять для каждой позиции символа, которая занимает O (n).\n\n- **Пространственная сложность:** O(1), так как дополнительные структуры данных не используются."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-009-encode-and-decode-strings",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/strings/9.encodeDecodeStrings/encodeDecodeStrings.js",
+        "documentationPath": "src/javascript/algorithms/strings/9.encodeDecodeStrings/encodeDecodeStrings.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/9.encodeDecodeStrings/encodeDecodeStrings.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/9.encodeDecodeStrings/encodeDecodeStrings.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "difficulty": "medium",
+      "question": {
+        "en": "How do you solve or implement `Encode and decode strings`?",
+        "ru": "Как решить или реализовать задачу `Encode and decode strings`?"
+      },
+      "answer": {
+        "en": "Description:\n\nWrite an algorithm to encode a list of strings to a single string, and then decode it back to the original list. Implement both encode and decode functions.\nExamples\n\nExample 1: \nInput: [\"learn\", \"datastructure\", \"algorithms\", \"easily\"] \nOutput: [\"learn\", \"datastructure\", \"algorithms\", \"easily\"]\n\nExample 2: \nInput: [\"one\", \"two\", \"three\"] \nOutput: [\"one\", \"two\", \"three\"]\n\nExample 3: \nInput: [\"#\", \"##\", \"abc#def\"] \nOutput: [\"#\", \"##\", \"abc#def\"]\nAlgorithm\nEncode\n\n1. Initialize an empty string encodedStr.\n2. For each string in the input array, append its length, a delimiter (e.g., #), and the string itself to encodedStr.\n3. Return the concatenated string.\nDecode\n\n1. Initialize an empty array decodedStrArr and an index variable i = 0.\n2. While i is less than the length of the encoded string:\n- Find the next delimiter (#) to determine the length prefix.\n- Parse the length, extract the substring of that length, and add it to the result array.\n- Move the index past the extracted substring and repeat.\n3. Return the array of decoded strings.\nComplexity\n- Time Complexity: O(n) for both encoding and decoding, where n is the total number of characters in all strings.\n- Space Complexity: O(n), for the encoded string and the decoded array.",
+        "ru": "Описание:\n\nНапишите алгоритм для кодирования списка строк в одну строку, а затем декодируйте его обратно в исходный список. Реализуйте функции encode и decode.\nПримеры\n\nПример 1: \nВвод: [\"learn\", \"datastructure\", \"algorithms\", \"easily\"] \nВывод: [\"learn\", \"datastructure\", \"algorithms\", \"easily\"]\n\nПример 2: \nВвод: [\"one\", \"two\", \"three\"] \nВывод: [\"one\", \"two\", \"three\"]\n\nПример 3: \nВвод: [\"#\", \"##\", \"abc#def\"] \nВывод: [\"#\", \"##\", \"abc#def\"]\nАлгоритм\nКодировать\n\n1. Инициализируйте пустую строку encodedStr.\n2. Для каждой строки во входном массиве добавьте ее длину, разделитель (например, #) и саму строку к encodedStr.\n3. Верните объединенную строку.\nДекодирование\n\n1. Инициализируйте пустой массив decodedStrArr и индексную переменную i = 0.\n2. Пока i меньше длины закодированной строки:\n- Найдите следующий разделитель (#), чтобы определить префикс длины.\n- Проанализируйте длину, извлеките подстроку этой длины и добавьте ее в массив результатов.\n- Переместите индекс за извлеченную подстроку и повторите.\n3. Вернуть массив декодированных строк.\nСложность\n\n– Временная сложность: O(n) как для кодирования, так и для декодирования, где n — общее количество символов во всех строках.\n- Пространственная сложность: O(n) для закодированной строки и декодированного массива."
+      },
+      "explanation": {
+        "en": "**Description:**\n\nWrite an algorithm to encode a list of strings to a single string, and then decode it back to the original list. Implement both `encode` and `decode` functions.\n\n#### Examples\n\n**Example 1:**  \nInput: `[\"learn\", \"datastructure\", \"algorithms\", \"easily\"]`  \nOutput: `[\"learn\", \"datastructure\", \"algorithms\", \"easily\"]`\n\n**Example 2:**  \nInput: `[\"one\", \"two\", \"three\"]`  \nOutput: `[\"one\", \"two\", \"three\"]`\n\n**Example 3:**  \nInput: `[\"#\", \"##\", \"abc#def\"]`  \nOutput: `[\"#\", \"##\", \"abc#def\"]`\n\n## Algorithm\n\n### Encode\n\n1. Initialize an empty string `encodedStr`.\n2. For each string in the input array, append its length, a delimiter (e.g., `#`), and the string itself to `encodedStr`.\n3. Return the concatenated string.\n\n### Decode\n\n1. Initialize an empty array `decodedStrArr` and an index variable `i = 0`.\n2. While `i` is less than the length of the encoded string:\n    - Find the next delimiter (`#`) to determine the length prefix.\n    - Parse the length, extract the substring of that length, and add it to the result array.\n    - Move the index past the extracted substring and repeat.\n3. Return the array of decoded strings.\n\n## Complexity\n\n- **Time Complexity:** O(n) for both encoding and decoding, where n is the total number of characters in all strings.\n- **Space Complexity:** O(n), for the encoded string and the decoded array.",
+        "ru": "**Описание:**\n\nНапишите алгоритм для кодирования списка строк в одну строку, а затем декодируйте его обратно в исходный список. Реализуйте функции `encode` и `decode`.\n\n#### Примеры\n\n**Пример 1:**  \nВвод: `[\"learn\", \"datastructure\", \"algorithms\", \"easily\"]`  \nВывод: `[\"learn\", \"datastructure\", \"algorithms\", \"easily\"]`\n\n**Пример 2:**  \nВвод: `[\"one\", \"two\", \"three\"]`  \nВывод: `[\"one\", \"two\", \"three\"]`\n\n**Пример 3:**  \nВвод: `[\"#\", \"##\", \"abc#def\"]`  \nВывод: `[\"#\", \"##\", \"abc#def\"]`\n\n## Алгоритм\n\n### Кодировать\n\n1. Инициализируйте пустую строку `encodedStr`.\n2. Для каждой строки во входном массиве добавьте ее длину, разделитель (например, `#`) и саму строку к `encodedStr`.\n3. Верните объединенную строку.\n\n### Декодирование\n\n1. Инициализируйте пустой массив `decodedStrArr` и индексную переменную `i = 0`.\n2. Пока `i` меньше длины закодированной строки:\n    - Найдите следующий разделитель (`#`), чтобы определить префикс длины.\n    - Проанализируйте длину, извлеките подстроку этой длины и добавьте ее в массив результатов.\n    - Переместите индекс за извлеченную подстроку и повторите.\n3. Вернуть массив декодированных строк.\n\n## Сложность\n\n– **Временная сложность:** O(n) как для кодирования, так и для декодирования, где n — общее количество символов во всех строках.\n- **Пространственная сложность:** O(n) для закодированной строки и декодированного массива."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-010-greatest-common-devisor-of-strings",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/strings/10.greatestCommonDivisor/greatestCommonDivisor.js",
+        "documentationPath": "src/javascript/algorithms/strings/10.greatestCommonDivisor/greatestCommonDivisor.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/10.greatestCommonDivisor/greatestCommonDivisor.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/10.greatestCommonDivisor/greatestCommonDivisor.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "difficulty": "easy",
+      "question": {
+        "en": "How do you solve or implement `Greatest common devisor of strings`?",
+        "ru": "Как решить или реализовать задачу `Greatest common devisor of strings`?"
+      },
+      "answer": {
+        "en": "Greatest Common Divisor of Strings\n\nGiven two strings str1 and str2, return the largest string x such that x divides both str1 and str2.\n\nNote: For any two strings a and b, we say \"b divides a\" if and only if a = b + b + ... + b (one or more times).\nExamples\n\nExample 1: \nInput: str1 = \"AB\", str2 = \"AB\" \nOutput: \"AB\"\n\nExample 2: \nInput: str1 = \"ABCABCABC\", str2 = \"ABCABC\" \nOutput: \"ABC\"\n\nExample 3: \nInput: str1 = \"ABABAB\", str2 = \"AB\" \nOutput: \"AB\"\n\nExample 4: \nInput: str1 = \"LEET\", str2 = \"CODE\" \nOutput: \"\"\nAlgorithm\n\nThis problem is efficiently solved using Euclidean's algorithm for GCD:\n\n1. If str1 + str2 !== str2 + str1, return \"\" (no common divisor string exists).\n2. Compute the GCD of the lengths of str1 and str2.\n3. The substring of length GCD from either string is the answer.\nComplexity\n- Time Complexity: O(n + m), where n and m are the lengths of the two strings (for concatenation and comparison), plus O(log(min(n, m))) for the GCD calculation.\n- Space Complexity: O(n + m), for the concatenated strings.",
+        "ru": "Greatest Common Divisor of Strings\n\nGiven two strings str1 and str2, return the largest string x such that x divides both str1 and str2.\n\nNote: For any two strings a and b, we say \"b divides a\" if and only if a = b + b + ... + b (one or more times).\nExamples\n\nExample 1: \nInput: str1 = \"AB\", str2 = \"AB\" \nOutput: \"AB\"\n\nExample 2: \nInput: str1 = \"ABCABCABC\", str2 = \"ABCABC\" \nOutput: \"ABC\"\n\nExample 3: \nInput: str1 = \"ABABAB\", str2 = \"AB\" \nOutput: \"AB\"\n\nExample 4: \nInput: str1 = \"LEET\", str2 = \"CODE\" \nOutput: \"\"\nAlgorithm\n\nThis problem is efficiently solved using Euclidean's algorithm for GCD:\n\n1. If str1 + str2 !== str2 + str1, return \"\" (no common divisor string exists).\n2. Compute the GCD of the lengths of str1 and str2.\n3. The substring of length GCD from either string is the answer.\nComplexity\n- Time Complexity: O(n + m), where n and m are the lengths of the two strings (for concatenation and comparison), plus O(log(min(n, m))) for the GCD calculation.\n- Space Complexity: O(n + m), for the concatenated strings."
+      },
+      "explanation": {
+        "en": "# Greatest Common Divisor of Strings\n\nGiven two strings `str1` and `str2`, return the largest string `x` such that `x` divides both `str1` and `str2`.\n\n**Note:** For any two strings `a` and `b`, we say \"b divides a\" if and only if `a = b + b + ... + b` (one or more times).\n\n## Examples\n\n**Example 1:**  \nInput: `str1 = \"AB\", str2 = \"AB\"`  \nOutput: `\"AB\"`\n\n**Example 2:**  \nInput: `str1 = \"ABCABCABC\", str2 = \"ABCABC\"`  \nOutput: `\"ABC\"`\n\n**Example 3:**  \nInput: `str1 = \"ABABAB\", str2 = \"AB\"`  \nOutput: `\"AB\"`\n\n**Example 4:**  \nInput: `str1 = \"LEET\", str2 = \"CODE\"`  \nOutput: `\"\"`\n\n## Algorithm\n\nThis problem is efficiently solved using **Euclidean's algorithm** for GCD:\n\n1. If `str1 + str2 !== str2 + str1`, return `\"\"` (no common divisor string exists).\n2. Compute the GCD of the lengths of `str1` and `str2`.\n3. The substring of length GCD from either string is the answer.\n\n## Complexity\n\n- **Time Complexity:** O(n + m), where n and m are the lengths of the two strings (for concatenation and comparison), plus O(log(min(n, m))) for the GCD calculation.\n- **Space Complexity:** O(n + m), for the concatenated strings.",
+        "ru": "# Greatest Common Divisor of Strings\n\nGiven two strings `str1` and `str2`, return the largest string `x` such that `x` divides both `str1` and `str2`.\n\n**Note:** For any two strings `a` and `b`, we say \"b divides a\" if and only if `a = b + b + ... + b` (one or more times).\n\n## Examples\n\n**Example 1:**  \nInput: `str1 = \"AB\", str2 = \"AB\"`  \nOutput: `\"AB\"`\n\n**Example 2:**  \nInput: `str1 = \"ABCABCABC\", str2 = \"ABCABC\"`  \nOutput: `\"ABC\"`\n\n**Example 3:**  \nInput: `str1 = \"ABABAB\", str2 = \"AB\"`  \nOutput: `\"AB\"`\n\n**Example 4:**  \nInput: `str1 = \"LEET\", str2 = \"CODE\"`  \nOutput: `\"\"`\n\n## Algorithm\n\nThis problem is efficiently solved using **Euclidean's algorithm** for GCD:\n\n1. If `str1 + str2 !== str2 + str1`, return `\"\"` (no common divisor string exists).\n2. Compute the GCD of the lengths of `str1` and `str2`.\n3. The substring of length GCD from either string is the answer.\n\n## Complexity\n\n- **Time Complexity:** O(n + m), where n and m are the lengths of the two strings (for concatenation and comparison), plus O(log(min(n, m))) for the GCD calculation.\n- **Space Complexity:** O(n + m), for the concatenated strings."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-011-reverse-words-in-string",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/strings/11.reverseWordsInString/reverseWordsInString.js",
+        "documentationPath": "src/javascript/algorithms/strings/11.reverseWordsInString/reverseWordsInString.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/11.reverseWordsInString/reverseWordsInString.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/11.reverseWordsInString/reverseWordsInString.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "difficulty": "medium",
+      "question": {
+        "en": "How do you solve or implement `Reverse words in string`?",
+        "ru": "Как решить или реализовать задачу `Reverse words in string`?"
+      },
+      "answer": {
+        "en": "Level: Medium. Pattern/complexity: Basic string and array operations. Description: Given an input string str , return a string of the words in reverse order, concatenated by a single space, without extra spaces. Examples Example 1: Input: \"It is fun to learn DSA\" Output: \"DSA learn to fun is It\" Example 2: Input: \"hello DSA\" Output: \"DSA hello\" Example 3: Input: \" \" Output: \"\" Algorithm This problem is efficiently solved using basic string and array operations: 1. Trim the input string to remove leading and trailing spaces. 2. Split the string into an array of words using a regular expression that matches one or more spaces. 3. Reverse the array of words. 4. Join the reversed words with a single space. 5. Return the result. Complexity - Time Complexity: O(n), where n is the length of the string (for splitting, reversing, and joining). - Space Complexity: O(n), for storing the array of words.",
+        "ru": "Уровень: Средний. Шаблон/сложность: базовые операции со строками и массивами. Описание: Учитывая входную строку str, возвращает строку слов в обратном порядке, объединенную одним пробелом, без дополнительных пробелов. Примеры Пример 1: Входные данные: «Интересно изучать DSA» Выходные данные: «DSA научиться весело» Пример 2: Входные данные: «Привет, DSA» Выходные данные: «DSA привет» Пример 3: Входные данные: « » Выходные данные: «» Алгоритм Эта проблема эффективно решается с помощью базовых операций со строками и массивами: 1. Обрезаем входную строку, чтобы удалить начальные и конечные пробелы. 2. Разделите строку на массив слов, используя регулярное выражение, соответствующее одному или нескольким пробелам. 3. Переверните массив слов. 4. Соедините перевернутые слова одним пробелом. 5. Вернуть результат. Сложность — временная сложность: O(n), где n — длина строки (для разделения, реверсирования и объединения). - Пространственная сложность: O(n) для хранения массива слов."
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven an input string `str`, return a string of the words in reverse order, concatenated by a single space, without extra spaces.\n\n## Examples\n\n**Example 1:**  \nInput: `\"It is fun to learn DSA\"`  \nOutput: `\"DSA learn to fun is It\"`\n\n**Example 2:**  \nInput: `\"hello DSA\"`  \nOutput: `\"DSA hello\"`\n\n**Example 3:**  \nInput: `\"   \"`  \nOutput: `\"\"`\n\n## Algorithm\n\nThis problem is efficiently solved using basic string and array operations:\n\n1. Trim the input string to remove leading and trailing spaces.\n2. Split the string into an array of words using a regular expression that matches one or more spaces.\n3. Reverse the array of words.\n4. Join the reversed words with a single space.\n5. Return the result.\n\n## Complexity\n\n- **Time Complexity:** O(n), where n is the length of the string (for splitting, reversing, and joining).\n- **Space Complexity:** O(n), for storing the array of words.",
+        "ru": "**Описание:**\nУчитывая входную строку `str`, верните строку слов в обратном порядке, объединенную одним пробелом, без дополнительных пробелов.\n\n## Примеры\n\n**Пример 1:**  \nВвод: `\"It is fun to learn DSA\"`  \nВывод: `\"DSA learn to fun is It\"`\n\n**Пример 2:**  \nВвод: `\"hello DSA\"`  \nВывод: `\"DSA hello\"`\n\n**Пример 3:**  \nВвод: `\"   \"`  \nВывод: `\"\"`\n\n## Алгоритм\n\nЭта проблема эффективно решается с помощью базовых операций со строками и массивами:\n\n1. Обрежьте входную строку, удалив начальные и конечные пробелы.\n2. Разделите строку на массив слов, используя регулярное выражение, соответствующее одному или нескольким пробелам.\n3. Переверните массив слов.\n4. Соедините перевернутые слова одним пробелом.\n5. Вернуть результат.\n\n## Сложность\n\n– **Временная сложность:** O(n), где n — длина строки (для разделения, реверсирования и объединения).\n- **Пространственная сложность:** O(n) для хранения массива слов."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-012-length-of-last-word",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/strings/12.lastWordLength/lastWordLength.js",
+        "documentationPath": "src/javascript/algorithms/strings/12.lastWordLength/lastWordLength.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/12.lastWordLength/lastWordLength.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/12.lastWordLength/lastWordLength.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "difficulty": "easy",
+      "question": {
+        "en": "How do you solve or implement `Length of last word`?",
+        "ru": "Как решить или реализовать задачу `Length of last word`?"
+      },
+      "answer": {
+        "en": "Level: Easy. Pattern/complexity: String traversal. Description: Given an input string str which consists of words and spaces, return the length of the last word in the string. Note: A word is considered as a maximal substring of non-space characters. Examples Example 1: Input: \"Welcome to DSA\" Output: 3 Example 2: Input: \" My pet is fluffy \" Output: 6 Example 3: Input: \" \" Output: 0 Algorithm This problem is efficiently solved by traversing the string from the end: 1. Start from the last character of the string. 2. Skip any trailing spaces. 3. Count the length of the last word by iterating backwards until a space or the start of the string is reached. 4. Return the length. Complexity - Time Complexity: O(n), where n is the length of the string. This is because we may need to iterate entire string incase of single word string(worst case scenario). - Space Complexity: O(1), as only a few variables are used.",
+        "ru": "Уровень: Легко. Шаблон/сложность: обход строк. Описание: Учитывая входную строку str, состоящую из слов и пробелов, возвращает длину последнего слова в строке. Примечание. Слово рассматривается как максимальная подстрока непробельных символов. Примеры Пример 1: Входные данные: «Добро пожаловать в DSA» Выходные данные: 3 Пример 2: Входные данные: «Мой питомец пушистый» Выходные данные: 6 Пример 3: Входные данные: « » Выходные данные: 0 Алгоритм Эта проблема эффективно решается путем обхода строки с конца: 1. Начните с последнего символа строки. 2. Пропустите все конечные пробелы. 3. Подсчитайте длину последнего слова, выполняя итерацию в обратном направлении, пока не будет достигнут пробел или начало строки. 4. Вернуть длину. Сложность — временная сложность: O(n), где n — длина строки. Это связано с тем, что нам может потребоваться перебрать всю строку в случае строки из одного слова (худший сценарий). - Пространственная сложность: O(1), так как используется всего несколько переменных."
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven an input string `str` which consists of words and spaces, return the length of the last word in the string.\n\n**Note:** A word is considered as a maximal substring of non-space characters.\n\n## Examples\n\n**Example 1:**  \nInput: `\"Welcome to DSA\"`  \nOutput: `3`\n\n**Example 2:**  \nInput: `\" My pet is fluffy  \"`  \nOutput: `6`\n\n**Example 3:**  \nInput: `\"   \"`  \nOutput: `0`\n\n## Algorithm\n\nThis problem is efficiently solved by traversing the string from the end:\n\n1. Start from the last character of the string.\n2. Skip any trailing spaces.\n3. Count the length of the last word by iterating backwards until a space or the start of the string is reached.\n4. Return the length.\n\n## Complexity\n\n- **Time Complexity:** O(n), where n is the length of the string. This is because we may need to iterate entire string incase of single word string(worst case scenario).\n- **Space Complexity:** O(1), as only a few variables are used.",
+        "ru": "**Описание:**\nУчитывая входную строку `str`, состоящую из слов и пробелов, верните длину последнего слова в строке.\n\n**Примечание.** Слово считается максимальной подстрокой непробельных символов.\n\n## Примеры\n\n**Пример 1:**  \nВвод: `\"Welcome to DSA\"`  \nВывод: `3`\n\n**Пример 2:**  \nВвод: `\" My pet is fluffy  \"`  \nВывод: `6`\n\n**Пример 3:**  \nВвод: `\"   \"`  \nВывод: `0`\n\n## Алгоритм\n\nЭта проблема эффективно решается путем обхода строки с конца:\n\n1. Начните с последнего символа строки.\n2. Пропустите все конечные пробелы.\n3. Подсчитайте длину последнего слова, выполняя итерацию в обратном направлении, пока не будет достигнут пробел или начало строки.\n4. Вернуть длину.\n\n## Сложность\n\n– **Временная сложность:** O(n), где n — длина строки. Это связано с тем, что нам может потребоваться перебрать всю строку в случае строки из одного слова (худший сценарий).\n- **Пространственная сложность:** O(1), поскольку используется всего несколько переменных."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "sudheerj-dsa-string-string-001-longest-substring-without-repeating-characters-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/strings/1.longestSubstringWithoutRepeatingChars/longestSubstringWithoutRepeatingChars.js",
+        "documentationPath": "src/javascript/algorithms/strings/1.longestSubstringWithoutRepeatingChars/longestSubstringWithoutRepeatingChars.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/1.longestSubstringWithoutRepeatingChars/longestSubstringWithoutRepeatingChars.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/1.longestSubstringWithoutRepeatingChars/longestSubstringWithoutRepeatingChars.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Longest substring without repeating characters",
+        "ru": "Самая длинная подстрока без повторяющихся символов"
+      },
+      "prompt": {
+        "en": "Implement `Longest substring without repeating characters` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Longest substring without repeating characters`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "// Sliding window: TC: O(n), SC: O(min(n, m))\n/**\n * Finds the length of the longest substring without repeating characters.\n * @param {string} str\n * @returns {number} Length of the longest substring without repeating characters.\n */\nfunction longestSubstringLengthWithoutRepeatingChar(str) {\n  let charSet = new Set();\n  let left = 0,\n    right = 0,\n    maxLength = 0;\n\n  while (right < str.length) {\n    while (charSet.has(str[right])) {\n      charSet.delete(str[left]);\n      left++;\n    }\n    charSet.add(str[right]);\n    right++;\n    maxLength = Math.max(maxLength, charSet.size);\n  }\n  return maxLength;\n}\n\n//Additional problem\nfunction longestSubstringWithoutRepeatingChar(str) {\n  let charSet = new Set();\n  let left = 0,\n    right = 0,\n    start = 0,\n    maxLength = 0;\n\n  while (right < str.length) {\n    while (charSet.has(str[right])) {\n      charSet.delete(str[left]);\n      left++;\n    }\n    charSet.add(str[right]);\n    right++;\n    if (charSet.size > maxLength) {\n      start = left;\n      maxLength = charSet.size;\n    }\n  }\n  return str.substring(start, start + maxLength);\n}\n\n// Test cases\nconst testStrings = [\n  \"abcabcbbaa\", // 3\n  \"aaaaaaa\", // 1\n  \"pwwkew\", // 3\n  \"dvdf\", // 3\n  \"\", // 0\n  \"abcdef\", // 6\n];\n\nfor (const s of testStrings) {\n  console.log(\n    `Input: \"${s}\" | Length: ${longestSubstringLengthWithoutRepeatingChar(\n      s\n    )} | Substring: \"${longestSubstringWithoutRepeatingChar(s)}\"`\n  );\n}",
+      "expectedAnswer": {
+        "en": "// Sliding window: TC: O(n), SC: O(min(n, m))\n/**\n * Finds the length of the longest substring without repeating characters.\n * @param {string} str\n * @returns {number} Length of the longest substring without repeating characters.\n */\nfunction longestSubstringLengthWithoutRepeatingChar(str) {\n  let charSet = new Set();\n  let left = 0,\n    right = 0,\n    maxLength = 0;\n\n  while (right < str.length) {\n    while (charSet.has(str[right])) {\n      charSet.delete(str[left]);\n      left++;\n    }\n    charSet.add(str[right]);\n    right++;\n    maxLength = Math.max(maxLength, charSet.size);\n  }\n  return maxLength;\n}\n\n//Additional problem\nfunction longestSubstringWithoutRepeatingChar(str) {\n  let charSet = new Set();\n  let left = 0,\n    right = 0,\n    start = 0,\n    maxLength = 0;\n\n  while (right < str.length) {\n    while (charSet.has(str[right])) {\n      charSet.delete(str[left]);\n      left++;\n    }\n    charSet.add(str[right]);\n    right++;\n    if (charSet.size > maxLength) {\n      start = left;\n      maxLength = charSet.size;\n    }\n  }\n  return str.substring(start, start + maxLength);\n}\n\n// Test cases\nconst testStrings = [\n  \"abcabcbbaa\", // 3\n  \"aaaaaaa\", // 1\n  \"pwwkew\", // 3\n  \"dvdf\", // 3\n  \"\", // 0\n  \"abcdef\", // 6\n];\n\nfor (const s of testStrings) {\n  console.log(\n    `Input: \"${s}\" | Length: ${longestSubstringLengthWithoutRepeatingChar(\n      s\n    )} | Substring: \"${longestSubstringWithoutRepeatingChar(s)}\"`\n  );\n}",
+        "ru": "// Sliding window: TC: O(n), SC: O(min(n, m))\n/**\n * Finds the length of the longest substring without repeating characters.\n * @param {string} str\n * @returns {number} Length of the longest substring without repeating characters.\n */\nfunction longestSubstringLengthWithoutRepeatingChar(str) {\n  let charSet = new Set();\n  let left = 0,\n    right = 0,\n    maxLength = 0;\n\n  while (right < str.length) {\n    while (charSet.has(str[right])) {\n      charSet.delete(str[left]);\n      left++;\n    }\n    charSet.add(str[right]);\n    right++;\n    maxLength = Math.max(maxLength, charSet.size);\n  }\n  return maxLength;\n}\n\n//Additional problem\nfunction longestSubstringWithoutRepeatingChar(str) {\n  let charSet = new Set();\n  let left = 0,\n    right = 0,\n    start = 0,\n    maxLength = 0;\n\n  while (right < str.length) {\n    while (charSet.has(str[right])) {\n      charSet.delete(str[left]);\n      left++;\n    }\n    charSet.add(str[right]);\n    right++;\n    if (charSet.size > maxLength) {\n      start = left;\n      maxLength = charSet.size;\n    }\n  }\n  return str.substring(start, start + maxLength);\n}\n\n// Test cases\nconst testStrings = [\n  \"abcabcbbaa\", // 3\n  \"aaaaaaa\", // 1\n  \"pwwkew\", // 3\n  \"dvdf\", // 3\n  \"\", // 0\n  \"abcdef\", // 6\n];\n\nfor (const s of testStrings) {\n  console.log(\n    `Input: \"${s}\" | Length: ${longestSubstringLengthWithoutRepeatingChar(\n      s\n    )} | Substring: \"${longestSubstringWithoutRepeatingChar(s)}\"`\n  );\n}"
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven a string `str`, find the length of the longest substring without repeating characters.\n\n## Examples\n\n**Example 1:**  \nInput: `s = \"abcabcbbaa\"`  \nOutput: `3`  \nExplanation: The longest substring is `\"abc\"`.\n\n**Example 2:**  \nInput: `s = \"aaaaaaa\"`  \nOutput: `1`  \nExplanation: The longest substring is `\"a\"`.\n\n**Example 3:**  \nInput: `s = \"pwwkew\"`  \nOutput: `3`  \nExplanation: The longest substring is `\"wke\"`.\n\n## Visualization\n\n![Screenshot](../../../../images/longest_substring_sliding_window.png)\n\n## Algorithm\n\nThis problem is efficiently solved using the **sliding window** technique with a Set to track unique characters in the current window.\n\n1. Initialize an empty Set to store unique characters.\n2. Use two pointers, `left` and `right`, to represent the current window.\n3. Move the `right` pointer through the string:\n    - If the character at `right` is not in the Set, add it and update the maximum length.\n    - If the character is already in the Set, remove characters from the left of the window (increment `left` and remove from Set) until the duplicate is removed.\n4. Continue until the end of the string.\n5. The maximum window size found is the answer.\n\n\n**Time and Space complexity:**\n\n- **Time Complexity:** O(n), where n is the length of the string (each character is visited at most twice).\n- **Space Complexity:** O(min(n, m)), where n is the length of the input string andm is the size of the character set (e.g., 26 for lowercase English letters).",
+        "ru": "**Описание:**\nДана строка `str`. Найдите длину самой длинной подстроки без повторяющихся символов.\n\n## Примеры\n\n**Пример 1:**  \nВвод: `s = \"abcabcbbaa\"`  \nВывод: `3`  \nОбъяснение: Самая длинная подстрока — `\"abc\"`.\n\n**Пример 2:**  \nВвод: `s = \"aaaaaaa\"`  \nВывод: `1`  \nОбъяснение: Самая длинная подстрока — `\"a\"`.\n\n**Пример 3:**  \nВвод: `s = \"pwwkew\"`  \nВывод: `3`  \nОбъяснение: Самая длинная подстрока — `\"wke\"`.\n\n## Визуализация\n\n![Скриншот](../../../../images/longest_substring_sliding_window.png)\n\n## Алгоритм\n\nЭта проблема эффективно решается с помощью метода **скользящего окна** с набором для отслеживания уникальных символов в текущем окне.\n\n1. Инициализируйте пустой набор для хранения уникальных символов.\n2. Используйте два указателя `left` и `right` для обозначения текущего окна.\n3. Переместите указатель `right` по строке:\n    - Если символа `right` нет в наборе, добавьте его и обновите максимальную длину.\n    - Если персонаж уже есть в наборе, удалите символы из левой части окна (увеличьте `left` и удалите из набора), пока дубликат не будет удален.\n4. Продолжайте до конца строки.\n5. Ответом является найденный максимальный размер окна.\n\n\n**Сложность во времени и пространстве:**\n\n- **Временная сложность:** O(n), где n — длина строки (каждый символ посещается не более двух раз).\n– **Пространственная сложность:** O(min(n, m)), где n — длина входной строки, а m — размер набора символов (например, 26 для строчных английских букв)."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "needsAnswerReview": true,
+        "reviewReasons": [
+          "answer-too-long-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-002-longest-repeating-character-replacement-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/strings/2.longestRepeatingCharReplacement/longestRepeatingCharReplacement.js",
+        "documentationPath": "src/javascript/algorithms/strings/2.longestRepeatingCharReplacement/longestRepeatingCharReplacement.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/2.longestRepeatingCharReplacement/longestRepeatingCharReplacement.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/2.longestRepeatingCharReplacement/longestRepeatingCharReplacement.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Longest repeating character replacement",
+        "ru": "Самая длинная повторяющаяся замена символов"
+      },
+      "prompt": {
+        "en": "Implement `Longest repeating character replacement` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Longest repeating character replacement`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "// Sliding window: TC: O(n), SC: O(1)\n/**\n * Finds the length of the longest substring with the same letter after at most k replacements.\n * @param {string} str - The input string (uppercase English letters).\n * @param {number} k - The maximum number of allowed replacements.\n * @returns {number} The length of the longest valid substring.\n */\nfunction longestCharReplacement(str, k) {\n  const charCount = new Array(26).fill(0);\n  let maxLength = 0,\n    maxCharFrequency = 0,\n    left = 0;\n\n    for(let right = 0; right < str.length; right++) {\n        maxCharFrequency = Math.max(maxCharFrequency, ++charCount[str.charCodeAt(right) - 65]);\n        while((right-left+1-maxCharFrequency) > k) {\n            charCount[str.charCodeAt(left) - 65]--;\n            left++;\n        }\n        maxLength = Math.max(maxLength, right-left+1);\n    }\n    return maxLength;\n}\n\n// Test cases\nconst testCases = [\n  { str: \"AAABABBAA\", k: 2, expected: 6 },\n  { str: \"BBBB\", k: 2, expected: 4 },\n  { str: \"AABABBA\", k: 1, expected: 4 },\n  { str: \"ABAB\", k: 2, expected: 4 },\n  { str: \"ABCDE\", k: 1, expected: 2 },\n];\n\nfor (const { str, k, expected } of testCases) {\n  const result = longestCharReplacement(str, k);\n  console.log(\n    `Input: \"${str}\", k=${k} | Output: ${result} | Expected: ${expected}`\n  );\n}",
+      "expectedAnswer": {
+        "en": "// Sliding window: TC: O(n), SC: O(1)\n/**\n * Finds the length of the longest substring with the same letter after at most k replacements.\n * @param {string} str - The input string (uppercase English letters).\n * @param {number} k - The maximum number of allowed replacements.\n * @returns {number} The length of the longest valid substring.\n */\nfunction longestCharReplacement(str, k) {\n  const charCount = new Array(26).fill(0);\n  let maxLength = 0,\n    maxCharFrequency = 0,\n    left = 0;\n\n    for(let right = 0; right < str.length; right++) {\n        maxCharFrequency = Math.max(maxCharFrequency, ++charCount[str.charCodeAt(right) - 65]);\n        while((right-left+1-maxCharFrequency) > k) {\n            charCount[str.charCodeAt(left) - 65]--;\n            left++;\n        }\n        maxLength = Math.max(maxLength, right-left+1);\n    }\n    return maxLength;\n}\n\n// Test cases\nconst testCases = [\n  { str: \"AAABABBAA\", k: 2, expected: 6 },\n  { str: \"BBBB\", k: 2, expected: 4 },\n  { str: \"AABABBA\", k: 1, expected: 4 },\n  { str: \"ABAB\", k: 2, expected: 4 },\n  { str: \"ABCDE\", k: 1, expected: 2 },\n];\n\nfor (const { str, k, expected } of testCases) {\n  const result = longestCharReplacement(str, k);\n  console.log(\n    `Input: \"${str}\", k=${k} | Output: ${result} | Expected: ${expected}`\n  );\n}",
+        "ru": "// Sliding window: TC: O(n), SC: O(1)\n/**\n * Finds the length of the longest substring with the same letter after at most k replacements.\n * @param {string} str - The input string (uppercase English letters).\n * @param {number} k - The maximum number of allowed replacements.\n * @returns {number} The length of the longest valid substring.\n */\nfunction longestCharReplacement(str, k) {\n  const charCount = new Array(26).fill(0);\n  let maxLength = 0,\n    maxCharFrequency = 0,\n    left = 0;\n\n    for(let right = 0; right < str.length; right++) {\n        maxCharFrequency = Math.max(maxCharFrequency, ++charCount[str.charCodeAt(right) - 65]);\n        while((right-left+1-maxCharFrequency) > k) {\n            charCount[str.charCodeAt(left) - 65]--;\n            left++;\n        }\n        maxLength = Math.max(maxLength, right-left+1);\n    }\n    return maxLength;\n}\n\n// Test cases\nconst testCases = [\n  { str: \"AAABABBAA\", k: 2, expected: 6 },\n  { str: \"BBBB\", k: 2, expected: 4 },\n  { str: \"AABABBA\", k: 1, expected: 4 },\n  { str: \"ABAB\", k: 2, expected: 4 },\n  { str: \"ABCDE\", k: 1, expected: 2 },\n];\n\nfor (const { str, k, expected } of testCases) {\n  const result = longestCharReplacement(str, k);\n  console.log(\n    `Input: \"${str}\", k=${k} | Output: ${result} | Expected: ${expected}`\n  );\n}"
+      },
+      "explanation": {
+        "en": "# Longest Repeating Character Replacement\n\nGiven a string `str` and an integer `k`, you can replace at most `k` characters in the string with any uppercase English letter. Return the length of the longest substring containing the same letter you can get after performing the above operations.\n\n## Examples\n\n**Example 1:**  \nInput: `str = \"AAABABBAA\"`, `k = 2`  \nOutput: `6`  \nExplanation: Replace the two 'B's in the middle with 'A' to get \"AAAAAAA\".\n\n**Example 2:**  \nInput: `str = \"BBBB\"`, `k = 2`  \nOutput: `4`  \nExplanation: No replacements needed.\n\n## Visualization\n\nThe sliding window moves over the string, expanding to the right and shrinking from the left as needed. The window always contains at most `k` characters that need to be replaced to make all characters in the window the same.\nYou can visualize this with a diagram showing the window over the string, highlighting the current window and the maximum window found.\n\n![Screenshot](../../../../images/longest_repeating_char_replacement.png)\n\n\n\n## Algorithm\n\nThis problem is efficiently solved using the **sliding window** technique:\n\n1. Use a fixed-size array to count the frequency of each character in the current window.\n2. Use two pointers (`left` and `right`) to represent the window.\n3. For each character at `right`, update its count and track the maximum frequency in the window.\n4. If the window size minus the max frequency exceeds `k`, shrink the window from the left.\n5. Update the maximum window size found.\n\n\n## Complexity\n\n- **Time Complexity:** O(n), where n is the length of the string.\n- **Space Complexity:** O(1), since the character count array is always of size 26.",
+        "ru": "# Замена самого длинного повторяющегося символа\n\nУчитывая строку `str` и целое число `k`, вы можете заменить не более символов `k` в строке любой заглавной английской буквой. Возвращает длину самой длинной подстроки, содержащей ту же букву, которую вы можете получить после выполнения вышеуказанных операций.\n\n## Примеры\n\n**Пример 1:**  \nВвод: `str = \"AAABABBAA\"`, `k = 2`  \nВывод: `6`  \nПояснение: Замените две буквы «Б» посередине на «А», чтобы получить «ААААААА».\n\n**Пример 2:**  \nВвод: `str = \"BBBB\"`, `k = 2`  \nВывод: `4`  \nОбъяснение: Замены не требуются.\n\n## Визуализация\n\nСкользящее окно перемещается по строке, расширяясь вправо и сжимаясь слева по мере необходимости. Окно всегда содержит не более `k` символов, которые необходимо заменить, чтобы все символы в окне стали одинаковыми.\nВы можете визуализировать это с помощью диаграммы, показывающей окно над строкой, выделяя текущее окно и найденное максимальное окно.\n\n![Скриншот](../../../../images/longest_repeating_char_replacement.png)\n\n\n\n## Алгоритм\n\nЭта проблема эффективно решается с помощью техники **скользящего окна**:\n\n1. Используйте массив фиксированного размера для подсчета частоты каждого символа в текущем окне.\n2. Используйте два указателя (`left` и `right`) для обозначения окна.\n3. Для каждого символа по адресу `right` обновите его счетчик и отследите максимальную частоту в окне.\n4. Если размер окна за вычетом максимальной частоты превышает `k`, уменьшите окно слева.\n5. Обновите найденный максимальный размер окна.\n\n\n## Сложность\n\n– **Временная сложность:** O(n), где n — длина строки.\n- **Пространственная сложность:** O(1), поскольку размер массива символов всегда равен 26."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "needsAnswerReview": true,
+        "reviewReasons": [
+          "answer-too-long-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-003-minimum-window-substring-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/strings/3.minWindowSubstring/minWindowSubstring.js",
+        "documentationPath": "src/javascript/algorithms/strings/3.minWindowSubstring/minWindowSubstring.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/3.minWindowSubstring/minWindowSubstring.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/3.minWindowSubstring/minWindowSubstring.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "type": "implement",
+      "difficulty": "hard",
+      "title": {
+        "en": "Minimum window substring",
+        "ru": "Минимальная подстрока окна"
+      },
+      "prompt": {
+        "en": "Implement `Minimum window substring` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Minimum window substring`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "// Sliding window: TC: O(m + n), SC: O(m + n)\n/**\n * Finds the minimum window substring of str that contains all the characters of subStr.\n * @param {string} str - The main string.\n * @param {string} subStr - The target substring.\n * @returns {string} The minimum window substring, or \"\" if no such window exists.\n */\nfunction minWindowSubstring(str, subStr) {\n  if (subStr.length > str.length) return \"\";\n  \n  let windowStrCount = new Map();\n  let subStrCount = new Map();\n\n  let minLength = Number.MAX_VALUE;\n  let bestWindow = [-1, -1];\n\n  for(const ch of subStr) {\n    subStrCount.set(ch, (subStrCount.get(ch) || 0) + 1);\n  }\n\n  let having = 0, required = subStrCount.size;\n  let left = 0;\n\n  for(let right = 0; right < str.length; right++) {\n    let rightChar = str[right];\n\n    if(subStrCount.has(rightChar)) {\n      windowStrCount.set(rightChar, (windowStrCount.get(rightChar) || 0) +1);\n      if(subStrCount.get(rightChar) === windowStrCount.get(rightChar)) {\n        having++;\n      }\n    }\n\n    while(required === having) {\n      if(minLength > right-left+1) {\n        minLength = right-left+1;\n        bestWindow[0] = left;\n        bestWindow[1] = right;\n      }\n\n      let leftChar = str[left];\n      if(subStrCount.has(leftChar)) {\n        windowStrCount.set(leftChar, windowStrCount.get(leftChar)-1);\n        if(windowStrCount.get(leftChar) < subStrCount.get(leftChar)) {\n          having--;\n        }\n      }\n      left++;\n    }\n  }\n\n  return minLength === Number.MAX_VALUE ? \"\" : str.substring(bestWindow[0], bestWindow[1]+1);\n}\n\n// Test cases\nconst testCases = [\n  { str: \"ADOBECODEBANC\", subStr: \"ABC\", expected: \"BANC\" },\n  { str: \"A\", subStr: \"A\", expected: \"A\" },\n  { str: \"a\", subStr: \"aa\", expected: \"\" },\n  { str: \"ab\", subStr: \"b\", expected: \"b\" },\n  { str: \"ab\", subStr: \"a\", expected: \"a\" },\n  { str: \"ab\", subStr: \"c\", expected: \"\" },\n];\n\nfor (const { str, subStr, expected } of testCases) {\n  const result = minWindowSubstring(str, subStr);\n  console.log(\n      `Input: str=\"${str}\", subStr=\"${subStr}\" | Output: \"${result}\" | Expected: \"${expected}\"`\n  );\n}",
+      "expectedAnswer": {
+        "en": "// Sliding window: TC: O(m + n), SC: O(m + n)\n/**\n * Finds the minimum window substring of str that contains all the characters of subStr.\n * @param {string} str - The main string.\n * @param {string} subStr - The target substring.\n * @returns {string} The minimum window substring, or \"\" if no such window exists.\n */\nfunction minWindowSubstring(str, subStr) {\n  if (subStr.length > str.length) return \"\";\n  \n  let windowStrCount = new Map();\n  let subStrCount = new Map();\n\n  let minLength = Number.MAX_VALUE;\n  let bestWindow = [-1, -1];\n\n  for(const ch of subStr) {\n    subStrCount.set(ch, (subStrCount.get(ch) || 0) + 1);\n  }\n\n  let having = 0, required = subStrCount.size;\n  let left = 0;\n\n  for(let right = 0; right < str.length; right++) {\n    let rightChar = str[right];\n\n    if(subStrCount.has(rightChar)) {\n      windowStrCount.set(rightChar, (windowStrCount.get(rightChar) || 0) +1);\n      if(subStrCount.get(rightChar) === windowStrCount.get(rightChar)) {\n        having++;\n      }\n    }\n\n    while(required === having) {\n      if(minLength > right-left+1) {\n        minLength = right-left+1;\n        bestWindow[0] = left;\n        bestWindow[1] = right;\n      }\n\n      let leftChar = str[left];\n      if(subStrCount.has(leftChar)) {\n        windowStrCount.set(leftChar, windowStrCount.get(leftChar)-1);\n        if(windowStrCount.get(leftChar) < subStrCount.get(leftChar)) {\n          having--;\n        }\n      }\n      left++;\n    }\n  }\n\n  return minLength === Number.MAX_VALUE ? \"\" : str.substring(bestWindow[0], bestWindow[1]+1);\n}\n\n// Test cases\nconst testCases = [\n  { str: \"ADOBECODEBANC\", subStr: \"ABC\", expected: \"BANC\" },\n  { str: \"A\", subStr: \"A\", expected: \"A\" },\n  { str: \"a\", subStr: \"aa\", expected: \"\" },\n  { str: \"ab\", subStr: \"b\", expected: \"b\" },\n  { str: \"ab\", subStr: \"a\", expected: \"a\" },\n  { str: \"ab\", subStr: \"c\", expected: \"\" },\n];\n\nfor (const { str, subStr, expected } of testCases) {\n  const result = minWindowSubstring(str, subStr);\n  console.log(\n      `Input: str=\"${str}\", subStr=\"${subStr}\" | Output: \"${result}\" | Expected: \"${expected}\"`\n  );\n}",
+        "ru": "// Sliding window: TC: O(m + n), SC: O(m + n)\n/**\n * Finds the minimum window substring of str that contains all the characters of subStr.\n * @param {string} str - The main string.\n * @param {string} subStr - The target substring.\n * @returns {string} The minimum window substring, or \"\" if no such window exists.\n */\nfunction minWindowSubstring(str, subStr) {\n  if (subStr.length > str.length) return \"\";\n  \n  let windowStrCount = new Map();\n  let subStrCount = new Map();\n\n  let minLength = Number.MAX_VALUE;\n  let bestWindow = [-1, -1];\n\n  for(const ch of subStr) {\n    subStrCount.set(ch, (subStrCount.get(ch) || 0) + 1);\n  }\n\n  let having = 0, required = subStrCount.size;\n  let left = 0;\n\n  for(let right = 0; right < str.length; right++) {\n    let rightChar = str[right];\n\n    if(subStrCount.has(rightChar)) {\n      windowStrCount.set(rightChar, (windowStrCount.get(rightChar) || 0) +1);\n      if(subStrCount.get(rightChar) === windowStrCount.get(rightChar)) {\n        having++;\n      }\n    }\n\n    while(required === having) {\n      if(minLength > right-left+1) {\n        minLength = right-left+1;\n        bestWindow[0] = left;\n        bestWindow[1] = right;\n      }\n\n      let leftChar = str[left];\n      if(subStrCount.has(leftChar)) {\n        windowStrCount.set(leftChar, windowStrCount.get(leftChar)-1);\n        if(windowStrCount.get(leftChar) < subStrCount.get(leftChar)) {\n          having--;\n        }\n      }\n      left++;\n    }\n  }\n\n  return minLength === Number.MAX_VALUE ? \"\" : str.substring(bestWindow[0], bestWindow[1]+1);\n}\n\n// Test cases\nconst testCases = [\n  { str: \"ADOBECODEBANC\", subStr: \"ABC\", expected: \"BANC\" },\n  { str: \"A\", subStr: \"A\", expected: \"A\" },\n  { str: \"a\", subStr: \"aa\", expected: \"\" },\n  { str: \"ab\", subStr: \"b\", expected: \"b\" },\n  { str: \"ab\", subStr: \"a\", expected: \"a\" },\n  { str: \"ab\", subStr: \"c\", expected: \"\" },\n];\n\nfor (const { str, subStr, expected } of testCases) {\n  const result = minWindowSubstring(str, subStr);\n  console.log(\n      `Input: str=\"${str}\", subStr=\"${subStr}\" | Output: \"${result}\" | Expected: \"${expected}\"`\n  );\n}"
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven two strings `str` and `subStr` of lengths `m` and `n` respectively, return the minimum window \nsubstring of `str` such that every character in `subStr` (including duplicates) is included in the window. If there is no such substring available, just return the empty string(i.e,\"\").\n\n### Examples\n\n**Example 1:**  \nInput: `str = \"ADOBECODEBANC\"`, `subStr = \"ABC\"`  \nOutput: `\"BANC\"`  \nExplanation: The minimum window substring `\"BANC\"` includes 'A', 'B', and 'C' from `subStr`.\n\n**Example 2:**  \nInput: `str = \"A\"`, `subStr = \"A\"`  \nOutput: `\"A\"`\n\n**Example 3:**  \nInput: `str = \"a\"`, `subStr = \"aa\"`  \nOutput: `\"\"`\n\n## Visualization\n\nThe sliding window expands to include all required characters, then contracts to find the smallest valid window. You can visualize this with a diagram showing the window's movement over the string, highlighting the current and minimum windows found.\n\n![Screenshot](../../../../images/min_window_substring.png)\n\n## Algorithm\n\nThis problem is efficiently solved using the **sliding window** technique with two hash maps:\n\n1. Count the frequency of each character in `subStr` using a hash map.\n2. Use two pointers (`left` and `right`) to represent the current window in `str`.\n3. Expand the window by moving `right` and update the window's character counts.\n4. When the window contains all characters of `subStr` with the required frequency, try to shrink the window from the left to find the minimum.\n5. Track the minimum window found during the process.\n6. Return the minimum window substring, or `\"\"` if no such window exists.\n\n## Complexity\n\n- **Time Complexity:** O(m + n), where m and n are the lengths of `str` and `subStr`.\n- **Space Complexity:** O(m + n), for the hash maps.",
+        "ru": "**Описание:**\nУчитывая две строки `str` и `subStr` длиной `m` и `n` соответственно, верните минимальное окно. \nподстроку `str` так, чтобы каждый символ `subStr` (включая дубликаты) был включен в окно. Если такой подстроки нет, просто верните пустую строку (т. е. «»).\n\n### Примеры\n\n**Пример 1:**  \nВвод: `str = \"ADOBECODEBANC\"`, `subStr = \"ABC\"`  \nВывод: `\"BANC\"`  \nОбъяснение: Подстрока минимального окна `\"BANC\"` включает «A», «B» и «C» из `subStr`.\n\n**Пример 2:**  \nВвод: `str = \"A\"`, `subStr = \"A\"`  \nВывод: `\"A\"`\n\n**Пример 3:**  \nВвод: `str = \"a\"`, `subStr = \"aa\"`  \nВыход: `\"\"`\n\n## Визуализация\n\nСкользящее окно расширяется и включает в себя все необходимые символы, а затем сжимается, чтобы найти наименьшее допустимое окно. Вы можете визуализировать это с помощью диаграммы, показывающей движение окна по строке, выделяя текущее и минимальное найденные окна.\n\n![Скриншот](../../../../images/min_window_substring.png)\n\n## Алгоритм\n\nЭта проблема эффективно решается с помощью техники **скользящего окна** с двумя хэш-картами:\n\n1. Подсчитайте частоту каждого символа в `subStr`, используя хеш-карту.\n2. Используйте два указателя (`left` и `right`) для представления текущего окна в `str`.\n3. Разверните окно, переместив `right`, и обновите количество символов в окне.\n4. Когда в окне появятся все символы `subStr` с необходимой частотой, попробуйте сжать окно слева, чтобы найти минимум.\n5. Отслеживайте минимальное окно, обнаруженное в процессе.\n6. Верните подстроку минимального окна или `\"\"`, если такого окна не существует.\n\n## Сложность\n\n- **Временная сложность:** O(m + n), где m и n — длины `str` и `subStr`.\n- **Пространственная сложность:** O(m + n) для хэш-карт."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "needsAnswerReview": true,
+        "reviewReasons": [
+          "answer-too-long-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-004-valid-anagram-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/strings/4.validAnagram/validAnagram.js",
+        "documentationPath": "src/javascript/algorithms/strings/4.validAnagram/validAnagram.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/4.validAnagram/validAnagram.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/4.validAnagram/validAnagram.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "type": "implement",
+      "difficulty": "easy",
+      "title": {
+        "en": "Valid anagram",
+        "ru": "Действительная анаграмма"
+      },
+      "prompt": {
+        "en": "Implement `Valid anagram` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Valid anagram`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "/**\n * Checks if two strings are anagrams using a frequency array (lowercase a-z only).\n * TC: O(n), SC: O(1)\n * @param {string} str1\n * @param {string} str2\n * @returns {boolean}\n */\nfunction validAnagram1(str1, str2) {\n    if(str1.length !== str2.length) return false;\n\n    let charFrequencyArr = new Array(26).fill(0);\n\n    for(let i=0; i< str1.length; i++) {\n        let charCode1 = str1.charCodeAt(i);\n        let charCode2 = str2.charCodeAt(i);\n        charFrequencyArr[charCode1-97]++;\n        charFrequencyArr[charCode2-97]--;\n    }\n\n    return charFrequencyArr.every((n) => n === 0);\n}\n\n/**\n * Checks if two strings are anagrams using a Map (works for any characters).\n * TC: O(n), SC: O(n)\n * @param {string} str1\n * @param {string} str2\n * @returns {boolean}\n */\nfunction validAnagram2(str1, str2) {\n    if(str1.length != str2.length) return false;\n\n    let charMap = new Map();\n\n    for(let ch of str1) {\n        charMap.set(ch, (charMap.get(ch) || 0) + 1);\n    }\n\n    for(let ch of str2) {\n        if(charMap.has(ch)) {\n            charMap.set(ch, charMap.get(ch)-1);\n            if(charMap.get(ch) === 0) charMap.delete(ch);\n        } else {\n            return false;\n        }\n    }\n     \n    return charMap.size === 0;\n}\n\n/**\n * Checks if two strings are anagrams by sorting and comparing.\n * TC: O(n log n), SC: O(n)\n * @param {string} str1\n * @param {string} str2\n * @returns {boolean}\n */\nfunction validAnagram3(str1, str2) {\n    if(str1.length !== str2.length) return false;\n\n    return [...str1].sort().join('') === [...str2].sort().join('');\n}\n\n\n\n// Test cases\nconst testCases = [\n    { str1: \"anagram\", str2: \"nagaram\", expected: true },\n    { str1: \"rat\", str2: \"cat\", expected: false },\n    { str1: \"Listen\", str2: \"Silent\", expected: false },\n    { str1: \"aabbcc\", str2: \"abcabc\", expected: true },\n    { str1: \"aabbcc\", str2: \"aabbc\", expected: false },\n    { str1: \"123\", str2: \"321\", expected: true },\n    { str1: \"a!b@c\", str2: \"c!b@a\", expected: true },\n];\n\nfor (const { str1, str2, expected } of testCases) {\n    console.log(\n        `Input: \"${str1}\", \"${str2}\" | Array: ${validAnagram1(str1, str2)} | Map: ${validAnagram2(str1, str2)} | Sort: ${validAnagram3(str1, str2)} | Expected: ${expected}`\n    );\n}",
+      "expectedAnswer": {
+        "en": "/**\n * Checks if two strings are anagrams using a frequency array (lowercase a-z only).\n * TC: O(n), SC: O(1)\n * @param {string} str1\n * @param {string} str2\n * @returns {boolean}\n */\nfunction validAnagram1(str1, str2) {\n    if(str1.length !== str2.length) return false;\n\n    let charFrequencyArr = new Array(26).fill(0);\n\n    for(let i=0; i< str1.length; i++) {\n        let charCode1 = str1.charCodeAt(i);\n        let charCode2 = str2.charCodeAt(i);\n        charFrequencyArr[charCode1-97]++;\n        charFrequencyArr[charCode2-97]--;\n    }\n\n    return charFrequencyArr.every((n) => n === 0);\n}\n\n/**\n * Checks if two strings are anagrams using a Map (works for any characters).\n * TC: O(n), SC: O(n)\n * @param {string} str1\n * @param {string} str2\n * @returns {boolean}\n */\nfunction validAnagram2(str1, str2) {\n    if(str1.length != str2.length) return false;\n\n    let charMap = new Map();\n\n    for(let ch of str1) {\n        charMap.set(ch, (charMap.get(ch) || 0) + 1);\n    }\n\n    for(let ch of str2) {\n        if(charMap.has(ch)) {\n            charMap.set(ch, charMap.get(ch)-1);\n            if(charMap.get(ch) === 0) charMap.delete(ch);\n        } else {\n            return false;\n        }\n    }\n     \n    return charMap.size === 0;\n}\n\n/**\n * Checks if two strings are anagrams by sorting and comparing.\n * TC: O(n log n), SC: O(n)\n * @param {string} str1\n * @param {string} str2\n * @returns {boolean}\n */\nfunction validAnagram3(str1, str2) {\n    if(str1.length !== str2.length) return false;\n\n    return [...str1].sort().join('') === [...str2].sort().join('');\n}\n\n\n\n// Test cases\nconst testCases = [\n    { str1: \"anagram\", str2: \"nagaram\", expected: true },\n    { str1: \"rat\", str2: \"cat\", expected: false },\n    { str1: \"Listen\", str2: \"Silent\", expected: false },\n    { str1: \"aabbcc\", str2: \"abcabc\", expected: true },\n    { str1: \"aabbcc\", str2: \"aabbc\", expected: false },\n    { str1: \"123\", str2: \"321\", expected: true },\n    { str1: \"a!b@c\", str2: \"c!b@a\", expected: true },\n];\n\nfor (const { str1, str2, expected } of testCases) {\n    console.log(\n        `Input: \"${str1}\", \"${str2}\" | Array: ${validAnagram1(str1, str2)} | Map: ${validAnagram2(str1, str2)} | Sort: ${validAnagram3(str1, str2)} | Expected: ${expected}`\n    );\n}",
+        "ru": "/**\n * Checks if two strings are anagrams using a frequency array (lowercase a-z only).\n * TC: O(n), SC: O(1)\n * @param {string} str1\n * @param {string} str2\n * @returns {boolean}\n */\nfunction validAnagram1(str1, str2) {\n    if(str1.length !== str2.length) return false;\n\n    let charFrequencyArr = new Array(26).fill(0);\n\n    for(let i=0; i< str1.length; i++) {\n        let charCode1 = str1.charCodeAt(i);\n        let charCode2 = str2.charCodeAt(i);\n        charFrequencyArr[charCode1-97]++;\n        charFrequencyArr[charCode2-97]--;\n    }\n\n    return charFrequencyArr.every((n) => n === 0);\n}\n\n/**\n * Checks if two strings are anagrams using a Map (works for any characters).\n * TC: O(n), SC: O(n)\n * @param {string} str1\n * @param {string} str2\n * @returns {boolean}\n */\nfunction validAnagram2(str1, str2) {\n    if(str1.length != str2.length) return false;\n\n    let charMap = new Map();\n\n    for(let ch of str1) {\n        charMap.set(ch, (charMap.get(ch) || 0) + 1);\n    }\n\n    for(let ch of str2) {\n        if(charMap.has(ch)) {\n            charMap.set(ch, charMap.get(ch)-1);\n            if(charMap.get(ch) === 0) charMap.delete(ch);\n        } else {\n            return false;\n        }\n    }\n     \n    return charMap.size === 0;\n}\n\n/**\n * Checks if two strings are anagrams by sorting and comparing.\n * TC: O(n log n), SC: O(n)\n * @param {string} str1\n * @param {string} str2\n * @returns {boolean}\n */\nfunction validAnagram3(str1, str2) {\n    if(str1.length !== str2.length) return false;\n\n    return [...str1].sort().join('') === [...str2].sort().join('');\n}\n\n\n\n// Test cases\nconst testCases = [\n    { str1: \"anagram\", str2: \"nagaram\", expected: true },\n    { str1: \"rat\", str2: \"cat\", expected: false },\n    { str1: \"Listen\", str2: \"Silent\", expected: false },\n    { str1: \"aabbcc\", str2: \"abcabc\", expected: true },\n    { str1: \"aabbcc\", str2: \"aabbc\", expected: false },\n    { str1: \"123\", str2: \"321\", expected: true },\n    { str1: \"a!b@c\", str2: \"c!b@a\", expected: true },\n];\n\nfor (const { str1, str2, expected } of testCases) {\n    console.log(\n        `Input: \"${str1}\", \"${str2}\" | Array: ${validAnagram1(str1, str2)} | Map: ${validAnagram2(str1, str2)} | Sort: ${validAnagram3(str1, str2)} | Expected: ${expected}`\n    );\n}"
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven two strings `str1` and `str2`, return `true` if `str2` is an anagram of `str1`, and `false` otherwise.\n\n**Note:** An Anagram is defined as a word or phrase formed by rearranging the letters of a different word or phrase, using all the original letters exactly once.\n\n### Examples\nExample 1:\nInput: str1 = \"anagram\", str2 = \"nagaram\"\nOutput: true\n\nExample 2:\nInput: str1 = \"rat\", str2 = \"cat\"\nOutput: false\n\n**Algorithmic Steps**\nThis problem is solved with the help of **frequency counting** approach using an array. \n\n#### 1. Frequency Array (for lowercase a-z)\n\n1. If the strings are not the same length, return `false`.\n2. Create an array of size 26 to count letter frequencies.\n3. For each character in both strings, increment for `str1` and decrement for `str2`.\n4. If all counts are zero, the strings are anagrams.\n\nNote:There are other approaches as well to validate anagrams\n\n#### 2. Hash Map (for any characters)\n\n1. If the strings are not the same length, return `false`.\n2. Count the frequency of each character in `str1` using a map.\n3. Decrement the count for each character in `str2`.\n4. If any count goes negative or a character is missing, return `false`.\n5. If the map is empty at the end, the strings are anagrams.\n\n#### 3. Sort and Compare\n\n1. If the strings are not the same length, return `false`.\n2. Sort both strings and compare them.\n\n\n**Time and Space complexity:**\nThis algorithm takes a time complexity of `O(n)`, where `n` represents length of the string. This is because we are traversing the string at most once. \n\nAlso, it requires space complexity of `O(1)`(i.e, `O(26)`) due to no other data structure used except fixed 26 letter array for the character frequencies.\n\nThe complexity of all approaches can be summarized as below,\n\n| Approach         | Time Complexity | Space Complexity |\n|------------------|----------------|-----------------|\n| Frequency Array  | O(n)           | O(1)            |\n| Hash Map         | O(n)           | O(n)            |\n| Sort & Compare   | O(n log n)     | O(n)            |",
+        "ru": "**Описание:**\nУчитывая две строки `str1` и `str2`, верните `true`, если `str2` является анаграммой `str1`, и `false` в противном случае.\n\n**Примечание.** Анаграмма определяется как слово или фраза, образованная путем перестановки букв другого слова или фразы с использованием всех исходных букв ровно один раз.\n\n### Примеры\nПример 1:\nВвод: str1 = «анаграмма», str2 = «нагарам».\nВывод: правда\n\nПример 2:\nВвод: str1 = «крыса», str2 = «кот».\nВывод: ложь\n\n**Алгоритмические шаги**\nЭта проблема решается с помощью подхода **частотного подсчета** с использованием массива. \n\n#### 1. Массив частот (строчные буквы от a до z)\n\n1. Если строки разной длины, верните `false`.\n2. Создайте массив размером 26 для подсчета частот букв.\n3. Для каждого символа в обеих строках увеличьте значение для `str1` и уменьшите для `str2`.\n4. Если все значения равны нулю, строки являются анаграммами.\n\nПримечание. Существуют и другие подходы для проверки анаграмм.\n\n#### 2. Хэш-карта (для любых символов)\n\n1. Если строки разной длины, верните `false`.\n2. Подсчитайте частоту каждого символа в `str1` с помощью карты.\n3. Уменьшите счетчик для каждого символа в `str2`.\n4. Если какой-либо счетчик становится отрицательным или отсутствует символ, верните `false`.\n5. Если карта в конце пуста, строки являются анаграммами.\n\n#### 3. Сортировка и сравнение\n\n1. Если строки разной длины, верните `false`.\n2. Отсортируйте обе строки и сравните их.\n\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм требует временной сложности `O(n)`, где `n` представляет длину строки. Это связано с тем, что мы проходим по строке не более одного раза. \n\nКроме того, для этого требуется пространственная сложность `O(1)` (т. е. `O(26)`), поскольку не используется никакая другая структура данных, кроме фиксированного 26-буквенного массива для частот символов.\n\nСложность всех подходов можно резюмировать следующим образом:\n\n| Подход | Временная сложность | Космическая сложность |\n|------------------|-----------------|-----------------|\n| Частотная матрица | О(п) | О(1) |\n| Хэш-карта | О(п) | О(п) |\n| Сортировать и сравнивать | O(n log n) | О(п) |"
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "needsAnswerReview": true,
+        "reviewReasons": [
+          "answer-too-long-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-006-valid-palindrome-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/strings/6.validPalindrome/validPalindrome.js",
+        "documentationPath": "src/javascript/algorithms/strings/6.validPalindrome/validPalindrome.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/6.validPalindrome/validPalindrome.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/6.validPalindrome/validPalindrome.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "type": "implement",
+      "difficulty": "easy",
+      "title": {
+        "en": "Valid palindrome",
+        "ru": "Действительный палиндром"
+      },
+      "prompt": {
+        "en": "Implement `Valid palindrome` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Valid palindrome`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "/**\n * Checks if a string is a valid palindrome, considering only alphanumeric characters and ignoring cases.\n * @param {string} str\n * @returns {boolean}\n */\nfunction isValidPalindrome1(str) {\n  let left = 0,\n    right = str.length - 1;\n  while (left < right) {\n      let ch1 = str[left];\n      let ch2 = str[right];\n\n      if(!isAlphanumeric1(ch1)) left++;\n      else if(!isAlphanumeric1(ch2)) right--;\n      else {\n          if(ch1.toLowerCase() != ch2.toLowerCase()) {\n              return false;\n          }\n          left++;\n          right--;\n      }\n  }\n  return true;\n}\n\n/**\n * Checks if a character is alphanumeric.\n * @param {string} char\n * @returns {boolean}\n */\nfunction isAlphanumeric1(char) {\n  return /^[a-zA-Z0-9]$/i.test(char);\n}\n\n//Two pointer without regex:- TC:O(n) SC: O(n)\nfunction isValidPalindrome2(str) {\n    if(str.length <=1) return true;\n\n    let left = 0, right = str.length -1;\n    while(left < right) {\n        let ch1 = str[left];\n        let ch2 = str[right];\n\n        if(!isAlphanumeric2(ch1)) left++;\n        else if(!isAlphanumeric2(ch2)) right--;\n        else {\n            if(ch1.toLowerCase() != ch2.toLowerCase()) {\n                return false;\n            }\n            left++;\n            right--;\n        }\n    }\n    return true;\n}\n\n/**\n * Checks if a character is alphanumeric.\n * @param {string} char\n * @returns {boolean}\n */\nfunction isAlphanumeric2(char) {\n    const ch = char.toLowerCase();\n    return (ch >= 'a' && ch <= 'z')\n        || (ch >= '0' && ch <= '9');\n}\n\n// Test cases\nconst testCases = [\n  { str: \"A man, a plan, a canal: Panama\", expected: true },\n  { str: \"Hello World\", expected: false },\n  { str: \" \", expected: true },\n  { str: \"racecar\", expected: true },\n  { str: \"No lemon, no melon\", expected: true },\n  { str: \"12321\", expected: true },\n  { str: \"123abccba321\", expected: true },\n  { str: \"abc\", expected: false },\n];\n\nfor (const { str, expected } of testCases) {\n  const result = isValidPalindrome1(str);\n  const result1 = isValidPalindrome2(str);\n  console.log(`Input: \"${str}\" | Output: ${result} | Expected: ${expected}`);\n  console.log(`Input: \"${str}\" | Output: ${result1} | Expected: ${expected}`);\n\n}",
+      "expectedAnswer": {
+        "en": "/**\n * Checks if a string is a valid palindrome, considering only alphanumeric characters and ignoring cases.\n * @param {string} str\n * @returns {boolean}\n */\nfunction isValidPalindrome1(str) {\n  let left = 0,\n    right = str.length - 1;\n  while (left < right) {\n      let ch1 = str[left];\n      let ch2 = str[right];\n\n      if(!isAlphanumeric1(ch1)) left++;\n      else if(!isAlphanumeric1(ch2)) right--;\n      else {\n          if(ch1.toLowerCase() != ch2.toLowerCase()) {\n              return false;\n          }\n          left++;\n          right--;\n      }\n  }\n  return true;\n}\n\n/**\n * Checks if a character is alphanumeric.\n * @param {string} char\n * @returns {boolean}\n */\nfunction isAlphanumeric1(char) {\n  return /^[a-zA-Z0-9]$/i.test(char);\n}\n\n//Two pointer without regex:- TC:O(n) SC: O(n)\nfunction isValidPalindrome2(str) {\n    if(str.length <=1) return true;\n\n    let left = 0, right = str.length -1;\n    while(left < right) {\n        let ch1 = str[left];\n        let ch2 = str[right];\n\n        if(!isAlphanumeric2(ch1)) left++;\n        else if(!isAlphanumeric2(ch2)) right--;\n        else {\n            if(ch1.toLowerCase() != ch2.toLowerCase()) {\n                return false;\n            }\n            left++;\n            right--;\n        }\n    }\n    return true;\n}\n\n/**\n * Checks if a character is alphanumeric.\n * @param {string} char\n * @returns {boolean}\n */\nfunction isAlphanumeric2(char) {\n    const ch = char.toLowerCase();\n    return (ch >= 'a' && ch <= 'z')\n        || (ch >= '0' && ch <= '9');\n}\n\n// Test cases\nconst testCases = [\n  { str: \"A man, a plan, a canal: Panama\", expected: true },\n  { str: \"Hello World\", expected: false },\n  { str: \" \", expected: true },\n  { str: \"racecar\", expected: true },\n  { str: \"No lemon, no melon\", expected: true },\n  { str: \"12321\", expected: true },\n  { str: \"123abccba321\", expected: true },\n  { str: \"abc\", expected: false },\n];\n\nfor (const { str, expected } of testCases) {\n  const result = isValidPalindrome1(str);\n  const result1 = isValidPalindrome2(str);\n  console.log(`Input: \"${str}\" | Output: ${result} | Expected: ${expected}`);\n  console.log(`Input: \"${str}\" | Output: ${result1} | Expected: ${expected}`);\n\n}",
+        "ru": "/**\n * Checks if a string is a valid palindrome, considering only alphanumeric characters and ignoring cases.\n * @param {string} str\n * @returns {boolean}\n */\nfunction isValidPalindrome1(str) {\n  let left = 0,\n    right = str.length - 1;\n  while (left < right) {\n      let ch1 = str[left];\n      let ch2 = str[right];\n\n      if(!isAlphanumeric1(ch1)) left++;\n      else if(!isAlphanumeric1(ch2)) right--;\n      else {\n          if(ch1.toLowerCase() != ch2.toLowerCase()) {\n              return false;\n          }\n          left++;\n          right--;\n      }\n  }\n  return true;\n}\n\n/**\n * Checks if a character is alphanumeric.\n * @param {string} char\n * @returns {boolean}\n */\nfunction isAlphanumeric1(char) {\n  return /^[a-zA-Z0-9]$/i.test(char);\n}\n\n//Two pointer without regex:- TC:O(n) SC: O(n)\nfunction isValidPalindrome2(str) {\n    if(str.length <=1) return true;\n\n    let left = 0, right = str.length -1;\n    while(left < right) {\n        let ch1 = str[left];\n        let ch2 = str[right];\n\n        if(!isAlphanumeric2(ch1)) left++;\n        else if(!isAlphanumeric2(ch2)) right--;\n        else {\n            if(ch1.toLowerCase() != ch2.toLowerCase()) {\n                return false;\n            }\n            left++;\n            right--;\n        }\n    }\n    return true;\n}\n\n/**\n * Checks if a character is alphanumeric.\n * @param {string} char\n * @returns {boolean}\n */\nfunction isAlphanumeric2(char) {\n    const ch = char.toLowerCase();\n    return (ch >= 'a' && ch <= 'z')\n        || (ch >= '0' && ch <= '9');\n}\n\n// Test cases\nconst testCases = [\n  { str: \"A man, a plan, a canal: Panama\", expected: true },\n  { str: \"Hello World\", expected: false },\n  { str: \" \", expected: true },\n  { str: \"racecar\", expected: true },\n  { str: \"No lemon, no melon\", expected: true },\n  { str: \"12321\", expected: true },\n  { str: \"123abccba321\", expected: true },\n  { str: \"abc\", expected: false },\n];\n\nfor (const { str, expected } of testCases) {\n  const result = isValidPalindrome1(str);\n  const result1 = isValidPalindrome2(str);\n  console.log(`Input: \"${str}\" | Output: ${result} | Expected: ${expected}`);\n  console.log(`Input: \"${str}\" | Output: ${result1} | Expected: ${expected}`);\n\n}"
+      },
+      "explanation": {
+        "en": "**Description:**\n\nGiven a string `str`, return `true` if it is a palindrome, or `false` otherwise.\n\n**Note:** A palindrome is a string that reads the same backward as forward. Ignore non-alphanumeric characters and consider uppercase and lowercase letters as equal.\n\n## Examples\n\n**Example 1:**  \nInput: `str = \"A man, a plan, a canal: Panama\"`  \nOutput: `true`\n\n**Example 2:**  \nInput: `str = \"Hello World\"`  \nOutput: `false`\n\n**Example 3:**  \nInput: `str = \" \"`  \nOutput: `true`\n\n## Algorithm steps\n\nThis problem is efficiently solved using the **two-pointer** technique by traversing over the input string.:\n\n1. Initialize two pointers, `left` at the start and `right` at the end of the string.\n2. Move `left` forward and `right` backward until both point to alphanumeric characters.\n3. Compare the characters at `left` and `right` (case-insensitive).\n4. If they are not equal, return `false`.\n5. Move both pointers towards the center and repeat.\n6. If all characters match, return `true`.\n\n## Complexity\n\n- **Time Complexity:** O(n), where n is the length of the string. This is because we are traversing the string only once.\n- **Space Complexity:** O(1), as no extra data structures are used.",
+        "ru": "**Описание:**\n\nУчитывая строку `str`, верните `true`, если это палиндром, или `false` в противном случае.\n\n**Примечание.** Палиндром – это строка, которая читается как в прямом, так и в обратном направлении. Игнорируйте небуквенно-цифровые символы и считайте прописные и строчные буквы равными.\n\n## Примеры\n\n**Пример 1:**  \nВвод: `str = \"A man, a plan, a canal: Panama\"`  \nВывод: `true`\n\n**Пример 2:**  \nВвод: `str = \"Hello World\"`  \nВывод: `false`\n\n**Пример 3:**  \nВвод: `str = \" \"`  \nВывод: `true`\n\n## Шаги алгоритма\n\nЭта проблема эффективно решается с помощью метода **двух указателей** путем обхода входной строки:\n\n1. Инициализируйте два указателя: `left` в начале и `right` в конце строки.\n2. Переместите `left` вперед, а `right` назад, пока оба не укажут на буквенно-цифровые символы.\n3. Сравните символы `left` и `right` (без учета регистра).\n4. Если они не равны, верните `false`.\n5. Переместите оба указателя к центру и повторите.\n6. Если все символы совпадают, верните `true`.\n\n## Сложность\n\n– **Временная сложность:** O(n), где n — длина строки. Это потому, что мы проходим по строке только один раз.\n- **Пространственная сложность:** O(1), так как дополнительные структуры данных не используются."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "needsAnswerReview": true,
+        "reviewReasons": [
+          "answer-too-long-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-007-longest-palindromic-substring-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/strings/7.longestPalindromicSubstring/longestPalindromicSubstring.js",
+        "documentationPath": "src/javascript/algorithms/strings/7.longestPalindromicSubstring/longestPalindromicSubstring.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/7.longestPalindromicSubstring/longestPalindromicSubstring.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/7.longestPalindromicSubstring/longestPalindromicSubstring.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Longest palindromic substring",
+        "ru": "Самая длинная палиндромная подстрока"
+      },
+      "prompt": {
+        "en": "Implement `Longest palindromic substring` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Longest palindromic substring`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "/**\n * Finds the longest palindromic substring in a given string using expand-around-center.\n * @param {string} str\n * @returns {string}\n */\nfunction longestPalindromicSubstring(str) {\n  if (!str || str.length <= 1) return str;\n\n  let left = 0,\n    right = 0;\n\n  for (let i = 0; i < str.length; i++) {\n    // Odd length palindrome\n    let [left1, right1] = expandAroundCenter(str, i, i);\n    // Even length palindrome\n    let [left2, right2] = expandAroundCenter(str, i, i + 1);\n\n    if (right1 - left1 > right - left) {\n      left = left1;\n      right = right1;\n    }\n    if (right2 - left2 > right - left) {\n      left = left2;\n      right = right2;\n    }\n  }\n  return str.substring(left, right + 1);\n}\n\n/**\n * Expands around the given center and returns the bounds of the palindrome.\n * @param {string} str\n * @param {number} left\n * @param {number} right\n * @returns {[number, number]}\n */\nfunction expandAroundCenter(str, left, right) {\n  while (left >= 0 && right < str.length && str[left] === str[right]) {\n    left--;\n    right++;\n  }\n  return [left + 1, right - 1];\n}\n\n// Test cases\nconst testCases = [\n  { str: \"ababd\", expected: \"aba\" },\n  { str: \"dbbc\", expected: \"bb\" },\n  { str: \"babad\", expected: \"bab\" }, // or \"aba\"\n  { str: \"cbbd\", expected: \"bb\" },\n  { str: \"a\", expected: \"a\" },\n  { str: \"ac\", expected: \"a\" }, // or \"c\"\n  { str: \"\", expected: \"\" },\n];\n\nfor (const { str, expected } of testCases) {\n  const result = longestPalindromicSubstring(str);\n  console.log(\n    `Input: \"${str}\" | Output: \"${result}\" | Expected: \"${expected}\"`\n  );\n}",
+      "expectedAnswer": {
+        "en": "/**\n * Finds the longest palindromic substring in a given string using expand-around-center.\n * @param {string} str\n * @returns {string}\n */\nfunction longestPalindromicSubstring(str) {\n  if (!str || str.length <= 1) return str;\n\n  let left = 0,\n    right = 0;\n\n  for (let i = 0; i < str.length; i++) {\n    // Odd length palindrome\n    let [left1, right1] = expandAroundCenter(str, i, i);\n    // Even length palindrome\n    let [left2, right2] = expandAroundCenter(str, i, i + 1);\n\n    if (right1 - left1 > right - left) {\n      left = left1;\n      right = right1;\n    }\n    if (right2 - left2 > right - left) {\n      left = left2;\n      right = right2;\n    }\n  }\n  return str.substring(left, right + 1);\n}\n\n/**\n * Expands around the given center and returns the bounds of the palindrome.\n * @param {string} str\n * @param {number} left\n * @param {number} right\n * @returns {[number, number]}\n */\nfunction expandAroundCenter(str, left, right) {\n  while (left >= 0 && right < str.length && str[left] === str[right]) {\n    left--;\n    right++;\n  }\n  return [left + 1, right - 1];\n}\n\n// Test cases\nconst testCases = [\n  { str: \"ababd\", expected: \"aba\" },\n  { str: \"dbbc\", expected: \"bb\" },\n  { str: \"babad\", expected: \"bab\" }, // or \"aba\"\n  { str: \"cbbd\", expected: \"bb\" },\n  { str: \"a\", expected: \"a\" },\n  { str: \"ac\", expected: \"a\" }, // or \"c\"\n  { str: \"\", expected: \"\" },\n];\n\nfor (const { str, expected } of testCases) {\n  const result = longestPalindromicSubstring(str);\n  console.log(\n    `Input: \"${str}\" | Output: \"${result}\" | Expected: \"${expected}\"`\n  );\n}",
+        "ru": "/**\n * Finds the longest palindromic substring in a given string using expand-around-center.\n * @param {string} str\n * @returns {string}\n */\nfunction longestPalindromicSubstring(str) {\n  if (!str || str.length <= 1) return str;\n\n  let left = 0,\n    right = 0;\n\n  for (let i = 0; i < str.length; i++) {\n    // Odd length palindrome\n    let [left1, right1] = expandAroundCenter(str, i, i);\n    // Even length palindrome\n    let [left2, right2] = expandAroundCenter(str, i, i + 1);\n\n    if (right1 - left1 > right - left) {\n      left = left1;\n      right = right1;\n    }\n    if (right2 - left2 > right - left) {\n      left = left2;\n      right = right2;\n    }\n  }\n  return str.substring(left, right + 1);\n}\n\n/**\n * Expands around the given center and returns the bounds of the palindrome.\n * @param {string} str\n * @param {number} left\n * @param {number} right\n * @returns {[number, number]}\n */\nfunction expandAroundCenter(str, left, right) {\n  while (left >= 0 && right < str.length && str[left] === str[right]) {\n    left--;\n    right++;\n  }\n  return [left + 1, right - 1];\n}\n\n// Test cases\nconst testCases = [\n  { str: \"ababd\", expected: \"aba\" },\n  { str: \"dbbc\", expected: \"bb\" },\n  { str: \"babad\", expected: \"bab\" }, // or \"aba\"\n  { str: \"cbbd\", expected: \"bb\" },\n  { str: \"a\", expected: \"a\" },\n  { str: \"ac\", expected: \"a\" }, // or \"c\"\n  { str: \"\", expected: \"\" },\n];\n\nfor (const { str, expected } of testCases) {\n  const result = longestPalindromicSubstring(str);\n  console.log(\n    `Input: \"${str}\" | Output: \"${result}\" | Expected: \"${expected}\"`\n  );\n}"
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven a string `str`, return the longest palindromic substring of `str`.\n\n**Note:** A palindrome is a string that reads the same backward as forward. If there are multiple palindromic substrings of the same length, return any one of them.\n\n## Examples\n\n**Example 1:**  \nInput: `str = \"ababd\"`  \nOutput: `\"aba\"`\n\n**Example 2:**  \nInput: `str = \"dbbc\"`  \nOutput: `\"bb\"`\n\n**Example 3:**  \nInput: `str = \"babad\"`  \nOutput: `\"bab\"` (or `\"aba\"`)\n\n## Visualization\n\n![Screenshot](../../../../images/longest_palindromic_substring.png)\n\n## Algorithm\n\nThis problem is efficiently solved using the **expand around center** approach where we expand the input string at each position:\n\n1. If the string is empty or has length 1, return the string.\n2. For each character in the string, treat it as the center of a palindrome and expand outwards to check for the longest odd and even length palindromes.\n3. Use a helper function to expand around the center and return the bounds of the palindrome.\n4. Track the start and end indices of the longest palindrome found.\n5. Return the substring between the start and end indices.\n\n## Complexity\n\n- **Time Complexity:** O(n²), where n is the length of the string (for each center, expand up to n).\n- **Space Complexity:** O(1), as no extra data structures are used.",
+        "ru": "**Описание:**\nУчитывая строку `str`, верните самую длинную палиндромную подстроку `str`.\n\n**Примечание.** Палиндром – это строка, которая читается как в прямом, так и в обратном направлении. Если существует несколько палиндромных подстрок одинаковой длины, верните любую из них.\n\n## Примеры\n\n**Пример 1:**  \nВвод: `str = \"ababd\"`  \nВывод: `\"aba\"`\n\n**Пример 2:**  \nВвод: `str = \"dbbc\"`  \nВывод: `\"bb\"`\n\n**Пример 3:**  \nВвод: `str = \"babad\"`  \nВыход: `\"bab\"` (или `\"aba\"`)\n\n## Визуализация\n\n![Скриншот](../../../../images/longest_palindromic_substring.png)\n\n## Алгоритм\n\nЭта проблема эффективно решается с помощью подхода **расширения вокруг центра**, при котором мы расширяем входную строку в каждой позиции:\n\n1. Если строка пуста или имеет длину 1, верните строку.\n2. Для каждого символа в строке рассматривайте его как центр палиндрома и расширяйте его наружу, чтобы проверить наличие самых длинных палиндромов нечетной и четной длины.\n3. Используйте вспомогательную функцию, чтобы развернуть вокруг центра и вернуть границы палиндрома.\n4. Отследите начальный и конечный индексы самого длинного найденного палиндрома.\n5. Верните подстроку между начальным и конечным индексами.\n\n## Сложность\n\n– **Временная сложность:** O(n²), где n — длина строки (для каждого центра расширяется до n).\n- **Пространственная сложность:** O(1), так как дополнительные структуры данных не используются."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "needsAnswerReview": true,
+        "reviewReasons": [
+          "answer-too-long-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-008-palindromic-substrings-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/strings/8.palindromicSubstrings/palindromicSubstrings.js",
+        "documentationPath": "src/javascript/algorithms/strings/8.palindromicSubstrings/palindromicSubstrings.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/8.palindromicSubstrings/palindromicSubstrings.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/8.palindromicSubstrings/palindromicSubstrings.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Palindromic substrings",
+        "ru": "Палиндромные подстроки"
+      },
+      "prompt": {
+        "en": "Implement `Palindromic substrings` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Palindromic substrings`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "/**\n * TC:O(n*2) SC:O(1)\n * Counts the number of palindromic substrings in a given string using expand-around-center.\n * @param {string} str\n * @returns {number}\n */\nfunction countPalindromicSubstrings(str) {\n  if (!str || str.length < 1) return 0;\n  let count = 0;\n  for (let i = 0; i < str.length; i++) {\n    count += expandAroundCenter(str, i, i); // Odd length palindromes\n    count += expandAroundCenter(str, i, i + 1); // Even length palindromes\n  }\n  return count;\n}\n\n/**\n * Expands around the given center and counts palindromic substrings.\n * @param {string} str\n * @param {number} left\n * @param {number} right\n * @returns {number}\n */\nfunction expandAroundCenter(str, left, right) {\n  let count = 0;\n  while (left >= 0 && right < str.length && str[left] === str[right]) {\n    count++;\n    left--;\n    right++;\n  }\n  return count;\n}\n\n// Test cases\nconst testCases = [\n  { str: \"baaab\", expected: 9 },\n  { str: \"abcd\", expected: 4 },\n  { str: \"aaa\", expected: 6 },\n  { str: \"\", expected: 0 },\n  { str: \"a\", expected: 1 },\n  { str: \"abccba\", expected: 9 },\n];\n\nfor (const { str, expected } of testCases) {\n  const result = countPalindromicSubstrings(str);\n  console.log(`Input: \"${str}\" | Output: ${result} | Expected: ${expected}`);\n}",
+      "expectedAnswer": {
+        "en": "/**\n * TC:O(n*2) SC:O(1)\n * Counts the number of palindromic substrings in a given string using expand-around-center.\n * @param {string} str\n * @returns {number}\n */\nfunction countPalindromicSubstrings(str) {\n  if (!str || str.length < 1) return 0;\n  let count = 0;\n  for (let i = 0; i < str.length; i++) {\n    count += expandAroundCenter(str, i, i); // Odd length palindromes\n    count += expandAroundCenter(str, i, i + 1); // Even length palindromes\n  }\n  return count;\n}\n\n/**\n * Expands around the given center and counts palindromic substrings.\n * @param {string} str\n * @param {number} left\n * @param {number} right\n * @returns {number}\n */\nfunction expandAroundCenter(str, left, right) {\n  let count = 0;\n  while (left >= 0 && right < str.length && str[left] === str[right]) {\n    count++;\n    left--;\n    right++;\n  }\n  return count;\n}\n\n// Test cases\nconst testCases = [\n  { str: \"baaab\", expected: 9 },\n  { str: \"abcd\", expected: 4 },\n  { str: \"aaa\", expected: 6 },\n  { str: \"\", expected: 0 },\n  { str: \"a\", expected: 1 },\n  { str: \"abccba\", expected: 9 },\n];\n\nfor (const { str, expected } of testCases) {\n  const result = countPalindromicSubstrings(str);\n  console.log(`Input: \"${str}\" | Output: ${result} | Expected: ${expected}`);\n}",
+        "ru": "/**\n * TC:O(n*2) SC:O(1)\n * Counts the number of palindromic substrings in a given string using expand-around-center.\n * @param {string} str\n * @returns {number}\n */\nfunction countPalindromicSubstrings(str) {\n  if (!str || str.length < 1) return 0;\n  let count = 0;\n  for (let i = 0; i < str.length; i++) {\n    count += expandAroundCenter(str, i, i); // Odd length palindromes\n    count += expandAroundCenter(str, i, i + 1); // Even length palindromes\n  }\n  return count;\n}\n\n/**\n * Expands around the given center and counts palindromic substrings.\n * @param {string} str\n * @param {number} left\n * @param {number} right\n * @returns {number}\n */\nfunction expandAroundCenter(str, left, right) {\n  let count = 0;\n  while (left >= 0 && right < str.length && str[left] === str[right]) {\n    count++;\n    left--;\n    right++;\n  }\n  return count;\n}\n\n// Test cases\nconst testCases = [\n  { str: \"baaab\", expected: 9 },\n  { str: \"abcd\", expected: 4 },\n  { str: \"aaa\", expected: 6 },\n  { str: \"\", expected: 0 },\n  { str: \"a\", expected: 1 },\n  { str: \"abccba\", expected: 9 },\n];\n\nfor (const { str, expected } of testCases) {\n  const result = countPalindromicSubstrings(str);\n  console.log(`Input: \"${str}\" | Output: ${result} | Expected: ${expected}`);\n}"
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven a string `str`,  return the number of substrings within`str` that are palindromes.\n\n**Note:** A palindrome is a string that reads the same backward as forward.\n\n## Examples\n\n**Example 1:**  \nInput: `str = \"abcd\"`  \nOutput: `4`  \nExplanation: Each character is a palindrome.\n\n**Example 2:**  \nInput: `str = \"aaa\"`  \nOutput: `6`  \nExplanation: All substrings are palindromes: `\"a\"`, `\"a\"`, `\"a\"`, `\"aa\"`, `\"aa\"`, `\"aaa\"`.\n\n**Example 3:**  \nInput: `str = \"baaab\"`  \nOutput: `9`\n\n## Algorithm\n\nThis problem is efficiently solved using the **expand around center** approach:\n\n1. If the string is empty, return 0.\n2. For each character in the string, treat it as the center of a palindrome and expand outwards to count all odd and even length palindromic substrings.\n3. Use a helper function to expand around the center and count palindromes.\n4. Sum the counts for all centers and return the total.\n\n\n## Complexity\n\n- **Time Complexity:** O(n²)(i.e,  O(n²) +  O(n²)), where n is the length of the string (for each center, expand up to n). This is because finding both odd and event length palindrome takes `O(n) +O(n)` time complexity and it needs to be repeated on each character position which takes O(n).\n\n- **Space Complexity:** O(1), as no extra data structures are used.",
+        "ru": "**Описание:**\nДана строка `str`, верните количество подстрок внутри `str`, которые являются палиндромами.\n\n**Примечание.** Палиндром – это строка, которая читается как в прямом, так и в обратном направлении.\n\n## Примеры\n\n**Пример 1:**  \nВвод: `str = \"abcd\"`  \nВывод: `4`  \nПояснение: Каждый символ является палиндромом.\n\n**Пример 2:**  \nВвод: `str = \"aaa\"`  \nВывод: `6`  \nПояснение: Все подстроки являются палиндромами: `\"a\"`, `\"a\"`, `\"a\"`, `\"aa\"`, `\"aa\"`, `\"aaa\"`.\n\n**Пример 3:**  \nВвод: `str = \"baaab\"`  \nВывод: `9`\n\n## Алгоритм\n\nЭта проблема эффективно решается с помощью подхода **расширения вокруг центра**:\n\n1. Если строка пуста, верните 0.\n2. Для каждого символа в строке рассматривайте его как центр палиндрома и расширяйте его наружу, чтобы подсчитать все палиндромные подстроки нечетной и четной длины.\n3. Используйте вспомогательную функцию для расширения вокруг центра и подсчета палиндромов.\n4. Суммируйте значения для всех центров и верните общую сумму.\n\n\n## Сложность\n\n- **Временная сложность:** O(n²) (т. е. O(n²) + O(n²)), где n — длина строки (для каждого центра расширяется до n). Это связано с тем, что нахождение палиндрома как нечетной, так и длины события требует временной сложности `O(n) +O(n)`, и его необходимо повторять для каждой позиции символа, которая занимает O (n).\n\n- **Пространственная сложность:** O(1), так как дополнительные структуры данных не используются."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "needsAnswerReview": true,
+        "reviewReasons": [
+          "answer-too-long-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-009-encode-and-decode-strings-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/strings/9.encodeDecodeStrings/encodeDecodeStrings.js",
+        "documentationPath": "src/javascript/algorithms/strings/9.encodeDecodeStrings/encodeDecodeStrings.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/9.encodeDecodeStrings/encodeDecodeStrings.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/9.encodeDecodeStrings/encodeDecodeStrings.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Encode and decode strings",
+        "ru": "Кодирование и декодирование строк"
+      },
+      "prompt": {
+        "en": "Implement `Encode and decode strings` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Encode and decode strings`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "/**\n * TC: O(n) SC: O(n)\n * Encodes a list of strings to a single string.\n * Uses length-prefix encoding with '#' as a delimiter.\n * @param {string[]} strs\n * @returns {string}\n */\nfunction encodeStrings(strs) {\n  let encodedStr = \"\";\n  for (let str of strs) {\n    encodedStr += str.length + \"#\" + str;\n  }\n  return encodedStr;\n}\n\n/**\n * Decodes a single string to a list of strings.\n * @param {string} str\n * @returns {string[]}\n */\nfunction decodeString(str) {\n  let decodedStrArr = [];\n  let i = 0;\n  while (i < str.length) {\n    let j = i;\n    while (str[j] !== \"#\" && j < str.length) j++;\n    let wordLength = Number.parseInt(str.substring(i, j));\n    let start = j + 1;\n    let subStr = str.substring(start, start + wordLength);\n    decodedStrArr.push(subStr);\n    i = start + wordLength;\n  }\n  return decodedStrArr;\n}\n\n// Test cases\nconst testCases = [\n  [\"learn\", \"datastructure\", \"algorithms\", \"easily\"],\n  [\"one\", \"two\", \"three\"],\n  [\"\", \"a\", \"\"],\n  [\"#\", \"##\", \"abc#def\"],\n  [],\n  [\"\", \"\"],\n];\n\nfor (const arr of testCases) {\n  const encoded = encodeStrings(arr);\n  const decoded = decodeString(encoded);\n  console.log(\n    `Input: ${JSON.stringify(\n      arr\n    )} | Encoded: \"${encoded}\" | Decoded: ${JSON.stringify(decoded)}`\n  );\n}",
+      "expectedAnswer": {
+        "en": "/**\n * TC: O(n) SC: O(n)\n * Encodes a list of strings to a single string.\n * Uses length-prefix encoding with '#' as a delimiter.\n * @param {string[]} strs\n * @returns {string}\n */\nfunction encodeStrings(strs) {\n  let encodedStr = \"\";\n  for (let str of strs) {\n    encodedStr += str.length + \"#\" + str;\n  }\n  return encodedStr;\n}\n\n/**\n * Decodes a single string to a list of strings.\n * @param {string} str\n * @returns {string[]}\n */\nfunction decodeString(str) {\n  let decodedStrArr = [];\n  let i = 0;\n  while (i < str.length) {\n    let j = i;\n    while (str[j] !== \"#\" && j < str.length) j++;\n    let wordLength = Number.parseInt(str.substring(i, j));\n    let start = j + 1;\n    let subStr = str.substring(start, start + wordLength);\n    decodedStrArr.push(subStr);\n    i = start + wordLength;\n  }\n  return decodedStrArr;\n}\n\n// Test cases\nconst testCases = [\n  [\"learn\", \"datastructure\", \"algorithms\", \"easily\"],\n  [\"one\", \"two\", \"three\"],\n  [\"\", \"a\", \"\"],\n  [\"#\", \"##\", \"abc#def\"],\n  [],\n  [\"\", \"\"],\n];\n\nfor (const arr of testCases) {\n  const encoded = encodeStrings(arr);\n  const decoded = decodeString(encoded);\n  console.log(\n    `Input: ${JSON.stringify(\n      arr\n    )} | Encoded: \"${encoded}\" | Decoded: ${JSON.stringify(decoded)}`\n  );\n}",
+        "ru": "/**\n * TC: O(n) SC: O(n)\n * Encodes a list of strings to a single string.\n * Uses length-prefix encoding with '#' as a delimiter.\n * @param {string[]} strs\n * @returns {string}\n */\nfunction encodeStrings(strs) {\n  let encodedStr = \"\";\n  for (let str of strs) {\n    encodedStr += str.length + \"#\" + str;\n  }\n  return encodedStr;\n}\n\n/**\n * Decodes a single string to a list of strings.\n * @param {string} str\n * @returns {string[]}\n */\nfunction decodeString(str) {\n  let decodedStrArr = [];\n  let i = 0;\n  while (i < str.length) {\n    let j = i;\n    while (str[j] !== \"#\" && j < str.length) j++;\n    let wordLength = Number.parseInt(str.substring(i, j));\n    let start = j + 1;\n    let subStr = str.substring(start, start + wordLength);\n    decodedStrArr.push(subStr);\n    i = start + wordLength;\n  }\n  return decodedStrArr;\n}\n\n// Test cases\nconst testCases = [\n  [\"learn\", \"datastructure\", \"algorithms\", \"easily\"],\n  [\"one\", \"two\", \"three\"],\n  [\"\", \"a\", \"\"],\n  [\"#\", \"##\", \"abc#def\"],\n  [],\n  [\"\", \"\"],\n];\n\nfor (const arr of testCases) {\n  const encoded = encodeStrings(arr);\n  const decoded = decodeString(encoded);\n  console.log(\n    `Input: ${JSON.stringify(\n      arr\n    )} | Encoded: \"${encoded}\" | Decoded: ${JSON.stringify(decoded)}`\n  );\n}"
+      },
+      "explanation": {
+        "en": "**Description:**\n\nWrite an algorithm to encode a list of strings to a single string, and then decode it back to the original list. Implement both `encode` and `decode` functions.\n\n#### Examples\n\n**Example 1:**  \nInput: `[\"learn\", \"datastructure\", \"algorithms\", \"easily\"]`  \nOutput: `[\"learn\", \"datastructure\", \"algorithms\", \"easily\"]`\n\n**Example 2:**  \nInput: `[\"one\", \"two\", \"three\"]`  \nOutput: `[\"one\", \"two\", \"three\"]`\n\n**Example 3:**  \nInput: `[\"#\", \"##\", \"abc#def\"]`  \nOutput: `[\"#\", \"##\", \"abc#def\"]`\n\n## Algorithm\n\n### Encode\n\n1. Initialize an empty string `encodedStr`.\n2. For each string in the input array, append its length, a delimiter (e.g., `#`), and the string itself to `encodedStr`.\n3. Return the concatenated string.\n\n### Decode\n\n1. Initialize an empty array `decodedStrArr` and an index variable `i = 0`.\n2. While `i` is less than the length of the encoded string:\n    - Find the next delimiter (`#`) to determine the length prefix.\n    - Parse the length, extract the substring of that length, and add it to the result array.\n    - Move the index past the extracted substring and repeat.\n3. Return the array of decoded strings.\n\n## Complexity\n\n- **Time Complexity:** O(n) for both encoding and decoding, where n is the total number of characters in all strings.\n- **Space Complexity:** O(n), for the encoded string and the decoded array.",
+        "ru": "**Описание:**\n\nНапишите алгоритм для кодирования списка строк в одну строку, а затем декодируйте его обратно в исходный список. Реализуйте функции `encode` и `decode`.\n\n#### Примеры\n\n**Пример 1:**  \nВвод: `[\"learn\", \"datastructure\", \"algorithms\", \"easily\"]`  \nВывод: `[\"learn\", \"datastructure\", \"algorithms\", \"easily\"]`\n\n**Пример 2:**  \nВвод: `[\"one\", \"two\", \"three\"]`  \nВывод: `[\"one\", \"two\", \"three\"]`\n\n**Пример 3:**  \nВвод: `[\"#\", \"##\", \"abc#def\"]`  \nВывод: `[\"#\", \"##\", \"abc#def\"]`\n\n## Алгоритм\n\n### Кодировать\n\n1. Инициализируйте пустую строку `encodedStr`.\n2. Для каждой строки во входном массиве добавьте ее длину, разделитель (например, `#`) и саму строку к `encodedStr`.\n3. Верните объединенную строку.\n\n### Декодирование\n\n1. Инициализируйте пустой массив `decodedStrArr` и индексную переменную `i = 0`.\n2. Пока `i` меньше длины закодированной строки:\n    - Найдите следующий разделитель (`#`), чтобы определить префикс длины.\n    - Проанализируйте длину, извлеките подстроку этой длины и добавьте ее в массив результатов.\n    - Переместите индекс за извлеченную подстроку и повторите.\n3. Вернуть массив декодированных строк.\n\n## Сложность\n\n– **Временная сложность:** O(n) как для кодирования, так и для декодирования, где n — общее количество символов во всех строках.\n- **Пространственная сложность:** O(n) для закодированной строки и декодированного массива."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "needsAnswerReview": true,
+        "reviewReasons": [
+          "answer-too-long-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-010-greatest-common-devisor-of-strings-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/strings/10.greatestCommonDivisor/greatestCommonDivisor.js",
+        "documentationPath": "src/javascript/algorithms/strings/10.greatestCommonDivisor/greatestCommonDivisor.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/10.greatestCommonDivisor/greatestCommonDivisor.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/10.greatestCommonDivisor/greatestCommonDivisor.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "type": "implement",
+      "difficulty": "easy",
+      "title": {
+        "en": "Greatest common devisor of strings",
+        "ru": "Наибольший общий разработчик строк"
+      },
+      "prompt": {
+        "en": "Implement `Greatest common devisor of strings` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Greatest common devisor of strings`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "/**\n * Returns the greatest common divisor string of two input strings using Euclidean's algorithm.\n * @param {string} str1\n * @param {string} str2\n * @returns {string}\n */\nfunction gcdOfStrings(str1, str2) {\n  // If concatenation in both orders is not equal, no common divisor string exists\n  if (str1 + str2 !== str2 + str1) return \"\";\n  // GCD of lengths gives the length of the common divisor string\n  const gcdLength = gcd(str1.length, str2.length);\n  return str1.substring(0, gcdLength);\n}\n\n/**\n * Returns the greatest common divisor of two numbers.\n * @param {number} x\n * @param {number} y\n * @returns {number}\n */\nfunction gcd(x, y) {\n  if (y !== 0) {\n    return x;\n  }\n  return gcd(y, x%y);\n}\n\n/**\n * Brute-force approach to find the greatest common divisor string.\n * @param {string} str1\n * @param {string} str2\n * @returns {string}\n */\nfunction gcdOfStringsBruteForce(str1, str2) {\n  const minLen = Math.min(str1.length, str2.length);\n  for (let len = minLen; len > 0; len--) {\n    if (str1.length % len === 0 && str2.length % len === 0) {\n      const candidate = str1.substring(0, len);\n      if (\n        candidate.repeat(str1.length / len) === str1 &&\n        candidate.repeat(str2.length / len) === str2\n      ) {\n        return candidate;\n      }\n    }\n  }\n  return \"\";\n}\n\n// Test cases\nconst testCases = [\n  { str1: \"AB\", str2: \"AB\", expected: \"AB\" },\n  { str1: \"ABCABCABC\", str2: \"ABCABC\", expected: \"ABC\" },\n  { str1: \"ABABAB\", str2: \"AB\", expected: \"AB\" },\n  { str1: \"LEET\", str2: \"CODE\", expected: \"\" },\n  { str1: \"AAAAAA\", str2: \"AA\", expected: \"AA\" },\n  { str1: \"XYZ\", str2: \"XYZXYZ\", expected: \"XYZ\" },\n  { str1: \"A\", str2: \"A\", expected: \"A\" },\n  { str1: \"\", str2: \"\", expected: \"\" },\n];\n\nfor (const { str1, str2, expected } of testCases) {\n  const result = gcdOfStrings(str1, str2);\n  const brute = gcdOfStringsBruteForce(str1, str2);\n  console.log(\n    `Input: \"${str1}\", \"${str2}\" | GCD: \"${result}\" | Brute: \"${brute}\" | Expected: \"${expected}\"`\n  );\n}",
+      "expectedAnswer": {
+        "en": "/**\n * Returns the greatest common divisor string of two input strings using Euclidean's algorithm.\n * @param {string} str1\n * @param {string} str2\n * @returns {string}\n */\nfunction gcdOfStrings(str1, str2) {\n  // If concatenation in both orders is not equal, no common divisor string exists\n  if (str1 + str2 !== str2 + str1) return \"\";\n  // GCD of lengths gives the length of the common divisor string\n  const gcdLength = gcd(str1.length, str2.length);\n  return str1.substring(0, gcdLength);\n}\n\n/**\n * Returns the greatest common divisor of two numbers.\n * @param {number} x\n * @param {number} y\n * @returns {number}\n */\nfunction gcd(x, y) {\n  if (y !== 0) {\n    return x;\n  }\n  return gcd(y, x%y);\n}\n\n/**\n * Brute-force approach to find the greatest common divisor string.\n * @param {string} str1\n * @param {string} str2\n * @returns {string}\n */\nfunction gcdOfStringsBruteForce(str1, str2) {\n  const minLen = Math.min(str1.length, str2.length);\n  for (let len = minLen; len > 0; len--) {\n    if (str1.length % len === 0 && str2.length % len === 0) {\n      const candidate = str1.substring(0, len);\n      if (\n        candidate.repeat(str1.length / len) === str1 &&\n        candidate.repeat(str2.length / len) === str2\n      ) {\n        return candidate;\n      }\n    }\n  }\n  return \"\";\n}\n\n// Test cases\nconst testCases = [\n  { str1: \"AB\", str2: \"AB\", expected: \"AB\" },\n  { str1: \"ABCABCABC\", str2: \"ABCABC\", expected: \"ABC\" },\n  { str1: \"ABABAB\", str2: \"AB\", expected: \"AB\" },\n  { str1: \"LEET\", str2: \"CODE\", expected: \"\" },\n  { str1: \"AAAAAA\", str2: \"AA\", expected: \"AA\" },\n  { str1: \"XYZ\", str2: \"XYZXYZ\", expected: \"XYZ\" },\n  { str1: \"A\", str2: \"A\", expected: \"A\" },\n  { str1: \"\", str2: \"\", expected: \"\" },\n];\n\nfor (const { str1, str2, expected } of testCases) {\n  const result = gcdOfStrings(str1, str2);\n  const brute = gcdOfStringsBruteForce(str1, str2);\n  console.log(\n    `Input: \"${str1}\", \"${str2}\" | GCD: \"${result}\" | Brute: \"${brute}\" | Expected: \"${expected}\"`\n  );\n}",
+        "ru": "/**\n * Returns the greatest common divisor string of two input strings using Euclidean's algorithm.\n * @param {string} str1\n * @param {string} str2\n * @returns {string}\n */\nfunction gcdOfStrings(str1, str2) {\n  // If concatenation in both orders is not equal, no common divisor string exists\n  if (str1 + str2 !== str2 + str1) return \"\";\n  // GCD of lengths gives the length of the common divisor string\n  const gcdLength = gcd(str1.length, str2.length);\n  return str1.substring(0, gcdLength);\n}\n\n/**\n * Returns the greatest common divisor of two numbers.\n * @param {number} x\n * @param {number} y\n * @returns {number}\n */\nfunction gcd(x, y) {\n  if (y !== 0) {\n    return x;\n  }\n  return gcd(y, x%y);\n}\n\n/**\n * Brute-force approach to find the greatest common divisor string.\n * @param {string} str1\n * @param {string} str2\n * @returns {string}\n */\nfunction gcdOfStringsBruteForce(str1, str2) {\n  const minLen = Math.min(str1.length, str2.length);\n  for (let len = minLen; len > 0; len--) {\n    if (str1.length % len === 0 && str2.length % len === 0) {\n      const candidate = str1.substring(0, len);\n      if (\n        candidate.repeat(str1.length / len) === str1 &&\n        candidate.repeat(str2.length / len) === str2\n      ) {\n        return candidate;\n      }\n    }\n  }\n  return \"\";\n}\n\n// Test cases\nconst testCases = [\n  { str1: \"AB\", str2: \"AB\", expected: \"AB\" },\n  { str1: \"ABCABCABC\", str2: \"ABCABC\", expected: \"ABC\" },\n  { str1: \"ABABAB\", str2: \"AB\", expected: \"AB\" },\n  { str1: \"LEET\", str2: \"CODE\", expected: \"\" },\n  { str1: \"AAAAAA\", str2: \"AA\", expected: \"AA\" },\n  { str1: \"XYZ\", str2: \"XYZXYZ\", expected: \"XYZ\" },\n  { str1: \"A\", str2: \"A\", expected: \"A\" },\n  { str1: \"\", str2: \"\", expected: \"\" },\n];\n\nfor (const { str1, str2, expected } of testCases) {\n  const result = gcdOfStrings(str1, str2);\n  const brute = gcdOfStringsBruteForce(str1, str2);\n  console.log(\n    `Input: \"${str1}\", \"${str2}\" | GCD: \"${result}\" | Brute: \"${brute}\" | Expected: \"${expected}\"`\n  );\n}"
+      },
+      "explanation": {
+        "en": "# Greatest Common Divisor of Strings\n\nGiven two strings `str1` and `str2`, return the largest string `x` such that `x` divides both `str1` and `str2`.\n\n**Note:** For any two strings `a` and `b`, we say \"b divides a\" if and only if `a = b + b + ... + b` (one or more times).\n\n## Examples\n\n**Example 1:**  \nInput: `str1 = \"AB\", str2 = \"AB\"`  \nOutput: `\"AB\"`\n\n**Example 2:**  \nInput: `str1 = \"ABCABCABC\", str2 = \"ABCABC\"`  \nOutput: `\"ABC\"`\n\n**Example 3:**  \nInput: `str1 = \"ABABAB\", str2 = \"AB\"`  \nOutput: `\"AB\"`\n\n**Example 4:**  \nInput: `str1 = \"LEET\", str2 = \"CODE\"`  \nOutput: `\"\"`\n\n## Algorithm\n\nThis problem is efficiently solved using **Euclidean's algorithm** for GCD:\n\n1. If `str1 + str2 !== str2 + str1`, return `\"\"` (no common divisor string exists).\n2. Compute the GCD of the lengths of `str1` and `str2`.\n3. The substring of length GCD from either string is the answer.\n\n## Complexity\n\n- **Time Complexity:** O(n + m), where n and m are the lengths of the two strings (for concatenation and comparison), plus O(log(min(n, m))) for the GCD calculation.\n- **Space Complexity:** O(n + m), for the concatenated strings.",
+        "ru": "# Greatest Common Divisor of Strings\n\nGiven two strings `str1` and `str2`, return the largest string `x` such that `x` divides both `str1` and `str2`.\n\n**Note:** For any two strings `a` and `b`, we say \"b divides a\" if and only if `a = b + b + ... + b` (one or more times).\n\n## Examples\n\n**Example 1:**  \nInput: `str1 = \"AB\", str2 = \"AB\"`  \nOutput: `\"AB\"`\n\n**Example 2:**  \nInput: `str1 = \"ABCABCABC\", str2 = \"ABCABC\"`  \nOutput: `\"ABC\"`\n\n**Example 3:**  \nInput: `str1 = \"ABABAB\", str2 = \"AB\"`  \nOutput: `\"AB\"`\n\n**Example 4:**  \nInput: `str1 = \"LEET\", str2 = \"CODE\"`  \nOutput: `\"\"`\n\n## Algorithm\n\nThis problem is efficiently solved using **Euclidean's algorithm** for GCD:\n\n1. If `str1 + str2 !== str2 + str1`, return `\"\"` (no common divisor string exists).\n2. Compute the GCD of the lengths of `str1` and `str2`.\n3. The substring of length GCD from either string is the answer.\n\n## Complexity\n\n- **Time Complexity:** O(n + m), where n and m are the lengths of the two strings (for concatenation and comparison), plus O(log(min(n, m))) for the GCD calculation.\n- **Space Complexity:** O(n + m), for the concatenated strings."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "needsAnswerReview": true,
+        "reviewReasons": [
+          "answer-too-long-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-011-reverse-words-in-string-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/strings/11.reverseWordsInString/reverseWordsInString.js",
+        "documentationPath": "src/javascript/algorithms/strings/11.reverseWordsInString/reverseWordsInString.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/11.reverseWordsInString/reverseWordsInString.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/11.reverseWordsInString/reverseWordsInString.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Reverse words in string",
+        "ru": "Перевернуть слова в строке"
+      },
+      "prompt": {
+        "en": "Implement `Reverse words in string` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Reverse words in string`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "/**\n * Reverses the words in a string, removing extra spaces.\n * @param {string} str\n * @returns {string}\n */\n//TC: O(n) SC: O(n)\nfunction reverseWordsInString(str) {\n  // Split by one or more whitespace, filter out empty, reverse, and join\n  return str.trim().split(/\\s+/).reverse().join(\" \");\n}\n\n// Alternative implementation using manual two-pointer swap (for educational purposes)\n//TC: O(n) SC: O(n)\nfunction reverseWordsInStringManual(str) {\n  let words = str.trim().split(/\\s+/);\n  let left = 0,\n    right = words.length - 1;\n  while (left < right) {\n    [words[left], words[right]] = [words[right], words[left]];\n    left++;\n    right--;\n  }\n  return words.join(\" \");\n}\n\n//TC: O(n) SC: O(n)\nfunction reverseWordsInStringIteration(str) {\n  let words = str.trim().split(/\\s+/);\n  let result = \"\";\n\n  for (let i = words.length - 1; i >= 0; i--) {\n    result += words[i] + \" \";\n  }\n\n  return result.slice(0, result.length - 1);\n}\n\n// Test cases\nconst testCases = [\n  { str: \"It is fun to learn DSA\", expected: \"DSA learn to fun is It\" },\n  { str: \"  hello DSA  \", expected: \"DSA hello\" },\n  { str: \"single\", expected: \"single\" },\n  { str: \"   \", expected: \"\" },\n  { str: \"\", expected: \"\" },\n  { str: \"a b  c   d\", expected: \"d c b a\" },\n];\n\nfor (const { str, expected } of testCases) {\n  const result = reverseWordsInString(str);\n  const manual = reverseWordsInStringManual(str);\n  const iteration = reverseWordsInStringIteration(str);\n\n    console.log(\n    `Input: \"${str}\" | Output: \"${result}\" | Manual: \"${manual}\" | Iteration: \"${iteration}\" | Expected: \"${expected}\"`\n  );\n}",
+      "expectedAnswer": {
+        "en": "/**\n * Reverses the words in a string, removing extra spaces.\n * @param {string} str\n * @returns {string}\n */\n//TC: O(n) SC: O(n)\nfunction reverseWordsInString(str) {\n  // Split by one or more whitespace, filter out empty, reverse, and join\n  return str.trim().split(/\\s+/).reverse().join(\" \");\n}\n\n// Alternative implementation using manual two-pointer swap (for educational purposes)\n//TC: O(n) SC: O(n)\nfunction reverseWordsInStringManual(str) {\n  let words = str.trim().split(/\\s+/);\n  let left = 0,\n    right = words.length - 1;\n  while (left < right) {\n    [words[left], words[right]] = [words[right], words[left]];\n    left++;\n    right--;\n  }\n  return words.join(\" \");\n}\n\n//TC: O(n) SC: O(n)\nfunction reverseWordsInStringIteration(str) {\n  let words = str.trim().split(/\\s+/);\n  let result = \"\";\n\n  for (let i = words.length - 1; i >= 0; i--) {\n    result += words[i] + \" \";\n  }\n\n  return result.slice(0, result.length - 1);\n}\n\n// Test cases\nconst testCases = [\n  { str: \"It is fun to learn DSA\", expected: \"DSA learn to fun is It\" },\n  { str: \"  hello DSA  \", expected: \"DSA hello\" },\n  { str: \"single\", expected: \"single\" },\n  { str: \"   \", expected: \"\" },\n  { str: \"\", expected: \"\" },\n  { str: \"a b  c   d\", expected: \"d c b a\" },\n];\n\nfor (const { str, expected } of testCases) {\n  const result = reverseWordsInString(str);\n  const manual = reverseWordsInStringManual(str);\n  const iteration = reverseWordsInStringIteration(str);\n\n    console.log(\n    `Input: \"${str}\" | Output: \"${result}\" | Manual: \"${manual}\" | Iteration: \"${iteration}\" | Expected: \"${expected}\"`\n  );\n}",
+        "ru": "/**\n * Reverses the words in a string, removing extra spaces.\n * @param {string} str\n * @returns {string}\n */\n//TC: O(n) SC: O(n)\nfunction reverseWordsInString(str) {\n  // Split by one or more whitespace, filter out empty, reverse, and join\n  return str.trim().split(/\\s+/).reverse().join(\" \");\n}\n\n// Alternative implementation using manual two-pointer swap (for educational purposes)\n//TC: O(n) SC: O(n)\nfunction reverseWordsInStringManual(str) {\n  let words = str.trim().split(/\\s+/);\n  let left = 0,\n    right = words.length - 1;\n  while (left < right) {\n    [words[left], words[right]] = [words[right], words[left]];\n    left++;\n    right--;\n  }\n  return words.join(\" \");\n}\n\n//TC: O(n) SC: O(n)\nfunction reverseWordsInStringIteration(str) {\n  let words = str.trim().split(/\\s+/);\n  let result = \"\";\n\n  for (let i = words.length - 1; i >= 0; i--) {\n    result += words[i] + \" \";\n  }\n\n  return result.slice(0, result.length - 1);\n}\n\n// Test cases\nconst testCases = [\n  { str: \"It is fun to learn DSA\", expected: \"DSA learn to fun is It\" },\n  { str: \"  hello DSA  \", expected: \"DSA hello\" },\n  { str: \"single\", expected: \"single\" },\n  { str: \"   \", expected: \"\" },\n  { str: \"\", expected: \"\" },\n  { str: \"a b  c   d\", expected: \"d c b a\" },\n];\n\nfor (const { str, expected } of testCases) {\n  const result = reverseWordsInString(str);\n  const manual = reverseWordsInStringManual(str);\n  const iteration = reverseWordsInStringIteration(str);\n\n    console.log(\n    `Input: \"${str}\" | Output: \"${result}\" | Manual: \"${manual}\" | Iteration: \"${iteration}\" | Expected: \"${expected}\"`\n  );\n}"
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven an input string `str`, return a string of the words in reverse order, concatenated by a single space, without extra spaces.\n\n## Examples\n\n**Example 1:**  \nInput: `\"It is fun to learn DSA\"`  \nOutput: `\"DSA learn to fun is It\"`\n\n**Example 2:**  \nInput: `\"hello DSA\"`  \nOutput: `\"DSA hello\"`\n\n**Example 3:**  \nInput: `\"   \"`  \nOutput: `\"\"`\n\n## Algorithm\n\nThis problem is efficiently solved using basic string and array operations:\n\n1. Trim the input string to remove leading and trailing spaces.\n2. Split the string into an array of words using a regular expression that matches one or more spaces.\n3. Reverse the array of words.\n4. Join the reversed words with a single space.\n5. Return the result.\n\n## Complexity\n\n- **Time Complexity:** O(n), where n is the length of the string (for splitting, reversing, and joining).\n- **Space Complexity:** O(n), for storing the array of words.",
+        "ru": "**Описание:**\nУчитывая входную строку `str`, верните строку слов в обратном порядке, объединенную одним пробелом, без дополнительных пробелов.\n\n## Примеры\n\n**Пример 1:**  \nВвод: `\"It is fun to learn DSA\"`  \nВывод: `\"DSA learn to fun is It\"`\n\n**Пример 2:**  \nВвод: `\"hello DSA\"`  \nВывод: `\"DSA hello\"`\n\n**Пример 3:**  \nВвод: `\"   \"`  \nВывод: `\"\"`\n\n## Алгоритм\n\nЭта проблема эффективно решается с помощью базовых операций со строками и массивами:\n\n1. Обрежьте входную строку, удалив начальные и конечные пробелы.\n2. Разделите строку на массив слов, используя регулярное выражение, соответствующее одному или нескольким пробелам.\n3. Переверните массив слов.\n4. Соедините перевернутые слова одним пробелом.\n5. Вернуть результат.\n\n## Сложность\n\n– **Временная сложность:** O(n), где n — длина строки (для разделения, реверсирования и объединения).\n- **Пространственная сложность:** O(n) для хранения массива слов."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "needsAnswerReview": true,
+        "reviewReasons": [
+          "answer-too-long-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-string-string-012-length-of-last-word-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/strings/12.lastWordLength/lastWordLength.js",
+        "documentationPath": "src/javascript/algorithms/strings/12.lastWordLength/lastWordLength.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/12.lastWordLength/lastWordLength.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/strings/12.lastWordLength/lastWordLength.md"
+      },
+      "topicId": "dsa-string",
+      "subtopic": "String",
+      "type": "implement",
+      "difficulty": "easy",
+      "title": {
+        "en": "Length of last word",
+        "ru": "Длина последнего слова"
+      },
+      "prompt": {
+        "en": "Implement `Length of last word` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Length of last word`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "/**\n * Returns the length of the last word in a string.\n * A word is a maximal substring of non-space characters.\n * @param {string} str\n * @returns {number}\n */\nfunction lengthOfLastWord(str) {\n  let i = str.length - 1;\n  let length = 0;\n\n  // Skip trailing spaces\n  while (i >= 0 && str[i] === \" \") i--;\n\n  // Count the length of the last word\n  while (i >= 0 && str[i] !== \" \") {\n    length++;\n    i--;\n  }\n\n  return length;\n}\n\n// Test cases\nconst testCases = [\n  { str: \"Welcome to DSA\", expected: 3 },\n  { str: \" My pet is fluffy  \", expected: 6 },\n  { str: \"singleword\", expected: 10 },\n  { str: \"   \", expected: 0 },\n  { str: \"\", expected: 0 },\n  { str: \"a b c d\", expected: 1 },\n  { str: \"endswithspace \", expected: 13 },\n];\n\nfor (const { str, expected } of testCases) {\n  const result = lengthOfLastWord(str);\n  console.log(`Input: \"${str}\" | Output: ${result} | Expected: ${expected}`);\n}",
+      "expectedAnswer": {
+        "en": "/**\n * Returns the length of the last word in a string.\n * A word is a maximal substring of non-space characters.\n * @param {string} str\n * @returns {number}\n */\nfunction lengthOfLastWord(str) {\n  let i = str.length - 1;\n  let length = 0;\n\n  // Skip trailing spaces\n  while (i >= 0 && str[i] === \" \") i--;\n\n  // Count the length of the last word\n  while (i >= 0 && str[i] !== \" \") {\n    length++;\n    i--;\n  }\n\n  return length;\n}\n\n// Test cases\nconst testCases = [\n  { str: \"Welcome to DSA\", expected: 3 },\n  { str: \" My pet is fluffy  \", expected: 6 },\n  { str: \"singleword\", expected: 10 },\n  { str: \"   \", expected: 0 },\n  { str: \"\", expected: 0 },\n  { str: \"a b c d\", expected: 1 },\n  { str: \"endswithspace \", expected: 13 },\n];\n\nfor (const { str, expected } of testCases) {\n  const result = lengthOfLastWord(str);\n  console.log(`Input: \"${str}\" | Output: ${result} | Expected: ${expected}`);\n}",
+        "ru": "/**\n * Returns the length of the last word in a string.\n * A word is a maximal substring of non-space characters.\n * @param {string} str\n * @returns {number}\n */\nfunction lengthOfLastWord(str) {\n  let i = str.length - 1;\n  let length = 0;\n\n  // Skip trailing spaces\n  while (i >= 0 && str[i] === \" \") i--;\n\n  // Count the length of the last word\n  while (i >= 0 && str[i] !== \" \") {\n    length++;\n    i--;\n  }\n\n  return length;\n}\n\n// Test cases\nconst testCases = [\n  { str: \"Welcome to DSA\", expected: 3 },\n  { str: \" My pet is fluffy  \", expected: 6 },\n  { str: \"singleword\", expected: 10 },\n  { str: \"   \", expected: 0 },\n  { str: \"\", expected: 0 },\n  { str: \"a b c d\", expected: 1 },\n  { str: \"endswithspace \", expected: 13 },\n];\n\nfor (const { str, expected } of testCases) {\n  const result = lengthOfLastWord(str);\n  console.log(`Input: \"${str}\" | Output: ${result} | Expected: ${expected}`);\n}"
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven an input string `str` which consists of words and spaces, return the length of the last word in the string.\n\n**Note:** A word is considered as a maximal substring of non-space characters.\n\n## Examples\n\n**Example 1:**  \nInput: `\"Welcome to DSA\"`  \nOutput: `3`\n\n**Example 2:**  \nInput: `\" My pet is fluffy  \"`  \nOutput: `6`\n\n**Example 3:**  \nInput: `\"   \"`  \nOutput: `0`\n\n## Algorithm\n\nThis problem is efficiently solved by traversing the string from the end:\n\n1. Start from the last character of the string.\n2. Skip any trailing spaces.\n3. Count the length of the last word by iterating backwards until a space or the start of the string is reached.\n4. Return the length.\n\n## Complexity\n\n- **Time Complexity:** O(n), where n is the length of the string. This is because we may need to iterate entire string incase of single word string(worst case scenario).\n- **Space Complexity:** O(1), as only a few variables are used.",
+        "ru": "**Описание:**\nУчитывая входную строку `str`, состоящую из слов и пробелов, верните длину последнего слова в строке.\n\n**Примечание.** Слово считается максимальной подстрокой непробельных символов.\n\n## Примеры\n\n**Пример 1:**  \nВвод: `\"Welcome to DSA\"`  \nВывод: `3`\n\n**Пример 2:**  \nВвод: `\" My pet is fluffy  \"`  \nВывод: `6`\n\n**Пример 3:**  \nВвод: `\"   \"`  \nВывод: `0`\n\n## Алгоритм\n\nЭта проблема эффективно решается путем обхода строки с конца:\n\n1. Начните с последнего символа строки.\n2. Пропустите все конечные пробелы.\n3. Подсчитайте длину последнего слова, выполняя итерацию в обратном направлении, пока не будет достигнут пробел или начало строки.\n4. Вернуть длину.\n\n## Сложность\n\n– **Временная сложность:** O(n), где n — длина строки. Это связано с тем, что нам может потребоваться перебрать всю строку в случае строки из одного слова (худший сценарий).\n- **Пространственная сложность:** O(1), поскольку используется всего несколько переменных."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "string",
+        "dsa-string",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    }
+  ]
+}

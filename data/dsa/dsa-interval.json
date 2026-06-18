@@ -1,0 +1,654 @@
+{
+  "topic": {
+    "id": "dsa-interval",
+    "title": {
+      "en": "Interval Algorithms"
+    }
+  },
+  "cards": [
+    {
+      "id": "sudheerj-dsa-interval-interval-001-insert-interval",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/interval/1.insertInterval/insertInterval.js",
+        "documentationPath": "src/javascript/algorithms/interval/1.insertInterval/insertInterval.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/1.insertInterval/insertInterval.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/1.insertInterval/insertInterval.md"
+      },
+      "topicId": "dsa-interval",
+      "subtopic": "Interval",
+      "difficulty": "medium",
+      "question": {
+        "en": "How do you solve or implement `Insert interval`?",
+        "ru": "Как решить или реализовать задачу `Insert interval`?"
+      },
+      "answer": {
+        "en": "Algorithmic Steps\nThis problem is solved with the help of logic that involves comparing the elements and merging the intervals in case of overlap through iteration. The algorithmic approach can be summarized as follows:\n\n1. Create an empty array result list which is used to store all intervals after insertion of new internval.\n\n2. Initialize a boolean variable isIntervalInserted to indicate new interval inserted or not. \n\n3. Iterate through the list of the intervals. For each interval, compare the end value of the new input interval with its start value of the interval.\n\n4. If the end value of the new interval is less than start value, then there is no overlap between the intervals. In this case, you can add the new interval followed by current interval to the result list. Also, mark the boolean variable isIntervalInserted to true.\n\n5. If either isIntervalInserted value is true or end value of current is less than or equal to the start value of the new interval, then there is no overlap between the intervals. In this case, you can just add the current interval to the result lit.\n\n6. If both step 4 and step 5 conditions failed, there is an overlap between current interval and newly inserting interval.In this case, you need to take minimum of current and new interval as start value and maximum of current and new interval as end value. \n\n7. Repeat steps 3-6 until all the intervals have been traversed.\n\n8. If the new interval not added to the result list yet(i.e, !isIntervalInserted), just add the new interval to the result.\n\n9. Return the final result list as updated list of intervals.\n\nTime and Space complexity:\nThis algorithm has a time complexity of O(n), where n is the number of intervals. This is because you need to traverse the entire interval list.\n\nThe space complexity of this algorithm is O(n) as we need to store a list containing all the intervals including the newly inserted interval.",
+        "ru": "Алгоритмические шаги\nЭта проблема решается с помощью логики, предполагающей сравнение элементов и объединение интервалов в случае перекрытия посредством итерации. Алгоритмический подход можно резюмировать следующим образом:\n\n1. Создайте пустой массив result list, который будет использоваться для хранения всех интервалов после вставки нового интервала.\n\n2. Инициализируйте логическую переменную isIntervalInserted, чтобы указать, вставлен ли новый интервал или нет. \n\n3. Перебрать список интервалов. Для каждого интервала сравните конечное значение нового входного интервала с его начальным значением интервала.\n\n4. Если конечное значение нового интервала меньше начального, то перекрытия между интервалами нет. В этом случае вы можете добавить в список результатов новый интервал, а затем текущий интервал. Также установите для логической переменной isIntervalInserted значение true.\n\n5. Если значение isIntervalInserted истинно или конечное значение тока меньше или равно начальному значению нового интервала, то перекрытия между интервалами нет. В этом случае вы можете просто добавить текущий интервал к горящему результату.\n\n6. Если условия шага 4 и шага 5 не выполнены, это означает, что текущий интервал и вновь вставляемый интервал перекрываются. В этом случае вам необходимо принять минимум текущего и нового интервала в качестве начального значения, а максимум текущего и нового интервала в качестве конечного значения. \n\n7. Повторяйте шаги 3–6, пока не будут пройдены все интервалы.\n\n8. Если новый интервал еще не добавлен в список результатов (например, !isIntervalInserted), просто добавьте новый интервал к результату.\n\n9. Верните окончательный список результатов в виде обновленного списка интервалов.\n\nСложность во времени и пространстве:\nЭтот алгоритм имеет временную сложность O(n), где n — количество интервалов. Это связано с тем, что вам нужно пройти весь список интервалов.\n\nПространственная сложность этого алгоритма равна O(n), поскольку нам нужно сохранить список, содержащий все интервалы, включая вновь вставленный интервал."
+      },
+      "explanation": {
+        "en": "**Algorithmic Steps**\nThis problem is solved with the help of logic that involves comparing the elements and merging the intervals in case of overlap through iteration. The algorithmic approach can be summarized as follows:\n\n1. Create an empty array `result` list which is used to store all intervals after insertion of new internval.\n\n2. Initialize a boolean variable `isIntervalInserted` to indicate new interval inserted or not. \n\n3. Iterate through the list of the intervals. For each interval, compare the end value of the new input interval with its start value of the interval.\n\n4. If the end value of the new interval is less than start value, then there is no overlap between the intervals. In this case, you can add the new interval followed by current interval to the result list. Also, mark the boolean variable `isIntervalInserted` to true.\n\n5. If either `isIntervalInserted` value is true or end value of current is less than or equal to the start value of the new interval, then there is no overlap between the intervals. In this case, you can just add the current interval to the result lit.\n\n6. If both step 4 and step 5 conditions failed, there is an overlap between current interval and newly inserting interval.In this case, you need to take minimum of current and new interval as start value and maximum of current and new interval as end value. \n\n7. Repeat steps 3-6 until all the intervals have been traversed.\n\n8. If the new interval not added to the result list yet(i.e, `!isIntervalInserted`), just add the new interval to the result.\n\n9. Return the final result list as updated list of intervals.\n\n\n**Time and Space complexity:**\nThis algorithm has a time complexity of O(n), where n is the number of intervals. This is because you need to traverse the entire interval list.\n\nThe space complexity of this algorithm is O(n) as we need to store a list containing all the intervals including the newly inserted interval.",
+        "ru": "**Алгоритмические шаги**\nЭта проблема решается с помощью логики, предполагающей сравнение элементов и объединение интервалов в случае перекрытия посредством итерации. Алгоритмический подход можно резюмировать следующим образом:\n\n1. Создайте пустой массив `result` list, который будет использоваться для хранения всех интервалов после вставки нового интервала.\n\n2. Инициализируйте логическую переменную `isIntervalInserted`, чтобы указать, вставлен ли новый интервал или нет. \n\n3. Перебрать список интервалов. Для каждого интервала сравните конечное значение нового входного интервала с его начальным значением интервала.\n\n4. Если конечное значение нового интервала меньше начального, то перекрытия между интервалами нет. В этом случае вы можете добавить в список результатов новый интервал, а затем текущий интервал. Также установите для логической переменной `isIntervalInserted` значение true.\n\n5. Если значение `isIntervalInserted` истинно или конечное значение тока меньше или равно начальному значению нового интервала, то перекрытия между интервалами нет. В этом случае вы можете просто добавить текущий интервал к горящему результату.\n\n6. Если условия шага 4 и шага 5 не выполнены, это означает, что текущий интервал и вновь вставляемый интервал перекрываются. В этом случае вам необходимо принять минимум текущего и нового интервала в качестве начального значения, а максимум текущего и нового интервала в качестве конечного значения. \n\n7. Повторяйте шаги 3–6, пока не будут пройдены все интервалы.\n\n8. Если новый интервал еще не добавлен в список результатов (например, `!isIntervalInserted`), просто добавьте новый интервал к результату.\n\n9. Верните окончательный список результатов в виде обновленного списка интервалов.\n\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм имеет временную сложность O(n), где n — количество интервалов. Это связано с тем, что вам нужно пройти весь список интервалов.\n\nПространственная сложность этого алгоритма равна O(n), поскольку нам нужно сохранить список, содержащий все интервалы, включая вновь вставленный интервал."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "interval",
+        "dsa-interval"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-interval-interval-002-merge-interval",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/interval/2.mergeInterval/mergeInterval.js",
+        "documentationPath": "src/javascript/algorithms/interval/2.mergeInterval/mergeInterval.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/2.mergeInterval/mergeInterval.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/2.mergeInterval/mergeInterval.md"
+      },
+      "topicId": "dsa-interval",
+      "subtopic": "Interval",
+      "difficulty": "medium",
+      "question": {
+        "en": "How do you solve or implement `Merge interval`?",
+        "ru": "Как решить или реализовать задачу `Merge interval`?"
+      },
+      "answer": {
+        "en": "Algorithmic Steps\nThis problem is solved with the help of sorting intervals followed by merging the intervals through iteration. The algorithmic approach can be summarized as follows:\n\n1. First, sort the list of intervals based on their start times. This step helps to keep the overlapping intervals next to each other in the list.\n\n2. Initialize a new list mergedIntervals to hold the merged intervals and add the first interval to it. \n\n3. Iterate through the rest of the intervals, starting from the second interval onwards. For each interval, compare its start value with the end value of the last interval in the merged list.\n\n4. If the start value is greater than the end value of the last interval, then there is no overlap between the intervals. In this case, you can add the current interval as a new entry to the merged list.\n\n5. If the start value is less than or equal to the end value of the last interval, then there is overlap between the intervals. In this case, you can update the end value of the last interval in the merged list to the maximum of the end value of the last interval and the start value of current interval. \n\n6. Repeat steps 3-5 until all the intervals have been traversed.\n\n7. Return mergedIntervals as the final merged intervals.\n\nTime and Space complexity:\nThis algorithm has a time complexity of O(n logn) + O(n), where n is the number of intervals. This is because sort operation typically takes a time complexity of O(n log n) for sorting the list. Thereafter, iteration over the intervals take a time complexity of O(n). So the total time complexity simplifies to O(n log n).\n\nThe space complexity of this algorithm is O(n) as we need to store a list containing all the merged intervals.",
+        "ru": "Алгоритмические шаги\nЭта проблема решается с помощью сортировки интервалов с последующим объединением интервалов посредством итерации. Алгоритмический подход можно резюмировать следующим образом:\n\n1. Сначала отсортируйте список интервалов по времени их начала. Этот шаг помогает сохранить перекрывающиеся интервалы рядом друг с другом в списке.\n\n2. Инициализируйте новый список mergedIntervals для хранения объединенных интервалов и добавьте в него первый интервал. \n\n3. Переберите остальные интервалы, начиная со второго интервала. Для каждого интервала сравните его начальное значение с конечным значением последнего интервала в объединенном списке.\n\n4. Если начальное значение больше конечного значения последнего интервала, то перекрытия между интервалами нет. В этом случае вы можете добавить текущий интервал в качестве новой записи в объединенный список.\n\n5. Если начальное значение меньше или равно конечному значению последнего интервала, между интервалами происходит перекрытие. В этом случае вы можете обновить конечное значение последнего интервала в объединенном списке до максимального значения конечного значения последнего интервала и начального значения текущего интервала. \n\n6. Повторяйте шаги 3–5, пока не будут пройдены все интервалы.\n\n7. Верните mergedIntervals в качестве окончательных объединенных интервалов.\n\nСложность во времени и пространстве:\nЭтот алгоритм имеет временную сложность O(n logn) + O(n), где n — количество интервалов. Это связано с тем, что операция сортировки обычно требует временной сложности O(n log n) для сортировки списка. После этого итерация по интервалам занимает временную сложность O(n). Таким образом, общая временная сложность упрощается до O(n log n).\n\nПространственная сложность этого алгоритма составляет O(n), поскольку нам нужно сохранить список, содержащий все объединенные интервалы."
+      },
+      "explanation": {
+        "en": "**Algorithmic Steps**\nThis problem is solved with the help of sorting intervals followed by merging the intervals through iteration. The algorithmic approach can be summarized as follows:\n\n1. First, sort the list of intervals based on their start times. This step helps to keep the overlapping intervals next to each other in the list.\n\n2. Initialize a new list `mergedIntervals` to hold the merged intervals and add the first interval to it. \n\n3. Iterate through the rest of the intervals, starting from the second interval onwards. For each interval, compare its start value with the end value of the last interval in the merged list.\n\n4. If the start value is greater than the end value of the last interval, then there is no overlap between the intervals. In this case, you can add the current interval as a new entry to the merged list.\n\n5. If the start value is less than or equal to the end value of the last interval, then there is overlap between the intervals. In this case, you can update the end value of the last interval in the merged list to the maximum of the end value of the last interval and the start value of current interval. \n\n6. Repeat steps 3-5 until all the intervals have been traversed.\n\n7. Return `mergedIntervals` as the final merged intervals.\n\n\n**Time and Space complexity:**\nThis algorithm has a time complexity of O(n logn) + O(n), where n is the number of intervals. This is because sort operation typically takes a time complexity of O(n log n) for sorting the list. Thereafter, iteration over the intervals take a time complexity of O(n). So the total time complexity simplifies to O(n log n).\n\nThe space complexity of this algorithm is O(n) as we need to store a list containing all the merged intervals.",
+        "ru": "**Алгоритмические шаги**\nЭта проблема решается с помощью сортировки интервалов с последующим объединением интервалов посредством итерации. Алгоритмический подход можно резюмировать следующим образом:\n\n1. Сначала отсортируйте список интервалов по времени их начала. Этот шаг помогает сохранить перекрывающиеся интервалы рядом друг с другом в списке.\n\n2. Инициализируйте новый список `mergedIntervals` для хранения объединенных интервалов и добавьте в него первый интервал. \n\n3. Переберите остальные интервалы, начиная со второго интервала. Для каждого интервала сравните его начальное значение с конечным значением последнего интервала в объединенном списке.\n\n4. Если начальное значение больше конечного значения последнего интервала, то перекрытия между интервалами нет. В этом случае вы можете добавить текущий интервал в качестве новой записи в объединенный список.\n\n5. Если начальное значение меньше или равно конечному значению последнего интервала, между интервалами происходит перекрытие. В этом случае вы можете обновить конечное значение последнего интервала в объединенном списке до максимального значения конечного значения последнего интервала и начального значения текущего интервала. \n\n6. Повторяйте шаги 3–5, пока не будут пройдены все интервалы.\n\n7. Верните `mergedIntervals` в качестве окончательных объединенных интервалов.\n\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм имеет временную сложность O(n logn) + O(n), где n — количество интервалов. Это связано с тем, что операция сортировки обычно требует временной сложности O(n log n) для сортировки списка. После этого итерация по интервалам занимает временную сложность O(n). Таким образом, общая временная сложность упрощается до O(n log n).\n\nПространственная сложность этого алгоритма составляет O(n), поскольку нам нужно сохранить список, содержащий все объединенные интервалы."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "interval",
+        "dsa-interval"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-interval-interval-003-non-overlapping-intervals",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/interval/3.nonOverlappingIntervals/nonOverlappingIntervals.js",
+        "documentationPath": "src/javascript/algorithms/interval/3.nonOverlappingIntervals/nonOverlappingIntervals.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/3.nonOverlappingIntervals/nonOverlappingIntervals.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/3.nonOverlappingIntervals/nonOverlappingIntervals.md"
+      },
+      "topicId": "dsa-interval",
+      "subtopic": "Interval",
+      "difficulty": "medium",
+      "question": {
+        "en": "How do you solve or implement `Non-overlapping intervals`?",
+        "ru": "Как решить или реализовать задачу `Non-overlapping intervals`?"
+      },
+      "answer": {
+        "en": "Description:\nGiven an array of intervals intervals where intervals[i] = [starti, endi], return the minimum number of intervals you need to remove to make the rest of the intervals non-overlapping.\n\nNote: Intervals that only touch at a point are non-overlapping. For example, [1, 2] and [2, 3] are non-overlapping.\nExamples\n\nExample 1:\n- Input: intervals = [[1,2],[2,3],[3,4],[1,3]]\n- Output: 1\n- Explanation: [1,3] can be removed and the rest of the intervals are non-overlapping.\n\nExample 2:\n- Input: intervals = [[1,2],[1,2],[1,2]]\n- Output: 2\n- Explanation: You need to remove two [1,2] to make the rest of the intervals non-overlapping.\n\nExample 3:\n- Input: intervals = [[1,2],[2,3]]\n- Output: 0\n- Explanation: You don't need to remove any of the intervals since they're already non-overlapping.\n\nAlgorithmic Steps\nThis problem is solved with the help of greedy approach. The algorithmic approach can be summarized as follows:\n\n1. First, sort the list of intervals based on their start times. This step helps to keep the overlapping intervals next to each other in the list.\n\n2. Initialize a minimum removal of intervals variable minRemove to 0, which is used to hold the minimum number of intervals to be removed to make non-overlapping intervals. \n\n3. Initialize previous end value of an interval prevEnd with first interval end value. i.e, Here, first interval is considered as non-overlapping interval by default.\n\n4. Iterate through the rest of the intervals, starting from the second interval onwards. For each interval, keep the start(i.e, start) and end(i.e, end) values for comparing with other intervals.\n\n5. If the start value is greater than the end value of the previous interval, then there is no overlap between the intervals. In this case, you can update the previous end value(prevEnd) with the current end value(end) of interval.\n\n6. If the start value is less than to end value of the previous interval, then there is overlap between the intervals. In this case, you can increment minRemove counter by one. Also, the previous end value needs to be updated by minimum value between previous end value and current value. The intervals with the earliest end times are helpful to minimize the potential overlap with future intervals \n\n7. Repeat steps 4-5 until all the intervals have been traversed.\n\n8. Return minRemove as the minimum number of intervals to be removed to make a non overlapping interval list.\n\nTime and Space complexity:\nThis algorithm has a time complexity of O(n logn) + O(n) ~= O(n), where n is the number of intervals. This is because sort operation typically takes a time complexity of O(n log n) for sorting the list. Thereafter, iteration over the intervals take a time complexity of O(n). So the total time complexity simplifies to O(n log n).\n\nThe space complexity of this algorithm is O(1) due to no additional data structure used.",
+        "ru": "Описание:\nУчитывая массив интервалов intervals, где intervals[i] = [starti, endi], верните минимальное количество интервалов, которое необходимо удалить, чтобы остальные интервалы не перекрывались.\n\nПримечание. Интервалы, соприкасающиеся только в одной точке, не перекрываются. Например, [1, 2] и [2, 3] не перекрываются.\nПримеры\n\nПример 1:\n- Ввод: интервалы = [[1,2],[2,3],[3,4],[1,3]]\n- Выход: 1\n- Пояснение: [1,3] можно удалить, а остальные интервалы не перекрываться.\n\nПример 2:\n- Ввод: интервалы = [[1,2],[1,2],[1,2]]\n- Выход: 2\n- Объяснение: Вам нужно удалить два [1,2], чтобы остальные интервалы не перекрывались.\n\nПример 3:\n- Ввод: интервалы = [[1,2],[2,3]]\n- Выход: 0\n- Объяснение: Вам не нужно удалять какие-либо интервалы, поскольку они уже не перекрываются.\n\nАлгоритмические шаги\nЭта проблема решается с помощью жадного подхода. Алгоритмический подход можно резюмировать следующим образом:\n\n1. Сначала отсортируйте список интервалов по времени их начала. Этот шаг помогает сохранить перекрывающиеся интервалы рядом друг с другом в списке.\n\n2. Инициализируйте переменную минимального удаления интервалов minRemove значением 0, которое используется для хранения минимального количества интервалов, которые необходимо удалить, чтобы создать непересекающиеся интервалы. \n\n3. Инициализируйте предыдущее конечное значение интервала prevEnd с конечным значением первого интервала. т. е. здесь первый интервал по умолчанию считается неперекрывающимся интервалом.\n\n4. Переберите остальные интервалы, начиная со второго интервала. Для каждого интервала сохраните начальное (т. е. start) и конечное (т. е. end) значения для сравнения с другими интервалами.\n\n5. Если начальное значение больше конечного значения предыдущего интервала, то перекрытия между интервалами нет. В этом случае вы можете обновить предыдущее конечное значение (prevEnd) текущим конечным значением (end) интервала.\n\n6. Если начальное значение меньше конечного значения предыдущего интервала, то интервалы перекрываются. В этом случае вы можете увеличить счетчик minRemove на единицу. Кроме того, предыдущее конечное значение необходимо обновить на минимальное значение между предыдущим конечным значением и текущим значением. Интервалы с самым ранним временем окончания помогают свести к минимуму потенциальное перекрытие с будущими интервалами. \n\n7. Повторяйте шаги 4–5, пока не будут пройдены все интервалы.\n\n8. Верните minRemove в качестве минимального количества интервалов, которые необходимо удалить, чтобы создать список неперекрывающихся интервалов.\n\nСложность во времени и пространстве:\nЭтот алгоритм имеет временную сложность O(n logn) + O(n) ~= O(n), где n — количество интервалов. Это связано с тем, что операция сортировки обычно требует временной сложности O(n log n) для сортировки списка. После этого итерация по интервалам занимает временную сложность O(n). Таким образом, общая временная сложность упрощается до O(n log n).\n\nПространственная сложность этого алгоритма составляет O(1) из-за отсутствия дополнительной структуры данных."
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven an array of intervals `intervals` where `intervals[i] = [starti, endi]`, return the minimum number of intervals you need to remove to make the rest of the intervals non-overlapping.\n\n**Note:** Intervals that only touch at a point are non-overlapping. For example, `[1, 2]` and `[2, 3]` are non-overlapping.\n\n## **Examples**\n\n**Example 1:**\n\n- **Input:** intervals = [[1,2],[2,3],[3,4],[1,3]]\n- **Output:** 1\n- **Explanation:** [1,3] can be removed and the rest of the intervals are non-overlapping.\n\n**Example 2:**\n\n- **Input:** intervals = [[1,2],[1,2],[1,2]]\n- **Output:** 2\n- **Explanation:** You need to remove two [1,2] to make the rest of the intervals non-overlapping.\n\n**Example 3:**\n\n- **Input:** intervals = [[1,2],[2,3]]\n- **Output:** 0\n- **Explanation:** You don't need to remove any of the intervals since they're already non-overlapping.\n\n**Algorithmic Steps**\nThis problem is solved with the help of greedy approach. The algorithmic approach can be summarized as follows:\n\n1. First, sort the list of intervals based on their start times. This step helps to keep the overlapping intervals next to each other in the list.\n\n2. Initialize a minimum removal of intervals variable `minRemove` to 0, which is used to hold the minimum number of intervals to be removed to make non-overlapping intervals. \n\n3. Initialize previous end value of an interval `prevEnd` with first interval end value. i.e, Here, first interval is considered as non-overlapping interval by default.\n\n4. Iterate through the rest of the intervals, starting from the second interval onwards. For each interval, keep the start(i.e, `start`) and end(i.e, `end`) values for comparing with other intervals.\n\n5. If the start value is greater than the end value of the previous interval, then there is no overlap between the intervals. In this case, you can update the previous end value(`prevEnd`) with the current end value(`end`) of interval.\n\n6. If the start value is less than to end value of the previous interval, then there is overlap between the intervals. In this case, you can increment `minRemove` counter by one. Also, the previous end value needs to be updated by minimum value between previous end value and current value. The intervals with the earliest end times are helpful to minimize the potential overlap with future intervals \n\n7. Repeat steps 4-5 until all the intervals have been traversed.\n\n8. Return `minRemove` as the minimum number of intervals to be removed to make a non overlapping interval list.\n\n\n**Time and Space complexity:**\nThis algorithm has a time complexity of O(n logn) + O(n) ~= O(n), where n is the number of intervals. This is because sort operation typically takes a time complexity of O(n log n) for sorting the list. Thereafter, iteration over the intervals take a time complexity of O(n). So the total time complexity simplifies to O(n log n).\n\nThe space complexity of this algorithm is O(1) due to no additional data structure used.",
+        "ru": "**Описание:**\nУчитывая массив интервалов `intervals`, где `intervals[i] = [starti, endi]`, верните минимальное количество интервалов, которое необходимо удалить, чтобы остальные интервалы не перекрывались.\n\n**Примечание.** Интервалы, соприкасающиеся только в одной точке, не перекрываются. Например, `[1, 2]` и `[2, 3]` не перекрываются.\n\n## **Примеры**\n\n**Пример 1:**\n\n- **Ввод:** интервалы = [[1,2],[2,3],[3,4],[1,3]]\n- **Выход:** 1\n- **Пояснение:** [1,3] можно удалить, а остальные интервалы не перекрываться.\n\n**Пример 2:**\n\n- **Ввод:** интервалы = [[1,2],[1,2],[1,2]]\n- **Выход:** 2\n- **Объяснение:** Вам нужно удалить два [1,2], чтобы остальные интервалы не перекрывались.\n\n**Пример 3:**\n\n- **Ввод:** интервалы = [[1,2],[2,3]]\n- **Выход:** 0\n- **Объяснение:** Вам не нужно удалять какие-либо интервалы, поскольку они уже не перекрываются.\n\n**Алгоритмические шаги**\nЭта проблема решается с помощью жадного подхода. Алгоритмический подход можно резюмировать следующим образом:\n\n1. Сначала отсортируйте список интервалов по времени их начала. Этот шаг помогает сохранить перекрывающиеся интервалы рядом друг с другом в списке.\n\n2. Инициализируйте переменную минимального удаления интервалов `minRemove` значением 0, которое используется для хранения минимального количества интервалов, которые необходимо удалить, чтобы создать непересекающиеся интервалы. \n\n3. Инициализируйте предыдущее конечное значение интервала `prevEnd` с конечным значением первого интервала. т. е. здесь первый интервал по умолчанию считается неперекрывающимся интервалом.\n\n4. Переберите остальные интервалы, начиная со второго интервала. Для каждого интервала сохраните начальное (т. е. `start`) и конечное (т. е. `end`) значения для сравнения с другими интервалами.\n\n5. Если начальное значение больше конечного значения предыдущего интервала, то перекрытия между интервалами нет. В этом случае вы можете обновить предыдущее конечное значение (`prevEnd`) текущим конечным значением (`end`) интервала.\n\n6. Если начальное значение меньше конечного значения предыдущего интервала, то интервалы перекрываются. В этом случае вы можете увеличить счетчик `minRemove` на единицу. Кроме того, предыдущее конечное значение необходимо обновить на минимальное значение между предыдущим конечным значением и текущим значением. Интервалы с самым ранним временем окончания помогают свести к минимуму потенциальное перекрытие с будущими интервалами. \n\n7. Повторяйте шаги 4–5, пока не будут пройдены все интервалы.\n\n8. Верните `minRemove` в качестве минимального количества интервалов, которые необходимо удалить, чтобы создать список неперекрывающихся интервалов.\n\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм имеет временную сложность O(n logn) + O(n) ~= O(n), где n — количество интервалов. Это связано с тем, что операция сортировки обычно требует временной сложности O(n log n) для сортировки списка. После этого итерация по интервалам занимает временную сложность O(n). Таким образом, общая временная сложность упрощается до O(n log n).\n\nПространственная сложность этого алгоритма составляет O(1) из-за отсутствия дополнительной структуры данных."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "interval",
+        "dsa-interval"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-interval-interval-004-meeting-rooms",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/interval/4.meetingRooms/meetingRooms.js",
+        "documentationPath": "src/javascript/algorithms/interval/4.meetingRooms/meetingRooms.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/4.meetingRooms/meetingRooms.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/4.meetingRooms/meetingRooms.md"
+      },
+      "topicId": "dsa-interval",
+      "subtopic": "Interval",
+      "difficulty": "medium",
+      "question": {
+        "en": "How do you solve or implement `Meeting rooms`?",
+        "ru": "Как решить или реализовать задачу `Meeting rooms`?"
+      },
+      "answer": {
+        "en": "Problem:\nGiven an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] (si < ei), determine if a person could attend all meetings.\n\nRemember that [[1, 4],[4, 7]] will not conflict at 4.\n\nExamples:\nInput: intervals = [[1,3],[3,7],[6,8],[8, 10], [10, 12]]\nOutput: false\nExplanation: \nThe meeting intervals [3,7], [6,8] will conflict\n\nInput: intervals = [[1,5], [5,7], [8, 10]]\nOutput: true\nExplanation: \nThe three meeting intervals will not conflict\n\nAlgorithmic Steps\nThis problem is solved with the help of greedy approach. The algorithmic approach can be summarized as follows:\n\n1. First, sort the list of intervals based on their start times. This step helps to keep the intervals arranged in a sequential order and makes it easy to check for any overlaps in the list.\n\n2. Iterate through the list of intervals. For each iteration, keep the current start time(i.e, startTime) and previous end time(i.e, prevEndTime) values to compare start time with previous meeting's end time.\n\n Note: Remember that the main idea behind this solution is to verify that each meeting ends before the next meeting starts.\n\n3. If the start time is less than the end time of the previous interval, then there is an overlap between the intervals. In this case, a person cannot attend all meetings. So you need to return false immediately.\n\n4. If the start time is greater than the previous interval's end time, then there is no overlap between the intervals. In this case, you need to proceed with next set of intervals to find any overlap between the meetings. \n\n5. Repeat steps 2-4 until there is no overlap exists in the list or all intervals have been traversed.\n\n6. Return true indicating that a person can attend all meetings.\n\nTime and Space complexity:\nThis algorithm has a time complexity of O(n logn) + O(n) ~= O(n), where n is the number of intervals. This is because sort operation typically takes a time complexity of O(n log n) for sorting the list. Thereafter, iteration over the intervals take a time complexity of O(n). So the total time complexity simplifies to O(n log n).\n\nThe space complexity of this algorithm is O(1) due to no additional data structure used.",
+        "ru": "Проблема:\nУчитывая массив временных интервалов встреч, состоящий из времени начала и окончания [[s1,e1],[s2,e2],...] (si < ei), определите, может ли человек присутствовать на всех собраниях.\n\nПомните, что [[1, 4],[4, 7]] не будет конфликтовать с номером 4.\n\nПримеры:\nВвод: интервалы = [[1,3],[3,7],[6,8],[8, 10], [10, 12]]\nВывод: ложь\nОбъяснение: \nИнтервалы встреч [3,7], [6,8] будут конфликтовать.\n\nВвод: интервалы = [[1,5], [5,7], [8, 10]]\nВывод: правда\nОбъяснение: \nТри интервала встреч не будут противоречить\n\nАлгоритмические шаги\nЭта проблема решается с помощью жадного подхода. Алгоритмический подход можно резюмировать следующим образом:\n\n1. Сначала отсортируйте список интервалов по времени их начала. Этот шаг помогает обеспечить последовательный порядок интервалов и позволяет легко проверить наличие совпадений в списке.\n\n2. Перебрать список интервалов. Для каждой итерации сохраняйте значения текущего времени начала (т. е. startTime) и предыдущего времени окончания (т. е. prevEndTime), чтобы сравнить время начала со временем окончания предыдущего собрания.\n\n Примечание. Помните, что основная идея этого решения – убедиться в том, что каждая встреча заканчивается до начала следующей.\n\n3. Если время начала меньше времени окончания предыдущего интервала, то между интервалами имеется перекрытие. В этом случае человек не может присутствовать на всех собраниях. Поэтому вам нужно немедленно вернуть false.\n\n4. Если время начала больше времени окончания предыдущего интервала, то перекрытия между интервалами нет. В этом случае вам нужно перейти к следующему набору интервалов, чтобы обнаружить совпадения между встречами. \n\n5. Повторяйте шаги 2–4 до тех пор, пока в списке не исчезнет перекрытие или не будут пройдены все интервалы.\n\n6. Верните true, указывая, что человек может посещать все собрания.\n\nСложность во времени и пространстве:\nЭтот алгоритм имеет временную сложность O(n logn) + O(n) ~= O(n), где n — количество интервалов. Это связано с тем, что операция сортировки обычно требует временной сложности O(n log n) для сортировки списка. После этого итерация по интервалам занимает временную сложность O(n). Таким образом, общая временная сложность упрощается до O(n log n).\n\nПространственная сложность этого алгоритма составляет O(1) из-за отсутствия дополнительной структуры данных."
+      },
+      "explanation": {
+        "en": "**Problem:**\nGiven an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] (si < ei), determine if a person could attend all meetings.\n\nRemember that [[1, 4],[4, 7]] will not conflict at 4.\n\n**Examples:**\nInput: intervals = [[1,3],[3,7],[6,8],[8, 10], [10, 12]]\nOutput: false\nExplanation: \nThe meeting intervals [3,7], [6,8] will conflict\n\nInput: intervals = [[1,5], [5,7], [8, 10]]\nOutput: true\nExplanation: \nThe three meeting intervals will not conflict\n\n**Algorithmic Steps**\nThis problem is solved with the help of greedy approach. The algorithmic approach can be summarized as follows:\n\n1. First, sort the list of intervals based on their start times. This step helps to keep the intervals arranged in a sequential order and makes it easy to check for any overlaps in the list.\n\n2. Iterate through the list of intervals. For each iteration, keep the current start time(i.e, `startTime`) and previous end time(i.e, `prevEndTime`) values to compare start time with previous meeting's end time.\n\n    **Note:** Remember that the main idea behind this solution is to verify that each meeting ends before the next meeting starts.\n\n3. If the start time is less than the end time of the previous interval, then there is an overlap between the intervals. In this case, a person cannot attend all meetings. So you need to return `false` immediately.\n\n4. If the start time is greater than the previous interval's end time, then there is no overlap between the intervals. In this case, you need to proceed with next set of intervals to find any overlap between the meetings. \n\n5. Repeat steps 2-4 until there is no overlap exists in the list or all intervals have been traversed.\n\n6. Return `true` indicating that a person can attend all meetings.\n\n\n**Time and Space complexity:**\nThis algorithm has a time complexity of O(n logn) + O(n) ~= O(n), where n is the number of intervals. This is because sort operation typically takes a time complexity of O(n log n) for sorting the list. Thereafter, iteration over the intervals take a time complexity of O(n). So the total time complexity simplifies to O(n log n).\n\nThe space complexity of this algorithm is O(1) due to no additional data structure used.",
+        "ru": "**Проблема:**\nУчитывая массив временных интервалов встреч, состоящий из времени начала и окончания [[s1,e1],[s2,e2],...] (si < ei), определите, может ли человек присутствовать на всех собраниях.\n\nПомните, что [[1, 4],[4, 7]] не будет конфликтовать с номером 4.\n\n**Примеры:**\nВвод: интервалы = [[1,3],[3,7],[6,8],[8, 10], [10, 12]]\nВывод: ложь\nОбъяснение: \nИнтервалы встреч [3,7], [6,8] будут конфликтовать.\n\nВвод: интервалы = [[1,5], [5,7], [8, 10]]\nВывод: правда\nОбъяснение: \nТри интервала встреч не будут противоречить\n\n**Алгоритмические шаги**\nЭта проблема решается с помощью жадного подхода. Алгоритмический подход можно резюмировать следующим образом:\n\n1. Сначала отсортируйте список интервалов по времени их начала. Этот шаг помогает обеспечить последовательный порядок интервалов и позволяет легко проверить наличие совпадений в списке.\n\n2. Перебрать список интервалов. Для каждой итерации сохраняйте значения текущего времени начала (т. е. `startTime`) и предыдущего времени окончания (т. е. `prevEndTime`), чтобы сравнить время начала со временем окончания предыдущего собрания.\n\n    **Примечание.** Помните, что основная идея этого решения – убедиться в том, что каждая встреча заканчивается до начала следующей.\n\n3. Если время начала меньше времени окончания предыдущего интервала, то между интервалами имеется перекрытие. В этом случае человек не может присутствовать на всех собраниях. Поэтому вам нужно немедленно вернуть `false`.\n\n4. Если время начала больше времени окончания предыдущего интервала, то перекрытия между интервалами нет. В этом случае вам нужно перейти к следующему набору интервалов, чтобы обнаружить совпадения между встречами. \n\n5. Повторяйте шаги 2–4 до тех пор, пока в списке не исчезнет перекрытие или не будут пройдены все интервалы.\n\n6. Верните `true`, указывая, что человек может посещать все собрания.\n\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм имеет временную сложность O(n logn) + O(n) ~= O(n), где n — количество интервалов. Это связано с тем, что операция сортировки обычно требует временной сложности O(n log n) для сортировки списка. После этого итерация по интервалам занимает временную сложность O(n). Таким образом, общая временная сложность упрощается до O(n log n).\n\nПространственная сложность этого алгоритма составляет O(1) из-за отсутствия дополнительной структуры данных."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "interval",
+        "dsa-interval"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-interval-interval-005-meeting-rooms-2",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/interval/5.meetingRooms2/meetingRooms2.js",
+        "documentationPath": "src/javascript/algorithms/interval/5.meetingRooms2/meetingRooms2.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/5.meetingRooms2/meetingRooms2.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/5.meetingRooms2/meetingRooms2.md"
+      },
+      "topicId": "dsa-interval",
+      "subtopic": "Interval",
+      "difficulty": "medium",
+      "question": {
+        "en": "How do you solve or implement `Meeting rooms 2`?",
+        "ru": "Как решить или реализовать задачу `Meeting rooms 2`?"
+      },
+      "answer": {
+        "en": "Problem:\nGiven an array of meeting time intervals consisting of start and end times[[s1,e1],[s2,e2],...](si< ei), find the minimum number of conference rooms required.\n\nRemember that [[1, 4],[4, 7]] will not conflict at 4.\n\nExamples:\nInput: intervals = [[2, 7], [3, 5], [3, 9], [5, 12], [8, 15], [9, 14]]\nOutput: 3\nExplanation: \nroom1: [2, 7], [8, 15]\nroom2: [3, 5], [5, 12]\nroom3: [3, 9], [9, 14]\n\nInput: intervals = [[1,5]]\nOutput: 1\nExplanation: \nOnly one meeting room is needed\n\nAlgorithmic Steps\nThis problem is solved with the help of two pointers approach. The algorithmic approach can be summarized as follows:\n\n1. Initialize start and end times of each interval in two array variables startTimes and endTimes with the length of interval list.\n\n2. Initialize minimum required meeting rooms in minMeetingRooms and a counter variable count that increments when a meeting starts and decrements when a meeting ends.\n\n3. Iterate through the list of intervals and fill the start and end times in both array variables(i.e, startTimes, endTimes).\n\n4. Sort both start and end time arrays in an ascending order for the comparison.\n\n5. Initialize two pointer variables startIndex and endIndex to keep track of start and end time arrays.\n\n6. Iterate over the list of intervals using start time index value.\n\n7. If the start time is less than the end time, then increment the counter variable along with start index value(i.e,startIndex).\n\n8. If the start time is greater than the end time, then decrement the counter variable and increment end index(i.e, endIndex).\n\n9. For each iteration, find the maximum of minMeetingRooms and count. This calculation represents the peak occupancy at any point in time.\n\n10. Repeat steps 6-9 until start index value reaches the last element of interval list.\n\n11. Return minMeetingRooms indicating the minimum number of meeting rooms required.\n\nTime and Space complexity:\nThis algorithm has a time complexity of O(n logn) + O(n) + O(n) ~= O(n), where n is the number of intervals. This is because of traversing the intervals to fill the start and end times. Next, you need to perform sort operation which typically takes a time complexity of O(n log n) for sorting the list. Finally, iteration over the intervals take a time complexity of O(n). So the total time complexity simplifies to O(n log n).\n\nThe space complexity of this algorithm is O(n) due to the usage of two arrays for storing the start and end times.",
+        "ru": "Проблема:\nУчитывая массив временных интервалов совещаний, состоящий из времени начала и окончания [[s1,e1],[s2,e2],...](si< ei), найдите минимальное необходимое количество конференц-залов.\n\nПомните, что [[1, 4],[4, 7]] не будет конфликтовать с номером 4.\n\nПримеры:\nВвод: интервалы = [[2, 7], [3, 5], [3, 9], [5, 12], [8, 15], [9, 14]]\nВыход: 3\nОбъяснение: \nкомната1: [2, 7], [8, 15]\nкомната2: [3, 5], [5, 12]\nкомната3: [3, 9], [9, 14]\n\nВвод: интервалы = [[1,5]]\nВыход: 1\nОбъяснение: \nНужен только один конференц-зал\n\nАлгоритмические шаги\nЭта проблема решается с помощью подхода двух указателей. Алгоритмический подход можно резюмировать следующим образом:\n\n1. Инициализируйте время начала и окончания каждого интервала в двух переменных массива startTimes и endTimes длиной списка интервалов.\n\n2. Инициализируйте минимально необходимые помещения для собраний в minMeetingRooms и переменную-счетчик count, которая увеличивается при начале собрания и уменьшается при его окончании.\n\n3. Пройдите по списку интервалов и заполните время начала и окончания в обеих переменных массива (т. е. startTimes, endTimes).\n\n4. Отсортируйте массивы времени начала и окончания в порядке возрастания для сравнения.\n\n5. Инициализируйте две переменные-указатели startIndex и endIndex, чтобы отслеживать массивы времени начала и окончания.\n\n6. Переберите список интервалов, используя значение индекса времени начала.\n\n7. Если время начала меньше времени окончания, увеличьте переменную счетчика вместе со значением индекса начала (т. е. startIndex).\n\n8. Если время начала больше времени окончания, уменьшите переменную счетчика и увеличьте индекс окончания (т. е. endIndex).\n\n9. Для каждой итерации найдите максимум minMeetingRooms и count. Этот расчет представляет собой пиковую заполняемость в любой момент времени.\n\n10. Повторяйте шаги 6–9, пока значение начального индекса не достигнет последнего элемента списка интервалов.\n\n11. Верните minMeetingRooms, указав минимальное необходимое количество конференц-залов.\n\nСложность во времени и пространстве:\nЭтот алгоритм имеет временную сложность O(n logn) + O(n) + O(n) ~= O(n), где n — количество интервалов. Это связано с пересечением интервалов для заполнения времени начала и окончания. Затем вам необходимо выполнить операцию сортировки, которая обычно требует временной сложности O(n log n) для сортировки списка. Наконец, итерация по интервалам требует временной сложности O(n). Таким образом, общая временная сложность упрощается до O(n log n).\n\nПространственная сложность этого алгоритма составляет O(n) из-за использования двух массивов для хранения времени начала и окончания."
+      },
+      "explanation": {
+        "en": "**Problem:**\nGiven an array of meeting time intervals consisting of start and end times[[s1,e1],[s2,e2],...](si< ei), find the minimum number of conference rooms required.\n\nRemember that [[1, 4],[4, 7]] will not conflict at 4.\n\n**Examples:**\nInput: intervals = [[2, 7], [3, 5], [3, 9], [5, 12], [8, 15], [9, 14]]\nOutput: 3\nExplanation: \nroom1: [2, 7], [8, 15]\nroom2: [3, 5], [5, 12]\nroom3: [3, 9], [9, 14]\n\nInput: intervals = [[1,5]]\nOutput: 1\nExplanation: \nOnly one meeting room is needed\n\n**Algorithmic Steps**\nThis problem is solved with the help of **two pointers** approach. The algorithmic approach can be summarized as follows:\n\n1. Initialize start and end times of each interval in two array variables `startTimes` and `endTimes`  with the length of interval list.\n\n2. Initialize minimum required meeting rooms in `minMeetingRooms` and a counter variable `count` that increments when a meeting starts and decrements when a meeting ends.\n\n3. Iterate through the list of intervals and fill the start and end times in both array variables(i.e, `startTimes`, `endTimes`).\n\n4. Sort both start and end time arrays in an ascending order for the comparison.\n\n5. Initialize two pointer variables `startIndex` and `endIndex` to keep track of start and end time arrays.\n\n6. Iterate over the list of intervals using start time index value.\n\n7. If the start time is less than the end time, then increment the counter variable along with start index value(i.e,`startIndex`).\n\n8. If the start time is greater than the end time, then decrement the counter variable and increment end index(i.e, `endIndex`).\n\n9. For each iteration, find the maximum of `minMeetingRooms` and `count`. This calculation represents the peak occupancy at any point in time.\n\n10. Repeat steps 6-9 until start index value reaches the last element of interval list.\n\n11. Return `minMeetingRooms` indicating the minimum number of meeting rooms required.\n\n\n**Time and Space complexity:**\nThis algorithm has a time complexity of O(n logn) + O(n) + O(n) ~= O(n), where n is the number of intervals. This is because of traversing the intervals to fill the start and end times. Next, you need to perform sort operation which typically takes a time complexity of O(n log n) for sorting the list. Finally, iteration over the intervals take a time complexity of O(n). So the total time complexity simplifies to O(n log n).\n\nThe space complexity of this algorithm is O(n) due to the usage of two arrays for storing the start and end times.",
+        "ru": "**Проблема:**\nУчитывая массив временных интервалов совещаний, состоящий из времени начала и окончания [[s1,e1],[s2,e2],...](si< ei), найдите минимальное необходимое количество конференц-залов.\n\nПомните, что [[1, 4],[4, 7]] не будет конфликтовать с номером 4.\n\n**Примеры:**\nВвод: интервалы = [[2, 7], [3, 5], [3, 9], [5, 12], [8, 15], [9, 14]]\nВыход: 3\nОбъяснение: \nкомната1: [2, 7], [8, 15]\nкомната2: [3, 5], [5, 12]\nкомната3: [3, 9], [9, 14]\n\nВвод: интервалы = [[1,5]]\nВыход: 1\nОбъяснение: \nНужен только один конференц-зал\n\n**Алгоритмические шаги**\nЭта проблема решается с помощью подхода **двух указателей**. Алгоритмический подход можно резюмировать следующим образом:\n\n1. Инициализируйте время начала и окончания каждого интервала в двух переменных массива `startTimes` и `endTimes` длиной списка интервалов.\n\n2. Инициализируйте минимально необходимые помещения для собраний в `minMeetingRooms` и переменную-счетчик `count`, которая увеличивается при начале собрания и уменьшается при его окончании.\n\n3. Пройдите по списку интервалов и заполните время начала и окончания в обеих переменных массива (т. е. `startTimes`, `endTimes`).\n\n4. Отсортируйте массивы времени начала и окончания в порядке возрастания для сравнения.\n\n5. Инициализируйте две переменные-указатели `startIndex` и `endIndex`, чтобы отслеживать массивы времени начала и окончания.\n\n6. Переберите список интервалов, используя значение индекса времени начала.\n\n7. Если время начала меньше времени окончания, увеличьте переменную счетчика вместе со значением индекса начала (т. е. `startIndex`).\n\n8. Если время начала больше времени окончания, уменьшите переменную счетчика и увеличьте индекс окончания (т. е. `endIndex`).\n\n9. Для каждой итерации найдите максимум `minMeetingRooms` и `count`. Этот расчет представляет собой пиковую заполняемость в любой момент времени.\n\n10. Повторяйте шаги 6–9, пока значение начального индекса не достигнет последнего элемента списка интервалов.\n\n11. Верните `minMeetingRooms`, указав минимальное необходимое количество конференц-залов.\n\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм имеет временную сложность O(n logn) + O(n) + O(n) ~= O(n), где n — количество интервалов. Это связано с пересечением интервалов для заполнения времени начала и окончания. Затем вам необходимо выполнить операцию сортировки, которая обычно требует временной сложности O(n log n) для сортировки списка. Наконец, итерация по интервалам требует временной сложности O(n). Таким образом, общая временная сложность упрощается до O(n log n).\n\nПространственная сложность этого алгоритма составляет O(n) из-за использования двух массивов для хранения времени начала и окончания."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "interval",
+        "dsa-interval"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-interval-interval-006-meeting-rooms-3",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/interval/meetingRooms3/meetingRooms3.js",
+        "documentationPath": "src/javascript/algorithms/interval/meetingRooms3/meetingRooms3.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/6.meetingRooms3/meetingRooms3.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/6.meetingRooms3/meetingRooms3.md"
+      },
+      "topicId": "dsa-interval",
+      "subtopic": "Interval",
+      "difficulty": "medium",
+      "question": {
+        "en": "How do you solve or implement `Meeting rooms 3`?",
+        "ru": "Как решить или реализовать задачу `Meeting rooms 3`?"
+      },
+      "answer": {
+        "en": "Level: Medium. Pattern/complexity: Greedy algorithm. Hint: Two minheaps + greedy scheduling + simulation.",
+        "ru": "Уровень: Средний. Шаблон/сложность: Жадный алгоритм. Подсказка: две минкучи + жадное планирование + симуляция."
+      },
+      "explanation": {
+        "en": "Level: Medium. Pattern/complexity: Greedy algorithm. Hint: Two minheaps + greedy scheduling + simulation.",
+        "ru": "Уровень: Средний. Шаблон/сложность: Жадный алгоритм. Подсказка: две минкучи + жадное планирование + симуляция."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "interval",
+        "dsa-interval"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-interval-interval-007-max-non-overlapping-segments",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/interval/7.maxNonOverlappingSegments/maxNonOverlappingSegments.js",
+        "documentationPath": "src/javascript/algorithms/interval/7.maxNonOverlappingSegments/maxNonOverlappingSegments.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/7.maxNonOverlappingSegments/maxNonOverlappingSegments.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/7.maxNonOverlappingSegments/maxNonOverlappingSegments.md"
+      },
+      "topicId": "dsa-interval",
+      "subtopic": "Interval",
+      "difficulty": "medium",
+      "question": {
+        "en": "How do you solve or implement `Max non-overlapping segments`?",
+        "ru": "Как решить или реализовать задачу `Max non-overlapping segments`?"
+      },
+      "answer": {
+        "en": "Level: Medium. Pattern/complexity: Greedy algorithm. Description: Given two arrays A and B representing N segments [A[K], B[K]], find the maximal number of non-overlapping segments. Examples Example 1: Input: A = [1, 3, 7, 9, 9], B = [5, 6, 8, 9, 10] Output: 3 Algorithmic Steps This problem is solved using a greedy approach: 1. Initialize a variable to track the end of the last added segment. 2. Iterate through the segments: - If the start of the current segment is after the end of the last added segment, add it to the count and update the end. 3. Return the count of non-overlapping segments. Time and Space complexity: - Time complexity: O(n) , where n is the number of segments. - Space complexity: O(1) .",
+        "ru": "Уровень: Средний. Шаблон/сложность: Жадный алгоритм. Описание: Даны два массива A и B, представляющие N сегментов [A[K], B[K]], найдите максимальное количество непересекающихся сегментов. Примеры Пример 1: Входные данные: A = [1, 3, 7, 9, 9], B = [5, 6, 8, 9, 10] Выходные данные: 3 алгоритмических шага Эта проблема решается с использованием жадного подхода: 1. Инициализируйте переменную для отслеживания конца последнего добавленного сегмента. 2. Перебрать сегменты: - Если начало текущего сегмента находится после конца последнего добавленного сегмента, добавьте его к счетчику и обновите конец. 3. Вернуть количество непересекающихся сегментов. Временная и пространственная сложность: - Временная сложность: O(n), где n — количество сегментов. - Пространственная сложность: O(1) ."
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven two arrays A and B representing N segments [A[K], B[K]], find the maximal number of non-overlapping segments.\n\n### Examples\nExample 1:\n\nInput: A = [1, 3, 7, 9, 9], B = [5, 6, 8, 9, 10]\nOutput: 3\n\n**Algorithmic Steps**\nThis problem is solved using a greedy approach:\n\n1. Initialize a variable to track the end of the last added segment.\n2. Iterate through the segments:\n   - If the start of the current segment is after the end of the last added segment, add it to the count and update the end.\n3. Return the count of non-overlapping segments.\n\n**Time and Space complexity:**\n- Time complexity: `O(n)`, where `n` is the number of segments.\n- Space complexity: `O(1)`.",
+        "ru": "**Описание:**\nДаны два массива A и B, представляющие N сегментов [A[K], B[K]], найдите максимальное количество непересекающихся сегментов.\n\n### Примеры\nПример 1:\n\nВвод: A = [1, 3, 7, 9, 9], B = [5, 6, 8, 9, 10]\nВыход: 3\n\n**Алгоритмические шаги**\nЭта проблема решается жадным подходом:\n\n1. Инициализируйте переменную для отслеживания конца последнего добавленного сегмента.\n2. Перебрать сегменты:\n   - Если начало текущего сегмента находится после окончания последнего добавленного сегмента, добавьте его к счетчику и обновите конец.\n3. Вернуть количество непересекающихся сегментов.\n\n**Сложность во времени и пространстве:**\n- Временная сложность: `O(n)`, где `n` — количество сегментов.\n- Космическая сложность: `O(1)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "interval",
+        "dsa-interval"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "sudheerj-dsa-interval-interval-001-insert-interval-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/interval/1.insertInterval/insertInterval.js",
+        "documentationPath": "src/javascript/algorithms/interval/1.insertInterval/insertInterval.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/1.insertInterval/insertInterval.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/1.insertInterval/insertInterval.md"
+      },
+      "topicId": "dsa-interval",
+      "subtopic": "Interval",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Insert interval",
+        "ru": "Вставить интервал"
+      },
+      "prompt": {
+        "en": "Implement `Insert interval` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Insert interval`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "//TC:O(n) SC:O(n)\n function insertInterval(newInterval, intervals) {\n    let result = [];\n    let [newStart, newEnd] = newInterval;\n    let isIntervalInserted = false;\n\n    for(let [currStart, currEnd] of intervals) {\n        if(newEnd < currStart) {\n            // If the new interval ends before the current interval starts\n            if(!isIntervalInserted) {\n                result.push([newStart, newEnd]);\n                isIntervalInserted = true;\n            }\n            result.push([currStart, currEnd]);\n        } else if(currEnd < newStart) {\n            // If the current interval ends before the new interval starts\n            result.push([currStart, currEnd]);\n        } else {\n            // Overlapping intervals\n            newStart = Math.min(newStart, currStart);\n            newEnd = Math.max(newEnd, currEnd);\n        }\n    }\n\n     if(!isIntervalInserted) {\n         result.push([newStart, newEnd]);\n     }\n     return result;\n }\n\n let newInterval = [4, 8];\n let intervals = [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]];\n console.log(insertInterval(newInterval, intervals));\n\n const tests = [\n     {\n         label: \"Original test\",\n         newInterval: [4, 8],\n         intervals: [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]],\n         expected: [[1, 2], [3, 10], [12, 16]],\n     },\n     {\n         label: \"Insert before all intervals (no overlap)\",\n         newInterval: [0, 1],\n         intervals: [[2, 3], [4, 5]],\n         expected: [[0, 1], [2, 3], [4, 5]],\n     },\n     {\n         label: \"Insert after all intervals (no overlap)\",\n         newInterval: [10, 12],\n         intervals: [[1, 2], [3, 5], [6, 8]],\n         expected: [[1, 2], [3, 5], [6, 8], [10, 12]],\n     }\n ];\n\n // ---- Run All Tests ----\n tests.forEach(({ label, newInterval, intervals, expected }, i) => {\n     const result = insertInterval([...newInterval], JSON.parse(JSON.stringify(intervals)));\n     const passed = JSON.stringify(result) === JSON.stringify(expected);\n     console.log(`Test ${i + 1} - ${label}: ${passed ? \"✅ Passed\" : \"❌ Failed\"}`);\n     if (!passed) {\n         console.log(`  Expected: ${JSON.stringify(expected)}`);\n         console.log(`  Received: ${JSON.stringify(result)}`);\n     }\n });",
+      "expectedAnswer": {
+        "en": "//TC:O(n) SC:O(n)\n function insertInterval(newInterval, intervals) {\n    let result = [];\n    let [newStart, newEnd] = newInterval;\n    let isIntervalInserted = false;\n\n    for(let [currStart, currEnd] of intervals) {\n        if(newEnd < currStart) {\n            // If the new interval ends before the current interval starts\n            if(!isIntervalInserted) {\n                result.push([newStart, newEnd]);\n                isIntervalInserted = true;\n            }\n            result.push([currStart, currEnd]);\n        } else if(currEnd < newStart) {\n            // If the current interval ends before the new interval starts\n            result.push([currStart, currEnd]);\n        } else {\n            // Overlapping intervals\n            newStart = Math.min(newStart, currStart);\n            newEnd = Math.max(newEnd, currEnd);\n        }\n    }\n\n     if(!isIntervalInserted) {\n         result.push([newStart, newEnd]);\n     }\n     return result;\n }\n\n let newInterval = [4, 8];\n let intervals = [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]];\n console.log(insertInterval(newInterval, intervals));\n\n const tests = [\n     {\n         label: \"Original test\",\n         newInterval: [4, 8],\n         intervals: [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]],\n         expected: [[1, 2], [3, 10], [12, 16]],\n     },\n     {\n         label: \"Insert before all intervals (no overlap)\",\n         newInterval: [0, 1],\n         intervals: [[2, 3], [4, 5]],\n         expected: [[0, 1], [2, 3], [4, 5]],\n     },\n     {\n         label: \"Insert after all intervals (no overlap)\",\n         newInterval: [10, 12],\n         intervals: [[1, 2], [3, 5], [6, 8]],\n         expected: [[1, 2], [3, 5], [6, 8], [10, 12]],\n     }\n ];\n\n // ---- Run All Tests ----\n tests.forEach(({ label, newInterval, intervals, expected }, i) => {\n     const result = insertInterval([...newInterval], JSON.parse(JSON.stringify(intervals)));\n     const passed = JSON.stringify(result) === JSON.stringify(expected);\n     console.log(`Test ${i + 1} - ${label}: ${passed ? \"✅ Passed\" : \"❌ Failed\"}`);\n     if (!passed) {\n         console.log(`  Expected: ${JSON.stringify(expected)}`);\n         console.log(`  Received: ${JSON.stringify(result)}`);\n     }\n });",
+        "ru": "//TC:O(n) SC:O(n)\n function insertInterval(newInterval, intervals) {\n    let result = [];\n    let [newStart, newEnd] = newInterval;\n    let isIntervalInserted = false;\n\n    for(let [currStart, currEnd] of intervals) {\n        if(newEnd < currStart) {\n            // If the new interval ends before the current interval starts\n            if(!isIntervalInserted) {\n                result.push([newStart, newEnd]);\n                isIntervalInserted = true;\n            }\n            result.push([currStart, currEnd]);\n        } else if(currEnd < newStart) {\n            // If the current interval ends before the new interval starts\n            result.push([currStart, currEnd]);\n        } else {\n            // Overlapping intervals\n            newStart = Math.min(newStart, currStart);\n            newEnd = Math.max(newEnd, currEnd);\n        }\n    }\n\n     if(!isIntervalInserted) {\n         result.push([newStart, newEnd]);\n     }\n     return result;\n }\n\n let newInterval = [4, 8];\n let intervals = [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]];\n console.log(insertInterval(newInterval, intervals));\n\n const tests = [\n     {\n         label: \"Original test\",\n         newInterval: [4, 8],\n         intervals: [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]],\n         expected: [[1, 2], [3, 10], [12, 16]],\n     },\n     {\n         label: \"Insert before all intervals (no overlap)\",\n         newInterval: [0, 1],\n         intervals: [[2, 3], [4, 5]],\n         expected: [[0, 1], [2, 3], [4, 5]],\n     },\n     {\n         label: \"Insert after all intervals (no overlap)\",\n         newInterval: [10, 12],\n         intervals: [[1, 2], [3, 5], [6, 8]],\n         expected: [[1, 2], [3, 5], [6, 8], [10, 12]],\n     }\n ];\n\n // ---- Run All Tests ----\n tests.forEach(({ label, newInterval, intervals, expected }, i) => {\n     const result = insertInterval([...newInterval], JSON.parse(JSON.stringify(intervals)));\n     const passed = JSON.stringify(result) === JSON.stringify(expected);\n     console.log(`Test ${i + 1} - ${label}: ${passed ? \"✅ Passed\" : \"❌ Failed\"}`);\n     if (!passed) {\n         console.log(`  Expected: ${JSON.stringify(expected)}`);\n         console.log(`  Received: ${JSON.stringify(result)}`);\n     }\n });"
+      },
+      "explanation": {
+        "en": "**Algorithmic Steps**\nThis problem is solved with the help of logic that involves comparing the elements and merging the intervals in case of overlap through iteration. The algorithmic approach can be summarized as follows:\n\n1. Create an empty array `result` list which is used to store all intervals after insertion of new internval.\n\n2. Initialize a boolean variable `isIntervalInserted` to indicate new interval inserted or not. \n\n3. Iterate through the list of the intervals. For each interval, compare the end value of the new input interval with its start value of the interval.\n\n4. If the end value of the new interval is less than start value, then there is no overlap between the intervals. In this case, you can add the new interval followed by current interval to the result list. Also, mark the boolean variable `isIntervalInserted` to true.\n\n5. If either `isIntervalInserted` value is true or end value of current is less than or equal to the start value of the new interval, then there is no overlap between the intervals. In this case, you can just add the current interval to the result lit.\n\n6. If both step 4 and step 5 conditions failed, there is an overlap between current interval and newly inserting interval.In this case, you need to take minimum of current and new interval as start value and maximum of current and new interval as end value. \n\n7. Repeat steps 3-6 until all the intervals have been traversed.\n\n8. If the new interval not added to the result list yet(i.e, `!isIntervalInserted`), just add the new interval to the result.\n\n9. Return the final result list as updated list of intervals.\n\n\n**Time and Space complexity:**\nThis algorithm has a time complexity of O(n), where n is the number of intervals. This is because you need to traverse the entire interval list.\n\nThe space complexity of this algorithm is O(n) as we need to store a list containing all the intervals including the newly inserted interval.",
+        "ru": "**Алгоритмические шаги**\nЭта проблема решается с помощью логики, предполагающей сравнение элементов и объединение интервалов в случае перекрытия посредством итерации. Алгоритмический подход можно резюмировать следующим образом:\n\n1. Создайте пустой массив `result` list, который будет использоваться для хранения всех интервалов после вставки нового интервала.\n\n2. Инициализируйте логическую переменную `isIntervalInserted`, чтобы указать, вставлен ли новый интервал или нет. \n\n3. Перебрать список интервалов. Для каждого интервала сравните конечное значение нового входного интервала с его начальным значением интервала.\n\n4. Если конечное значение нового интервала меньше начального, то перекрытия между интервалами нет. В этом случае вы можете добавить в список результатов новый интервал, а затем текущий интервал. Также установите для логической переменной `isIntervalInserted` значение true.\n\n5. Если значение `isIntervalInserted` истинно или конечное значение тока меньше или равно начальному значению нового интервала, то перекрытия между интервалами нет. В этом случае вы можете просто добавить текущий интервал к горящему результату.\n\n6. Если условия шага 4 и шага 5 не выполнены, это означает, что текущий интервал и вновь вставляемый интервал перекрываются. В этом случае вам необходимо принять минимум текущего и нового интервала в качестве начального значения, а максимум текущего и нового интервала в качестве конечного значения. \n\n7. Повторяйте шаги 3–6, пока не будут пройдены все интервалы.\n\n8. Если новый интервал еще не добавлен в список результатов (например, `!isIntervalInserted`), просто добавьте новый интервал к результату.\n\n9. Верните окончательный список результатов в виде обновленного списка интервалов.\n\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм имеет временную сложность O(n), где n — количество интервалов. Это связано с тем, что вам нужно пройти весь список интервалов.\n\nПространственная сложность этого алгоритма равна O(n), поскольку нам нужно сохранить список, содержащий все интервалы, включая вновь вставленный интервал."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "interval",
+        "dsa-interval",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "needsAnswerReview": true,
+        "reviewReasons": [
+          "answer-too-long-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-interval-interval-002-merge-interval-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/interval/2.mergeInterval/mergeInterval.js",
+        "documentationPath": "src/javascript/algorithms/interval/2.mergeInterval/mergeInterval.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/2.mergeInterval/mergeInterval.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/2.mergeInterval/mergeInterval.md"
+      },
+      "topicId": "dsa-interval",
+      "subtopic": "Interval",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Merge interval",
+        "ru": "Объединить интервал"
+      },
+      "prompt": {
+        "en": "Implement `Merge interval` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Merge interval`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "// TC: O(n log n) + O(n)=> O(n log n) SC: O(n)\n\nfunction mergeInterval(intervals) {\n    let mergedIntervals = [];\n    intervals.sort((a, b) => a[0]-b[0]);\n    mergedIntervals.push(intervals[0]);\n\n    for(let i=1; i< intervals.length; i++) {\n        let currInterval = intervals[i];\n        let latestMergeInterval = mergedIntervals[mergedIntervals.length-1];\n        if(latestMergeInterval[1] < currInterval[0]) {\n            mergedIntervals.push(currInterval);\n        } else {\n            mergedIntervals[mergedIntervals.length-1][1] = Math.max(latestMergeInterval[1], currInterval[1]);\n        }\n    }\n\n    return mergedIntervals;\n}\n\nlet intervals1 = [[1,3],[2,6],[8,10],[15,18]];\nlet intervals2 = [[1,5],[5,8]];\nconsole.log(mergeInterval(intervals1));\nconsole.log(mergeInterval(intervals2));",
+      "expectedAnswer": {
+        "en": "// TC: O(n log n) + O(n)=> O(n log n) SC: O(n)\n\nfunction mergeInterval(intervals) {\n    let mergedIntervals = [];\n    intervals.sort((a, b) => a[0]-b[0]);\n    mergedIntervals.push(intervals[0]);\n\n    for(let i=1; i< intervals.length; i++) {\n        let currInterval = intervals[i];\n        let latestMergeInterval = mergedIntervals[mergedIntervals.length-1];\n        if(latestMergeInterval[1] < currInterval[0]) {\n            mergedIntervals.push(currInterval);\n        } else {\n            mergedIntervals[mergedIntervals.length-1][1] = Math.max(latestMergeInterval[1], currInterval[1]);\n        }\n    }\n\n    return mergedIntervals;\n}\n\nlet intervals1 = [[1,3],[2,6],[8,10],[15,18]];\nlet intervals2 = [[1,5],[5,8]];\nconsole.log(mergeInterval(intervals1));\nconsole.log(mergeInterval(intervals2));",
+        "ru": "// TC: O(n log n) + O(n)=> O(n log n) SC: O(n)\n\nfunction mergeInterval(intervals) {\n    let mergedIntervals = [];\n    intervals.sort((a, b) => a[0]-b[0]);\n    mergedIntervals.push(intervals[0]);\n\n    for(let i=1; i< intervals.length; i++) {\n        let currInterval = intervals[i];\n        let latestMergeInterval = mergedIntervals[mergedIntervals.length-1];\n        if(latestMergeInterval[1] < currInterval[0]) {\n            mergedIntervals.push(currInterval);\n        } else {\n            mergedIntervals[mergedIntervals.length-1][1] = Math.max(latestMergeInterval[1], currInterval[1]);\n        }\n    }\n\n    return mergedIntervals;\n}\n\nlet intervals1 = [[1,3],[2,6],[8,10],[15,18]];\nlet intervals2 = [[1,5],[5,8]];\nconsole.log(mergeInterval(intervals1));\nconsole.log(mergeInterval(intervals2));"
+      },
+      "explanation": {
+        "en": "**Algorithmic Steps**\nThis problem is solved with the help of sorting intervals followed by merging the intervals through iteration. The algorithmic approach can be summarized as follows:\n\n1. First, sort the list of intervals based on their start times. This step helps to keep the overlapping intervals next to each other in the list.\n\n2. Initialize a new list `mergedIntervals` to hold the merged intervals and add the first interval to it. \n\n3. Iterate through the rest of the intervals, starting from the second interval onwards. For each interval, compare its start value with the end value of the last interval in the merged list.\n\n4. If the start value is greater than the end value of the last interval, then there is no overlap between the intervals. In this case, you can add the current interval as a new entry to the merged list.\n\n5. If the start value is less than or equal to the end value of the last interval, then there is overlap between the intervals. In this case, you can update the end value of the last interval in the merged list to the maximum of the end value of the last interval and the start value of current interval. \n\n6. Repeat steps 3-5 until all the intervals have been traversed.\n\n7. Return `mergedIntervals` as the final merged intervals.\n\n\n**Time and Space complexity:**\nThis algorithm has a time complexity of O(n logn) + O(n), where n is the number of intervals. This is because sort operation typically takes a time complexity of O(n log n) for sorting the list. Thereafter, iteration over the intervals take a time complexity of O(n). So the total time complexity simplifies to O(n log n).\n\nThe space complexity of this algorithm is O(n) as we need to store a list containing all the merged intervals.",
+        "ru": "**Алгоритмические шаги**\nЭта проблема решается с помощью сортировки интервалов с последующим объединением интервалов посредством итерации. Алгоритмический подход можно резюмировать следующим образом:\n\n1. Сначала отсортируйте список интервалов по времени их начала. Этот шаг помогает сохранить перекрывающиеся интервалы рядом друг с другом в списке.\n\n2. Инициализируйте новый список `mergedIntervals` для хранения объединенных интервалов и добавьте в него первый интервал. \n\n3. Переберите остальные интервалы, начиная со второго интервала. Для каждого интервала сравните его начальное значение с конечным значением последнего интервала в объединенном списке.\n\n4. Если начальное значение больше конечного значения последнего интервала, то перекрытия между интервалами нет. В этом случае вы можете добавить текущий интервал в качестве новой записи в объединенный список.\n\n5. Если начальное значение меньше или равно конечному значению последнего интервала, между интервалами происходит перекрытие. В этом случае вы можете обновить конечное значение последнего интервала в объединенном списке до максимального значения конечного значения последнего интервала и начального значения текущего интервала. \n\n6. Повторяйте шаги 3–5, пока не будут пройдены все интервалы.\n\n7. Верните `mergedIntervals` в качестве окончательных объединенных интервалов.\n\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм имеет временную сложность O(n logn) + O(n), где n — количество интервалов. Это связано с тем, что операция сортировки обычно требует временной сложности O(n log n) для сортировки списка. После этого итерация по интервалам занимает временную сложность O(n). Таким образом, общая временная сложность упрощается до O(n log n).\n\nПространственная сложность этого алгоритма составляет O(n), поскольку нам нужно сохранить список, содержащий все объединенные интервалы."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "interval",
+        "dsa-interval",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-interval-interval-003-non-overlapping-intervals-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/interval/3.nonOverlappingIntervals/nonOverlappingIntervals.js",
+        "documentationPath": "src/javascript/algorithms/interval/3.nonOverlappingIntervals/nonOverlappingIntervals.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/3.nonOverlappingIntervals/nonOverlappingIntervals.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/3.nonOverlappingIntervals/nonOverlappingIntervals.md"
+      },
+      "topicId": "dsa-interval",
+      "subtopic": "Interval",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Non-overlapping intervals",
+        "ru": "Непересекающиеся интервалы"
+      },
+      "prompt": {
+        "en": "Implement `Non-overlapping intervals` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Non-overlapping intervals`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "//Greedy approach: TC: O(n logn) + O(n), SC: O(1)\n\nfunction eraseOverlappingIntervals(intervals) {\n    intervals.sort((a, b) => a[0]-b[0]);\n    let minRemoveCount = 0;\n    let prevEnd = intervals[0][1];\n\n    for(let i=1; i<intervals.length; i++){\n        let start = intervals[i][0];\n        let end = intervals[i][1];\n\n        if(start >= prevEnd) {\n            prevEnd = end;\n        } else {\n            minRemoveCount++;\n            prevEnd = Math.min(prevEnd, end);\n        }\n    }\n    return minRemoveCount;\n}\n\nlet intervals = [[1, 2], [2, 3], [3, 4],  [1, 3]];\nconsole.log(eraseOverlappingIntervals(intervals));",
+      "expectedAnswer": {
+        "en": "//Greedy approach: TC: O(n logn) + O(n), SC: O(1)\n\nfunction eraseOverlappingIntervals(intervals) {\n    intervals.sort((a, b) => a[0]-b[0]);\n    let minRemoveCount = 0;\n    let prevEnd = intervals[0][1];\n\n    for(let i=1; i<intervals.length; i++){\n        let start = intervals[i][0];\n        let end = intervals[i][1];\n\n        if(start >= prevEnd) {\n            prevEnd = end;\n        } else {\n            minRemoveCount++;\n            prevEnd = Math.min(prevEnd, end);\n        }\n    }\n    return minRemoveCount;\n}\n\nlet intervals = [[1, 2], [2, 3], [3, 4],  [1, 3]];\nconsole.log(eraseOverlappingIntervals(intervals));",
+        "ru": "//Greedy approach: TC: O(n logn) + O(n), SC: O(1)\n\nfunction eraseOverlappingIntervals(intervals) {\n    intervals.sort((a, b) => a[0]-b[0]);\n    let minRemoveCount = 0;\n    let prevEnd = intervals[0][1];\n\n    for(let i=1; i<intervals.length; i++){\n        let start = intervals[i][0];\n        let end = intervals[i][1];\n\n        if(start >= prevEnd) {\n            prevEnd = end;\n        } else {\n            minRemoveCount++;\n            prevEnd = Math.min(prevEnd, end);\n        }\n    }\n    return minRemoveCount;\n}\n\nlet intervals = [[1, 2], [2, 3], [3, 4],  [1, 3]];\nconsole.log(eraseOverlappingIntervals(intervals));"
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven an array of intervals `intervals` where `intervals[i] = [starti, endi]`, return the minimum number of intervals you need to remove to make the rest of the intervals non-overlapping.\n\n**Note:** Intervals that only touch at a point are non-overlapping. For example, `[1, 2]` and `[2, 3]` are non-overlapping.\n\n## **Examples**\n\n**Example 1:**\n\n- **Input:** intervals = [[1,2],[2,3],[3,4],[1,3]]\n- **Output:** 1\n- **Explanation:** [1,3] can be removed and the rest of the intervals are non-overlapping.\n\n**Example 2:**\n\n- **Input:** intervals = [[1,2],[1,2],[1,2]]\n- **Output:** 2\n- **Explanation:** You need to remove two [1,2] to make the rest of the intervals non-overlapping.\n\n**Example 3:**\n\n- **Input:** intervals = [[1,2],[2,3]]\n- **Output:** 0\n- **Explanation:** You don't need to remove any of the intervals since they're already non-overlapping.\n\n**Algorithmic Steps**\nThis problem is solved with the help of greedy approach. The algorithmic approach can be summarized as follows:\n\n1. First, sort the list of intervals based on their start times. This step helps to keep the overlapping intervals next to each other in the list.\n\n2. Initialize a minimum removal of intervals variable `minRemove` to 0, which is used to hold the minimum number of intervals to be removed to make non-overlapping intervals. \n\n3. Initialize previous end value of an interval `prevEnd` with first interval end value. i.e, Here, first interval is considered as non-overlapping interval by default.\n\n4. Iterate through the rest of the intervals, starting from the second interval onwards. For each interval, keep the start(i.e, `start`) and end(i.e, `end`) values for comparing with other intervals.\n\n5. If the start value is greater than the end value of the previous interval, then there is no overlap between the intervals. In this case, you can update the previous end value(`prevEnd`) with the current end value(`end`) of interval.\n\n6. If the start value is less than to end value of the previous interval, then there is overlap between the intervals. In this case, you can increment `minRemove` counter by one. Also, the previous end value needs to be updated by minimum value between previous end value and current value. The intervals with the earliest end times are helpful to minimize the potential overlap with future intervals \n\n7. Repeat steps 4-5 until all the intervals have been traversed.\n\n8. Return `minRemove` as the minimum number of intervals to be removed to make a non overlapping interval list.\n\n\n**Time and Space complexity:**\nThis algorithm has a time complexity of O(n logn) + O(n) ~= O(n), where n is the number of intervals. This is because sort operation typically takes a time complexity of O(n log n) for sorting the list. Thereafter, iteration over the intervals take a time complexity of O(n). So the total time complexity simplifies to O(n log n).\n\nThe space complexity of this algorithm is O(1) due to no additional data structure used.",
+        "ru": "**Описание:**\nУчитывая массив интервалов `intervals`, где `intervals[i] = [starti, endi]`, верните минимальное количество интервалов, которое необходимо удалить, чтобы остальные интервалы не перекрывались.\n\n**Примечание.** Интервалы, соприкасающиеся только в одной точке, не перекрываются. Например, `[1, 2]` и `[2, 3]` не перекрываются.\n\n## **Примеры**\n\n**Пример 1:**\n\n- **Ввод:** интервалы = [[1,2],[2,3],[3,4],[1,3]]\n- **Выход:** 1\n- **Пояснение:** [1,3] можно удалить, а остальные интервалы не перекрываться.\n\n**Пример 2:**\n\n- **Ввод:** интервалы = [[1,2],[1,2],[1,2]]\n- **Выход:** 2\n- **Объяснение:** Вам нужно удалить два [1,2], чтобы остальные интервалы не перекрывались.\n\n**Пример 3:**\n\n- **Ввод:** интервалы = [[1,2],[2,3]]\n- **Выход:** 0\n- **Объяснение:** Вам не нужно удалять какие-либо интервалы, поскольку они уже не перекрываются.\n\n**Алгоритмические шаги**\nЭта проблема решается с помощью жадного подхода. Алгоритмический подход можно резюмировать следующим образом:\n\n1. Сначала отсортируйте список интервалов по времени их начала. Этот шаг помогает сохранить перекрывающиеся интервалы рядом друг с другом в списке.\n\n2. Инициализируйте переменную минимального удаления интервалов `minRemove` значением 0, которое используется для хранения минимального количества интервалов, которые необходимо удалить, чтобы создать непересекающиеся интервалы. \n\n3. Инициализируйте предыдущее конечное значение интервала `prevEnd` с конечным значением первого интервала. т. е. здесь первый интервал по умолчанию считается неперекрывающимся интервалом.\n\n4. Переберите остальные интервалы, начиная со второго интервала. Для каждого интервала сохраните начальное (т. е. `start`) и конечное (т. е. `end`) значения для сравнения с другими интервалами.\n\n5. Если начальное значение больше конечного значения предыдущего интервала, то перекрытия между интервалами нет. В этом случае вы можете обновить предыдущее конечное значение (`prevEnd`) текущим конечным значением (`end`) интервала.\n\n6. Если начальное значение меньше конечного значения предыдущего интервала, то интервалы перекрываются. В этом случае вы можете увеличить счетчик `minRemove` на единицу. Кроме того, предыдущее конечное значение необходимо обновить на минимальное значение между предыдущим конечным значением и текущим значением. Интервалы с самым ранним временем окончания помогают свести к минимуму потенциальное перекрытие с будущими интервалами. \n\n7. Повторяйте шаги 4–5, пока не будут пройдены все интервалы.\n\n8. Верните `minRemove` в качестве минимального количества интервалов, которые необходимо удалить, чтобы создать список неперекрывающихся интервалов.\n\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм имеет временную сложность O(n logn) + O(n) ~= O(n), где n — количество интервалов. Это связано с тем, что операция сортировки обычно требует временной сложности O(n log n) для сортировки списка. После этого итерация по интервалам занимает временную сложность O(n). Таким образом, общая временная сложность упрощается до O(n log n).\n\nПространственная сложность этого алгоритма составляет O(1) из-за отсутствия дополнительной структуры данных."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "interval",
+        "dsa-interval",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-interval-interval-004-meeting-rooms-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/interval/4.meetingRooms/meetingRooms.js",
+        "documentationPath": "src/javascript/algorithms/interval/4.meetingRooms/meetingRooms.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/4.meetingRooms/meetingRooms.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/4.meetingRooms/meetingRooms.md"
+      },
+      "topicId": "dsa-interval",
+      "subtopic": "Interval",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Meeting rooms",
+        "ru": "Конференц-залы"
+      },
+      "prompt": {
+        "en": "Implement `Meeting rooms` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Meeting rooms`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "//TC: O(n logn)+ O(n) SC:O(1):\n// Time Complexity: O(n log n) for sorting + O(n) for scanning => O(n log n)\n// Space Complexity: O(1) extra space (in-place sort)\n\nfunction canAttendMeetings(intervals) {\n    // Sort meetings by start time\n    intervals.sort((a, b) => a[0] - b[0]);\n\n    // Check for overlap\n    for(let i=1; i< intervals.length; i++) {\n        let startTime = intervals[i][0];\n        let prevEndTime = intervals[i-1][1];\n\n        if(prevEndTime > startTime) {\n            return false; // Overlapping meetings\n        }\n    }\n\n    return true;\n}\n\n// Test cases\nconst testCases = [\n    {\n        input: [[1, 3], [3, 7], [6, 8], [8, 10], [10, 12]],\n        expected: false,\n        reason: \"Overlap between [3,7] and [6,8]\",\n    },\n    {\n        input: [[1, 5], [5, 7], [8, 10]],\n        expected: true,\n        reason: \"All meetings end before next starts\",\n    },\n    {\n        input: [[1, 4], [2, 5], [7, 9]],\n        expected: false,\n        reason: \"Overlap between [1,4] and [2,5]\",\n    },\n    {\n        input: [[1, 3], [3, 5], [5, 7]],\n        expected: true,\n        reason: \"Meetings touch but do not overlap\",\n    },\n    {\n        input: [],\n        expected: true,\n        reason: \"Empty list means no conflict\",\n    },\n];\n\ntestCases.forEach(({ input, expected, reason }, index) => {\n    const result = canAttendMeetings(input);\n    console.log(`Test #${index + 1}: ${result === expected ? \"✅ Passed\" : \"❌ Failed\"} — ${reason}`);\n});",
+      "expectedAnswer": {
+        "en": "//TC: O(n logn)+ O(n) SC:O(1):\n// Time Complexity: O(n log n) for sorting + O(n) for scanning => O(n log n)\n// Space Complexity: O(1) extra space (in-place sort)\n\nfunction canAttendMeetings(intervals) {\n    // Sort meetings by start time\n    intervals.sort((a, b) => a[0] - b[0]);\n\n    // Check for overlap\n    for(let i=1; i< intervals.length; i++) {\n        let startTime = intervals[i][0];\n        let prevEndTime = intervals[i-1][1];\n\n        if(prevEndTime > startTime) {\n            return false; // Overlapping meetings\n        }\n    }\n\n    return true;\n}\n\n// Test cases\nconst testCases = [\n    {\n        input: [[1, 3], [3, 7], [6, 8], [8, 10], [10, 12]],\n        expected: false,\n        reason: \"Overlap between [3,7] and [6,8]\",\n    },\n    {\n        input: [[1, 5], [5, 7], [8, 10]],\n        expected: true,\n        reason: \"All meetings end before next starts\",\n    },\n    {\n        input: [[1, 4], [2, 5], [7, 9]],\n        expected: false,\n        reason: \"Overlap between [1,4] and [2,5]\",\n    },\n    {\n        input: [[1, 3], [3, 5], [5, 7]],\n        expected: true,\n        reason: \"Meetings touch but do not overlap\",\n    },\n    {\n        input: [],\n        expected: true,\n        reason: \"Empty list means no conflict\",\n    },\n];\n\ntestCases.forEach(({ input, expected, reason }, index) => {\n    const result = canAttendMeetings(input);\n    console.log(`Test #${index + 1}: ${result === expected ? \"✅ Passed\" : \"❌ Failed\"} — ${reason}`);\n});",
+        "ru": "//TC: O(n logn)+ O(n) SC:O(1):\n// Time Complexity: O(n log n) for sorting + O(n) for scanning => O(n log n)\n// Space Complexity: O(1) extra space (in-place sort)\n\nfunction canAttendMeetings(intervals) {\n    // Sort meetings by start time\n    intervals.sort((a, b) => a[0] - b[0]);\n\n    // Check for overlap\n    for(let i=1; i< intervals.length; i++) {\n        let startTime = intervals[i][0];\n        let prevEndTime = intervals[i-1][1];\n\n        if(prevEndTime > startTime) {\n            return false; // Overlapping meetings\n        }\n    }\n\n    return true;\n}\n\n// Test cases\nconst testCases = [\n    {\n        input: [[1, 3], [3, 7], [6, 8], [8, 10], [10, 12]],\n        expected: false,\n        reason: \"Overlap between [3,7] and [6,8]\",\n    },\n    {\n        input: [[1, 5], [5, 7], [8, 10]],\n        expected: true,\n        reason: \"All meetings end before next starts\",\n    },\n    {\n        input: [[1, 4], [2, 5], [7, 9]],\n        expected: false,\n        reason: \"Overlap between [1,4] and [2,5]\",\n    },\n    {\n        input: [[1, 3], [3, 5], [5, 7]],\n        expected: true,\n        reason: \"Meetings touch but do not overlap\",\n    },\n    {\n        input: [],\n        expected: true,\n        reason: \"Empty list means no conflict\",\n    },\n];\n\ntestCases.forEach(({ input, expected, reason }, index) => {\n    const result = canAttendMeetings(input);\n    console.log(`Test #${index + 1}: ${result === expected ? \"✅ Passed\" : \"❌ Failed\"} — ${reason}`);\n});"
+      },
+      "explanation": {
+        "en": "**Problem:**\nGiven an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] (si < ei), determine if a person could attend all meetings.\n\nRemember that [[1, 4],[4, 7]] will not conflict at 4.\n\n**Examples:**\nInput: intervals = [[1,3],[3,7],[6,8],[8, 10], [10, 12]]\nOutput: false\nExplanation: \nThe meeting intervals [3,7], [6,8] will conflict\n\nInput: intervals = [[1,5], [5,7], [8, 10]]\nOutput: true\nExplanation: \nThe three meeting intervals will not conflict\n\n**Algorithmic Steps**\nThis problem is solved with the help of greedy approach. The algorithmic approach can be summarized as follows:\n\n1. First, sort the list of intervals based on their start times. This step helps to keep the intervals arranged in a sequential order and makes it easy to check for any overlaps in the list.\n\n2. Iterate through the list of intervals. For each iteration, keep the current start time(i.e, `startTime`) and previous end time(i.e, `prevEndTime`) values to compare start time with previous meeting's end time.\n\n    **Note:** Remember that the main idea behind this solution is to verify that each meeting ends before the next meeting starts.\n\n3. If the start time is less than the end time of the previous interval, then there is an overlap between the intervals. In this case, a person cannot attend all meetings. So you need to return `false` immediately.\n\n4. If the start time is greater than the previous interval's end time, then there is no overlap between the intervals. In this case, you need to proceed with next set of intervals to find any overlap between the meetings. \n\n5. Repeat steps 2-4 until there is no overlap exists in the list or all intervals have been traversed.\n\n6. Return `true` indicating that a person can attend all meetings.\n\n\n**Time and Space complexity:**\nThis algorithm has a time complexity of O(n logn) + O(n) ~= O(n), where n is the number of intervals. This is because sort operation typically takes a time complexity of O(n log n) for sorting the list. Thereafter, iteration over the intervals take a time complexity of O(n). So the total time complexity simplifies to O(n log n).\n\nThe space complexity of this algorithm is O(1) due to no additional data structure used.",
+        "ru": "**Проблема:**\nУчитывая массив временных интервалов встреч, состоящий из времени начала и окончания [[s1,e1],[s2,e2],...] (si < ei), определите, может ли человек присутствовать на всех собраниях.\n\nПомните, что [[1, 4],[4, 7]] не будет конфликтовать с номером 4.\n\n**Примеры:**\nВвод: интервалы = [[1,3],[3,7],[6,8],[8, 10], [10, 12]]\nВывод: ложь\nОбъяснение: \nИнтервалы встреч [3,7], [6,8] будут конфликтовать.\n\nВвод: интервалы = [[1,5], [5,7], [8, 10]]\nВывод: правда\nОбъяснение: \nТри интервала встреч не будут противоречить\n\n**Алгоритмические шаги**\nЭта проблема решается с помощью жадного подхода. Алгоритмический подход можно резюмировать следующим образом:\n\n1. Сначала отсортируйте список интервалов по времени их начала. Этот шаг помогает обеспечить последовательный порядок интервалов и позволяет легко проверить наличие совпадений в списке.\n\n2. Перебрать список интервалов. Для каждой итерации сохраняйте значения текущего времени начала (т. е. `startTime`) и предыдущего времени окончания (т. е. `prevEndTime`), чтобы сравнить время начала со временем окончания предыдущего собрания.\n\n    **Примечание.** Помните, что основная идея этого решения – убедиться в том, что каждая встреча заканчивается до начала следующей.\n\n3. Если время начала меньше времени окончания предыдущего интервала, то между интервалами имеется перекрытие. В этом случае человек не может присутствовать на всех собраниях. Поэтому вам нужно немедленно вернуть `false`.\n\n4. Если время начала больше времени окончания предыдущего интервала, то перекрытия между интервалами нет. В этом случае вам нужно перейти к следующему набору интервалов, чтобы обнаружить совпадения между встречами. \n\n5. Повторяйте шаги 2–4 до тех пор, пока в списке не исчезнет перекрытие или не будут пройдены все интервалы.\n\n6. Верните `true`, указывая, что человек может посещать все собрания.\n\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм имеет временную сложность O(n logn) + O(n) ~= O(n), где n — количество интервалов. Это связано с тем, что операция сортировки обычно требует временной сложности O(n log n) для сортировки списка. После этого итерация по интервалам занимает временную сложность O(n). Таким образом, общая временная сложность упрощается до O(n log n).\n\nПространственная сложность этого алгоритма составляет O(1) из-за отсутствия дополнительной структуры данных."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "interval",
+        "dsa-interval",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "needsAnswerReview": true,
+        "reviewReasons": [
+          "answer-too-long-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-interval-interval-005-meeting-rooms-2-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/interval/5.meetingRooms2/meetingRooms2.js",
+        "documentationPath": "src/javascript/algorithms/interval/5.meetingRooms2/meetingRooms2.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/5.meetingRooms2/meetingRooms2.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/5.meetingRooms2/meetingRooms2.md"
+      },
+      "topicId": "dsa-interval",
+      "subtopic": "Interval",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Meeting rooms 2",
+        "ru": "Конференц-залы 2"
+      },
+      "prompt": {
+        "en": "Implement `Meeting rooms 2` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Meeting rooms 2`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "//Two pointer TC: O(n logn + n) SC: O(n)\n\nfunction minMeetingRooms1(intervals) {\n    let startTimes = Array(intervals.length);\n    let endTimes = Array(intervals.length);\n\n    for(let [start, end] of intervals) {\n        startTimes.push(start);\n        endTimes.push(end);\n    }\n\n    startTimes.sort((a, b) => a-b);\n    endTimes.sort((a, b) => a-b);\n\n    let startTimeIndex = endTimeIndex = 0;\n    let minMeetingRooms = count = 0; \n\n    while(startTimeIndex < intervals.length) {\n        let startTime = startTimes[startTimeIndex];\n        let endTime = endTimes[endTimeIndex];\n        if(startTime < endTime) {\n            startTimeIndex++;\n            count++;\n        } else {\n            endTimeIndex++;\n            count--;\n        }\n        minMeetingRooms = Math.max(minMeetingRooms, count);\n    }\n    return minMeetingRooms;\n}\n\nlet intervals = [[2, 7], [3, 5], [3, 9], [5, 12], [8, 15], [9, 14]];\nconsole.log(minMeetingRooms1(intervals));",
+      "expectedAnswer": {
+        "en": "//Two pointer TC: O(n logn + n) SC: O(n)\n\nfunction minMeetingRooms1(intervals) {\n    let startTimes = Array(intervals.length);\n    let endTimes = Array(intervals.length);\n\n    for(let [start, end] of intervals) {\n        startTimes.push(start);\n        endTimes.push(end);\n    }\n\n    startTimes.sort((a, b) => a-b);\n    endTimes.sort((a, b) => a-b);\n\n    let startTimeIndex = endTimeIndex = 0;\n    let minMeetingRooms = count = 0; \n\n    while(startTimeIndex < intervals.length) {\n        let startTime = startTimes[startTimeIndex];\n        let endTime = endTimes[endTimeIndex];\n        if(startTime < endTime) {\n            startTimeIndex++;\n            count++;\n        } else {\n            endTimeIndex++;\n            count--;\n        }\n        minMeetingRooms = Math.max(minMeetingRooms, count);\n    }\n    return minMeetingRooms;\n}\n\nlet intervals = [[2, 7], [3, 5], [3, 9], [5, 12], [8, 15], [9, 14]];\nconsole.log(minMeetingRooms1(intervals));",
+        "ru": "//Two pointer TC: O(n logn + n) SC: O(n)\n\nfunction minMeetingRooms1(intervals) {\n    let startTimes = Array(intervals.length);\n    let endTimes = Array(intervals.length);\n\n    for(let [start, end] of intervals) {\n        startTimes.push(start);\n        endTimes.push(end);\n    }\n\n    startTimes.sort((a, b) => a-b);\n    endTimes.sort((a, b) => a-b);\n\n    let startTimeIndex = endTimeIndex = 0;\n    let minMeetingRooms = count = 0; \n\n    while(startTimeIndex < intervals.length) {\n        let startTime = startTimes[startTimeIndex];\n        let endTime = endTimes[endTimeIndex];\n        if(startTime < endTime) {\n            startTimeIndex++;\n            count++;\n        } else {\n            endTimeIndex++;\n            count--;\n        }\n        minMeetingRooms = Math.max(minMeetingRooms, count);\n    }\n    return minMeetingRooms;\n}\n\nlet intervals = [[2, 7], [3, 5], [3, 9], [5, 12], [8, 15], [9, 14]];\nconsole.log(minMeetingRooms1(intervals));"
+      },
+      "explanation": {
+        "en": "**Problem:**\nGiven an array of meeting time intervals consisting of start and end times[[s1,e1],[s2,e2],...](si< ei), find the minimum number of conference rooms required.\n\nRemember that [[1, 4],[4, 7]] will not conflict at 4.\n\n**Examples:**\nInput: intervals = [[2, 7], [3, 5], [3, 9], [5, 12], [8, 15], [9, 14]]\nOutput: 3\nExplanation: \nroom1: [2, 7], [8, 15]\nroom2: [3, 5], [5, 12]\nroom3: [3, 9], [9, 14]\n\nInput: intervals = [[1,5]]\nOutput: 1\nExplanation: \nOnly one meeting room is needed\n\n**Algorithmic Steps**\nThis problem is solved with the help of **two pointers** approach. The algorithmic approach can be summarized as follows:\n\n1. Initialize start and end times of each interval in two array variables `startTimes` and `endTimes`  with the length of interval list.\n\n2. Initialize minimum required meeting rooms in `minMeetingRooms` and a counter variable `count` that increments when a meeting starts and decrements when a meeting ends.\n\n3. Iterate through the list of intervals and fill the start and end times in both array variables(i.e, `startTimes`, `endTimes`).\n\n4. Sort both start and end time arrays in an ascending order for the comparison.\n\n5. Initialize two pointer variables `startIndex` and `endIndex` to keep track of start and end time arrays.\n\n6. Iterate over the list of intervals using start time index value.\n\n7. If the start time is less than the end time, then increment the counter variable along with start index value(i.e,`startIndex`).\n\n8. If the start time is greater than the end time, then decrement the counter variable and increment end index(i.e, `endIndex`).\n\n9. For each iteration, find the maximum of `minMeetingRooms` and `count`. This calculation represents the peak occupancy at any point in time.\n\n10. Repeat steps 6-9 until start index value reaches the last element of interval list.\n\n11. Return `minMeetingRooms` indicating the minimum number of meeting rooms required.\n\n\n**Time and Space complexity:**\nThis algorithm has a time complexity of O(n logn) + O(n) + O(n) ~= O(n), where n is the number of intervals. This is because of traversing the intervals to fill the start and end times. Next, you need to perform sort operation which typically takes a time complexity of O(n log n) for sorting the list. Finally, iteration over the intervals take a time complexity of O(n). So the total time complexity simplifies to O(n log n).\n\nThe space complexity of this algorithm is O(n) due to the usage of two arrays for storing the start and end times.",
+        "ru": "**Проблема:**\nУчитывая массив временных интервалов совещаний, состоящий из времени начала и окончания [[s1,e1],[s2,e2],...](si< ei), найдите минимальное необходимое количество конференц-залов.\n\nПомните, что [[1, 4],[4, 7]] не будет конфликтовать с номером 4.\n\n**Примеры:**\nВвод: интервалы = [[2, 7], [3, 5], [3, 9], [5, 12], [8, 15], [9, 14]]\nВыход: 3\nОбъяснение: \nкомната1: [2, 7], [8, 15]\nкомната2: [3, 5], [5, 12]\nкомната3: [3, 9], [9, 14]\n\nВвод: интервалы = [[1,5]]\nВыход: 1\nОбъяснение: \nНужен только один конференц-зал\n\n**Алгоритмические шаги**\nЭта проблема решается с помощью подхода **двух указателей**. Алгоритмический подход можно резюмировать следующим образом:\n\n1. Инициализируйте время начала и окончания каждого интервала в двух переменных массива `startTimes` и `endTimes` длиной списка интервалов.\n\n2. Инициализируйте минимально необходимые помещения для собраний в `minMeetingRooms` и переменную-счетчик `count`, которая увеличивается при начале собрания и уменьшается при его окончании.\n\n3. Пройдите по списку интервалов и заполните время начала и окончания в обеих переменных массива (т. е. `startTimes`, `endTimes`).\n\n4. Отсортируйте массивы времени начала и окончания в порядке возрастания для сравнения.\n\n5. Инициализируйте две переменные-указатели `startIndex` и `endIndex`, чтобы отслеживать массивы времени начала и окончания.\n\n6. Переберите список интервалов, используя значение индекса времени начала.\n\n7. Если время начала меньше времени окончания, увеличьте переменную счетчика вместе со значением индекса начала (т. е. `startIndex`).\n\n8. Если время начала больше времени окончания, уменьшите переменную счетчика и увеличьте индекс окончания (т. е. `endIndex`).\n\n9. Для каждой итерации найдите максимум `minMeetingRooms` и `count`. Этот расчет представляет собой пиковую заполняемость в любой момент времени.\n\n10. Повторяйте шаги 6–9, пока значение начального индекса не достигнет последнего элемента списка интервалов.\n\n11. Верните `minMeetingRooms`, указав минимальное необходимое количество конференц-залов.\n\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм имеет временную сложность O(n logn) + O(n) + O(n) ~= O(n), где n — количество интервалов. Это связано с пересечением интервалов для заполнения времени начала и окончания. Затем вам необходимо выполнить операцию сортировки, которая обычно требует временной сложности O(n log n) для сортировки списка. Наконец, итерация по интервалам требует временной сложности O(n). Таким образом, общая временная сложность упрощается до O(n log n).\n\nПространственная сложность этого алгоритма составляет O(n) из-за использования двух массивов для хранения времени начала и окончания."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "interval",
+        "dsa-interval",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-interval-interval-006-meeting-rooms-3-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/interval/meetingRooms3/meetingRooms3.js",
+        "documentationPath": "src/javascript/algorithms/interval/meetingRooms3/meetingRooms3.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/6.meetingRooms3/meetingRooms3.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/6.meetingRooms3/meetingRooms3.md"
+      },
+      "topicId": "dsa-interval",
+      "subtopic": "Interval",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Meeting rooms 3",
+        "ru": "Конференц-залы 3"
+      },
+      "prompt": {
+        "en": "Implement `Meeting rooms 3` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Meeting rooms 3`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": null,
+      "expectedAnswer": {
+        "en": "Level: Medium. Pattern/complexity: Greedy algorithm. Hint: Two minheaps + greedy scheduling + simulation.",
+        "ru": "Уровень: Средний. Шаблон/сложность: Жадный алгоритм. Подсказка: две минкучи + жадное планирование + симуляция."
+      },
+      "explanation": {
+        "en": "Level: Medium. Pattern/complexity: Greedy algorithm. Hint: Two minheaps + greedy scheduling + simulation.",
+        "ru": "Уровень: Средний. Шаблон/сложность: Жадный алгоритм. Подсказка: две минкучи + жадное планирование + симуляция."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "interval",
+        "dsa-interval",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-interval-interval-007-max-non-overlapping-segments-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/interval/7.maxNonOverlappingSegments/maxNonOverlappingSegments.js",
+        "documentationPath": "src/javascript/algorithms/interval/7.maxNonOverlappingSegments/maxNonOverlappingSegments.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/7.maxNonOverlappingSegments/maxNonOverlappingSegments.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/interval/7.maxNonOverlappingSegments/maxNonOverlappingSegments.md"
+      },
+      "topicId": "dsa-interval",
+      "subtopic": "Interval",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Max non-overlapping segments",
+        "ru": "Максимальное количество непересекающихся сегментов"
+      },
+      "prompt": {
+        "en": "Implement `Max non-overlapping segments` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Max non-overlapping segments`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "function maxNonOverlappingSegments(startPoints, endPoints) {\n    const length = startPoints.length;\n    if(startPoints.length === 0) return 0;\n\n    const intervals = startPoints.map((startPoint, i) => {\n        return {\n            start: startPoint,\n            end: endPoints[i]\n        }\n    })\n\n    intervals.sort((a, b) => a.end - b.end);\n\n    let selectedCount = 0;\n    let lastSelectedEnd = -Infinity;\n\n    for ( const segment of intervals ) {\n        if(segment.start > lastSelectedEnd){\n            selectedCount++;\n            lastSelectedEnd = segment.end;\n        }\n    }\n\n    return selectedCount;\n}\n\n// Example 1\nconst startPoints1 = [1, 3, 7, 9, 9];\nconst endPoints1   = [5, 6, 8, 9, 10];\nconsole.log(maxNonOverlappingSegments(startPoints1, endPoints1)); // Output: 3\n\n// Example 2\nconst startPoints2 = [1, 2, 3, 4, 5];\nconst endPoints2   = [2, 3, 4, 5, 6];\nconsole.log(maxNonOverlappingSegments(startPoints2, endPoints2)); // Output: 3\n\n// Example 3\nconst startPoints3 = [0, 0, 0];\nconst endPoints3   = [0, 0, 0];\nconsole.log(maxNonOverlappingSegments(startPoints3, endPoints3)); // Output: 1",
+      "expectedAnswer": {
+        "en": "function maxNonOverlappingSegments(startPoints, endPoints) {\n    const length = startPoints.length;\n    if(startPoints.length === 0) return 0;\n\n    const intervals = startPoints.map((startPoint, i) => {\n        return {\n            start: startPoint,\n            end: endPoints[i]\n        }\n    })\n\n    intervals.sort((a, b) => a.end - b.end);\n\n    let selectedCount = 0;\n    let lastSelectedEnd = -Infinity;\n\n    for ( const segment of intervals ) {\n        if(segment.start > lastSelectedEnd){\n            selectedCount++;\n            lastSelectedEnd = segment.end;\n        }\n    }\n\n    return selectedCount;\n}\n\n// Example 1\nconst startPoints1 = [1, 3, 7, 9, 9];\nconst endPoints1   = [5, 6, 8, 9, 10];\nconsole.log(maxNonOverlappingSegments(startPoints1, endPoints1)); // Output: 3\n\n// Example 2\nconst startPoints2 = [1, 2, 3, 4, 5];\nconst endPoints2   = [2, 3, 4, 5, 6];\nconsole.log(maxNonOverlappingSegments(startPoints2, endPoints2)); // Output: 3\n\n// Example 3\nconst startPoints3 = [0, 0, 0];\nconst endPoints3   = [0, 0, 0];\nconsole.log(maxNonOverlappingSegments(startPoints3, endPoints3)); // Output: 1",
+        "ru": "function maxNonOverlappingSegments(startPoints, endPoints) {\n    const length = startPoints.length;\n    if(startPoints.length === 0) return 0;\n\n    const intervals = startPoints.map((startPoint, i) => {\n        return {\n            start: startPoint,\n            end: endPoints[i]\n        }\n    })\n\n    intervals.sort((a, b) => a.end - b.end);\n\n    let selectedCount = 0;\n    let lastSelectedEnd = -Infinity;\n\n    for ( const segment of intervals ) {\n        if(segment.start > lastSelectedEnd){\n            selectedCount++;\n            lastSelectedEnd = segment.end;\n        }\n    }\n\n    return selectedCount;\n}\n\n// Example 1\nconst startPoints1 = [1, 3, 7, 9, 9];\nconst endPoints1   = [5, 6, 8, 9, 10];\nconsole.log(maxNonOverlappingSegments(startPoints1, endPoints1)); // Output: 3\n\n// Example 2\nconst startPoints2 = [1, 2, 3, 4, 5];\nconst endPoints2   = [2, 3, 4, 5, 6];\nconsole.log(maxNonOverlappingSegments(startPoints2, endPoints2)); // Output: 3\n\n// Example 3\nconst startPoints3 = [0, 0, 0];\nconst endPoints3   = [0, 0, 0];\nconsole.log(maxNonOverlappingSegments(startPoints3, endPoints3)); // Output: 1"
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven two arrays A and B representing N segments [A[K], B[K]], find the maximal number of non-overlapping segments.\n\n### Examples\nExample 1:\n\nInput: A = [1, 3, 7, 9, 9], B = [5, 6, 8, 9, 10]\nOutput: 3\n\n**Algorithmic Steps**\nThis problem is solved using a greedy approach:\n\n1. Initialize a variable to track the end of the last added segment.\n2. Iterate through the segments:\n   - If the start of the current segment is after the end of the last added segment, add it to the count and update the end.\n3. Return the count of non-overlapping segments.\n\n**Time and Space complexity:**\n- Time complexity: `O(n)`, where `n` is the number of segments.\n- Space complexity: `O(1)`.",
+        "ru": "**Описание:**\nДаны два массива A и B, представляющие N сегментов [A[K], B[K]], найдите максимальное количество непересекающихся сегментов.\n\n### Примеры\nПример 1:\n\nВвод: A = [1, 3, 7, 9, 9], B = [5, 6, 8, 9, 10]\nВыход: 3\n\n**Алгоритмические шаги**\nЭта проблема решается жадным подходом:\n\n1. Инициализируйте переменную для отслеживания конца последнего добавленного сегмента.\n2. Перебрать сегменты:\n   - Если начало текущего сегмента находится после окончания последнего добавленного сегмента, добавьте его к счетчику и обновите конец.\n3. Вернуть количество непересекающихся сегментов.\n\n**Сложность во времени и пространстве:**\n- Временная сложность: `O(n)`, где `n` — количество сегментов.\n- Космическая сложность: `O(1)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "interval",
+        "dsa-interval",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    }
+  ]
+}

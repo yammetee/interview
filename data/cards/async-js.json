@@ -1,0 +1,1255 @@
+{
+  "topic": {
+    "id": "async-js",
+    "title": {
+      "en": "Event Loop, Promise, async/await"
+    }
+  },
+  "cards": [
+    {
+      "id": "sudheerj-q-052-what-is-a-promise",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 52
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What is a promise",
+        "ru": "Что такое Promise?"
+      },
+      "answer": {
+        "en": "A Promise is a JavaScript object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. It acts as a placeholder for a value that may not be available yet but will be resolved in the future.\nA Promise can be in one of three states:\n- pending: Initial state, neither fulfilled nor rejected.\n- fulfilled: The operation completed successfully.\n- rejected: The operation failed (e.g., due to a network error).\nPromise Syntax\n\nExample: Creating and Using a Promise\n\nIn the above example:\n A Promise is created to handle an asynchronous operation with resolve and reject callbacks.\n The setTimeout resolves the promise with a value after 5 seconds.\n- .then(), .catch(), and .finally() are used to handle success, errors, and cleanup respectively.\nThe action flow of a promise will be as below,",
+        "ru": "Promise — это объект JavaScript, который представляет возможное завершение (или сбой) асинхронной операции и ее результирующее значение. Он действует как заполнитель для значения, которое может быть еще недоступно, но будет разрешено в будущем.\nPromise может находиться в одном из трех состояний:\n- в ожидании: исходное состояние, ни выполнено, ни отклонено.\n- выполнено: операция завершена успешно.\n- отклонено: операция не удалась (например, из-за сетевой ошибки).\nСинтаксис Promise\n\nПример: создание и использование Promise\n\nВ приведенном выше примере:\n Promise создается для обработки асинхронной операции с callback разрешения и отклонения.\n setTimeout разрешает Promise со значением через 5 секунд.\n- .then(), .catch() и .finally() используются для обработки успеха, ошибок и очистки соответственно.\nПоследовательность действий Promise будет такой, как показано ниже:"
+      },
+      "explanation": {
+        "en": "A **Promise** is a JavaScript object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. It acts as a placeholder for a value that may not be available yet but will be resolved in the future.\n\n    A Promise can be in one of **three states**:\n    - `pending`: Initial state, neither fulfilled nor rejected.\n    - `fulfilled`: The operation completed successfully.\n    - `rejected`: The operation failed (e.g., due to a network error).\n\n\n    #### Promise Syntax\n\n    ```javascript\n    const promise = new Promise(function (resolve, reject) {\n      // Perform async operation\n    });\n    ```\n    #### Example: Creating and Using a Promise\n    ```javascript\n    const promise = new Promise((resolve, reject) => {\n      setTimeout(() => {\n        resolve(\"I'm a Promise!\");\n      }, 5000);\n    });\n\n    promise\n      .then((value) => console.log(value)) // Logs after 5 seconds: \"I'm a Promise!\"\n      .catch((error) => console.error(error))  // Handles any rejection\n      .finally(() => console.log(\"Done\"));     // Runs regardless of success or failure\n    ```\n    In the above example:\n\n    *   A `Promise` is created to handle an asynchronous operation with `resolve` and `reject` callbacks.\n    *   The `setTimeout` resolves the promise with a value after 5 seconds.\n    *   `.then()`, `.catch()`, and `.finally()` are used to handle success, errors, and cleanup respectively.\n\n    The action flow of a promise will be as below,\n\n    ![Screenshot](images/promises.png)",
+        "ru": "A **Promise** is a JavaScript object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. It acts as a placeholder for a value that may not be available yet but will be resolved in the future.\n\n    A Promise can be in one of **three states**:\n    - `pending`: Initial state, neither fulfilled nor rejected.\n    - `fulfilled`: The operation completed successfully.\n    - `rejected`: The operation failed (e.g., due to a network error).\n\n\n    #### Promise Syntax\n\n    ```JavaScript\n    const promise = new Promise(function (resolve, reject) {\n      // Perform async operation\n    });\n    ```\n    #### Example: Creating and Using a Promise\n    ```JavaScript\n    const promise = new Promise((resolve, reject) => {\n      setTimeout(() => {\n        resolve(\"I'm a Promise!\");\n      }, 5000);\n    });\n\n    promise\n      .then((value) => console.log(value)) // Logs after 5 seconds: \"I'm a Promise!\"\n      .catch((error) => console.error(error))  // Handles any rejection\n      .finally(() => console.log(\"Done\"));     // Runs regardless of success or failure\n    ```\n    In the above example:\n\n    *   A `Promise` is created to handle an asynchronous operation with `resolve` and `reject` callbacks.\n    *   The `setTimeout` resolves the promise with a value after 5 seconds.\n    *   `.then()`, `.catch()`, and `.finally()` are used to handle success, errors, and cleanup respectively.\n\n    The action flow of a promise will be as below,\n\n    ![Screenshot](images/promises.png)"
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "ru-translation-review"
+        ]
+      },
+      "explanationContent": [
+        {
+          "type": "text",
+          "text": {
+            "en": "A Promise is a JavaScript object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. It acts as a placeholder for a value that may not be available yet but will be resolved in the future.\nA Promise can be in one of three states:\n- `pending`: Initial state, neither fulfilled nor rejected.\n- `fulfilled`: The operation completed successfully.\n- `rejected`: The operation failed (e.g., due to a network error).\nPromise Syntax",
+            "ru": "Promise — это объект JavaScript, который представляет возможное завершение (или сбой) асинхронной операции и ее результирующее значение. Он действует как заполнитель для значения, которое может быть еще недоступно, но будет разрешено в будущем.\nPromise может находиться в одном из трех состояний:\n- `pending`: исходное состояние, ни выполнено, ни отклонено.\n- `fulfilled`: операция завершена успешно.\n- `rejected`: операция не удалась (например, из-за сетевой ошибки).\nСинтаксис Promise"
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "const promise = new Promise(function (resolve, reject) {\n  // Perform async operation\n});"
+          }
+        },
+        {
+          "type": "text",
+          "text": {
+            "en": "Example: Creating and Using a Promise",
+            "ru": "Пример: создание и использование Promise"
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "const promise = new Promise((resolve, reject) => {\n  setTimeout(() => {\n    resolve(\"I'm a Promise!\");\n  }, 5000);\n});\n\npromise\n  .then((value) => console.log(value)) // Logs after 5 seconds: \"I'm a Promise!\"\n  .catch((error) => console.error(error))  // Handles any rejection\n  .finally(() => console.log(\"Done\"));     // Runs regardless of success or failure"
+          }
+        },
+        {
+          "type": "text",
+          "text": {
+            "en": "In the above example:\n*   A `Promise` is created to handle an asynchronous operation with `resolve` and `reject` callbacks.\n*   The `setTimeout` resolves the promise with a value after 5 seconds.\n*   `.then()`, `.catch()`, and `.finally()` are used to handle success, errors, and cleanup respectively.\nThe action flow of a promise will be as below,",
+            "ru": "В приведенном выше примере:\n* `Promise` создается для обработки асинхронной операции с callback `resolve` и `reject`.\n* `setTimeout` разрешает Promise со значением через 5 секунд.\n* `.then()`, `.catch()` и `.finally()` используются для обработки успеха, ошибок и очистки соответственно.\nПоследовательность действий Promise будет такой, как показано ниже:"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sudheerj-q-053-why-do-you-need-a-promise",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 53
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "Why do you need a promise",
+        "ru": "Зачем нужен Promise?"
+      },
+      "answer": {
+        "en": "Promises are used to handle asynchronous operations , especially in languages like JavaScript, which often work with non-blocking operations such as network requests, file I/O, and timers. When an operation is asynchronous, it doesn't immediately return a result; instead, it works in the background and provides the result later. Handling this in a clean, organized way can be difficult without a structured approach. Promises are used to: 1. Handle asynchronous operations . 2. Provide a cleaner alternative to callbacks . 3. Avoid callback hell . 4. Make code more readable and maintainable .",
+        "ru": "Promise используются для обработки асинхронных операций, особенно в таких языках, как JavaScript, которые часто работают с неблокирующими операциями, такими как сетевые запросы, файловый ввод-вывод и таймеры. When an operation is asynchronous, it doesn't immediately return a result; вместо этого он работает в фоновом режиме и предоставляет результат позже. Без структурированного подхода решить эту проблему четко и организованно может быть сложно. Promise используются для: 1. Обработки асинхронных операций. 2. Предоставьте более чистую альтернативу callback. 3. Избегайте ада callback. 4. Сделайте код более читабельным и удобным в сопровождении."
+      },
+      "explanation": {
+        "en": "Promises are **used to handle asynchronous operations**, especially in languages like JavaScript, which often work with non-blocking operations such as network requests, file I/O, and timers. When an operation is asynchronous, it doesn't immediately return a result; instead, it works in the background and provides the result later. Handling this in a clean, organized way can be difficult without a structured approach.\n\n    Promises are used to:\n\n    1.  **Handle asynchronous operations**.\n    2.  **Provide a cleaner alternative to callbacks**.\n    3.  **Avoid callback hell**.\n    4.  **Make code more readable and maintainable**.",
+        "ru": "Promise **используются для обработки асинхронных операций**, особенно в таких языках, как JavaScript, которые часто работают с неблокирующими операциями, такими как сетевые запросы, файловый ввод-вывод и таймеры. Когда операция является асинхронной, она не возвращает результат немедленно; вместо этого он работает в фоновом режиме и предоставляет результат позже. Без структурированного подхода решить эту проблему четко и организованно может быть сложно.\n\n    Promise используются для:\n\n    1. **Обработка асинхронных операций**.\n    2. **Предоставьте более чистую альтернативу callback**.\n    3. **Избегайте ада callback**.\n    4. **Сделайте код более читабельным и удобным в обслуживании**."
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-q-062-what-are-the-main-rules-of-promise",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 62
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What are the main rules of promise",
+        "ru": "Какие основные правила работы с Promise?"
+      },
+      "answer": {
+        "en": "A promise must follow a specific set of rules: 1. A promise is an object that supplies a standard-compliant .then() method 2. A pending promise may transition into either fulfilled or rejected state 3. A fulfilled or rejected promise is settled and it must not transition into any other state. 4. Once a promise is settled, the value must not change.",
+        "ru": "Promise должен следовать определенному набору правил: 1. Promise — это объект, который предоставляет соответствующий стандарту метод .then(). 2. Ожидающее Promise может перейти в состояние выполненное или отклоненное. 3. Выполненное или отклоненное Promise является фиксированным и не должно переходить в какое-либо другое состояние. 4. После того, как Promise выполнено, его стоимость не должна меняться."
+      },
+      "explanation": {
+        "en": "A promise must follow a specific set of rules:\n\n    1. A promise is an object that supplies a standard-compliant `.then()` method\n    2. A pending promise may transition into either fulfilled or rejected state\n    3. A fulfilled or rejected promise is settled and it must not transition into any other state.\n    4. Once a promise is settled, the value must not change.",
+        "ru": "Promise должно соответствовать определенному набору правил:\n\n    1. Promise — это объект, предоставляющий соответствующий стандарту метод `.then()`.\n    2. Ожидающее Promise может перейти в состояние «выполнено» или «отклонено».\n    3. Выполненное или отклоненное Promise является урегулированным и не должно переходить в какое-либо другое состояние.\n    4. После того, как Promise выполнено, его стоимость не должна меняться."
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-q-064-what-is-promise-chaining",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 64
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What is promise chaining",
+        "ru": "Что такое цепочка Promise?"
+      },
+      "answer": {
+        "en": "The process of executing a sequence of asynchronous tasks one after another using promises is known as Promise chaining. Let's take an example of promise chaining for calculating the final result, In the above handlers, the result is passed to the chain of .then() handlers with the below work flow, 1. The initial promise resolves in 1 second, 2. After that .then handler is called by logging the result(1) and then return a promise with the value of result \\ 2. 3. After that the value passed to the next .then handler by logging the result(2) and return a promise with result \\ 3. 4. Finally the value passed to the last .then handler by logging the result(6) and return a promise with result \\ 4.",
+        "ru": "Процесс выполнения последовательности асинхронных задач одна за другой с использованием Promise известен как цепочка Promise. Давайте возьмем пример цепочки Promise для расчета окончательного результата. В приведенных выше обработчиках результат передается в цепочку обработчиков .then() с приведенным ниже рабочим процессом: 1. Первоначальное Promise разрешается за 1 секунду, 2. После этого вызывается обработчик .then путем регистрации результата (1), а затем возвращается Promise со значением результата \\ 2. 3. После этого значение передается следующему обработчику .then путем регистрации результата (2) и вернуть Promise с результатом \\ 3. 4. Наконец, значение передается последнему обработчику .then путем регистрации результата (6) и возврата Promise с результатом \\ 4."
+      },
+      "explanation": {
+        "en": "The process of executing a sequence of asynchronous tasks one after another using promises is known as Promise chaining. Let's take an example of promise chaining for calculating the final result,\n\n    ```javascript\n    new Promise(function (resolve, reject) {\n      setTimeout(() => resolve(1), 1000);\n    })\n      .then(function (result) {\n        console.log(result); // 1\n        return result * 2;\n      })\n      .then(function (result) {\n        console.log(result); // 2\n        return result * 3;\n      })\n      .then(function (result) {\n        console.log(result); // 6\n        return result * 4;\n      });\n    ```\n\n    In the above handlers, the result is passed to the chain of .then() handlers with the below work flow,\n\n    1. The initial promise resolves in 1 second,\n    2. After that `.then` handler is called by logging the result(1) and then return a promise with the value of result \\* 2.\n    3. After that the value passed to the next `.then` handler by logging the result(2) and return a promise with result \\* 3.\n    4. Finally the value passed to the last `.then` handler by logging the result(6) and return a promise with result \\* 4.",
+        "ru": "The process of executing a sequence of asynchronous tasks one after another using promises is known as Promise chaining. Let's take an example of promise chaining for calculating the final result,\n\n    ```JavaScript\n    new Promise(function (resolve, reject) {\n      setTimeout(() => resolve(1), 1000);\n    })\n      .then(function (result) {\n        console.log(result); // 1\n        return result * 2;\n      })\n      .then(function (result) {\n        console.log(result); // 2\n        return result * 3;\n      })\n      .then(function (result) {\n        console.log(result); // 6\n        return result * 4;\n      });\n    ```\n\n    In the above handlers, the result is passed to the chain of .then() handlers with the below work flow,\n\n    1. The initial promise resolves in 1 second,\n    2. After that `.then` handler is called by logging the result(1) and then return a promise with the value of result \\* 2.\n    3. After that the value passed to the next `.then` handler by logging the result(2) and return a promise with result \\* 3.\n    4. Finally the value passed to the last `.then` handler by logging the result(6) and return a promise with result \\* 4."
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "ru-translation-review"
+        ]
+      },
+      "explanationContent": [
+        {
+          "type": "text",
+          "text": {
+            "en": "The process of executing a sequence of asynchronous tasks one after another using promises is known as Promise chaining. Let's take an example of promise chaining for calculating the final result,"
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "new Promise(function (resolve, reject) {\n  setTimeout(() => resolve(1), 1000);\n})\n  .then(function (result) {\n    console.log(result); // 1\n    return result * 2;\n  })\n  .then(function (result) {\n    console.log(result); // 2\n    return result * 3;\n  })\n  .then(function (result) {\n    console.log(result); // 6\n    return result * 4;\n  });"
+          }
+        },
+        {
+          "type": "text",
+          "text": {
+            "en": "In the above handlers, the result is passed to the chain of .then() handlers with the below work flow,\n1. The initial promise resolves in 1 second,\n2. After that `.then` handler is called by logging the result(1) and then return a promise with the value of result \\* 2.\n3. After that the value passed to the next `.then` handler by logging the result(2) and return a promise with result \\* 3.\n4. Finally the value passed to the last `.then` handler by logging the result(6) and return a promise with result \\* 4."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sudheerj-q-065-what-is-promise-all",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 65
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What is promise.all",
+        "ru": "Что такое Promise.all()?"
+      },
+      "answer": {
+        "en": "Promise.all is a promise that takes an array of promises as an input (an iterable), and it gets resolved when all the promises get resolved or any one of them gets rejected. For example, the syntax of promise.all method is below, Note: Remember that the order of the promises(output the result) is maintained as per input order.",
+        "ru": "Promise.all — это Promise, который принимает массив Promise в качестве входных данных (итерируемый объект) и выполняется, когда все Promise решены или какой-либо из них отклонен. Например, синтаксис метода Promise.all приведен ниже. Примечание. Помните, что порядок Promise (вывод результата) сохраняется в соответствии с порядком ввода."
+      },
+      "explanation": {
+        "en": "Promise.all is a promise that takes an array of promises as an input (an iterable), and it gets resolved when all the promises get resolved or any one of them gets rejected. For example, the syntax of promise.all method is below,\n\n    ```javascript\n    Promise.all([Promise1, Promise2, Promise3]) .then(result) => {   console.log(result) }) .catch(error => console.log(`Error in promises ${error}`))\n    ```\n\n    **Note:** Remember that the order of the promises(output the result) is maintained as per input order.",
+        "ru": "Promise.all — это Promise, который принимает массив Promise в качестве входных данных (итерируемый объект) и выполняется, когда все Promise решены или какой-либо из них отклонен. Например, синтаксис метода Promise.all приведен ниже:\n\n    ```JavaScript\n    Promise.all([Promise1, Promise2, Promise3]) .then(result) => {   console.log(result) }) .catch(error => console.log(`Error in promises ${error}`))\n    ```\n\n    **Примечание.** Помните, что порядок Promise (вывод результата) сохраняется в соответствии с порядком ввода."
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "ru-translation-review"
+        ]
+      },
+      "explanationContent": [
+        {
+          "type": "text",
+          "text": {
+            "en": "Promise.all is a promise that takes an array of promises as an input (an iterable), and it gets resolved when all the promises get resolved or any one of them gets rejected. For example, the syntax of promise.all method is below,",
+            "ru": "Promise.all — это Promise, который принимает массив Promise в качестве входных данных (итерируемый объект) и выполняется, когда все Promise решены или какой-либо из них отклонен. Например, синтаксис метода Promise.all приведен ниже:"
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "Promise.all([Promise1, Promise2, Promise3]) .then(result) => {   console.log(result) }) .catch(error => console.log(`Error in promises ${error}`))"
+          }
+        },
+        {
+          "type": "text",
+          "text": {
+            "en": "Note: Remember that the order of the promises(output the result) is maintained as per input order.",
+            "ru": "Примечание. Помните, что порядок Promise (вывод результата) сохраняется в соответствии с порядком ввода."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sudheerj-q-094-what-are-the-pros-and-cons-of-promises-over-callbacks",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 94
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What are the pros and cons of promises over callbacks",
+        "ru": "Какие плюсы и минусы у Promise по сравнению с callback-функциями?"
+      },
+      "answer": {
+        "en": "Below are the list of pros and cons of promises over callbacks, Pros: 1. It avoids callback hell which is unreadable 2. Easy to write sequential asynchronous code with .then() 3. Easy to write parallel asynchronous code with Promise.all() 4. Solves some of the common problems of callbacks(call the callback too late, too early, many times and swallow errors/exceptions) Cons: 5. It makes little complex code 6. You need to load a polyfill if ES6 is not supported",
+        "ru": "Ниже приведен список плюсов и минусов Promise перед callback. Плюсы: 1. Это позволяет избежать ада callback, который нечитабелен. 2. Легко писать последовательный асинхронный код с помощью .then(). 3. Легко писать параллельный асинхронный код с помощью Promise.all(). 4. Решает некоторые распространенные проблемы callback (вызов callback слишком поздно, слишком рано, много раз и проглатывание ошибок/исключений). Минусы: 5. Это делает код немного сложным. 6. Вам необходимо загрузить полифилл, если ES6 не поддерживается."
+      },
+      "explanation": {
+        "en": "Below are the list of pros and cons of promises over callbacks,\n\n    **Pros:**\n\n    1. It avoids callback hell which is unreadable\n    2. Easy to write sequential asynchronous code with .then()\n    3. Easy to write parallel asynchronous code with Promise.all()\n    4. Solves some of the common problems of callbacks(call the callback too late, too early, many times and swallow errors/exceptions)\n\n    **Cons:**\n\n    5. It makes little complex code\n    6. You need to load a polyfill if ES6 is not supported",
+        "ru": "Ниже приведен список плюсов и минусов Promise вместо callback.\n\n    **Плюсы:**\n\n    1. Это позволяет избежать ада callback, который не читается\n    2. Легко писать последовательный асинхронный код с помощью .then().\n    3. Легко писать параллельный асинхронный код с помощью Promise.all().\n    4. Решает некоторые распространенные проблемы callback (вызов callback слишком поздно, слишком рано, много раз и проглатывает ошибки/исключения).\n\n    **Минусы:**\n\n    5. Создается небольшой сложный код\n    6. Вам необходимо загрузить полифилл, если ES6 не поддерживается."
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-q-232-what-is-nodejs",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 232
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What is nodejs",
+        "ru": "Что такое Node.js?"
+      },
+      "answer": {
+        "en": "Node.js is a server-side platform built on Chrome's JavaScript runtime for easily building fast and scalable network applications. It is an event-based, non-blocking, asynchronous I/O runtime that uses Google's V8 JavaScript engine and libuv library.",
+        "ru": "Node.js — это серверная платформа, созданная на основе среды выполнения JavaScript Chrome, позволяющая легко создавать быстрые и масштабируемые сетевые приложения. Это основанная на событиях неблокирующая асинхронная среда выполнения ввода-вывода, использующая движок JavaScript V8 от Google и библиотеку libuv."
+      },
+      "explanation": {
+        "en": "Node.js is JavaScript running outside the browser with APIs for networking, files, streams, and processes. Its non-blocking I/O model makes it a strong fit for servers that handle many concurrent connections.",
+        "ru": ""
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ]
+    },
+    {
+      "id": "sudheerj-q-237-what-is-the-event-loop",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 237
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What is the event loop",
+        "ru": "Что такое event loop?"
+      },
+      "answer": {
+        "en": "The event loop is a process that continuously monitors both the call stack and the event queue and checks whether or not the call stack is empty. If the call stack is empty and there are pending events in the event queue, the event loop dequeues the event from the event queue and pushes it to the call stack. The call stack executes the event, and any additional events generated during the execution are added to the end of the event queue.\n\n Note: The event loop allows Node.js to perform non-blocking I/O operations, even though JavaScript is single-threaded, by offloading operations to the system kernel whenever possible. Since most modern kernels are multi-threaded, they can handle multiple operations executing in the background.",
+        "ru": "event loop — это процесс, который постоянно отслеживает как стек вызовов, так и event queue, а также проверяет, пуст ли стек вызовов. Если стек вызовов пуст и в event queue есть ожидающие события, event loop удаляет событие из event queue и помещает его в стек вызовов. Стек вызовов выполняет событие, и любые дополнительные события, сгенерированные во время выполнения, добавляются в конец event queue.\n\n Примечание. event loop позволяет Node.js выполнять неблокирующие операции ввода-вывода, даже если JavaScript является однопоточным, по возможности перекладывая операции на ядро ​​системы. Поскольку большинство современных ядер являются многопоточными, они могут обрабатывать несколько операций, выполняемых в фоновом режиме."
+      },
+      "explanation": {
+        "en": "The event loop is a process that continuously monitors both the call stack and the event queue and checks whether or not the call stack is empty. If the call stack is empty and there are pending events in the event queue, the event loop dequeues the event from the event queue and pushes it to the call stack. The call stack executes the event, and any additional events generated during the execution are added to the end of the event queue.\n\n      **Note:** The event loop allows Node.js to perform non-blocking I/O operations, even though JavaScript is single-threaded, by offloading operations to the system kernel whenever possible. Since most modern kernels are multi-threaded, they can handle multiple operations executing in the background.",
+        "ru": "event loop — это процесс, который постоянно отслеживает как стек вызовов, так и event queue, а также проверяет, пуст ли стек вызовов. Если стек вызовов пуст и в event queue есть ожидающие события, event loop удаляет событие из event queue и помещает его в стек вызовов. Стек вызовов выполняет событие, и любые дополнительные события, сгенерированные во время выполнения, добавляются в конец event queue.\n\n      **Примечание.** event loop позволяет Node.js выполнять неблокирующие операции ввода-вывода, даже если JavaScript является однопоточным, по возможности перекладывая операции на ядро ​​системы. Поскольку большинство современных ядер являются многопоточными, они могут обрабатывать несколько операций, выполняемых в фоновом режиме."
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-q-239-what-is-the-event-queue",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 239
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What is the event queue",
+        "ru": "Что такое event queue?"
+      },
+      "answer": {
+        "en": "The event queue follows the queue data structure. It stores async callbacks to be added to the call stack. It is also known as the Callback Queue or Macrotask Queue. Whenever the call stack receives an async function, it is moved into the Web API. Based on the function, Web API executes it and awaits the result. Once it is finished, it moves the callback into the event queue (the callback of a promise is moved into the microtask queue). The event loop constantly checks whether or not the call stack is empty. Once the call stack is empty and there is a callback in the event queue, the event loop moves the callback into the call stack. But if there is a callback in the microtask queue as well, it is moved first. The microtask queue has a higher priority than the event queue.",
+        "ru": "event queue соответствует структуре данных очереди. Он хранит асинхронные callback для добавления в стек вызовов. Она также известна как очередь callback или очередь макрозадач.\n\n Всякий раз, когда стек вызовов получает асинхронную функцию, она перемещается в веб-API. На основе функции веб-API выполняет ее и ожидает результата. По завершении callback перемещается в event queue (callback Promise перемещается в microtask queue).\n\n event loop постоянно проверяет, пуст ли стек вызовов. Когда стек вызовов пуст и в event queue есть callback, event loop перемещает callback в стек вызовов. Но если в microtask queue также есть callback, он перемещается первым. microtask queue имеет более высокий приоритет, чем event queue."
+      },
+      "explanation": {
+        "en": "well, it is moved first. The microtask queue has a higher priority than the event queue.",
+        "ru": "event queue соответствует структуре данных очереди. Он хранит асинхронные callback для добавления в стек вызовов. Она также известна как очередь callback или очередь макрозадач.\n\n      Всякий раз, когда стек вызовов получает асинхронную функцию, она перемещается в веб-API. На основе функции веб-API выполняет ее и ожидает результата. По завершении callback перемещается в event queue (callback Promise перемещается в microtask queue).\n\n      event loop постоянно проверяет, пуст ли стек вызовов. Когда стек вызовов пуст и в event queue есть callback, event loop перемещает callback в стек вызовов. Но если в microtask queue также есть callback, он перемещается первым. microtask queue имеет более высокий приоритет, чем event queue."
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-q-319-what-are-dynamic-imports",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 319
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What are dynamic imports",
+        "ru": "Что такое динамические импорты?"
+      },
+      "answer": {
+        "en": "The dynamic imports using import() function syntax allows us to load modules on demand by using promises or the async/await syntax. Currently this feature is in stage4 proposal. The main advantage of dynamic imports is reduction of our bundle's sizes, the size/payload response of our requests and overall improvements in the user experience. The syntax of dynamic imports would be as below,",
+        "ru": "Динамический импорт с использованием синтаксиса функции import() позволяет нам загружать модули по требованию, используя Promise или синтаксис async/await. В настоящее время эта функция находится в стадии предложения 4. Основным преимуществом динамического импорта является reduce размеров нашего пакета, ответа на размер/полезную нагрузку наших запросов и общее улучшение пользовательского опыта. Синтаксис динамического импорта будет выглядеть следующим образом:"
+      },
+      "explanation": {
+        "en": "The dynamic imports using `import()` function syntax allows us to load modules on demand by using promises or the async/await syntax. Currently this feature is in [stage4 proposal](https://github.com/tc39/proposal-dynamic-import). The main advantage of dynamic imports is reduction of our bundle's sizes, the size/payload response of our requests and overall improvements in the user experience.\n      The syntax of dynamic imports would be as below,\n\n      ```javascript\n      import(\"./Module\").then((Module) => Module.method());\n      ```",
+        "ru": "The dynamic imports using `import()` function syntax allows us to load modules on demand by using promises or the async/await syntax. Currently this feature is in [stage4 proposal](https://github.com/tc39/proposal-dynamic-import). The main advantage of dynamic imports is reduction of our bundle's sizes, the size/payload response of our requests and overall improvements in the user experience.\n      The syntax of dynamic imports would be as below,\n\n      ```JavaScript\n      import(\"./Module\").then((Module) => Module.method());\n      ```"
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "ru-translation-review"
+        ]
+      },
+      "explanationContent": [
+        {
+          "type": "text",
+          "text": {
+            "en": "The dynamic imports using `import()` function syntax allows us to load modules on demand by using promises or the async/await syntax. Currently this feature is in [stage4 proposal](https://github.com/tc39/proposal-dynamic-import). The main advantage of dynamic imports is reduction of our bundle's sizes, the size/payload response of our requests and overall improvements in the user experience.\nThe syntax of dynamic imports would be as below,"
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "import(\"./Module\").then((Module) => Module.method());"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sudheerj-q-385-what-are-the-different-ways-to-deal-with-asynchronous-code",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 385
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What are the different ways to deal with Asynchronous Code",
+        "ru": "Какими способами можно работать с асинхронным кодом?"
+      },
+      "answer": {
+        "en": "Below are the list of different ways to deal with Asynchronous code. 1. Callbacks 2. Promises 3. Async/await 4. Third-party libraries such as async.js,bluebird etc",
+        "ru": "Ниже приведен список различных способов работы с асинхронным кодом. 1. callback 2. Promise 3. Async/await 4. Сторонние библиотеки, такие как async.js, bluebird и т. д."
+      },
+      "explanation": {
+        "en": "These approaches represent different levels of abstraction over async work. Callbacks are the lowest-level pattern, promises model a future value, and `async/await` makes promise-based code read more like synchronous control flow.",
+        "ru": "Ниже приведен список различных способов работы с асинхронным кодом.\n\n     1. callback\n     2. Promise\n     3. Асинхронность/ожидание\n     4. Сторонние библиотеки, такие как async.js, bluebird и т. д."
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-q-390-what-are-tasks-in-event-loop",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 390
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What are tasks in event loop",
+        "ru": "Что такое задачи в event loop?"
+      },
+      "answer": {
+        "en": "A task is any javascript code/program which is scheduled to be run by the standard mechanisms such as initially starting to run a program, run an event callback, or an interval or timeout being fired. All these tasks are scheduled on a task queue. Below are the list of use cases to add tasks to the task queue, 1. When a new javascript program is executed directly from console or running by the <script element, the task will be added to the task queue. 2. When an event fires, the event callback added to task queue 3. When a setTimeout or setInterval is reached, the corresponding callback added to task queue",
+        "ru": "Задача — это любой код/программа JavaScript, запуск которого запланирован с помощью стандартных механизмов, таких как первоначальный запуск программы, запуск callback события или запуск интервала или тайм-аута. Все эти задачи планируются в очереди задач. Ниже приведен список вариантов использования для добавления задач в очередь задач: 1. Когда новая программа JavaScript запускается непосредственно из консоли или запускается с помощью элемента <script, задача будет добавлена ​​в очередь задач. 2. При возникновении события callback события добавляется в очередь задач. 3. При достижении значений setTimeout или setInterval соответствующий callback добавляется в очередь задач."
+      },
+      "explanation": {
+        "en": "A task is any javascript code/program which is scheduled to be run by the standard mechanisms such as initially starting to run a program, run an event callback, or an interval or timeout being fired. All these tasks are scheduled on a task queue.\n     Below are the list of use cases to add tasks to the task queue,\n\n     1. When a new javascript program is executed directly from console or running by the `<script>` element, the task will be added to the task queue.\n     2. When an event fires, the event callback added to task queue\n     3. When a setTimeout or setInterval is reached, the corresponding callback added to task queue",
+        "ru": "Задача — это любой код/программа JavaScript, запуск которого запланирован с помощью стандартных механизмов, таких как первоначальный запуск программы, запуск callback события или запуск интервала или тайм-аута. Все эти задачи планируются в очереди задач.\n     Ниже приведен список вариантов использования для добавления задач в очередь задач.\n\n     1. Когда новая программа JavaScript запускается непосредственно из консоли или с помощью элемента `<script>`, задача будет добавлена в очередь задач.\n     2. При возникновении события callback события добавляется в очередь задач.\n     3. При достижении setTimeout или setInterval соответствующий callback добавляется в очередь задач."
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-q-391-what-is-microtask",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 391
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What is microtask",
+        "ru": "Что такое microtask?"
+      },
+      "answer": {
+        "en": "A microtask is a type of JavaScript callback that is scheduled to run immediately after the currently executing script and before the next event loop tick. Microtasks are executed after the current task completes and before any new tasks (macrotasks) are run. This ensures a fast and predictable update cycle.\nCommon sources of microtasks stored in the microtask queue include:\n1. Promises:\nWhen a Promise is resolved or rejected, its .then(), .catch(), and .finally() callbacks are placed in the microtask queue.\n\n2. queueMicrotask():\nA method that explicitly schedules a function to be run in the microtask queue.\n\n3. MutationObserver callbacks:\nObservers changes in the DOM and triggers a callback as a microtask.\n\n4. await:\nAwait internally uses Promises, so the code after await is scheduled as a microtask.\n\nNote: All of these microtasks are processed in the same turn of the event loop.",
+        "ru": "microtask — это тип callback JavaScript, запуск которого запланирован сразу после текущего сценария и перед следующим тиковым циклом событий. microtask выполняются после завершения текущей задачи и до запуска новых задач (макрозадач). Это обеспечивает быстрый и предсказуемый цикл обновления.\nОбщие источники microtask, хранящихся в microtask queue, включают:\n1. Promise:\nКогда Promise разрешено или отклонено, его callback .then(), .catch() и .finally() помещаются в microtask queue.\n\n2. queueMicrotask():\nМетод, который явно планирует запуск функции в microtask queue.\n\n3. callback MutationObserver:\nНаблюдатели изменяют DOM и запускают callback как microtask.\n\n4. ожидайте:\nAwait внутренне использует Promises, поэтому код после await запланирован как microtask.\n\nПримечание. Все эти microtask обрабатываются в одном и том же цикле событий."
+      },
+      "explanation": {
+        "en": "A microtask is a type of JavaScript callback that is scheduled to run immediately after the currently executing script and before the next event loop tick. Microtasks are executed after the current task completes and before any new tasks (macrotasks) are run. This ensures a fast and predictable update cycle.\n\n     Common sources of microtasks stored in the microtask queue include:\n\n     1. **Promises:**\n        When a Promise is resolved or rejected, its `.then()`, `.catch()`, and `.finally()` callbacks are placed in the microtask queue.\n\n        ```javascript\n        Promise.resolve().then(() => {\n         console.log('Microtask from a Promise');\n        });\n        ```\n\n      2. **queueMicrotask():**\n     \n         A method that explicitly schedules a function to be run in the microtask queue.\n\n         ```javascript\n          queueMicrotask(() => {\n             console.log('Microtask from  queueMicrotask');\n           });\n         ```\n\n      3. **MutationObserver callbacks:**\n\n         Observers changes in the DOM and triggers a callback as a microtask.\n\n         ```javascript\n            const observer = new MutationObserver(() => {\n              console.log('Microtask from MutationObserver');\n            })\n            observer.observe(document.body, {childList: true});\n         ```\n\n      4. **await:**  \n         Await internally uses Promises, so the code after `await` is scheduled as a microtask.\n\n         ```javascript\n          async function asyncFunction() {\n            await null;\n            console.log('Microtask from Await'); // Schedule this code as microtask\n          }\n         ```\n     **Note:** All of these microtasks are processed in the same turn of the event loop.",
+        "ru": "A microtask is a type of JavaScript callback that is scheduled to run immediately after the currently executing script and before the next event loop tick. Microtasks are executed after the current task completes and before any new tasks (macrotasks) are run. This ensures a fast and predictable update cycle.\n\n     Common sources of microtasks stored in the microtask queue include:\n\n     1. **Promises:**\n        When a Promise is resolved or rejected, its `.then()`, `.catch()`, and `.finally()` callbacks are placed in the microtask queue.\n\n        ```JavaScript\n        Promise.resolve().then(() => {\n         console.log('Microtask from a Promise');\n        });\n        ```\n\n      2. **queueMicrotask():**\n     \n         A method that explicitly schedules a function to be run in the microtask queue.\n\n         ```JavaScript\n          queueMicrotask(() => {\n             console.log('Microtask from  queueMicrotask');\n           });\n         ```\n\n      3. **MutationObserver callbacks:**\n\n         Observers changes in the DOM and triggers a callback as a microtask.\n\n         ```JavaScript\n            const observer = new MutationObserver(() => {\n              console.log('Microtask from MutationObserver');\n            })\n            observer.observe(document.body, {childList: true});\n         ```\n\n      4. **await:**  \n         Await internally uses Promises, so the code after `await` is scheduled as a microtask.\n\n         ```JavaScript\n          async function asyncFunction() {\n            await null;\n            console.log('Microtask from Await'); // Schedule this code as microtask\n          }\n         ```\n     **Note:** All of these microtasks are processed in the same turn of the event loop."
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "ru-translation-review"
+        ]
+      },
+      "explanationContent": [
+        {
+          "type": "text",
+          "text": {
+            "en": "A microtask is a type of JavaScript callback that is scheduled to run immediately after the currently executing script and before the next event loop tick. Microtasks are executed after the current task completes and before any new tasks (macrotasks) are run. This ensures a fast and predictable update cycle.\nCommon sources of microtasks stored in the microtask queue include:\n1. Promises:\nWhen a Promise is resolved or rejected, its `.then()`, `.catch()`, and `.finally()` callbacks are placed in the microtask queue.",
+            "ru": "microtask — это тип callback JavaScript, запуск которого запланирован сразу после текущего сценария и перед следующим тиковым циклом событий. microtask выполняются после завершения текущей задачи и до запуска новых задач (макрозадач). Это обеспечивает быстрый и предсказуемый цикл обновления.\nОбщие источники microtask, хранящихся в microtask queue, включают:\n1. Promise:\nКогда Promise разрешено или отклонено, его callback `.then()`, `.catch()` и `.finally()` помещаются в microtask queue."
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "Promise.resolve().then(() => {\n console.log('Microtask from a Promise');\n});"
+          }
+        },
+        {
+          "type": "text",
+          "text": {
+            "en": "2. queueMicrotask():\nA method that explicitly schedules a function to be run in the microtask queue.",
+            "ru": "2. queueMicrotask():\nМетод, который явно планирует запуск функции в microtask queue."
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "queueMicrotask(() => {\n   console.log('Microtask from  queueMicrotask');\n });"
+          }
+        },
+        {
+          "type": "text",
+          "text": {
+            "en": "3. MutationObserver callbacks:\nObservers changes in the DOM and triggers a callback as a microtask.",
+            "ru": "3. callback MutationObserver:\nНаблюдатели изменяют DOM и запускают callback как microtask."
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "const observer = new MutationObserver(() => {\n  console.log('Microtask from MutationObserver');\n})\nobserver.observe(document.body, {childList: true});"
+          }
+        },
+        {
+          "type": "text",
+          "text": {
+            "en": "4. await:\nAwait internally uses Promises, so the code after `await` is scheduled as a microtask.",
+            "ru": "4. ожидайте:\nAwait внутренне использует Promises, поэтому код после `await` запланирован как microtask."
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "async function asyncFunction() {\n  await null;\n  console.log('Microtask from Await'); // Schedule this code as microtask\n}"
+          }
+        },
+        {
+          "type": "text",
+          "text": {
+            "en": "Note: All of these microtasks are processed in the same turn of the event loop.",
+            "ru": "Примечание. Все эти microtask обрабатываются в одном и том же цикле событий."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sudheerj-q-393-what-is-the-purpose-of-queuemicrotask",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 393
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What is the purpose of queueMicrotask",
+        "ru": "Для чего нужен queueMicrotask()?"
+      },
+      "answer": {
+        "en": "The queueMicrotask function is used to schedule a microtask, which is a function that will be executed asynchronously in the microtask queue. The purpose of queueMicrotask is to ensure that a function is executed after the current task has finished, but before the browser performs any rendering or handles user events. Example: By using queueMicrotask, you can ensure that certain tasks or callbacks are executed at the earliest opportunity during the JavaScript event loop, making it useful for performing work that needs to be done asynchronously but with higher priority than regular setTimeout or setInterval callbacks.",
+        "ru": "Функция queueMicrotask используется для планирования microtask, которая представляет собой функцию, которая будет выполняться асинхронно в microtask queue. Цель queueMicrotask — гарантировать выполнение функции после завершения текущей задачи, но до того, как браузер выполнит какой-либо рендеринг или обработает пользовательские события. Пример. ИспользуяqueueMicrotask, вы можете гарантировать, что определенные задачи или callback будут выполняться при первой возможности во время цикла событий JavaScript, что делает его полезным для выполнения работы, которую необходимо выполнять асинхронно, но с более высоким приоритетом, чем обычные callback setTimeout или setInterval."
+      },
+      "explanation": {
+        "en": "The `queueMicrotask` function is used to schedule a microtask, which is a function that will be executed asynchronously in the microtask queue. The purpose of `queueMicrotask` is to ensure that a function is executed after the current task has finished, but before the browser performs any rendering or handles user events.\n\n     Example:\n\n     ```javascript\n     console.log(\"Start\"); //1\n\n     queueMicrotask(() => {\n       console.log(\"Inside microtask\"); // 3\n     });\n\n     console.log(\"End\"); //2\n     ```\n\n     By using queueMicrotask, you can ensure that certain tasks or callbacks are executed at the earliest opportunity during the JavaScript event loop, making it useful for performing work that needs to be done asynchronously but with higher priority than regular `setTimeout` or `setInterval` callbacks.",
+        "ru": "The `queueMicrotask` function is used to schedule a microtask, which is a function that will be executed asynchronously in the microtask queue. The purpose of `queueMicrotask` is to ensure that a function is executed after the current task has finished, but before the browser performs any rendering or handles user events.\n\n     Example:\n\n     ```JavaScript\n     console.log(\"Start\"); //1\n\n     queueMicrotask(() => {\n       console.log(\"Inside microtask\"); // 3\n     });\n\n     console.log(\"End\"); //2\n     ```\n\n     By using queueMicrotask, you can ensure that certain tasks or callbacks are executed at the earliest opportunity during the JavaScript event loop, making it useful for performing work that needs to be done asynchronously but with higher priority than regular `setTimeout` or `setInterval` callbacks."
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "ru-translation-review"
+        ]
+      },
+      "explanationContent": [
+        {
+          "type": "text",
+          "text": {
+            "en": "The `queueMicrotask` function is used to schedule a microtask, which is a function that will be executed asynchronously in the microtask queue. The purpose of `queueMicrotask` is to ensure that a function is executed after the current task has finished, but before the browser performs any rendering or handles user events.\nExample:"
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "console.log(\"Start\"); //1\n\nqueueMicrotask(() => {\n  console.log(\"Inside microtask\"); // 3\n});\n\nconsole.log(\"End\"); //2"
+          }
+        },
+        {
+          "type": "text",
+          "text": {
+            "en": "By using queueMicrotask, you can ensure that certain tasks or callbacks are executed at the earliest opportunity during the JavaScript event loop, making it useful for performing work that needs to be done asynchronously but with higher priority than regular `setTimeout` or `setInterval` callbacks."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sudheerj-q-395-what-are-the-differences-between-promises-and-observables",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 395
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What are the differences between promises and observables",
+        "ru": "В чем разница между Promise и Observable?"
+      },
+      "answer": {
+        "en": "Some of the major difference in a tabular form Promises Observables ------------------------------------------------------------------ ---------------------------------------------------------------------------------------- Emits only a single value at a time Emits multiple values over a period of time(stream of values ranging from 0 to multiple) Eager in nature; they are going to be called immediately Lazy in nature; they require subscription to be invoked Promise is always asynchronous even though it resolved immediately Observable can be either synchronous or asynchronous Doesn't provide any operators Provides operators such as map, forEach, filter, reduce, retry, and retryWhen etc Cannot be canceled | Canceled by using unsubscribe() method |",
+        "ru": "Некоторые из основных отличий в табличной форме Promise Наблюдаемые ------------------------------------------------------------------ --------------------------------------------------------------------------------------------------------- Выдает только одно значение за раз Выдает несколько значений в течение определенного периода времени (поток значений от 0 до нескольких) Нетерпеливый по своей природе; их сразу же назовут Ленивыми по своей природе; для их вызова требуется подписка. Promise всегда асинхронно, даже если оно разрешается немедленно. Observable может быть как синхронным, так и асинхронным. Не предоставляет никаких операторов. Предоставляет такие операторы, как карта, forEach, фильтр, reduce, повтор и повтор, когда и т. д."
+      },
+      "explanation": {
+        "en": "Cannot be canceled                                                 | Canceled by using unsubscribe() method                                                   |",
+        "ru": "Некоторые основные различия в табличной форме\n\n     | Promise | Наблюдаемые |\n     | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |\n     | Выдает только одно значение за раз | Выдает несколько значений за определенный период времени (поток значений от 0 до нескольких) |\n     | Нетерпеливый по своей природе; их немедленно вызовут | Ленивый по натуре; для вызова требуется подписка |\n     | Promise всегда асинхронен, даже если он выполняется немедленно | Observable может быть синхронным или асинхронным |\n     | Не предоставляет никаких операторов | Предоставляет такие операторы, как карта, forEach, фильтр, reduce, повтор, повтор и т. д. |\n     | Нельзя отменить | Отменено с помощью метода unsubscribe() |"
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-q-397-what-is-an-event-table",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 397
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What is an event table",
+        "ru": "Что такое таблица событий?"
+      },
+      "answer": {
+        "en": "Event Table is a data structure that stores and keeps track of all the events which will be executed asynchronously like after some time interval or after the resolution of some API requests. i.e Whenever you call a setTimeout function or invoke async operation, it is added to the Event Table. It doesn't not execute functions on it’s own. The main purpose of the event table is to keep track of events and send them to the Event Queue as shown in the below diagram.",
+        "ru": "Таблица событий — это структура данных, которая хранит и отслеживает все события, которые будут выполняться асинхронно, например, через определенный интервал времени или после разрешения некоторых запросов API. т. е. всякий раз, когда вы вызываете функцию setTimeout или вызываете асинхронную операцию, она добавляется в таблицу событий. Он не выполняет функции сам по себе. Основная цель таблицы событий — отслеживать события и отправлять их в event queue, как показано на диаграмме ниже."
+      },
+      "explanation": {
+        "en": "Event Table is a data structure that stores and keeps track of all the events which will be executed asynchronously like after some time interval or after the resolution of some API requests. i.e Whenever you call a setTimeout function or invoke async operation, it is added to the Event Table.\n     It doesn't not execute functions on it’s own. The main purpose of the event table is to keep track of events and send them to the Event Queue as shown in the below diagram.\n\n     ![Screenshot](images/event-table.png)",
+        "ru": "Таблица событий — это структура данных, которая хранит и отслеживает все события, которые будут выполняться асинхронно, например, через определенный интервал времени или после разрешения некоторых запросов API. т. е. всякий раз, когда вы вызываете функцию setTimeout или вызываете асинхронную операцию, она добавляется в таблицу событий.\n     Он не выполняет функции сам по себе. Основная цель таблицы событий — отслеживать события и отправлять их в event queue, как показано на диаграмме ниже.\n\n     ![Скриншот](images/event-table.png)"
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-q-398-what-is-a-microtask-queue",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 398
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What is a microTask queue",
+        "ru": "Что такое microtask queue?"
+      },
+      "answer": {
+        "en": "Microtask Queue is the new queue where all the tasks initiated by promise objects get processed before the callback queue. The microtasks queue are processed before the next rendering and painting jobs. But if these microtasks are running for a long time then it leads to visual degradation.",
+        "ru": "microtask queue — это новая очередь, в которой все задачи, инициированные объектами Promise, обрабатываются до очереди callback. microtask queue обрабатывается перед следующими заданиями рендеринга и рисования. Но если эти microtask выполняются долго, то это приводит к ухудшению зрения."
+      },
+      "explanation": {
+        "en": "Microtasks have higher priority than normal task callbacks and run after the current call stack finishes. This is why promise callbacks often execute before `setTimeout` callbacks scheduled with zero delay.",
+        "ru": ""
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-q-403-what-are-the-common-use-cases-of-observables",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 403
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What are the common use cases of observables",
+        "ru": "Где обычно используются Observable?"
+      },
+      "answer": {
+        "en": "Some of the most common use cases of observables are web sockets with push notifications, user input changes, repeating intervals, etc",
+        "ru": "Некоторые из наиболее распространенных случаев использования наблюдаемых — это веб-сокеты с push-уведомлениями, изменениями пользовательского ввода, повторяющимися интервалами и т. д."
+      },
+      "explanation": {
+        "en": "Observables are useful when values arrive over time and there may be multiple emissions. This makes them a natural fit for streams such as UI events, WebSocket messages, intervals, and reactive state changes.",
+        "ru": ""
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ]
+    },
+    {
+      "id": "sudheerj-q-404-what-is-rxjs",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 404
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What is RxJS",
+        "ru": "Что такое RxJS?"
+      },
+      "answer": {
+        "en": "RxJS (Reactive Extensions for JavaScript) is a library for implementing reactive programming using observables that makes it easier to compose asynchronous or callback-based code. It also provides utility functions for creating and working with observables.",
+        "ru": "RxJS (Reactive Extensions for JavaScript) — это библиотека для реализации реактивного программирования с использованием наблюдаемых, которая упрощает составление асинхронного кода или кода на основе callback. Он также предоставляет служебные функции для создания наблюдаемых и работы с ними."
+      },
+      "explanation": {
+        "en": "RxJS provides a vocabulary for composing asynchronous streams with operators such as mapping, filtering, merging, retrying, and cancellation. It is most useful when an application has complex event or data-flow coordination.",
+        "ru": ""
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-q-408-what-is-an-observable",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 408
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What is an observable",
+        "ru": "Что такое Observable?"
+      },
+      "answer": {
+        "en": "An Observable is basically a function that can return a stream of values either synchronously or asynchronously to an observer over time. The consumer can get the value by calling subscribe() method. Let's look at a simple example of an Observable Note: Observables are not part of the JavaScript language yet but they are being proposed to be added to the language",
+        "ru": "Observable — это, по сути, функция, которая может возвращать поток значений наблюдателю синхронно или асинхронно с течением времени. Потребитель может получить значение, вызвав метод subscribe(). Давайте рассмотрим простой пример Observable. Примечание. Observable еще не являются частью языка JavaScript, но их предлагается добавить в язык."
+      },
+      "explanation": {
+        "en": "An Observable is basically a function that can return a stream of values either synchronously or asynchronously to an observer over time. The consumer can get the value by calling `subscribe()` method.\n     Let's look at a simple example of an Observable\n\n     ```javascript\n     import { Observable } from \"rxjs\";\n\n     const observable = new Observable((observer) => {\n       setTimeout(() => {\n         observer.next(\"Message from a Observable!\");\n       }, 3000);\n     });\n\n     observable.subscribe((value) => console.log(value));\n     ```\n\n     ![Screenshot](images/observables.png)\n\n     **Note:** Observables are not part of the JavaScript language yet but they are being proposed to be added to the language",
+        "ru": "An Observable is basically a function that can return a stream of values either synchronously or asynchronously to an observer over time. The consumer can get the value by calling `subscribe()` method.\n     Let's look at a simple example of an Observable\n\n     ```JavaScript\n     import { Observable } from \"rxjs\";\n\n     const observable = new Observable((observer) => {\n       setTimeout(() => {\n         observer.next(\"Message from a Observable!\");\n       }, 3000);\n     });\n\n     observable.subscribe((value) => console.log(value));\n     ```\n\n     ![Screenshot](images/observables.png)\n\n     **Note:** Observables are not part of the JavaScript language yet but they are being proposed to be added to the language"
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "ru-translation-review"
+        ]
+      },
+      "explanationContent": [
+        {
+          "type": "text",
+          "text": {
+            "en": "An Observable is basically a function that can return a stream of values either synchronously or asynchronously to an observer over time. The consumer can get the value by calling `subscribe()` method.\nLet's look at a simple example of an Observable"
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "import { Observable } from \"rxjs\";\n\nconst observable = new Observable((observer) => {\n  setTimeout(() => {\n    observer.next(\"Message from a Observable!\");\n  }, 3000);\n});\n\nobservable.subscribe((value) => console.log(value));"
+          }
+        },
+        {
+          "type": "text",
+          "text": {
+            "en": "Note: Observables are not part of the JavaScript language yet but they are being proposed to be added to the language"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sudheerj-q-410-what-is-an-async-function",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 410
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What is an async function",
+        "ru": "Что такое async-функция?"
+      },
+      "answer": {
+        "en": "An async function is a function declared with the async keyword which enables asynchronous, promise-based behavior to be written in a cleaner style by avoiding promise chains. These functions can contain zero or more await expressions. Let's take a below async function example, It is basically syntax sugar over ES2015 promises and generators.",
+        "ru": "Асинхронная функция — это функция, объявленная с ключевым словом async, которая позволяет писать асинхронное поведение на основе Promise в более чистом стиле, избегая цепочек Promise. Эти функции могут содержать ноль или более выражений ожидания. Давайте возьмем приведенный ниже пример асинхронной функции. По сути, это синтаксический сахар над Promise и генераторами ES2015."
+      },
+      "explanation": {
+        "en": "An async function is a function declared with the `async` keyword which enables asynchronous, promise-based behavior to be written in a cleaner style by avoiding promise chains. These functions can contain zero or more `await` expressions.\n\n     Let's take a below async function example,\n\n     ```javascript\n     async function logger() {\n       let data = await fetch(\"http://someapi.com/users\"); // pause until fetch returns\n       console.log(data);\n     }\n     logger();\n     ```\n\n     It is basically syntax sugar over ES2015 promises and generators.",
+        "ru": "An async function is a function declared with the `async` keyword which enables asynchronous, promise-based behavior to be written in a cleaner style by avoiding promise chains. These functions can contain zero or more `await` expressions.\n\n     Let's take a below async function example,\n\n     ```JavaScript\n     async function logger() {\n       let data = await fetch(\"http://someapi.com/users\"); // pause until fetch returns\n       console.log(data);\n     }\n     logger();\n     ```\n\n     It is basically syntax sugar over ES2015 promises and generators."
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "ru-translation-review"
+        ]
+      },
+      "explanationContent": [
+        {
+          "type": "text",
+          "text": {
+            "en": "An async function is a function declared with the `async` keyword which enables asynchronous, promise-based behavior to be written in a cleaner style by avoiding promise chains. These functions can contain zero or more `await` expressions.\nLet's take a below async function example,"
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "async function logger() {\n  let data = await fetch(\"http://someapi.com/users\"); // pause until fetch returns\n  console.log(data);\n}\nlogger();"
+          }
+        },
+        {
+          "type": "text",
+          "text": {
+            "en": "It is basically syntax sugar over ES2015 promises and generators."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sudheerj-q-426-what-is-the-easiest-way-to-ignore-promise-errors",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 426
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What is the easiest way to ignore promise errors?",
+        "ru": "Как проще всего игнорировать ошибки Promise?"
+      },
+      "answer": {
+        "en": "The easiest and safest way to ignore promise errors is void that error. This approach is ESLint friendly too.",
+        "ru": "Самый простой и безопасный способ игнорировать ошибки Promise — аннулировать эту ошибку. Этот подход также дружелюбен к ESLint."
+      },
+      "explanation": {
+        "en": "The easiest and safest way to ignore promise errors is void that error. This approach is ESLint friendly too.\n\n     ```js\n     await promise.catch((e) => void e);\n     ```",
+        "ru": "Самый простой и безопасный способ игнорировать ошибки Promise — аннулировать эту ошибку. Этот подход также дружелюбен к ESLint.\n\n     ```js\n     await promise.catch((e) => void e);\n     ```"
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "ru-translation-review"
+        ]
+      },
+      "explanationContent": [
+        {
+          "type": "text",
+          "text": {
+            "en": "The easiest and safest way to ignore promise errors is void that error. This approach is ESLint friendly too.",
+            "ru": "Самый простой и безопасный способ игнорировать ошибки Promise — аннулировать эту ошибку. Этот подход также дружелюбен к ESLint."
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "await promise.catch((e) => void e);"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sudheerj-q-451-how-to-use-await-outside-of-async-function-prior-to-es2022",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 451
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "How to use await outside of async function prior to ES2022?",
+        "ru": "Как использовать await вне async-функции до ES2022?"
+      },
+      "answer": {
+        "en": "Prior to ES2022, if you attempted to use an await outside of an async function resulted in a SyntaxError. But you can fix this issue with an alternative IIFE (Immediately Invoked Function Expression) to get access to the feature. In ES2022, you can write top-level await without writing any hacks.",
+        "ru": "До версии ES2022 попытка использовать ожидание вне асинхронной функции приводила к ошибке SyntaxError. Но вы можете решить эту проблему с помощью альтернативного IIFE (выражение немедленно вызываемой функции), чтобы получить доступ к этой функции. В ES2022 вы можете написать ожидание верхнего уровня без каких-либо хаков."
+      },
+      "explanation": {
+        "en": "Prior to ES2022, if you attempted to use an await outside of an async function resulted in a SyntaxError.\n\n     ```javascript\n     await Promise.resolve(console.log(\"Hello await\")); // SyntaxError: await is only valid in async function\n     ```\n\n     But you can fix this issue with an alternative IIFE (Immediately Invoked Function Expression) to get access to the feature.\n\n     ```javascript\n     (async function () {\n       await Promise.resolve(console.log(\"Hello await\")); // Hello await\n     })();\n     ```\n\n     In ES2022, you can write top-level await without writing any hacks.\n\n     ```javascript\n     await Promise.resolve(console.log(\"Hello await\")); //Hello await\n     ```",
+        "ru": "Prior to ES2022, if you attempted to use an await outside of an async function resulted in a SyntaxError.\n\n     ```JavaScript\n     await Promise.resolve(console.log(\"Hello await\")); // SyntaxError: await is only valid in async function\n     ```\n\n     But you can fix this issue with an alternative IIFE (Immediately Invoked Function Expression) to get access to the feature.\n\n     ```JavaScript\n     (async function () {\n       await Promise.resolve(console.log(\"Hello await\")); // Hello await\n     })();\n     ```\n\n     In ES2022, you can write top-level await without writing any hacks.\n\n     ```JavaScript\n     await Promise.resolve(console.log(\"Hello await\")); //Hello await\n     ```"
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "ru-translation-review"
+        ]
+      },
+      "explanationContent": [
+        {
+          "type": "text",
+          "text": {
+            "en": "Prior to ES2022, if you attempted to use an await outside of an async function resulted in a SyntaxError."
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "await Promise.resolve(console.log(\"Hello await\")); // SyntaxError: await is only valid in async function"
+          }
+        },
+        {
+          "type": "text",
+          "text": {
+            "en": "But you can fix this issue with an alternative IIFE (Immediately Invoked Function Expression) to get access to the feature."
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "(async function () {\n  await Promise.resolve(console.log(\"Hello await\")); // Hello await\n})();"
+          }
+        },
+        {
+          "type": "text",
+          "text": {
+            "en": "In ES2022, you can write top-level await without writing any hacks."
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "await Promise.resolve(console.log(\"Hello await\")); //Hello await"
+          }
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "sudheerj-ex-async-await-error",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "coding-exercise/async-await-error.js"
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported Exercise",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Async Await Error",
+        "ru": "Ошибка асинхронного ожидания"
+      },
+      "prompt": {
+        "en": "Imported coding exercise from `async-await-error.js`.",
+        "ru": "Импортированное упражнение по кодированию из `async-await-error.js`."
+      },
+      "code": "async function fetchData() {\n    throw new Error('Network error');\n}\n\nasync function getData() {\n    try {\n        const data = await fetchData();\n        console.log(data);\n        return data;\n    } catch (error) {\n        console.log('Caught:', error.message);\n        return null;\n    }\n}\n\ngetData().then(result => {\n    console.log('Result:', result);\n});\n\n// Output:\n// Caught: Network error\n// Result: null\n\n/**\n * Explanation:\n * \n * This demonstrates error handling with async/await in JavaScript.\n * \n * 1. fetchData() is an async function that throws an error.\n * \n * 2. In getData(), we use try/catch to handle errors from await fetchData().\n * \n * 3. When fetchData() throws an error, it's caught by the catch block,\n *    which logs the error message and returns null.\n * \n * 4. The .then() receives the return value from getData(), which is null\n *    because the error was caught and handled.\n * \n * 5. Without try/catch, the error would propagate and could be caught\n *    with .catch() on the promise chain.\n */\n",
+      "expectedAnswer": {
+        "en": "async function fetchData() {\n    throw new Error('Network error');\n}\n\nasync function getData() {\n    try {\n        const data = await fetchData();\n        console.log(data);\n        return data;\n    } catch (error) {\n        console.log('Caught:', error.message);\n        return null;\n    }\n}\n\ngetData().then(result => {\n    console.log('Result:', result);\n});\n\n// Output:\n// Caught: Network error\n// Result: null\n\n/**\n * Explanation:\n * \n * This demonstrates error handling with async/await in JavaScript.\n * \n * 1. fetchData() is an async function that throws an error.\n * \n * 2. In getData(), we use try/catch to handle errors from await fetchData().\n * \n * 3. When fetchData() throws an error, it's caught by the catch block,\n *    which logs the error message and returns null.\n * \n * 4. The .then() receives the return value from getData(), which is null\n *    because the error was caught and handled.\n * \n * 5. Without try/catch, the error would propagate and could be caught\n *    with .catch() on the promise chain.\n */\n",
+        "ru": "async function fetchData() {\n    throw new Error('Network error');\n}\n\nasync function getData() {\n    try {\n        const data = await fetchData();\n        console.log(data);\n        return data;\n    } catch (error) {\n        console.log('Caught:', error.message);\n        return null;\n    }\n}\n\ngetData().then(result => {\n    console.log('Result:', result);\n});\n\n// Output:\n// Caught: Network error\n// Result: null\n\n/**\n * Explanation:\n * \n * This demonstrates error handling with async/await in JavaScript.\n * \n * 1. fetchData() is an async function that throws an error.\n * \n * 2. In getData(), we use try/catch to handle errors from await fetchData().\n * \n * 3. When fetchData() throws an error, it's caught by the catch block,\n *    which logs the error message and returns null.\n * \n * 4. The .then() receives the return value from getData(), which is null\n *    because the error was caught and handled.\n * \n * 5. Without try/catch, the error would propagate and could be caught\n *    with .catch() on the promise chain.\n */\n"
+      },
+      "explanation": {
+        "en": "async function fetchData() {\n    throw new Error('Network error');\n}\n\nasync function getData() {\n    try {\n        const data = await fetchData();\n        console.log(data);\n        return data;\n    } catch (error) {\n        console.log('Caught:', error.message);\n        return null;\n    }\n}\n\ngetData().then(result => {\n    console.log('Result:', result);\n});\n\n// Output:\n// Caught: Network error\n// Result: null\n\n/**\n * Explanation:\n * \n * This demonstrates error handling with async/await in JavaScript.\n * \n * 1. fetchData() is an async function that throws an error.\n * \n * 2. In getData(), we use try/catch to handle errors from await fetchData().\n * \n * 3. When fetchData() throws an error, it's caught by the catch block,\n *    which logs the error message and returns null.\n * \n * 4. The .then() receives the return value from getData(), which is null\n *    because the error was caught and handled.\n * \n * 5. Without try/catch, the error would propagate and could be caught\n *    with .catch() on the promise chain.\n */\n",
+        "ru": "async function fetchData() {\n    throw new Error('Network error');\n}\n\nasync function getData() {\n    try {\n        const data = await fetchData();\n        console.log(data);\n        return data;\n    } catch (error) {\n        console.log('Caught:', error.message);\n        return null;\n    }\n}\n\ngetData().then(result => {\n    console.log('Result:', result);\n});\n\n// Output:\n// Caught: Network error\n// Result: null\n\n/**\n * Explanation:\n * \n * This demonstrates error handling with async/await in JavaScript.\n * \n * 1. fetchData() is an async function that throws an error.\n * \n * 2. In getData(), we use try/catch to handle errors from await fetchData().\n * \n * 3. When fetchData() throws an error, it's caught by the catch block,\n *    which logs the error message and returns null.\n * \n * 4. The .then() receives the return value from getData(), which is null\n *    because the error was caught and handled.\n * \n * 5. Without try/catch, the error would propagate and could be caught\n *    with .catch() on the promise chain.\n */\n"
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "coding-exercise",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-ex-eventloop-order",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "coding-exercise/eventloop-order.js"
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported Exercise",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Eventloop Order",
+        "ru": "Порядок event loop"
+      },
+      "prompt": {
+        "en": "Imported coding exercise from `eventloop-order.js`.",
+        "ru": "Импортированное упражнение по кодированию из `eventloop-order.js`."
+      },
+      "code": "function main(){\n    console.log('A');\n    setTimeout(\n        function print(){ console.log('B'); }\n        ,0);\n    console.log('C');\n}\nmain(); // A,C and B",
+      "expectedAnswer": {
+        "en": "function main(){\n    console.log('A');\n    setTimeout(\n        function print(){ console.log('B'); }\n        ,0);\n    console.log('C');\n}\nmain(); // A,C and B",
+        "ru": "функция основная(){\n    console.log('А');\n    setTimeout(\n        функция print(){ console.log('B'); }\n        ,0);\n    console.log('C');\n}\nосновной(); // А, С и Б"
+      },
+      "explanation": {
+        "en": "function main(){\n    console.log('A');\n    setTimeout(\n        function print(){ console.log('B'); }\n        ,0);\n    console.log('C');\n}\nmain(); // A,C and B",
+        "ru": "функция основная(){\n    console.log('А');\n    setTimeout(\n        функция print(){ console.log('B'); }\n        ,0);\n    console.log('C');\n}\nосновной(); // А, С и Б"
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "coding-exercise",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-ex-promise-all-behavior",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "coding-exercise/promise-all-behavior.js"
+      },
+      "topicId": "async-js",
+      "subtopic": "Imported Exercise",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Promise All Behavior",
+        "ru": "Обещайте все поведение"
+      },
+      "prompt": {
+        "en": "Imported coding exercise from `promise-all-behavior.js`.",
+        "ru": "Импортированное упражнение по кодированию из `promise-all-behavior.js`."
+      },
+      "code": "const promise1 = Promise.resolve(3);\nconst promise2 = new Promise((resolve) => setTimeout(() => resolve('foo'), 100));\nconst promise3 = Promise.reject('Error occurred');\nconst promise4 = Promise.resolve(42);\n\nPromise.all([promise1, promise2, promise4])\n    .then(values => {\n        console.log(values); // [3, 'foo', 42]\n    })\n    .catch(error => {\n        console.log('Caught:', error);\n    });\n\nPromise.all([promise1, promise2, promise3, promise4])\n    .then(values => {\n        console.log(values); // This won't execute\n    })\n    .catch(error => {\n        console.log('Caught:', error); // Caught: Error occurred\n    });\n\n/**\n * Explanation:\n * \n * This demonstrates Promise.all() behavior in JavaScript.\n * \n * 1. Promise.all() takes an array of promises and returns a single promise.\n * \n * 2. If ALL promises resolve, Promise.all() resolves with an array of all\n *    resolved values, in the same order as the input promises.\n * \n * 3. If ANY promise rejects, Promise.all() immediately rejects with the\n *    reason of the first promise that rejected. Other promises are ignored.\n * \n * 4. In the first example, all three promises resolve, so we get [3, 'foo', 42].\n * \n * 5. In the second example, promise3 rejects, so Promise.all() rejects\n *    immediately with 'Error occurred', even though promise1 and promise4\n *    would have resolved.\n * \n * 6. Promise.all() waits for all promises to settle (resolve or reject).\n * \n * Use Promise.allSettled() if you want to wait for all promises regardless\n * of whether they resolve or reject.\n */\n",
+      "expectedAnswer": {
+        "en": "const promise1 = Promise.resolve(3);\nconst promise2 = new Promise((resolve) => setTimeout(() => resolve('foo'), 100));\nconst promise3 = Promise.reject('Error occurred');\nconst promise4 = Promise.resolve(42);\n\nPromise.all([promise1, promise2, promise4])\n    .then(values => {\n        console.log(values); // [3, 'foo', 42]\n    })\n    .catch(error => {\n        console.log('Caught:', error);\n    });\n\nPromise.all([promise1, promise2, promise3, promise4])\n    .then(values => {\n        console.log(values); // This won't execute\n    })\n    .catch(error => {\n        console.log('Caught:', error); // Caught: Error occurred\n    });\n\n/**\n * Explanation:\n * \n * This demonstrates Promise.all() behavior in JavaScript.\n * \n * 1. Promise.all() takes an array of promises and returns a single promise.\n * \n * 2. If ALL promises resolve, Promise.all() resolves with an array of all\n *    resolved values, in the same order as the input promises.\n * \n * 3. If ANY promise rejects, Promise.all() immediately rejects with the\n *    reason of the first promise that rejected. Other promises are ignored.\n * \n * 4. In the first example, all three promises resolve, so we get [3, 'foo', 42].\n * \n * 5. In the second example, promise3 rejects, so Promise.all() rejects\n *    immediately with 'Error occurred', even though promise1 and promise4\n *    would have resolved.\n * \n * 6. Promise.all() waits for all promises to settle (resolve or reject).\n * \n * Use Promise.allSettled() if you want to wait for all promises regardless\n * of whether they resolve or reject.\n */\n",
+        "ru": "const promise1 = Promise.resolve(3);\nconst promise2 = new Promise((resolve) => setTimeout(() => resolve('foo'), 100));\nconst promise3 = Promise.reject('Error occurred');\nconst promise4 = Promise.resolve(42);\n\nPromise.all([promise1, promise2, promise4])\n    .then(values => {\n        console.log(values); // [3, 'foo', 42]\n    })\n    .catch(error => {\n        console.log('Caught:', error);\n    });\n\nPromise.all([promise1, promise2, promise3, promise4])\n    .then(values => {\n        console.log(values); // This won't execute\n    })\n    .catch(error => {\n        console.log('Caught:', error); // Caught: Error occurred\n    });\n\n/**\n * Explanation:\n * \n * This demonstrates Promise.all() behavior in JavaScript.\n * \n * 1. Promise.all() takes an array of promises and returns a single promise.\n * \n * 2. If ALL promises resolve, Promise.all() resolves with an array of all\n *    resolved values, in the same order as the input promises.\n * \n * 3. If ANY promise rejects, Promise.all() immediately rejects with the\n *    reason of the first promise that rejected. Other promises are ignored.\n * \n * 4. In the first example, all three promises resolve, so we get [3, 'foo', 42].\n * \n * 5. In the second example, promise3 rejects, so Promise.all() rejects\n *    immediately with 'Error occurred', even though promise1 and promise4\n *    would have resolved.\n * \n * 6. Promise.all() waits for all promises to settle (resolve or reject).\n * \n * Use Promise.allSettled() if you want to wait for all promises regardless\n * of whether they resolve or reject.\n */\n"
+      },
+      "explanation": {
+        "en": "const promise1 = Promise.resolve(3);\nconst promise2 = new Promise((resolve) => setTimeout(() => resolve('foo'), 100));\nconst promise3 = Promise.reject('Error occurred');\nconst promise4 = Promise.resolve(42);\n\nPromise.all([promise1, promise2, promise4])\n    .then(values => {\n        console.log(values); // [3, 'foo', 42]\n    })\n    .catch(error => {\n        console.log('Caught:', error);\n    });\n\nPromise.all([promise1, promise2, promise3, promise4])\n    .then(values => {\n        console.log(values); // This won't execute\n    })\n    .catch(error => {\n        console.log('Caught:', error); // Caught: Error occurred\n    });\n\n/**\n * Explanation:\n * \n * This demonstrates Promise.all() behavior in JavaScript.\n * \n * 1. Promise.all() takes an array of promises and returns a single promise.\n * \n * 2. If ALL promises resolve, Promise.all() resolves with an array of all\n *    resolved values, in the same order as the input promises.\n * \n * 3. If ANY promise rejects, Promise.all() immediately rejects with the\n *    reason of the first promise that rejected. Other promises are ignored.\n * \n * 4. In the first example, all three promises resolve, so we get [3, 'foo', 42].\n * \n * 5. In the second example, promise3 rejects, so Promise.all() rejects\n *    immediately with 'Error occurred', even though promise1 and promise4\n *    would have resolved.\n * \n * 6. Promise.all() waits for all promises to settle (resolve or reject).\n * \n * Use Promise.allSettled() if you want to wait for all promises regardless\n * of whether they resolve or reject.\n */\n",
+        "ru": "const promise1 = Promise.resolve(3);\nconst promise2 = new Promise((resolve) => setTimeout(() => resolve('foo'), 100));\nconst promise3 = Promise.reject('Error occurred');\nconst promise4 = Promise.resolve(42);\n\nPromise.all([promise1, promise2, promise4])\n    .then(values => {\n        console.log(values); // [3, 'foo', 42]\n    })\n    .catch(error => {\n        console.log('Caught:', error);\n    });\n\nPromise.all([promise1, promise2, promise3, promise4])\n    .then(values => {\n        console.log(values); // This won't execute\n    })\n    .catch(error => {\n        console.log('Caught:', error); // Caught: Error occurred\n    });\n\n/**\n * Explanation:\n * \n * This demonstrates Promise.all() behavior in JavaScript.\n * \n * 1. Promise.all() takes an array of promises and returns a single promise.\n * \n * 2. If ALL promises resolve, Promise.all() resolves with an array of all\n *    resolved values, in the same order as the input promises.\n * \n * 3. If ANY promise rejects, Promise.all() immediately rejects with the\n *    reason of the first promise that rejected. Other promises are ignored.\n * \n * 4. In the first example, all three promises resolve, so we get [3, 'foo', 42].\n * \n * 5. In the second example, promise3 rejects, so Promise.all() rejects\n *    immediately with 'Error occurred', even though promise1 and promise4\n *    would have resolved.\n * \n * 6. Promise.all() waits for all promises to settle (resolve or reject).\n * \n * Use Promise.allSettled() if you want to wait for all promises regardless\n * of whether they resolve or reject.\n */\n"
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "coding-exercise",
+        "async-js"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "needsAnswerReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "answer-too-long-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    }
+  ]
+}

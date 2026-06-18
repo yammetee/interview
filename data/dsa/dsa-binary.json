@@ -1,0 +1,472 @@
+{
+  "topic": {
+    "id": "dsa-binary",
+    "title": {
+      "en": "Binary Algorithms"
+    }
+  },
+  "cards": [
+    {
+      "id": "sudheerj-dsa-binary-binary-001-sum-of-two-integers",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/binary/1.twoSum/twoSum.js",
+        "documentationPath": "src/javascript/algorithms/binary/1.twoSum/twoSum.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/1.twoSum/twoSum.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/1.twoSum/twoSum.md"
+      },
+      "topicId": "dsa-binary",
+      "subtopic": "Binary",
+      "difficulty": "medium",
+      "question": {
+        "en": "How do you solve or implement `Sum of two integers`?",
+        "ru": "Как решить или реализовать задачу `Sum of two integers`?"
+      },
+      "answer": {
+        "en": "Description:\nGiven two integers a and b, return the sum of the two integers without using the operators + and -.\nExample:\nExample 1:\nInput: a = 44, b = 32\nOutput: 76\n\nExample 2:\nInput: a = 3, b = 2\nOutput: 5\n\nAlgorithmic Steps:\nThis problem is solved with the help of bitwise operators technique. The addition of two binary numbers is calculated by the sum of carry and XOR between the numbers until the carry becomes 0. The algorithmic approach can be summarized as follows: \n\n1. Get the two numbers a and b as input parameters.\n\n2. Iterate the bitwise operations until b is not zero. \n \n3. Calculate the carry of the two numbers using Bitwise AND operation. Also, shift the carry to the left 1. The can be store in a temp variable.\n\n4. Calculate the XOR operation between the numbers using Bitwise XOR operation. Store the result in a for next iteration.\n\n5. Update b value with temp calculated in step3.\n\n6. Repeat steps 3-5 steps until the carry(b) is zero.\n\n7. After the completion of loop, the addition of binary numbers returned from a.\n\n7. Return [-1, -1] incase of no matching numbers whose sum not equal to the target.\n\nTime and Space complexity:\nThis algorithm takes a time complexity of O(1)(~O(32)). This is because we are iterating the loop until the carry becomes zero. Considering 32-bit integers, the loop may run at most 32 times for maximum possible value of carry. \n\nHere, we don't use any additional datastructure other than temporary variable. Hence, the space complexity will be O(1).",
+        "ru": "Описание:\nУчитывая два целых числа a и b, верните сумму двух целых чисел без использования операторов + и -.\nПример:\nПример 1:\nВвод: а = 44, б = 32.\nВыход: 76\n\nПример 2:\nВвод: а = 3, б = 2\nВыход: 5\n\nАлгоритмические шаги:\nЭта проблема решается с помощью техники побитовых операторов. Сложение двух двоичных чисел рассчитывается по сумме переноса и XOR между числами до тех пор, пока перенос не станет равным 0. Алгоритмический подход можно резюмировать следующим образом: \n\n1. Получите два числа a и b в качестве входных параметров.\n\n2. Повторяйте побитовые операции до тех пор, пока b не станет равным нулю. \n \n3. Вычислите перенос двух чисел, используя операцию побитового И. Также сдвиньте перенос влево на 1. Его можно сохранить в переменной temp.\n\n4. Вычислите операцию XOR между числами, используя операцию побитового XOR. Сохраните результат в a для следующей итерации.\n\n5. Обновите значение b с помощью temp, рассчитанного на шаге 3.\n\n6. Повторяйте шаги 3–5, пока перенос (b) не станет равным нулю.\n\n7. После завершения цикла сложение двоичных чисел вернулось из a.\n\n7. Верните [-1, -1] в случае отсутствия совпадающих чисел, сумма которых не равна целевому значению.\n\nСложность во времени и пространстве:\nЭтот алгоритм требует временной сложности O(1)(~O(32)). Это потому, что мы повторяем цикл до тех пор, пока перенос не станет нулевым. Учитывая 32-битные целые числа, цикл может выполняться не более 32 раз для максимально возможного значения переноса. \n\nЗдесь мы не используем никакой дополнительной структуры данных, кроме временной переменной. Следовательно, пространственная сложность будет равна O(1)."
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven two integers `a` and `b`, return the sum of the two integers without using the operators + and -.\n\n## Example:\nExample 1:\nInput: a = 44, b = 32\nOutput: 76\n\nExample 2:\nInput: a = 3, b = 2\nOutput: 5\n\n**Algorithmic Steps:**\nThis problem is solved with the help of **bitwise operators** technique. The addition of two binary numbers is calculated by the sum of carry and XOR between the numbers until the carry becomes 0. The algorithmic approach can be summarized as follows: \n\n1. Get the two numbers `a` and `b` as input parameters.\n\n2. Iterate the bitwise operations until `b` is not zero. \n   \n3. Calculate the carry of the two numbers using Bitwise AND operation. Also, shift the carry to the left 1. The can be store in a `temp` variable.\n\n4. Calculate the XOR operation between the numbers using Bitwise XOR operation. Store the result in `a` for next iteration.\n\n5. Update `b` value with `temp` calculated in step3.\n\n6. Repeat steps 3-5 steps until the carry(`b`) is zero.\n\n7. After the completion of loop, the addition of binary numbers returned from `a`.\n\n7. Return `[-1, -1]` incase of no matching numbers whose sum not equal to the target.\n\n**Time and Space complexity:**\nThis algorithm takes a time complexity of `O(1)`(~`O(32)`). This is because we are iterating the loop until the carry becomes zero. Considering 32-bit integers, the loop may run at most 32 times for maximum possible value of carry. \n\nHere, we don't use any additional datastructure other than temporary variable. Hence, the space complexity will be `O(1)`.",
+        "ru": "**Описание:**\nУчитывая два целых числа `a` и `b`, верните сумму двух целых чисел без использования операторов + и -.\n\n## Пример:\nПример 1:\nВвод: а = 44, б = 32.\nВыход: 76\n\nПример 2:\nВвод: а = 3, б = 2\nВыход: 5\n\n**Алгоритмические шаги:**\nЭта проблема решается с помощью техники **побитовых операторов**. Сложение двух двоичных чисел рассчитывается по сумме переноса и XOR между числами до тех пор, пока перенос не станет равным 0. Алгоритмический подход можно резюмировать следующим образом: \n\n1. Получите два числа `a` и `b` в качестве входных параметров.\n\n2. Повторяйте побитовые операции до тех пор, пока `b` не станет равным нулю. \n   \n3. Вычислите перенос двух чисел, используя операцию побитового И. Также сдвиньте перенос влево на 1. Его можно сохранить в переменной `temp`.\n\n4. Вычислите операцию XOR между числами, используя операцию побитового XOR. Сохраните результат в `a` для следующей итерации.\n\n5. Обновите значение `b` с помощью `temp`, рассчитанного на шаге 3.\n\n6. Повторяйте шаги 3–5, пока перенос (`b`) не станет равным нулю.\n\n7. После завершения цикла сложение двоичных чисел вернулось из `a`.\n\n7. Верните `[-1, -1]` в случае отсутствия совпадающих чисел, сумма которых не равна целевому значению.\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм требует временной сложности `O(1)`(~`O(32)`). Это потому, что мы повторяем цикл до тех пор, пока перенос не станет нулевым. Учитывая 32-битные целые числа, цикл может выполняться не более 32 раз для максимально возможного значения переноса. \n\nЗдесь мы не используем никакой дополнительной структуры данных, кроме временной переменной. Следовательно, пространственная сложность будет равна `O(1)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "binary",
+        "dsa-binary"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-binary-binary-002-number-of-1-bits",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/binary/2.numberOf1Bits/numberOf1Bits.js",
+        "documentationPath": "src/javascript/algorithms/binary/2.numberOf1Bits/numberOf1Bits.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/2.numberOf1Bits/numberOf1Bits.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/2.numberOf1Bits/numberOf1Bits.md"
+      },
+      "topicId": "dsa-binary",
+      "subtopic": "Binary",
+      "difficulty": "easy",
+      "question": {
+        "en": "How do you solve or implement `Number of 1 Bits`?",
+        "ru": "Как решить или реализовать задачу `Number of 1 Bits`?"
+      },
+      "answer": {
+        "en": "Description:\nWrite a function that receives binary representation of an unsigned(or positive) integer and calculate the number of '1' bits(Set bits).\n\nNote: In binary representation, hamming weight is the number of 1's.\nExample:\nExample 1:\nInput: num = 12\nOutput: \n\nExample 2:\nInput: num = 128\nOutput: 5\n\nAlgorithmic Steps:\nThis problem is solved with the help of Brian Kernighans technique. The main intution behind this algorithm is that when you subtract 1 from an integer, all the bits following the rightmost set of bits are inverted. (i.e, turning 1 to 0 and 0 to 1). The algorithmic approach can be summarized as follows: \n\n1. Get the number num as input parameter.\n\n2. Initialize the counter(count) to zero. This variable indicates the number of 1s in the number. \n\n3. Iterate the number until it became zero. \n \n4. Update the number by multiplying the number itself with number which is subtracted by 1. It helps to invert the right most bit everytime.\n\n5. Update the counter by one for each iteration.\n \n6. Repeat 4-5 steps until the number is zero.\n\n7. Return the count as output which is equal to number of 1 set bits.\n\nTime and Space complexity:\nThis algorithm takes a time complexity of O(1). This is because we are iterating the loop only for the 1 set bits but not for 0 bits. \n\nHere, we don't use any additional datastructure other than counter variable. Hence, the space complexity will be O(1).",
+        "ru": "Описание:\nНапишите функцию, которая получает двоичное представление беззнакового (или положительного) целого числа и рассчитывает количество битов «1» (установленных битов).\n\nПримечание. В двоичном представлении вес Хэмминга равен количеству единиц.\nПример:\nПример 1:\nВвод: число = 12\nВыход: \n\nПример 2:\nВвод: число = 128\nВыход: 5\n\nАлгоритмические шаги:\nЭта проблема решается с помощью методики Брайана Керниганса. Основная идея этого алгоритма заключается в том, что когда вы вычитаете 1 из целого числа, все биты, следующие за самым правым набором битов, инвертируются. (т. е. превращение 1 в 0 и 0 в 1). Алгоритмический подход можно резюмировать следующим образом: \n\n1. Получите число num в качестве входного параметра.\n\n2. Инициализируйте счетчик (count) равным нулю. Эта переменная указывает количество 1 в номере. \n\n3. Повторяйте число, пока оно не станет нулевым. \n \n4. Обновите число, умножив само число на число, которое вычитается на 1. Это помогает каждый раз инвертировать самый правый бит.\n\n5. Обновите счетчик на единицу для каждой итерации.\n \n6. Повторяйте 4–5 шагов, пока число не станет равным нулю.\n\n7. Верните count в качестве вывода, равного количеству установленных битов 1.\n\nСложность во времени и пространстве:\nЭтот алгоритм требует временной сложности O(1). Это связано с тем, что мы повторяем цикл только для установленных битов 1, но не для битов 0. \n\nЗдесь мы не используем никакой дополнительной структуры данных, кроме переменной-счетчика. Следовательно, пространственная сложность будет равна O(1)."
+      },
+      "explanation": {
+        "en": "**Description:**\nWrite a function that receives binary representation of an unsigned(or positive) integer and calculate the number of '1' bits(Set bits).\n\n**Note:** In binary representation, hamming weight is the number of 1's.\n\n## Example:\nExample 1:\nInput: num = 12\nOutput: \n\nExample 2:\nInput: num = 128\nOutput: 5\n\n**Algorithmic Steps:**\nThis problem is solved with the help of **Brian Kernighans** technique. The main intution behind this algorithm is that when you subtract 1 from an integer, all the bits following the rightmost set of bits are inverted. (i.e, turning 1 to 0 and 0 to 1). The algorithmic approach can be summarized as follows: \n\n1. Get the number `num` as input parameter.\n\n2. Initialize the counter(`count`) to zero. This variable indicates the number of `1`s in the number. \n\n3. Iterate the number until it became zero. \n   \n4. Update the number by multiplying the number itself with number which is subtracted by 1. It helps to invert the right most bit everytime.\n\n5. Update the counter by one for each iteration.\n   \n6. Repeat 4-5 steps until the number is zero.\n\n7. Return the `count` as output which is equal to number of `1` set bits.\n\n\n**Time and Space complexity:**\nThis algorithm takes a time complexity of `O(1)`. This is because we are iterating the loop only for the `1` set bits but not for `0` bits. \n\nHere, we don't use any additional datastructure other than counter variable. Hence, the space complexity will be `O(1)`.",
+        "ru": "**Описание:**\nНапишите функцию, которая получает двоичное представление беззнакового (или положительного) целого числа и рассчитывает количество битов «1» (установленных битов).\n\n**Примечание.** В двоичном представлении вес Хэмминга равен количеству единиц.\n\n## Пример:\nПример 1:\nВвод: число = 12\nВыход: \n\nПример 2:\nВвод: число = 128\nВыход: 5\n\n**Алгоритмические шаги:**\nЭта проблема решается с помощью методики **Брайана Керниганса**. Основная идея этого алгоритма заключается в том, что когда вы вычитаете 1 из целого числа, все биты, следующие за самым правым набором битов, инвертируются. (т. е. превращение 1 в 0 и 0 в 1). Алгоритмический подход можно резюмировать следующим образом: \n\n1. Получите число `num` в качестве входного параметра.\n\n2. Инициализируйте счетчик (`count`) равным нулю. Эта переменная указывает количество `1` в номере. \n\n3. Повторяйте число, пока оно не станет нулевым. \n   \n4. Обновите число, умножив само число на число, которое вычитается на 1. Это помогает каждый раз инвертировать самый правый бит.\n\n5. Обновите счетчик на единицу для каждой итерации.\n   \n6. Повторяйте 4–5 шагов, пока число не станет равным нулю.\n\n7. Верните `count` в качестве вывода, равного количеству установленных битов `1`.\n\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм требует временной сложности `O(1)`. Это связано с тем, что мы повторяем цикл только для установленных битов `1`, но не для битов `0`. \n\nЗдесь мы не используем никакой дополнительной структуры данных, кроме переменной-счетчика. Следовательно, пространственная сложность будет равна `O(1)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "binary",
+        "dsa-binary"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-binary-binary-003-counting-bits",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/binary/3.countingBits/countingBits.js",
+        "documentationPath": "src/javascript/algorithms/binary/3.countingBits/countingBits.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/3.countingBits/countingBits.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/3.countingBits/countingBits.md"
+      },
+      "topicId": "dsa-binary",
+      "subtopic": "Binary",
+      "difficulty": "easy",
+      "question": {
+        "en": "How do you solve or implement `Counting Bits`?",
+        "ru": "Как решить или реализовать задачу `Counting Bits`?"
+      },
+      "answer": {
+        "en": "Description:\nGiven a positive integer num, return a list ans of length n + 1 where each element ans[i] represents the count of 1 bits in the binary representation of i(0<=i<=n).\nExample:\nExample 1:\nInput: num = 3\nOutput: [0, 1, 1, 2]\n\nExample 2:\nInput: num = 6\nOutput: [0, 1, 1, 2, 1, 2, 2]\n\nAlgorithmic Steps:\nThis problem is solved with the help of dynamic programming technique where previous results going to be reused to calculate the current results. The algorithmic approach can be summarized as follows: \n\n1. Get the number num as input parameter.\n\n2. Initialize the ans array with a length of num+1 where each element assigned to zero by default. This array indicates the number of 1s in each element from 0 to num. \n\n3. Initialize the offset(offset) variable to 1. This is because the first offset with power of 2 is 1(i.e, 2 power 0). In this problem, you can find pattern that offset is multiplied by 2 when the index value is power of 2.\n \n4. Iterate over each element upto num to find the counting bits.\n \n5. The offset should be updated to the index variable(i) once the offset multiplied by 2 is equal to index variable.\n \n6. If the condition in step5 fails, the number of 1's for current number is calculated by adding the number of 1's in previous power of 2 index variable with 1.\n \n7. Repeat 5-6 steps to calculate the number of set bits for each element.\n\n8. Return the ans array which holds number of set bits upto input number.\n\nTime and Space complexity:\nThis algorithm takes a time complexity of O(n). This is because we are iterating elements upto n.\n\nHere, we need to use array to hold the number of set bits for each element. Hence, the space complexity will be O(n).",
+        "ru": "Описание:\nУчитывая положительное целое число num, верните список ans длины n + 1, где каждый элемент ans[i] представляет количество 1 бит в двоичном представлении i(0<=i<=n).\nПример:\nПример 1:\nВвод: число = 3\nВыход: [0, 1, 1, 2]\n\nПример 2:\nВвод: число = 6\nВыход: [0, 1, 1, 2, 1, 2, 2]\n\nАлгоритмические шаги:\nЭта проблема решается с помощью метода динамического программирования, при котором предыдущие результаты будут повторно использоваться для расчета текущих результатов. Алгоритмический подход можно резюмировать следующим образом: \n\n1. Получите число num в качестве входного параметра.\n\n2. Инициализируйте массив ans длиной num+1, где каждому элементу по умолчанию присвоено ноль. Этот массив указывает количество 1 в каждом элементе от 0 до num. \n\n3. Инициализируйте переменную смещения (offset) значением 1. Это связано с тем, что первое смещение со степенью 2 равно 1 (т. е. 2 в степени 0). В этой задаче вы можете найти шаблон, согласно которому смещение умножается на 2, когда значение индекса равно степени 2.\n \n4. Переберите каждый элемент до num, чтобы найти биты счета.\n \n5. Смещение должно быть обновлено до индексной переменной (i), как только смещение, умноженное на 2, станет равным индексной переменной.\n \n6. Если условие на шаге 5 не выполняется, количество единиц для текущего числа рассчитывается путем сложения количества единиц в индексной переменной предыдущей степени 2 с 1.\n \n7. Повторите 5-6 шагов, чтобы вычислить количество установленных битов для каждого элемента.\n\n8. Верните массив ans, который содержит количество установленных битов до входного номера.\n\nСложность во времени и пространстве:\nЭтот алгоритм требует временной сложности O(n). Это потому, что мы повторяем элементы до n.\n\nЗдесь нам нужно использовать массив для хранения количества установленных бит для каждого элемента. Следовательно, пространственная сложность будет равна O(n)."
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven a positive integer `num`, return a list `ans` of length `n + 1` where each element `ans[i]` represents the count of 1 bits in the binary representation of i(`0<=i<=n`).\n\n## Example:\nExample 1:\nInput: num = 3\nOutput: [0, 1, 1, 2]\n\nExample 2:\nInput: num = 6\nOutput: [0, 1, 1, 2, 1, 2, 2]\n\n**Algorithmic Steps:**\nThis problem is solved with the help of **dynamic programming** technique where previous results going to be reused to calculate the current results. The algorithmic approach can be summarized as follows: \n\n1. Get the number `num` as input parameter.\n\n2. Initialize the `ans` array with a length of `num+1` where each element assigned to zero by default. This array indicates the number of `1`s in each element from `0` to `num`. \n\n3. Initialize the offset(`offset`) variable to 1. This is because the first offset with power of 2 is 1(i.e, 2 power 0). In this problem, you can find pattern that offset is multiplied by 2 when the index value is power of 2.\n   \n4. Iterate over each element upto `num` to find the counting bits.\n   \n5. The offset should be updated to the index variable(`i`) once the offset multiplied by 2 is equal to index variable.\n   \n6. If the condition in step5 fails, the number of 1's for current number is calculated by adding the number of 1's in previous power of 2 index variable with 1.\n   \n7. Repeat 5-6 steps to calculate the number of set bits for each element.\n\n8. Return the `ans` array which holds number of set bits upto input number.\n\n**Time and Space complexity:**\nThis algorithm takes a time complexity of `O(n)`. This is because we are iterating elements upto `n`.\n\nHere, we need to use array to hold the number of set bits for each element. Hence, the space complexity will be `O(n)`.",
+        "ru": "**Описание:**\nУчитывая положительное целое число `num`, верните список `ans` длины `n + 1`, где каждый элемент `ans[i]` представляет количество 1 бит в двоичном представлении i(`0<=i<=n`).\n\n## Пример:\nПример 1:\nВвод: число = 3\nВыход: [0, 1, 1, 2]\n\nПример 2:\nВвод: число = 6\nВыход: [0, 1, 1, 2, 1, 2, 2]\n\n**Алгоритмические шаги:**\nЭта проблема решается с помощью метода **динамического программирования**, при котором предыдущие результаты будут повторно использоваться для расчета текущих результатов. Алгоритмический подход можно резюмировать следующим образом: \n\n1. Получите число `num` в качестве входного параметра.\n\n2. Инициализируйте массив `ans` длиной `num+1`, где каждому элементу по умолчанию присвоено ноль. Этот массив указывает количество `1` в каждом элементе от `0` до `num`. \n\n3. Инициализируйте переменную смещения (`offset`) значением 1. Это связано с тем, что первое смещение со степенью 2 равно 1 (т. е. 2 в степени 0). В этой задаче вы можете найти шаблон, согласно которому смещение умножается на 2, когда значение индекса равно степени 2.\n   \n4. Переберите каждый элемент до `num`, чтобы найти биты счета.\n   \n5. Смещение должно быть обновлено до индексной переменной (`i`), как только смещение, умноженное на 2, станет равным индексной переменной.\n   \n6. Если условие на шаге 5 не выполняется, количество единиц для текущего числа рассчитывается путем сложения количества единиц в индексной переменной предыдущей степени 2 с 1.\n   \n7. Повторите 5-6 шагов, чтобы вычислить количество установленных битов для каждого элемента.\n\n8. Верните массив `ans`, который содержит количество установленных битов до входного номера.\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм требует временной сложности `O(n)`. Это потому, что мы повторяем элементы до `n`.\n\nЗдесь нам нужно использовать массив для хранения количества установленных бит для каждого элемента. Следовательно, пространственная сложность будет равна `O(n)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "binary",
+        "dsa-binary"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-binary-binary-004-missing-number",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/binary/4.missingNumber/missingNumber.js",
+        "documentationPath": "src/javascript/algorithms/binary/4.missingNumber/missingNumber.js",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/4.missingNumber/missingNumber.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/4.missingNumber/missingNumber.js"
+      },
+      "topicId": "dsa-binary",
+      "subtopic": "Binary",
+      "difficulty": "easy",
+      "question": {
+        "en": "How do you solve or implement `Missing number`?",
+        "ru": "Как решить или реализовать задачу `Missing number`?"
+      },
+      "answer": {
+        "en": "Level: Easy. Pattern/complexity: Bitwise XOR. //Using XOR operation - TC: O(n) SC: O(1) function missingNumber1(nums) { let missingNumber = nums.length; for(let i=0; i< nums.length; i++) { missingNumber ^= nums[i] ^i; } return missingNumber; } //Using numbers sum- TC: O(n) SC: O(1) function missingNumber2(nums) { let missingNumber = nums.length; for(let i=0; i< nums.length; i++) { missingNumber += i - nums[i]; } return missingNumber; } let nums1 = [3, 1, 0]; let nums2 = [5, 9, 7, 1, 2, 4, 0, 6, 8, 3]; console.log(missingNumber1(nums1)); console.log(missingNumber2(nums1)); console.log(missingNumber1(nums2)); console.log(missingNumber2(nums2));",
+        "ru": "Level: Easy. Pattern/complexity: Bitwise XOR. //Using XOR operation - TC: O(n) SC: O(1) function missingNumber1(nums) { let missingNumber = nums.length; for(let i=0; i< nums.length; i++) { missingNumber ^= nums[i] ^i; } return missingNumber; } //Using numbers sum- TC: O(n) SC: O(1) function missingNumber2(nums) { let missingNumber = nums.length; for(let i=0; i< nums.length; i++) { missingNumber += i - nums[i]; } return missingNumber; } let nums1 = [3, 1, 0]; let nums2 = [5, 9, 7, 1, 2, 4, 0, 6, 8, 3]; console.log(missingNumber1(nums1)); console.log(missingNumber2(nums1)); console.log(missingNumber1(nums2)); console.log(missingNumber2(nums2));"
+      },
+      "explanation": {
+        "en": "//Using XOR operation - TC: O(n) SC: O(1)\nfunction missingNumber1(nums) {\n    let missingNumber = nums.length;\n    for(let i=0; i< nums.length; i++) {\n        missingNumber ^= nums[i] ^i;\n    }\n    return missingNumber;\n}\n\n//Using numbers sum- TC: O(n) SC: O(1)\nfunction missingNumber2(nums) {\n    let missingNumber = nums.length;\n    for(let i=0; i< nums.length; i++) {\n        missingNumber += i - nums[i];\n    }\n    return missingNumber;\n}\n\nlet nums1 = [3, 1, 0];\nlet nums2 = [5, 9, 7, 1, 2, 4, 0, 6, 8, 3];\nconsole.log(missingNumber1(nums1)); \nconsole.log(missingNumber2(nums1)); \n\nconsole.log(missingNumber1(nums2)); \nconsole.log(missingNumber2(nums2));",
+        "ru": "//Using XOR operation - TC: O(n) SC: O(1)\nfunction missingNumber1(nums) {\n    let missingNumber = nums.length;\n    for(let i=0; i< nums.length; i++) {\n        missingNumber ^= nums[i] ^i;\n    }\n    return missingNumber;\n}\n\n//Using numbers sum- TC: O(n) SC: O(1)\nfunction missingNumber2(nums) {\n    let missingNumber = nums.length;\n    for(let i=0; i< nums.length; i++) {\n        missingNumber += i - nums[i];\n    }\n    return missingNumber;\n}\n\nlet nums1 = [3, 1, 0];\nlet nums2 = [5, 9, 7, 1, 2, 4, 0, 6, 8, 3];\nconsole.log(missingNumber1(nums1)); \nconsole.log(missingNumber2(nums1)); \n\nconsole.log(missingNumber1(nums2)); \nconsole.log(missingNumber2(nums2));"
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "binary",
+        "dsa-binary"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-binary-binary-005-reverse-bits",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/binary/5.reverseBits/reverseBits.js",
+        "documentationPath": "src/javascript/algorithms/binary/5.reverseBits/reverseBits.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/5.reverseBits/reverseBits.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/5.reverseBits/reverseBits.md"
+      },
+      "topicId": "dsa-binary",
+      "subtopic": "Binary",
+      "difficulty": "easy",
+      "question": {
+        "en": "How do you solve or implement `Reverse Bits`?",
+        "ru": "Как решить или реализовать задачу `Reverse Bits`?"
+      },
+      "answer": {
+        "en": "Description:\nReverse the bits of a given 32-bit unsigned integer.\nExample:\nExample 1:\nInput: num = 4\nOutput: 536870912\n\nExample 2:\nInput: num = 8\nOutput: 268435456\n\nAlgorithmic Steps:\nThis problem is solved with the help of Bitwise operations. The main intution of this algorithm is to retrieve each bit individually from least significant bit to the most significant bit and place that bit in the reversed position of a new number. As a result, the least significant bits moved to most significant bit side and vice-versa. The algorithmic approach can be summarized as follows: \n\n1. Get the number num as input parameter.\n\n2. Initialize the reverse bits number(reverseBitResult) to zero.\n \n3. Iterate through each index(i) in the range of 32. This is because we are handling with a 32-bit unsigned integer.\n \n4. Find the least significant bit of each index by applying right shift operation(i.e, num >> i). Thereafter, apply bitwise AND operation with 1, to know the bit value. This value is stored in bit variable.\n \n5. Apply OR operation between reverse bit result and the calculated bit left shifted to place it in reversed position(i.e, 32-i). The OR operation doesn't change the existing bits in the result.\n \n6. Repeat 4-5 steps until each bit traversed.\n\n7. Return the reverse bits number as inverted result.\n\nTime and Space complexity:\nThis algorithm takes a time complexity of O(32) -> O(1). This is because we are iterating through each index of 32-bit binary number.\n\nHere, we don't use any additional datastructure other than variable to store reversed number. Hence, the space complexity will be O(1).",
+        "ru": "Описание:\nИнвертируйте биты данного 32-битного беззнакового целого числа.\nПример:\nПример 1:\nВвод: число = 4\nВывод: 536870912\n\nПример 2:\nВвод: число = 8\nВывод: 268435456\n\nАлгоритмические шаги:\nЭта проблема решается с помощью Побитовых операций. Основная идея этого алгоритма состоит в том, чтобы извлечь каждый бит индивидуально от наименее значимого бита до наиболее значимого бита и поместить этот бит в обратную позицию нового числа. В результате младшие биты переместились в сторону старших битов и наоборот. Алгоритмический подход можно резюмировать следующим образом: \n\n1. Получите число num в качестве входного параметра.\n\n2. Инициализируйте число обратных битов (reverseBitResult) равным нулю.\n \n3. Переберите каждый индекс (i) в диапазоне 32. Это связано с тем, что мы обрабатываем 32-битное целое число без знака.\n \n4. Найдите младший бит каждого индекса, применив операцию сдвига вправо (т. е. num >> i). После этого примените побитовую операцию И с 1, чтобы узнать значение бита. Это значение хранится в переменной bit.\n \n5. Примените операцию ИЛИ между результатом обратного бита и вычисленным битом, сдвинутым влево, чтобы поместить его в инвертированную позицию (т. е. 32-i). Операция ИЛИ не меняет существующие биты результата.\n \n6. Повторяйте 4–5 шагов, пока не будет пройден каждый бит.\n\n7. Вернуть обратное количество битов как инвертированный результат.\n\nСложность во времени и пространстве:\nЭтот алгоритм требует временной сложности O(32) -> O(1). Это связано с тем, что мы перебираем каждый индекс 32-битного двоичного числа.\n\nЗдесь мы не используем никакой дополнительной структуры данных, кроме переменной для хранения перевернутого числа. Следовательно, пространственная сложность будет равна O(1)."
+      },
+      "explanation": {
+        "en": "**Description:**\nReverse the bits of a given 32-bit unsigned integer.\n\n## Example:\nExample 1:\nInput: num = 4\nOutput: 536870912\n\nExample 2:\nInput: num = 8\nOutput: 268435456\n\n**Algorithmic Steps:**\nThis problem is solved with the help of **Bitwise operations**. The main intution of this algorithm is to retrieve each bit individually from least significant bit to the most significant bit and place that bit in the reversed position of a new number. As a result, the least significant bits moved to most significant bit side and vice-versa. The algorithmic approach can be summarized as follows: \n\n1. Get the number `num` as input parameter.\n\n2. Initialize the reverse bits number(`reverseBitResult`) to zero.\n   \n3. Iterate through each index(`i`) in the range of 32. This is because we are handling with a 32-bit unsigned integer.\n   \n4. Find the least significant bit of each index by applying right shift operation(i.e, `num >> i`). Thereafter, apply bitwise AND operation with 1, to know the bit value. This value is stored in `bit` variable.\n   \n5. Apply OR operation between reverse bit result and the calculated bit left shifted to place it in reversed position(i.e, `32-i`). The OR operation doesn't change the existing bits in the result.\n   \n6. Repeat 4-5 steps until each bit traversed.\n\n7. Return the reverse bits number as inverted result.\n\n\n**Time and Space complexity:**\nThis algorithm takes a time complexity of `O(32) -> O(1)`. This is because we are iterating through each index of 32-bit binary number.\n\nHere, we don't use any additional datastructure other than variable to store reversed number. Hence, the space complexity will be `O(1)`.",
+        "ru": "**Описание:**\nИнвертируйте биты данного 32-битного беззнакового целого числа.\n\n## Пример:\nПример 1:\nВвод: число = 4\nВывод: 536870912\n\nПример 2:\nВвод: число = 8\nВывод: 268435456\n\n**Алгоритмические шаги:**\nЭта проблема решается с помощью **Побитовых операций**. Основная идея этого алгоритма состоит в том, чтобы извлечь каждый бит индивидуально от наименее значимого бита до наиболее значимого бита и поместить этот бит в обратную позицию нового числа. В результате младшие биты переместились в сторону старших битов и наоборот. Алгоритмический подход можно резюмировать следующим образом: \n\n1. Получите число `num` в качестве входного параметра.\n\n2. Инициализируйте число обратных битов (`reverseBitResult`) равным нулю.\n   \n3. Переберите каждый индекс (`i`) в диапазоне 32. Это связано с тем, что мы обрабатываем 32-битное целое число без знака.\n   \n4. Найдите младший бит каждого индекса, применив операцию сдвига вправо (т. е. `num >> i`). После этого примените побитовую операцию И с 1, чтобы узнать значение бита. Это значение хранится в переменной `bit`.\n   \n5. Примените операцию ИЛИ между результатом обратного бита и вычисленным битом, сдвинутым влево, чтобы поместить его в инвертированную позицию (т. е. `32-i`). Операция ИЛИ не меняет существующие биты результата.\n   \n6. Повторяйте 4–5 шагов, пока не будет пройден каждый бит.\n\n7. Вернуть обратное количество битов как инвертированный результат.\n\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм требует временной сложности `O(32) -> O(1)`. Это связано с тем, что мы перебираем каждый индекс 32-битного двоичного числа.\n\nЗдесь мы не используем никакой дополнительной структуры данных, кроме переменной для хранения перевернутого числа. Следовательно, пространственная сложность будет равна `O(1)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "binary",
+        "dsa-binary"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "sudheerj-dsa-binary-binary-001-sum-of-two-integers-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/binary/1.twoSum/twoSum.js",
+        "documentationPath": "src/javascript/algorithms/binary/1.twoSum/twoSum.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/1.twoSum/twoSum.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/1.twoSum/twoSum.md"
+      },
+      "topicId": "dsa-binary",
+      "subtopic": "Binary",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Sum of two integers",
+        "ru": "Сумма двух целых чисел"
+      },
+      "prompt": {
+        "en": "Implement `Sum of two integers` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Sum of two integers`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "// TC:O(32) ~ O(1), SC: O(1)\n\nfunction findTwoSum(a, b) {\n    while(b != 0) {\n        let carry = (a & b) << 1;\n        a = a ^ b;\n        b = carry;\n    }\n    return a;\n}\n\nlet a = 44, b = 32;\nlet a1 = 3, b1 = 2;\nconsole.log(findTwoSum(a, b));\nconsole.log(findTwoSum(a1, b1));",
+      "expectedAnswer": {
+        "en": "// TC:O(32) ~ O(1), SC: O(1)\n\nfunction findTwoSum(a, b) {\n    while(b != 0) {\n        let carry = (a & b) << 1;\n        a = a ^ b;\n        b = carry;\n    }\n    return a;\n}\n\nlet a = 44, b = 32;\nlet a1 = 3, b1 = 2;\nconsole.log(findTwoSum(a, b));\nconsole.log(findTwoSum(a1, b1));",
+        "ru": "// TC:O(32) ~ O(1), SC: O(1)\n\nfunction findTwoSum(a, b) {\n    while(b != 0) {\n        let carry = (a & b) << 1;\n        a = a ^ b;\n        b = carry;\n    }\n    return a;\n}\n\nlet a = 44, b = 32;\nlet a1 = 3, b1 = 2;\nconsole.log(findTwoSum(a, b));\nconsole.log(findTwoSum(a1, b1));"
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven two integers `a` and `b`, return the sum of the two integers without using the operators + and -.\n\n## Example:\nExample 1:\nInput: a = 44, b = 32\nOutput: 76\n\nExample 2:\nInput: a = 3, b = 2\nOutput: 5\n\n**Algorithmic Steps:**\nThis problem is solved with the help of **bitwise operators** technique. The addition of two binary numbers is calculated by the sum of carry and XOR between the numbers until the carry becomes 0. The algorithmic approach can be summarized as follows: \n\n1. Get the two numbers `a` and `b` as input parameters.\n\n2. Iterate the bitwise operations until `b` is not zero. \n   \n3. Calculate the carry of the two numbers using Bitwise AND operation. Also, shift the carry to the left 1. The can be store in a `temp` variable.\n\n4. Calculate the XOR operation between the numbers using Bitwise XOR operation. Store the result in `a` for next iteration.\n\n5. Update `b` value with `temp` calculated in step3.\n\n6. Repeat steps 3-5 steps until the carry(`b`) is zero.\n\n7. After the completion of loop, the addition of binary numbers returned from `a`.\n\n7. Return `[-1, -1]` incase of no matching numbers whose sum not equal to the target.\n\n**Time and Space complexity:**\nThis algorithm takes a time complexity of `O(1)`(~`O(32)`). This is because we are iterating the loop until the carry becomes zero. Considering 32-bit integers, the loop may run at most 32 times for maximum possible value of carry. \n\nHere, we don't use any additional datastructure other than temporary variable. Hence, the space complexity will be `O(1)`.",
+        "ru": "**Описание:**\nУчитывая два целых числа `a` и `b`, верните сумму двух целых чисел без использования операторов + и -.\n\n## Пример:\nПример 1:\nВвод: а = 44, б = 32.\nВыход: 76\n\nПример 2:\nВвод: а = 3, б = 2\nВыход: 5\n\n**Алгоритмические шаги:**\nЭта проблема решается с помощью техники **побитовых операторов**. Сложение двух двоичных чисел рассчитывается по сумме переноса и XOR между числами до тех пор, пока перенос не станет равным 0. Алгоритмический подход можно резюмировать следующим образом: \n\n1. Получите два числа `a` и `b` в качестве входных параметров.\n\n2. Повторяйте побитовые операции до тех пор, пока `b` не станет равным нулю. \n   \n3. Вычислите перенос двух чисел, используя операцию побитового И. Также сдвиньте перенос влево на 1. Его можно сохранить в переменной `temp`.\n\n4. Вычислите операцию XOR между числами, используя операцию побитового XOR. Сохраните результат в `a` для следующей итерации.\n\n5. Обновите значение `b` с помощью `temp`, рассчитанного на шаге 3.\n\n6. Повторяйте шаги 3–5, пока перенос (`b`) не станет равным нулю.\n\n7. После завершения цикла сложение двоичных чисел вернулось из `a`.\n\n7. Верните `[-1, -1]` в случае отсутствия совпадающих чисел, сумма которых не равна целевому значению.\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм требует временной сложности `O(1)`(~`O(32)`). Это потому, что мы повторяем цикл до тех пор, пока перенос не станет нулевым. Учитывая 32-битные целые числа, цикл может выполняться не более 32 раз для максимально возможного значения переноса. \n\nЗдесь мы не используем никакой дополнительной структуры данных, кроме временной переменной. Следовательно, пространственная сложность будет равна `O(1)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "binary",
+        "dsa-binary",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-binary-binary-002-number-of-1-bits-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/binary/2.numberOf1Bits/numberOf1Bits.js",
+        "documentationPath": "src/javascript/algorithms/binary/2.numberOf1Bits/numberOf1Bits.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/2.numberOf1Bits/numberOf1Bits.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/2.numberOf1Bits/numberOf1Bits.md"
+      },
+      "topicId": "dsa-binary",
+      "subtopic": "Binary",
+      "type": "implement",
+      "difficulty": "easy",
+      "title": {
+        "en": "Number of 1 Bits",
+        "ru": "Количество 1 бит"
+      },
+      "prompt": {
+        "en": "Implement `Number of 1 Bits` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Number of 1 Bits`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "//Optimistic solution without scanning zeros(Brian Kernighan's Algorithm)// TC: O(1), SC: O(1)\nfunction hammingWeight1(num) {\n    let count = 0;\n    while(num != 0) {\n        num &= num-1;\n        count++;\n    }\n    return count;\n}\n\n//TC: O(32)-> O(1), SC: O(1)\nfunction hammingWeight2(num) {\n    let count = 0;\n    while(num != 0) {\n        count += num & 1;\n        num >>= 1;\n    }\n    return count;\n}\n\n//TC: O(32)-> O(1), SC: O(1)\nfunction hammingWeight3(num) {\n    let count = 0;\n    while(num != 0) {\n        count += num % 2;\n        num >>= 1;\n    }\n    return count;\n}\n\n// TC: O(32) -> O(1) SC: O(1)\nfunction hammingWeight4(num) {\n    let count = 0;\n    let mask = 1;\n    for(let i=0; i< 32; i++) {\n        if((num & mask) != 0) {\n            count++;\n        }\n        num >>=1;\n    }\n    return count;\n}\n\nlet num1 = 12; // 00000000000000000000000000001100\nlet num2 = 128; // 00000000000000000000000010000000\nconsole.log(hammingWeight1(num1));\nconsole.log(hammingWeight2(num1));\nconsole.log(hammingWeight3(num1));\nconsole.log(hammingWeight4(num1));\n\nconsole.log(hammingWeight1(num2));\nconsole.log(hammingWeight2(num2));\nconsole.log(hammingWeight3(num2));\nconsole.log(hammingWeight4(num2));",
+      "expectedAnswer": {
+        "en": "//Optimistic solution without scanning zeros(Brian Kernighan's Algorithm)// TC: O(1), SC: O(1)\nfunction hammingWeight1(num) {\n    let count = 0;\n    while(num != 0) {\n        num &= num-1;\n        count++;\n    }\n    return count;\n}\n\n//TC: O(32)-> O(1), SC: O(1)\nfunction hammingWeight2(num) {\n    let count = 0;\n    while(num != 0) {\n        count += num & 1;\n        num >>= 1;\n    }\n    return count;\n}\n\n//TC: O(32)-> O(1), SC: O(1)\nfunction hammingWeight3(num) {\n    let count = 0;\n    while(num != 0) {\n        count += num % 2;\n        num >>= 1;\n    }\n    return count;\n}\n\n// TC: O(32) -> O(1) SC: O(1)\nfunction hammingWeight4(num) {\n    let count = 0;\n    let mask = 1;\n    for(let i=0; i< 32; i++) {\n        if((num & mask) != 0) {\n            count++;\n        }\n        num >>=1;\n    }\n    return count;\n}\n\nlet num1 = 12; // 00000000000000000000000000001100\nlet num2 = 128; // 00000000000000000000000010000000\nconsole.log(hammingWeight1(num1));\nconsole.log(hammingWeight2(num1));\nconsole.log(hammingWeight3(num1));\nconsole.log(hammingWeight4(num1));\n\nconsole.log(hammingWeight1(num2));\nconsole.log(hammingWeight2(num2));\nconsole.log(hammingWeight3(num2));\nconsole.log(hammingWeight4(num2));",
+        "ru": "//Optimistic solution without scanning zeros(Brian Kernighan's Algorithm)// TC: O(1), SC: O(1)\nfunction hammingWeight1(num) {\n    let count = 0;\n    while(num != 0) {\n        num &= num-1;\n        count++;\n    }\n    return count;\n}\n\n//TC: O(32)-> O(1), SC: O(1)\nfunction hammingWeight2(num) {\n    let count = 0;\n    while(num != 0) {\n        count += num & 1;\n        num >>= 1;\n    }\n    return count;\n}\n\n//TC: O(32)-> O(1), SC: O(1)\nfunction hammingWeight3(num) {\n    let count = 0;\n    while(num != 0) {\n        count += num % 2;\n        num >>= 1;\n    }\n    return count;\n}\n\n// TC: O(32) -> O(1) SC: O(1)\nfunction hammingWeight4(num) {\n    let count = 0;\n    let mask = 1;\n    for(let i=0; i< 32; i++) {\n        if((num & mask) != 0) {\n            count++;\n        }\n        num >>=1;\n    }\n    return count;\n}\n\nlet num1 = 12; // 00000000000000000000000000001100\nlet num2 = 128; // 00000000000000000000000010000000\nconsole.log(hammingWeight1(num1));\nconsole.log(hammingWeight2(num1));\nconsole.log(hammingWeight3(num1));\nconsole.log(hammingWeight4(num1));\n\nconsole.log(hammingWeight1(num2));\nconsole.log(hammingWeight2(num2));\nconsole.log(hammingWeight3(num2));\nconsole.log(hammingWeight4(num2));"
+      },
+      "explanation": {
+        "en": "**Description:**\nWrite a function that receives binary representation of an unsigned(or positive) integer and calculate the number of '1' bits(Set bits).\n\n**Note:** In binary representation, hamming weight is the number of 1's.\n\n## Example:\nExample 1:\nInput: num = 12\nOutput: \n\nExample 2:\nInput: num = 128\nOutput: 5\n\n**Algorithmic Steps:**\nThis problem is solved with the help of **Brian Kernighans** technique. The main intution behind this algorithm is that when you subtract 1 from an integer, all the bits following the rightmost set of bits are inverted. (i.e, turning 1 to 0 and 0 to 1). The algorithmic approach can be summarized as follows: \n\n1. Get the number `num` as input parameter.\n\n2. Initialize the counter(`count`) to zero. This variable indicates the number of `1`s in the number. \n\n3. Iterate the number until it became zero. \n   \n4. Update the number by multiplying the number itself with number which is subtracted by 1. It helps to invert the right most bit everytime.\n\n5. Update the counter by one for each iteration.\n   \n6. Repeat 4-5 steps until the number is zero.\n\n7. Return the `count` as output which is equal to number of `1` set bits.\n\n\n**Time and Space complexity:**\nThis algorithm takes a time complexity of `O(1)`. This is because we are iterating the loop only for the `1` set bits but not for `0` bits. \n\nHere, we don't use any additional datastructure other than counter variable. Hence, the space complexity will be `O(1)`.",
+        "ru": "**Описание:**\nНапишите функцию, которая получает двоичное представление беззнакового (или положительного) целого числа и рассчитывает количество битов «1» (установленных битов).\n\n**Примечание.** В двоичном представлении вес Хэмминга равен количеству единиц.\n\n## Пример:\nПример 1:\nВвод: число = 12\nВыход: \n\nПример 2:\nВвод: число = 128\nВыход: 5\n\n**Алгоритмические шаги:**\nЭта проблема решается с помощью методики **Брайана Керниганса**. Основная идея этого алгоритма заключается в том, что когда вы вычитаете 1 из целого числа, все биты, следующие за самым правым набором битов, инвертируются. (т. е. превращение 1 в 0 и 0 в 1). Алгоритмический подход можно резюмировать следующим образом: \n\n1. Получите число `num` в качестве входного параметра.\n\n2. Инициализируйте счетчик (`count`) равным нулю. Эта переменная указывает количество `1` в номере. \n\n3. Повторяйте число, пока оно не станет нулевым. \n   \n4. Обновите число, умножив само число на число, которое вычитается на 1. Это помогает каждый раз инвертировать самый правый бит.\n\n5. Обновите счетчик на единицу для каждой итерации.\n   \n6. Повторяйте 4–5 шагов, пока число не станет равным нулю.\n\n7. Верните `count` в качестве вывода, равного количеству установленных битов `1`.\n\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм требует временной сложности `O(1)`. Это связано с тем, что мы повторяем цикл только для установленных битов `1`, но не для битов `0`. \n\nЗдесь мы не используем никакой дополнительной структуры данных, кроме переменной-счетчика. Следовательно, пространственная сложность будет равна `O(1)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "binary",
+        "dsa-binary",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-binary-binary-003-counting-bits-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/binary/3.countingBits/countingBits.js",
+        "documentationPath": "src/javascript/algorithms/binary/3.countingBits/countingBits.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/3.countingBits/countingBits.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/3.countingBits/countingBits.md"
+      },
+      "topicId": "dsa-binary",
+      "subtopic": "Binary",
+      "type": "implement",
+      "difficulty": "easy",
+      "title": {
+        "en": "Counting Bits",
+        "ru": "Подсчет битов"
+      },
+      "prompt": {
+        "en": "Implement `Counting Bits` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Counting Bits`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "// Dynamic programming:- TC:O(n) SC:O(n)\n\nfunction countingBits1(num) {\n    let ans = new Array(num+1).fill(0);\n    let offset = 1; \n    for(let i=1; i< num+1; i++) {\n        if(offset * 2 === i) {\n            offset = i;\n        }\n        ans[i] = 1 +ans[i-offset];\n    }\n    return ans;\n}\n\nfunction countingBits2(num) {\n    let ans = new Array(num+1).fill(0);\n    for(let i=1; i< num+1; i++) {\n        ans[i] = ans[i >> 1] + (i & 1);\n    }\n    return ans;\n}\n\nlet num1 = 3;\nlet num2 = 6;\n\nconsole.log(countingBits1(num1));\nconsole.log(countingBits1(num2));\n\nconsole.log(countingBits2(num1));\nconsole.log(countingBits2(num2));",
+      "expectedAnswer": {
+        "en": "// Dynamic programming:- TC:O(n) SC:O(n)\n\nfunction countingBits1(num) {\n    let ans = new Array(num+1).fill(0);\n    let offset = 1; \n    for(let i=1; i< num+1; i++) {\n        if(offset * 2 === i) {\n            offset = i;\n        }\n        ans[i] = 1 +ans[i-offset];\n    }\n    return ans;\n}\n\nfunction countingBits2(num) {\n    let ans = new Array(num+1).fill(0);\n    for(let i=1; i< num+1; i++) {\n        ans[i] = ans[i >> 1] + (i & 1);\n    }\n    return ans;\n}\n\nlet num1 = 3;\nlet num2 = 6;\n\nconsole.log(countingBits1(num1));\nconsole.log(countingBits1(num2));\n\nconsole.log(countingBits2(num1));\nconsole.log(countingBits2(num2));",
+        "ru": "// Dynamic programming:- TC:O(n) SC:O(n)\n\nfunction countingBits1(num) {\n    let ans = new Array(num+1).fill(0);\n    let offset = 1; \n    for(let i=1; i< num+1; i++) {\n        if(offset * 2 === i) {\n            offset = i;\n        }\n        ans[i] = 1 +ans[i-offset];\n    }\n    return ans;\n}\n\nfunction countingBits2(num) {\n    let ans = new Array(num+1).fill(0);\n    for(let i=1; i< num+1; i++) {\n        ans[i] = ans[i >> 1] + (i & 1);\n    }\n    return ans;\n}\n\nlet num1 = 3;\nlet num2 = 6;\n\nconsole.log(countingBits1(num1));\nconsole.log(countingBits1(num2));\n\nconsole.log(countingBits2(num1));\nconsole.log(countingBits2(num2));"
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven a positive integer `num`, return a list `ans` of length `n + 1` where each element `ans[i]` represents the count of 1 bits in the binary representation of i(`0<=i<=n`).\n\n## Example:\nExample 1:\nInput: num = 3\nOutput: [0, 1, 1, 2]\n\nExample 2:\nInput: num = 6\nOutput: [0, 1, 1, 2, 1, 2, 2]\n\n**Algorithmic Steps:**\nThis problem is solved with the help of **dynamic programming** technique where previous results going to be reused to calculate the current results. The algorithmic approach can be summarized as follows: \n\n1. Get the number `num` as input parameter.\n\n2. Initialize the `ans` array with a length of `num+1` where each element assigned to zero by default. This array indicates the number of `1`s in each element from `0` to `num`. \n\n3. Initialize the offset(`offset`) variable to 1. This is because the first offset with power of 2 is 1(i.e, 2 power 0). In this problem, you can find pattern that offset is multiplied by 2 when the index value is power of 2.\n   \n4. Iterate over each element upto `num` to find the counting bits.\n   \n5. The offset should be updated to the index variable(`i`) once the offset multiplied by 2 is equal to index variable.\n   \n6. If the condition in step5 fails, the number of 1's for current number is calculated by adding the number of 1's in previous power of 2 index variable with 1.\n   \n7. Repeat 5-6 steps to calculate the number of set bits for each element.\n\n8. Return the `ans` array which holds number of set bits upto input number.\n\n**Time and Space complexity:**\nThis algorithm takes a time complexity of `O(n)`. This is because we are iterating elements upto `n`.\n\nHere, we need to use array to hold the number of set bits for each element. Hence, the space complexity will be `O(n)`.",
+        "ru": "**Описание:**\nУчитывая положительное целое число `num`, верните список `ans` длины `n + 1`, где каждый элемент `ans[i]` представляет количество 1 бит в двоичном представлении i(`0<=i<=n`).\n\n## Пример:\nПример 1:\nВвод: число = 3\nВыход: [0, 1, 1, 2]\n\nПример 2:\nВвод: число = 6\nВыход: [0, 1, 1, 2, 1, 2, 2]\n\n**Алгоритмические шаги:**\nЭта проблема решается с помощью метода **динамического программирования**, при котором предыдущие результаты будут повторно использоваться для расчета текущих результатов. Алгоритмический подход можно резюмировать следующим образом: \n\n1. Получите число `num` в качестве входного параметра.\n\n2. Инициализируйте массив `ans` длиной `num+1`, где каждому элементу по умолчанию присвоено ноль. Этот массив указывает количество `1` в каждом элементе от `0` до `num`. \n\n3. Инициализируйте переменную смещения (`offset`) значением 1. Это связано с тем, что первое смещение со степенью 2 равно 1 (т. е. 2 в степени 0). В этой задаче вы можете найти шаблон, согласно которому смещение умножается на 2, когда значение индекса равно степени 2.\n   \n4. Переберите каждый элемент до `num`, чтобы найти биты счета.\n   \n5. Смещение должно быть обновлено до индексной переменной (`i`), как только смещение, умноженное на 2, станет равным индексной переменной.\n   \n6. Если условие на шаге 5 не выполняется, количество единиц для текущего числа рассчитывается путем сложения количества единиц в индексной переменной предыдущей степени 2 с 1.\n   \n7. Повторите 5-6 шагов, чтобы вычислить количество установленных битов для каждого элемента.\n\n8. Верните массив `ans`, который содержит количество установленных битов до входного номера.\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм требует временной сложности `O(n)`. Это потому, что мы повторяем элементы до `n`.\n\nЗдесь нам нужно использовать массив для хранения количества установленных бит для каждого элемента. Следовательно, пространственная сложность будет равна `O(n)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "binary",
+        "dsa-binary",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-binary-binary-004-missing-number-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/binary/4.missingNumber/missingNumber.js",
+        "documentationPath": "src/javascript/algorithms/binary/4.missingNumber/missingNumber.js",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/4.missingNumber/missingNumber.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/4.missingNumber/missingNumber.js"
+      },
+      "topicId": "dsa-binary",
+      "subtopic": "Binary",
+      "type": "implement",
+      "difficulty": "easy",
+      "title": {
+        "en": "Missing number",
+        "ru": "Отсутствует номер"
+      },
+      "prompt": {
+        "en": "Implement `Missing number` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Missing number`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "//Using XOR operation - TC: O(n) SC: O(1)\nfunction missingNumber1(nums) {\n    let missingNumber = nums.length;\n    for(let i=0; i< nums.length; i++) {\n        missingNumber ^= nums[i] ^i;\n    }\n    return missingNumber;\n}\n\n//Using numbers sum- TC: O(n) SC: O(1)\nfunction missingNumber2(nums) {\n    let missingNumber = nums.length;\n    for(let i=0; i< nums.length; i++) {\n        missingNumber += i - nums[i];\n    }\n    return missingNumber;\n}\n\nlet nums1 = [3, 1, 0];\nlet nums2 = [5, 9, 7, 1, 2, 4, 0, 6, 8, 3];\nconsole.log(missingNumber1(nums1)); \nconsole.log(missingNumber2(nums1)); \n\nconsole.log(missingNumber1(nums2)); \nconsole.log(missingNumber2(nums2));",
+      "expectedAnswer": {
+        "en": "//Using XOR operation - TC: O(n) SC: O(1)\nfunction missingNumber1(nums) {\n    let missingNumber = nums.length;\n    for(let i=0; i< nums.length; i++) {\n        missingNumber ^= nums[i] ^i;\n    }\n    return missingNumber;\n}\n\n//Using numbers sum- TC: O(n) SC: O(1)\nfunction missingNumber2(nums) {\n    let missingNumber = nums.length;\n    for(let i=0; i< nums.length; i++) {\n        missingNumber += i - nums[i];\n    }\n    return missingNumber;\n}\n\nlet nums1 = [3, 1, 0];\nlet nums2 = [5, 9, 7, 1, 2, 4, 0, 6, 8, 3];\nconsole.log(missingNumber1(nums1)); \nconsole.log(missingNumber2(nums1)); \n\nconsole.log(missingNumber1(nums2)); \nconsole.log(missingNumber2(nums2));",
+        "ru": "//Using XOR operation - TC: O(n) SC: O(1)\nfunction missingNumber1(nums) {\n    let missingNumber = nums.length;\n    for(let i=0; i< nums.length; i++) {\n        missingNumber ^= nums[i] ^i;\n    }\n    return missingNumber;\n}\n\n//Using numbers sum- TC: O(n) SC: O(1)\nfunction missingNumber2(nums) {\n    let missingNumber = nums.length;\n    for(let i=0; i< nums.length; i++) {\n        missingNumber += i - nums[i];\n    }\n    return missingNumber;\n}\n\nlet nums1 = [3, 1, 0];\nlet nums2 = [5, 9, 7, 1, 2, 4, 0, 6, 8, 3];\nconsole.log(missingNumber1(nums1)); \nconsole.log(missingNumber2(nums1)); \n\nconsole.log(missingNumber1(nums2)); \nconsole.log(missingNumber2(nums2));"
+      },
+      "explanation": {
+        "en": "//Using XOR operation - TC: O(n) SC: O(1)\nfunction missingNumber1(nums) {\n    let missingNumber = nums.length;\n    for(let i=0; i< nums.length; i++) {\n        missingNumber ^= nums[i] ^i;\n    }\n    return missingNumber;\n}\n\n//Using numbers sum- TC: O(n) SC: O(1)\nfunction missingNumber2(nums) {\n    let missingNumber = nums.length;\n    for(let i=0; i< nums.length; i++) {\n        missingNumber += i - nums[i];\n    }\n    return missingNumber;\n}\n\nlet nums1 = [3, 1, 0];\nlet nums2 = [5, 9, 7, 1, 2, 4, 0, 6, 8, 3];\nconsole.log(missingNumber1(nums1)); \nconsole.log(missingNumber2(nums1)); \n\nconsole.log(missingNumber1(nums2)); \nconsole.log(missingNumber2(nums2));",
+        "ru": "//Using XOR operation - TC: O(n) SC: O(1)\nfunction missingNumber1(nums) {\n    let missingNumber = nums.length;\n    for(let i=0; i< nums.length; i++) {\n        missingNumber ^= nums[i] ^i;\n    }\n    return missingNumber;\n}\n\n//Using numbers sum- TC: O(n) SC: O(1)\nfunction missingNumber2(nums) {\n    let missingNumber = nums.length;\n    for(let i=0; i< nums.length; i++) {\n        missingNumber += i - nums[i];\n    }\n    return missingNumber;\n}\n\nlet nums1 = [3, 1, 0];\nlet nums2 = [5, 9, 7, 1, 2, 4, 0, 6, 8, 3];\nconsole.log(missingNumber1(nums1)); \nconsole.log(missingNumber2(nums1)); \n\nconsole.log(missingNumber1(nums2)); \nconsole.log(missingNumber2(nums2));"
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "binary",
+        "dsa-binary",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-binary-binary-005-reverse-bits-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/binary/5.reverseBits/reverseBits.js",
+        "documentationPath": "src/javascript/algorithms/binary/5.reverseBits/reverseBits.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/5.reverseBits/reverseBits.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/binary/5.reverseBits/reverseBits.md"
+      },
+      "topicId": "dsa-binary",
+      "subtopic": "Binary",
+      "type": "implement",
+      "difficulty": "easy",
+      "title": {
+        "en": "Reverse Bits",
+        "ru": "Обратные биты"
+      },
+      "prompt": {
+        "en": "Implement `Reverse Bits` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Reverse Bits`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "// TC:O(32) ~ O(1) SC:O(1)\n\nfunction reverseBits1(num) {\n    let reverseBitResult = 0;\n    for(let i=0; i<32; i++) {\n        let bit = (num >> i) & 1;\n        if( bit === 1) {\n            reverseBitResult = reverseBitResult | bit << 31-i;\n        }\n    }\n    return reverseBitResult;\n}\n\nfunction reverseBits2(num) {\n    let reverseBitResult = 0;\n    for(let i=0; i< 32; i++) {\n        reverseBitResult <<= 1;\n        reverseBitResult |= (1 & num);\n        num >>= 1;\n    }\n    return reverseBitResult;\n}\n\nlet num1 = 4;\nconsole.log(reverseBits1(num1));\nconsole.log(reverseBits2(num1));\n\nlet num2 = 8;\nconsole.log(reverseBits1(num2));\nconsole.log(reverseBits2(num2));",
+      "expectedAnswer": {
+        "en": "// TC:O(32) ~ O(1) SC:O(1)\n\nfunction reverseBits1(num) {\n    let reverseBitResult = 0;\n    for(let i=0; i<32; i++) {\n        let bit = (num >> i) & 1;\n        if( bit === 1) {\n            reverseBitResult = reverseBitResult | bit << 31-i;\n        }\n    }\n    return reverseBitResult;\n}\n\nfunction reverseBits2(num) {\n    let reverseBitResult = 0;\n    for(let i=0; i< 32; i++) {\n        reverseBitResult <<= 1;\n        reverseBitResult |= (1 & num);\n        num >>= 1;\n    }\n    return reverseBitResult;\n}\n\nlet num1 = 4;\nconsole.log(reverseBits1(num1));\nconsole.log(reverseBits2(num1));\n\nlet num2 = 8;\nconsole.log(reverseBits1(num2));\nconsole.log(reverseBits2(num2));",
+        "ru": "// TC:O(32) ~ O(1) SC:O(1)\n\nfunction reverseBits1(num) {\n    let reverseBitResult = 0;\n    for(let i=0; i<32; i++) {\n        let bit = (num >> i) & 1;\n        if( bit === 1) {\n            reverseBitResult = reverseBitResult | bit << 31-i;\n        }\n    }\n    return reverseBitResult;\n}\n\nfunction reverseBits2(num) {\n    let reverseBitResult = 0;\n    for(let i=0; i< 32; i++) {\n        reverseBitResult <<= 1;\n        reverseBitResult |= (1 & num);\n        num >>= 1;\n    }\n    return reverseBitResult;\n}\n\nlet num1 = 4;\nconsole.log(reverseBits1(num1));\nconsole.log(reverseBits2(num1));\n\nlet num2 = 8;\nconsole.log(reverseBits1(num2));\nconsole.log(reverseBits2(num2));"
+      },
+      "explanation": {
+        "en": "**Description:**\nReverse the bits of a given 32-bit unsigned integer.\n\n## Example:\nExample 1:\nInput: num = 4\nOutput: 536870912\n\nExample 2:\nInput: num = 8\nOutput: 268435456\n\n**Algorithmic Steps:**\nThis problem is solved with the help of **Bitwise operations**. The main intution of this algorithm is to retrieve each bit individually from least significant bit to the most significant bit and place that bit in the reversed position of a new number. As a result, the least significant bits moved to most significant bit side and vice-versa. The algorithmic approach can be summarized as follows: \n\n1. Get the number `num` as input parameter.\n\n2. Initialize the reverse bits number(`reverseBitResult`) to zero.\n   \n3. Iterate through each index(`i`) in the range of 32. This is because we are handling with a 32-bit unsigned integer.\n   \n4. Find the least significant bit of each index by applying right shift operation(i.e, `num >> i`). Thereafter, apply bitwise AND operation with 1, to know the bit value. This value is stored in `bit` variable.\n   \n5. Apply OR operation between reverse bit result and the calculated bit left shifted to place it in reversed position(i.e, `32-i`). The OR operation doesn't change the existing bits in the result.\n   \n6. Repeat 4-5 steps until each bit traversed.\n\n7. Return the reverse bits number as inverted result.\n\n\n**Time and Space complexity:**\nThis algorithm takes a time complexity of `O(32) -> O(1)`. This is because we are iterating through each index of 32-bit binary number.\n\nHere, we don't use any additional datastructure other than variable to store reversed number. Hence, the space complexity will be `O(1)`.",
+        "ru": "**Описание:**\nИнвертируйте биты данного 32-битного беззнакового целого числа.\n\n## Пример:\nПример 1:\nВвод: число = 4\nВывод: 536870912\n\nПример 2:\nВвод: число = 8\nВывод: 268435456\n\n**Алгоритмические шаги:**\nЭта проблема решается с помощью **Побитовых операций**. Основная идея этого алгоритма состоит в том, чтобы извлечь каждый бит индивидуально от наименее значимого бита до наиболее значимого бита и поместить этот бит в обратную позицию нового числа. В результате младшие биты переместились в сторону старших битов и наоборот. Алгоритмический подход можно резюмировать следующим образом: \n\n1. Получите число `num` в качестве входного параметра.\n\n2. Инициализируйте число обратных битов (`reverseBitResult`) равным нулю.\n   \n3. Переберите каждый индекс (`i`) в диапазоне 32. Это связано с тем, что мы обрабатываем 32-битное целое число без знака.\n   \n4. Найдите младший бит каждого индекса, применив операцию сдвига вправо (т. е. `num >> i`). После этого примените побитовую операцию И с 1, чтобы узнать значение бита. Это значение хранится в переменной `bit`.\n   \n5. Примените операцию ИЛИ между результатом обратного бита и вычисленным битом, сдвинутым влево, чтобы поместить его в инвертированную позицию (т. е. `32-i`). Операция ИЛИ не меняет существующие биты результата.\n   \n6. Повторяйте 4–5 шагов, пока не будет пройден каждый бит.\n\n7. Вернуть обратное количество битов как инвертированный результат.\n\n\n**Сложность во времени и пространстве:**\nЭтот алгоритм требует временной сложности `O(32) -> O(1)`. Это связано с тем, что мы перебираем каждый индекс 32-битного двоичного числа.\n\nЗдесь мы не используем никакой дополнительной структуры данных, кроме переменной для хранения перевернутого числа. Следовательно, пространственная сложность будет равна `O(1)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "algorithms",
+        "binary",
+        "dsa-binary",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    }
+  ]
+}

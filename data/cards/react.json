@@ -1,0 +1,354 @@
+{
+  "topic": {
+    "id": "react",
+    "title": {
+      "en": "React, Rendering, Memoization"
+    }
+  },
+  "cards": [
+    {
+      "id": "sudheerj-q-009-what-is-the-difference-between-and-operators",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 9
+      },
+      "topicId": "react",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What is the difference between == and === operators",
+        "ru": "В чем разница между операторами == и ===?"
+      },
+      "answer": {
+        "en": "JavaScript provides two types of equality operators: - Loose equality ( == , != ) : Performs type conversion if the types differ, comparing values after converting them to a common type. - Strict equality ( === , !== ) : Compares both value and type, without any type conversion. Strict Equality ( === ) - Two strings are strictly equal if they have exactly the same sequence of characters and length. - Two numbers are strictly equal if they have the same numeric value. - Special cases: - NaN === NaN is false - +0 === -0 is true - Two booleans are strictly equal if both are true or both are false . - Two objects are strictly equal if they refer to the same object in memory. - null and undefined are not strictly equal.\nLoose Equality (==)\n- Converts operands to the same type before making the comparison.\n- null == undefined is true.\n- \"1\" == 1 is true because the string is converted to a number.\n- 0 == false is true because false is converted to 0`.\nExamples:",
+        "ru": "JavaScript предоставляет два типа операторов равенства:\n- Свободное равенство (==, !=): выполняет преобразование типов, если типы различаются, сравнивая значения после преобразования их в общий тип.\n- Строгое равенство (===, !==): сравнивается значение и тип без какого-либо преобразования типов.\nСтрогое равенство (===)\n- Две строки строго равны, если они имеют одинаковую последовательность символов и длину.\n- Два числа строго равны, если они имеют одинаковое числовое значение.\n- Особые случаи:\n- NaN === NaN - false\n- +0 === -0 - true\n- Два логических значения строго равны, если оба имеют значение true или оба имеют значение false.\n- Два объекта строго равны, если они ссылаются на один и тот же объект в памяти.\n- null и undefined не** строго равны.\nСвободное равенство (==)\n- Преобразует операнды в один и тот же тип перед сравнением.\n- null == undefined — это true.\n- \"1\" == 1 — это true, поскольку строка преобразуется в число.\n- 0 == false — это true, поскольку false преобразуется в 0.\nПримеры:"
+      },
+      "explanation": {
+        "en": "undefined` are **not** strictly equal.\n\n    #### Loose Equality (`==`)\n    - Converts operands to the same type before making the comparison.\n    - `null == undefined` is `true`.\n    - `\"1\" == 1` is `true` because the string is converted to a number.\n    - `0 == false` is `true` because `false` is converted to `0`.\n\n    #### Examples:\n\n    ```javascript\n    0 == false            // true      (loose equality, type coercion)\n    0 === false           // false     (strict equality, different types)\n    1 == \"1\"              // true      (string converted to number)\n    1 === \"1\"             // false     (different types)\n    null == undefined     // true      (special case)\n    null === undefined    // false     (different types)\n    '0' == false          // true      ('0' is converted to 0)\n    '0' === false         // false     (different types)\n    NaN == NaN            // false     (NaN is never equal to itself)\n    NaN === NaN           // false\n    [] == []              // false     (different array objects)\n    [] === []             // false\n    {} == {}              // false     (different object references)\n    {} === {}             // false\n    ```",
+        "ru": "JavaScript предоставляет два типа операторов равенства:\n\n    - **Свободное равенство (`==`, `!=`)**: выполняет преобразование типов, если типы различаются, сравнивая значения после преобразования их в общий тип.\n    - **Строгое равенство (`===`, `!==`)**: сравнивается значение и тип без какого-либо преобразования типов.\n\n    #### Строгое равенство (`===`)\n    - Две строки строго равны, если они имеют одинаковую последовательность символов и длину.\n    - Два числа строго равны, если они имеют одинаковое числовое значение.\n      - **Особые случаи:**\n        - `NaN === NaN` - `false`\n        - `+0 === -0` - `true`\n    - Два логических значения строго равны, если оба имеют значение `true` или оба имеют значение `false`.\n    - Два объекта строго равны, если они ссылаются на один и тот же объект** в памяти.\n    - `null` и `undefined` **не** строго равны.\n\n    #### Свободное равенство (`==`)\n    - Преобразует операнды в один и тот же тип перед сравнением.\n    - `null == undefined` — это `true`.\n    - `\"1\" == 1` — это `true`, поскольку строка преобразуется в число.\n    - `0 == false` — это `true`, поскольку `false` преобразуется в `0`.\n\n    #### Примеры:\n\n    ```JavaScript\n    0 == false            // true      (loose equality, type coercion)\n    0 === false           // false     (strict equality, different types)\n    1 == \"1\"              // true      (string converted to number)\n    1 === \"1\"             // false     (different types)\n    null == undefined     // true      (special case)\n    null === undefined    // false     (different types)\n    '0' == false          // true      ('0' is converted to 0)\n    '0' === false         // false     (different types)\n    NaN == NaN            // false     (NaN is never equal to itself)\n    NaN === NaN           // false\n    [] == []              // false     (different array objects)\n    [] === []             // false\n    {} == {}              // false     (different object references)\n    {} === {}             // false\n    ```"
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "react"
+      ],
+      "explanationContent": [
+        {
+          "type": "text",
+          "text": {
+            "en": "undefined` are not strictly equal.\nLoose Equality (`==`)\n- Converts operands to the same type before making the comparison.\n- `null == undefined` is `true`.\n- `\"1\" == 1` is `true` because the string is converted to a number.\n- `0 == false` is `true` because `false` is converted to `0`.\nExamples:",
+            "ru": "JavaScript предоставляет два типа операторов равенства:\n- Свободное равенство (`==`, `!=`): выполняет преобразование типов, если типы различаются, сравнивая значения после преобразования их в общий тип.\n- Строгое равенство (`===`, `!==`): сравнивается значение и тип без какого-либо преобразования типов.\nСтрогое равенство (`===`)\n- Две строки строго равны, если они имеют одинаковую последовательность символов и длину.\n- Два числа строго равны, если они имеют одинаковое числовое значение.\n- Особые случаи:\n- `NaN === NaN` - `false`\n- `+0 === -0` - `true`\n- Два логических значения строго равны, если оба имеют значение `true` или оба имеют значение `false`.\n- Два объекта строго равны, если они ссылаются на один и тот же объект в памяти.\n- `null` и `undefined` не** строго равны.\nСвободное равенство (`==`)\n- Преобразует операнды в один и тот же тип перед сравнением.\n- `null == undefined` — это `true`.\n- `\"1\" == 1` — это `true`, поскольку строка преобразуется в число.\n- `0 == false` — это `true`, поскольку `false` преобразуется в `0`.\nПримеры:"
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "0 == false            // true      (loose equality, type coercion)\n0 === false           // false     (strict equality, different types)\n1 == \"1\"              // true      (string converted to number)\n1 === \"1\"             // false     (different types)\nnull == undefined     // true      (special case)\nnull === undefined    // false     (different types)\n'0' == false          // true      ('0' is converted to 0)\n'0' === false         // false     (different types)\nNaN == NaN            // false     (NaN is never equal to itself)\nNaN === NaN           // false\n[] == []              // false     (different array objects)\n[] === []             // false\n{} == {}              // false     (different object references)\n{} === {}             // false"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sudheerj-q-093-what-are-the-tools-or-techniques-used-for-debugging-javascript-code",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 93
+      },
+      "topicId": "react",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What are the tools or techniques used for debugging JavaScript code",
+        "ru": "Какие инструменты и техники используют для отладки JavaScript-кода?"
+      },
+      "answer": {
+        "en": "You can use below tools or techniques for debugging javascript 1. Chrome Devtools 2. debugger statement 3. Good old console.log statement",
+        "ru": "Вы можете использовать следующие инструменты или методы для отладки JavaScript: 1. Инструменты разработчика Chrome 2. Оператор отладчика 3. Старый добрый оператор console.log"
+      },
+      "explanation": {
+        "en": "Debugging tools help inspect runtime behavior instead of guessing from source code alone. DevTools breakpoints, the `debugger` statement, and targeted logging each fit different stages of investigation.",
+        "ru": "Вы можете использовать приведенные ниже инструменты или методы для отладки JavaScript.\n\n    1. Инструменты разработчика Chrome\n    2. оператор отладчика\n    3. Старый добрый оператор console.log"
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "react"
+      ],
+      "curation": {
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-q-131-what-are-the-pros-and-cons-of-for-loops",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 131
+      },
+      "topicId": "react",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What are the pros and cons of for loops",
+        "ru": "Какие плюсы и минусы у циклов for?"
+      },
+      "answer": {
+        "en": "The for-loop is a commonly used iteration syntax in javascript. It has both pros and cons Pros 1. Works on every environment 2. You can use break and continue flow control statements Cons 3. Too verbose 4. Imperative 5. You might face off-by-one errors.",
+        "ru": "Цикл for — это часто используемый синтаксис итерации в JavaScript. У него есть как плюсы, так и минусы. Плюсы 1. Работает в любой среде. 2. Вы можете использовать операторы управления потоком прерывания и продолжения. Минусы. 3. Слишком многословно. 4. Императивно. 5. Вы можете столкнуться с ошибками отклонения на единицу."
+      },
+      "explanation": {
+        "en": "The for-loop is a commonly used iteration syntax in javascript. It has both pros and cons\n\n      #### Pros\n\n      1. Works on every environment\n      2. You can use break and continue flow control statements\n\n      #### Cons\n\n      3. Too verbose\n      4. Imperative\n      5. You might face off-by-one errors.",
+        "ru": "Цикл for — это часто используемый синтаксис итерации в JavaScript. У него есть как плюсы, так и минусы\n\n      #### Плюсы\n\n      1. Работает в любой среде\n      2. Вы можете использовать операторы управления потоком прерывания и продолжения.\n\n      #### Минусы\n\n      3. Слишком многословно\n      4. Императив\n      5. Вы можете столкнуться с ошибками на единицу."
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "react"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-q-144-what-are-break-and-continue-statements",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 144
+      },
+      "topicId": "react",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What are break and continue statements",
+        "ru": "Что такое break и continue?"
+      },
+      "answer": {
+        "en": "The break statement is used to \"jump out\" of a loop. i.e, It breaks the loop and continues executing the code after the loop. The continue statement is used to \"jump over\" one iteration in the loop. i.e, It breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.",
+        "ru": "Оператор Break используется для «выхода» из цикла. т. е. он разрывает цикл и продолжает выполнение кода после цикла. Оператор continue используется для «перепрыгивания» одной итерации цикла. т. е. он прерывает одну итерацию (в цикле), если возникает указанное условие, и переходит к следующей итерации в цикле."
+      },
+      "explanation": {
+        "en": "The break statement is used to \"jump out\" of a loop. i.e, It breaks the loop and continues executing the code after the loop.\n\n      ```javascript\n      for (i = 0; i < 10; i++) {\n        if (i === 5) {\n          break;\n        }\n        text += \"Number: \" + i + \"<br>\";\n      }\n      ```\n\n      The continue statement is used to \"jump over\" one iteration in the loop. i.e, It breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.\n\n      ```javascript\n      for (i = 0; i < 10; i++) {\n        if (i === 5) {\n          continue;\n        }\n        text += \"Number: \" + i + \"<br>\";\n      }\n      ```",
+        "ru": "Оператор Break используется для «выхода» из цикла. т. е. он разрывает цикл и продолжает выполнение кода после цикла.\n\n      ```JavaScript\n      for (i = 0; i < 10; i++) {\n        if (i === 5) {\n          break;\n        }\n        text += \"Number: \" + i + \"<br>\";\n      }\n      ```\n\n      Оператор continue используется для «перепрыгивания» одной итерации цикла. т. е. он прерывает одну итерацию (в цикле), если возникает указанное условие, и переходит к следующей итерации в цикле.\n\n      ```JavaScript\n      for (i = 0; i < 10; i++) {\n        if (i === 5) {\n          continue;\n        }\n        text += \"Number: \" + i + \"<br>\";\n      }\n      ```"
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "react"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en"
+        ]
+      },
+      "explanationContent": [
+        {
+          "type": "text",
+          "text": {
+            "en": "The break statement is used to \"jump out\" of a loop. i.e, It breaks the loop and continues executing the code after the loop.",
+            "ru": "Оператор Break используется для «выхода» из цикла. т. е. он разрывает цикл и продолжает выполнение кода после цикла."
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "for (i = 0; i < 10; i++) {\n  if (i === 5) {\n    break;\n  }\n  text += \"Number: \" + i + \"<br>\";\n}"
+          }
+        },
+        {
+          "type": "text",
+          "text": {
+            "en": "The continue statement is used to \"jump over\" one iteration in the loop. i.e, It breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.",
+            "ru": "Оператор continue используется для «перепрыгивания» одной итерации цикла. т. е. он прерывает одну итерацию (в цикле), если возникает указанное условие, и переходит к следующей итерации в цикле."
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "for (i = 0; i < 10; i++) {\n  if (i === 5) {\n    continue;\n  }\n  text += \"Number: \" + i + \"<br>\";\n}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sudheerj-q-222-what-is-the-purpose-of-switch-case",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 222
+      },
+      "topicId": "react",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What is the purpose of switch-case",
+        "ru": "Для чего нужен switch-case?"
+      },
+      "answer": {
+        "en": "The switch case statement in JavaScript is used for decision making purposes. In a few cases, using the switch case statement is going to be more convenient than if-else statements. The syntax would be as below, The above multi-way branch statement provides an easy way to dispatch execution to different parts of code based on the value of the expression.",
+        "ru": "Оператор выбора случая в JavaScript используется для принятия решений. В некоторых случаях использование оператора Switch Case будет более удобным, чем операторов if-else. Синтаксис будет таким, как показано ниже. Приведенный выше оператор многопутевого ветвления обеспечивает простой способ распределения выполнения по различным частям кода в зависимости от значения выражения."
+      },
+      "explanation": {
+        "en": "The `switch case` statement in JavaScript is used for decision making purposes. In a few cases, using the `switch case` statement is going to be more convenient than `if-else` statements. The syntax would be as below,\n\n      ```javascript\n      switch (expression)\n      {\n          case value1:\n              statement1;\n              break;\n          case value2:\n              statement2;\n              break;\n          .\n          .\n          case valueN:\n              statementN;\n              break;\n          default:\n              statementDefault;\n      }\n      ```\n\n      The above multi-way branch statement provides an easy way to dispatch execution to different parts of code based on the value of the expression.",
+        "ru": "Оператор `switch case` в JavaScript используется для принятия решений. В некоторых случаях использование оператора `switch case` будет более удобным, чем использование оператора `if-else`. Синтаксис будет таким, как показано ниже:\n\n      ```JavaScript\n      switch (expression)\n      {\n          case value1:\n              statement1;\n              break;\n          case value2:\n              statement2;\n              break;\n          .\n          .\n          case valueN:\n              statementN;\n              break;\n          default:\n              statementDefault;\n      }\n      ```\n\n      Приведенный выше оператор многопутевого ветвления обеспечивает простой способ распределения выполнения различных частей кода в зависимости от значения выражения."
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "react"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en"
+        ]
+      },
+      "explanationContent": [
+        {
+          "type": "text",
+          "text": {
+            "en": "The `switch case` statement in JavaScript is used for decision making purposes. In a few cases, using the `switch case` statement is going to be more convenient than `if-else` statements. The syntax would be as below,",
+            "ru": "Оператор `switch case` в JavaScript используется для принятия решений. В некоторых случаях использование оператора `switch case` будет более удобным, чем использование оператора `if-else`. Синтаксис будет таким, как показано ниже:"
+          }
+        },
+        {
+          "type": "code",
+          "language": "js",
+          "code": {
+            "en": "switch (expression)\n{\n    case value1:\n        statement1;\n        break;\n    case value2:\n        statement2;\n        break;\n    .\n    .\n    case valueN:\n        statementN;\n        break;\n    default:\n        statementDefault;\n}"
+          }
+        },
+        {
+          "type": "text",
+          "text": {
+            "en": "The above multi-way branch statement provides an easy way to dispatch execution to different parts of code based on the value of the expression.",
+            "ru": "Приведенный выше оператор многопутевого ветвления обеспечивает простой способ распределения выполнения различных частей кода в зависимости от значения выражения."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sudheerj-q-223-what-are-the-conventions-to-be-followed-for-the-usage-of-switch-case",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 223
+      },
+      "topicId": "react",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What are the conventions to be followed for the usage of switch case",
+        "ru": "Каких правил стоит придерживаться при использовании switch-case?"
+      },
+      "answer": {
+        "en": "Below are the list of conventions should be taken care, 1. The expression can be of type either number or string. 2. Duplicate values are not allowed for the expression. 3. The default statement is optional. If the expression passed to switch does not match with any case value then the statement within default case will be executed. 4. The break statement is used inside the switch to terminate a statement sequence. 5. The break statement is optional. But if it is omitted, the execution will continue on into the next case.",
+        "ru": "Ниже приведен список соглашений, на которые следует обратить внимание: 1. Выражение может иметь числовой или строковый тип. 2. Для выражения не допускаются повторяющиеся значения. 3. Оператор по умолчанию не является обязательным. Если выражение, переданное в переключатель, не соответствует ни одному значению регистра, будет выполнен оператор в регистре по умолчанию. 4. Оператор Break используется внутри переключателя для завершения последовательности операторов. 5. Оператор Break не является обязательным. Но если он опущен, выполнение продолжится до следующего случая."
+      },
+      "explanation": {
+        "en": "Good `switch` usage is mostly about predictability. Avoid duplicate cases, include `break` or intentional fall-through comments, and use `default` when there is a meaningful fallback path.",
+        "ru": "Ниже приведен список соглашений, на которые следует обратить внимание.\n\n      1. Выражение может иметь числовой или строковый тип.\n      2. Для выражения не допускаются повторяющиеся значения.\n      3. Оператор по умолчанию не является обязательным. Если выражение, переданное в переключатель, не соответствует ни одному значению регистра, будет выполнен оператор в регистре по умолчанию.\n      4. Оператор Break используется внутри переключателя для завершения последовательности операторов.\n      5. Оператор Break не является обязательным. Но если он опущен, выполнение продолжится до следующего случая."
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "react"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-q-322-what-are-the-advantages-of-module-loaders",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 322
+      },
+      "topicId": "react",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What are the advantages of module loaders",
+        "ru": "В чем преимущества загрузчиков модулей?"
+      },
+      "answer": {
+        "en": "The module loaders provides the below features, 1. Dynamic loading 2. State isolation 3. Global namespace isolation 4. Compilation hooks 5. Nested virtualization",
+        "ru": "Загрузчики модулей предоставляют следующие функции: 1. Динамическая загрузка 2. Изоляция состояния 3. Изоляция глобального пространства имен 4. Перехватчики компиляции 5. Вложенная виртуализация"
+      },
+      "explanation": {
+        "en": "Module loaders help control how modules are resolved, transformed, and executed. They are especially useful when code needs dynamic loading, isolation, or compilation steps before running.",
+        "ru": "Загрузчики модулей предоставляют следующие функции:\n\n      1. Динамическая загрузка\n      2. Государственная изоляция\n      3. Глобальная изоляция пространства имен\n      4. Хуки для компиляции\n      5. Вложенная виртуализация"
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "react"
+      ],
+      "curation": {
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-q-463-what-are-the-real-world-use-cases-of-proxy",
+      "source": {
+        "repo": "sudheerj/javascript-interview-questions",
+        "path": "README.md",
+        "number": 463
+      },
+      "topicId": "react",
+      "subtopic": "Imported",
+      "difficulty": "medium",
+      "question": {
+        "en": "What are the real world use cases of proxy?",
+        "ru": "Какие реальные сценарии использования есть у Proxy?"
+      },
+      "answer": {
+        "en": "Proxies are not used in regular day to day JavaScript work but they enabled many exciting programming patterns. Some of the real world use cases are listed below, 1. Vue3 used proxy concept to implement reactive state 2. SolidJS implemented reactive stores 3. Immerjs built upon proxy to track updates to immutable updates 4. ZenStack improved Prisma ORM for access control layer",
+        "ru": "Прокси-серверы не используются в повседневной работе с JavaScript, но они позволяют использовать множество интересных шаблонов программирования. Некоторые из реальных случаев использования перечислены ниже: 1. Vue3 использовал концепцию прокси для реализации реактивного состояния. 2. SolidJS реализовал реактивные хранилища. 3. Immerjs построен на прокси-сервере для отслеживания обновлений неизменяемых обновлений. 4. ZenStack улучшил Prisma ORM для уровня управления доступом."
+      },
+      "explanation": {
+        "en": "A proxy can intercept operations such as property reads, writes, and function calls. This makes it powerful for reactivity, validation, logging, access control, and building abstractions around plain objects.",
+        "ru": "Прокси-серверы не используются в повседневной работе с JavaScript, но они позволяют использовать множество интересных шаблонов программирования. Некоторые из реальных случаев использования перечислены ниже:\n\n     1. Vue3 использовал концепцию прокси для реализации реактивного состояния.\n     2. В SolidJS реализованы реактивные хранилища.\n     3. Immerjs построен на прокси-сервере для отслеживания обновлений неизменяемых обновлений.\n     4. ZenStack улучшил Prisma ORM для уровня контроля доступа."
+      },
+      "tags": [
+        "sudheerj",
+        "imported",
+        "react"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    }
+  ],
+  "tasks": []
+}

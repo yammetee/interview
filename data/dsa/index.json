@@ -1,0 +1,113 @@
+{
+  "source": {
+    "repo": "sudheerj/datastructures-algorithms",
+    "localPath": "external/sudheerj-datastructures-algorithms",
+    "license": "MIT"
+  },
+  "topics": [
+    {
+      "id": "dsa-data-structures",
+      "title": {
+        "en": "Data Structures"
+      }
+    },
+    {
+      "id": "dsa-array",
+      "title": {
+        "en": "Array Algorithms"
+      }
+    },
+    {
+      "id": "dsa-string",
+      "title": {
+        "en": "String Algorithms"
+      }
+    },
+    {
+      "id": "dsa-dynamic-programming",
+      "title": {
+        "en": "Dynamic Programming"
+      }
+    },
+    {
+      "id": "dsa-binary",
+      "title": {
+        "en": "Binary Algorithms"
+      }
+    },
+    {
+      "id": "dsa-stack",
+      "title": {
+        "en": "Stack Algorithms"
+      }
+    },
+    {
+      "id": "dsa-linked-list",
+      "title": {
+        "en": "Linked List Algorithms"
+      }
+    },
+    {
+      "id": "dsa-tree",
+      "title": {
+        "en": "Tree Algorithms"
+      }
+    },
+    {
+      "id": "dsa-graph",
+      "title": {
+        "en": "Graph Algorithms"
+      }
+    },
+    {
+      "id": "dsa-matrix",
+      "title": {
+        "en": "Matrix Algorithms"
+      }
+    },
+    {
+      "id": "dsa-interval",
+      "title": {
+        "en": "Interval Algorithms"
+      }
+    },
+    {
+      "id": "dsa-hash-table",
+      "title": {
+        "en": "Hash Table Algorithms"
+      }
+    },
+    {
+      "id": "dsa-sorting",
+      "title": {
+        "en": "Sorting"
+      }
+    },
+    {
+      "id": "dsa-misc",
+      "title": {
+        "en": "Misc Algorithms"
+      }
+    }
+  ],
+  "counts": {
+    "cards": 156,
+    "tasks": 156,
+    "skippedDuplicateItems": 0
+  },
+  "files": [
+    "dsa-data-structures.json",
+    "dsa-array.json",
+    "dsa-string.json",
+    "dsa-dynamic-programming.json",
+    "dsa-binary.json",
+    "dsa-stack.json",
+    "dsa-linked-list.json",
+    "dsa-tree.json",
+    "dsa-graph.json",
+    "dsa-matrix.json",
+    "dsa-interval.json",
+    "dsa-hash-table.json",
+    "dsa-sorting.json"
+  ]
+}

@@ -1,0 +1,1116 @@
+{
+  "topic": {
+    "id": "dsa-sorting",
+    "title": {
+      "en": "Sorting"
+    }
+  },
+  "cards": [
+    {
+      "id": "sudheerj-dsa-sorting-sorting-001-bubble-sort",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/sorting/1.bubbleSort/bubbleSort.js",
+        "documentationPath": "src/javascript/sorting/1.bubbleSort/README.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/1.bubbleSort/bubbleSort.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/1.bubbleSort/bubbleSort.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Sorting",
+      "difficulty": "easy",
+      "question": {
+        "en": "How do you solve or implement `Bubble sort`?",
+        "ru": "Как решить или реализовать задачу `Bubble sort`?"
+      },
+      "answer": {
+        "en": "Level: Easy. Pattern/complexity: TC: O(n²), SC: O(1). Bubble Sort Bubble sort, sometimes referred to as sinking sort , is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted. It is named because elements tend to move up into the correct order like bubbles rising to the surface. Complexity Best Average Worst Space (Memory) Stable Advantage :-------------: :-----------------: :-----------------: :-------: :-------: :-------- O(n) O(n<sup 2</sup ) O(n<sup 2</sup ) O(1) Yes Simplicity",
+        "ru": "Уровень: Легко. Шаблон/сложность: TC: O(n²), SC: O(1). Пузырьковая сортировка Пузырьковая сортировка, иногда называемая тонущей сортировкой, представляет собой простой алгоритм сортировки, который многократно проходит по списку, сравнивает соседние элементы и меняет их местами, если они расположены в неправильном порядке. Проход по списку повторяется до тех пор, пока перестановки не понадобятся, что указывает на то, что список отсортирован. Оно названо так потому, что элементы имеют тенденцию двигаться вверх в правильном порядке, подобно пузырькам, поднимающимся на поверхность. Сложность Наилучший Средний Наихудший Объем (память) Стабильное Преимущество :-------------: :-----------------: :-----------------: :-------: :-------: :-------- O(n) O(n<sup 2</sup ) O(n<sup 2</sup ) O(1) Да Простота"
+      },
+      "explanation": {
+        "en": "# Bubble Sort\n\nBubble sort, sometimes referred to as **sinking sort**, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.\nThe pass through the list is repeated until no swaps are needed, which indicates that the list is sorted.\n\nIt is named because elements tend to move up into the correct order like bubbles rising to the surface.\n\n##\n\n## Complexity\n\n| Best            | Average             | Worst               | Space (Memory)    | Stable    | Advantage  |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  O(n)               | O(n<sup>2</sup>)       | O(n<sup>2</sup>)       | O(1)         | Yes       |   Simplicity        |",
+        "ru": "# Пузырьковая сортировка\n\nПузырьковая сортировка, иногда называемая **тонущей сортировкой**, представляет собой простой алгоритм сортировки, который многократно проходит по списку, сравнивает соседние элементы и меняет их местами, если они расположены в неправильном порядке.\nПроход по списку повторяется до тех пор, пока перестановки не понадобятся, что указывает на то, что список отсортирован.\n\nОно названо так потому, что элементы имеют тенденцию двигаться вверх в правильном порядке, подобно пузырькам, поднимающимся на поверхность.\n\n##\n\n## Сложность\n\n| Лучшее | Средний | Худшее | Пространство (Память) | Стабильный | Преимущество |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  О(п) | O(n<sup>2</sup>) | O(n<sup>2</sup>) | О(1) | Да |   Простота |"
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "sorting",
+        "dsa-sorting"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-sorting-002-selection-sort",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/sorting/2.selectionSort/selectionSort.js",
+        "documentationPath": "src/javascript/sorting/2.selectionSort/README.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/2.selectionSort/selectionSort.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/2.selectionSort/selectionSort.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Sorting",
+      "difficulty": "easy",
+      "question": {
+        "en": "How do you solve or implement `Selection sort`?",
+        "ru": "Как решить или реализовать задачу `Selection sort`?"
+      },
+      "answer": {
+        "en": "Level: Easy. Pattern/complexity: TC: O(n²), SC: O(1). Selection Sort Selection sort is an algorithm that selects the smallest(or minimum) element from an unsorted list in each iteration and move that element at the beginning of the unsorted list. Complexity Best Average Worst Space (Memory) Stable Advantage :-------------: :-----------------: :-----------------: :-------: :-------: :-------- O(n<sup 2</sup ) O(n<sup 2</sup ) O(n<sup 2</sup ) O(1) Yes Works well with small list",
+        "ru": "Уровень: Легко. Шаблон/сложность: TC: O(n²), SC: O(1). Сортировка выбором Сортировка выбором — это алгоритм, который выбирает наименьший (или минимальный) элемент из несортированного списка на каждой итерации и перемещает этот элемент в начало несортированного списка. Сложность Наилучший Средний Наихудший Объем (память) Стабильный Преимущество :-------------: :-----------------: :-----------------: :-------: :-------: :-------- O(n<sup 2</sup ) O(n<sup 2</sup ) O(n<sup 2</sup ) O(1) Да Хорошо работает с небольшим списком"
+      },
+      "explanation": {
+        "en": "# Selection Sort\n\nSelection sort is an algorithm that selects the smallest(or minimum) element from an unsorted list in each iteration and move that element at the beginning of the unsorted list.\n\n##\n\n## Complexity\n\n| Best            | Average             | Worst               | Space (Memory)    | Stable    | Advantage  |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  O(n<sup>2</sup>)                | O(n<sup>2</sup>)       | O(n<sup>2</sup>)       |  O(1)         | Yes       |   Works well with small list        |",
+        "ru": "# Сортировка выбором\n\nСортировка выбором — это алгоритм, который выбирает наименьший (или минимальный) элемент из несортированного списка на каждой итерации и перемещает этот элемент в начало несортированного списка.\n\n##\n\n## Сложность\n\n| Лучшее | Средний | Худшее | Пространство (Память) | Стабильный | Преимущество |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  O(n<sup>2</sup>) | O(n<sup>2</sup>) | O(n<sup>2</sup>) |  О(1) | Да |   Хорошо работает с небольшим списком |"
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "sorting",
+        "dsa-sorting"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-sorting-003-insertion-sort",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/sorting/3.insertionSort/insertionSort.js",
+        "documentationPath": "src/javascript/sorting/3.insertionSort/README.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/3.insertionSort/insertionSort.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/3.insertionSort/insertionSort.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Sorting",
+      "difficulty": "easy",
+      "question": {
+        "en": "How do you solve or implement `Insertion sort`?",
+        "ru": "Как решить или реализовать задачу `Insertion sort`?"
+      },
+      "answer": {
+        "en": "Level: Easy. Pattern/complexity: TC: O(n²), SC: O(1). Insertion Sort Insertion sort is the sorting mechanism where the sorted array is built one item at a time. The array elements are compared with each other sequentially and then arranged simultaneously in some particular order. It works similarly as we sort cards in our hand in a card game. Complexity Best Average Worst Space (Memory) Stable Advantage :-------------: :-----------------: :-----------------: :-------: :-------: :-------- O(n) O(n<sup 2</sup ) O(n<sup 2</sup ) O(1) Yes Efficient for data sets that are almost sorted list",
+        "ru": "Уровень: Легко. Шаблон/сложность: TC: O(n²), SC: O(1). Сортировка вставками. Сортировка вставками — это механизм сортировки, при котором отсортированный массив строится по одному элементу за раз. Элементы массива последовательно сравниваются друг с другом, а затем одновременно располагаются в определенном порядке. Это работает так же, как мы сортируем карты в руке в карточной игре. Сложность Наилучший Средний Наихудший Объем (память) Стабильное преимущество :-------------: :-----------------: :-----------------: :-------: :-------: :-------- O(n) O(n<sup 2</sup ) O(n<sup 2</sup ) O(1) Да Эффективно для наборов данных, которые почти отсортированный список"
+      },
+      "explanation": {
+        "en": "# Insertion Sort\n\nInsertion sort is the sorting mechanism where the sorted array is built one item at a time. The array elements are compared with each other sequentially and then arranged simultaneously in some particular order.  It works similarly as we sort cards in our hand in a card game.\n\n## Complexity\n\n| Best            | Average             | Worst               | Space (Memory)    | Stable    | Advantage  |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  O(n)                | O(n<sup>2</sup>)       | O(n<sup>2</sup>)       |  O(1)         | Yes       |  Efficient for data sets that are almost sorted list       |",
+        "ru": "# Сортировка вставками\n\nСортировка вставками — это механизм сортировки, при котором отсортированный массив строится по одному элементу за раз. Элементы массива последовательно сравниваются друг с другом, а затем одновременно располагаются в определенном порядке.  Это работает так же, как мы сортируем карты в руке в карточной игре.\n\n## Сложность\n\n| Лучшее | Средний | Худшее | Пространство (Память) | Стабильный | Преимущество |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  О(п) | O(n<sup>2</sup>) | O(n<sup>2</sup>) |  О(1) | Да |  Эффективно для наборов данных, которые представляют собой почти отсортированный список |"
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "sorting",
+        "dsa-sorting"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-sorting-004-merge-sort",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/sorting/4.mergeSort/mergeSort.js",
+        "documentationPath": "src/javascript/sorting/4.mergeSort/mergeSort.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/4.mergeSort/mergeSort.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/4.mergeSort/mergeSort.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Sorting",
+      "difficulty": "medium",
+      "question": {
+        "en": "How do you solve or implement `Merge sort`?",
+        "ru": "Как решить или реализовать задачу `Merge sort`?"
+      },
+      "answer": {
+        "en": "Level: Medium. Pattern/complexity: TC: O(n log n), SC: O(n). Merge sort Merge sort is based on divide and conquer technique in which the list breaking down into several sub-lists until each sublist consists of a single element and merging those sublists in a manner that results into a sorted list. How it works 1. At first, divide the unsorted array into two half-sized sub-arrays. 2. Continue to divide the sub-arrays until the array has one element. 3. Merge each sub-array pairs together by keeping the lowest value first. 4. Repeat step3 until there are no sub-arrays left. Complexity Best Average Worst Space (Memory) Stable Advantage :-------------: :-----------------: :-----------------: :-------: :-------: :-------- Ω(n log(n)) θ(n log(n)) O(n log(n)) O(n) Yes Sort efficiently large data sets",
+        "ru": "Уровень: Средний. Шаблон/сложность: TC: O(n log n), SC: O(n). Сортировка слиянием Сортировка слиянием основана на методе «разделяй и властвуй», при котором список разбивается на несколько подсписков до тех пор, пока каждый подсписок не будет состоять из одного элемента, и эти подсписки объединяются таким образом, чтобы получить отсортированный список. Как это работает 1. Сначала разделите неотсортированный массив на два подмассива половинного размера. 2. Продолжайте делить подмассивы, пока в массиве не останется один элемент. 3. Объедините каждую пару подмассивов вместе, сохраняя сначала наименьшее значение. 4. Повторяйте шаг 3, пока не останется подмассивов. Сложность Наилучший Средний Наихудший Объем (память) Стабильное преимущество :-------------: :-----------------: :-----------------: :-------: :-------: :-------- Ω(n log(n)) θ(n log(n)) O(n log(n)) O(n) Да ​​Эффективная сортировка больших наборов данных"
+      },
+      "explanation": {
+        "en": "# Merge sort \nMerge sort is based on **divide and conquer technique** in which the list breaking down into several sub-lists until each sublist consists of a single element and merging those sublists in a manner that results into a sorted list.\n\n## How it works\n1. At first, divide the unsorted array into two half-sized sub-arrays.\n2. Continue to divide the sub-arrays until the array has one element.\n3. Merge each sub-array pairs together by keeping the lowest value first.\n4. Repeat step3 until there are no sub-arrays left.\n\n## Complexity\n\n| Best            | Average             | Worst               | Space (Memory)    | Stable    | Advantage  |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  Ω(n log(n))               | θ(n log(n))       | O(n log(n))       | O(n)         | Yes       |   Sort efficiently large data sets        |",
+        "ru": "# Сортировка слиянием \nСортировка слиянием основана на методе **разделяй и властвуй**, при котором список разбивается на несколько подсписков до тех пор, пока каждый подсписок не будет состоять из одного элемента, и эти подсписки объединяются таким образом, чтобы получить отсортированный список.\n\n## Как это работает\n1. Сначала разделите неотсортированный массив на два подмассива половинного размера.\n2. Продолжайте делить подмассивы, пока в массиве не останется один элемент.\n3. Объедините каждую пару подмассивов вместе, сохраняя сначала наименьшее значение.\n4. Повторяйте шаг 3, пока не останется подмассивов.\n\n## Сложность\n\n| Лучшее | Средний | Худшее | Пространство (Память) | Стабильный | Преимущество |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  Ω(n log(n)) | θ(n log(n)) | O(n log(n)) | О(п) | Да |   Эффективная сортировка больших наборов данных |"
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "sorting",
+        "dsa-sorting"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-sorting-005-quick-sort",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/sorting/5.quickSort/quickSort.js",
+        "documentationPath": "src/javascript/sorting/5.quickSort/quickSort.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/5.quickSort/quickSort.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/5.quickSort/quickSort.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Sorting",
+      "difficulty": "medium",
+      "question": {
+        "en": "How do you solve or implement `Quick sort`?",
+        "ru": "Как решить или реализовать задачу `Quick sort`?"
+      },
+      "answer": {
+        "en": "QuickSort\n\nQuickSort is a sorting algorithm based on Divide and Conquer technique that picks any one element(last, first, middle or random element) which can be chosen as a pivot and partitions the given array around the picked pivot by keeping the pivot in its correct position in the sorted array. The elements less than pivot are kept on the left side and elements greater than pivot are on the right side of the pivot.\nHow it works\n1. Choose any value in the array as pivot element.\n2. Order the array elements in such a way that lower values than pivot element are on the the left side, and higher values are on the right side.\n3. Swap the pivot element with first higher value to keep the pivot between the lower and higher values.\n4. Repeat steps 1-3 recursively for the sub-arrays on the left side and right side of pivot element until the sub-array contain only one element.\nComplexity\n\n| Best | Average | Worst | Space (Memory) | Stable | Advantage |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n| Ω(n log(n)) | θ(n log(n)) | O(n<sup>2</sup>) | O(log n) | Yes | Efficient algorithm except for almost sorted arrays |",
+        "ru": "Быстрая сортировка\n\nQuickSort — это алгоритм сортировки, основанный на методе разделяй и властвуй, который выбирает любой элемент (последний, первый, средний или случайный элемент), который может быть выбран в качестве опорного элемента, и разбивает данный массив вокруг выбранного опорного элемента, сохраняя опорный элемент в правильном положении в отсортированном массиве. Элементы меньше опорной точки сохраняются с левой стороны, а элементы больше опорной — справа от опорной точки.\nКак это работает\n1. Выберите любое значение массива в качестве элемента поворота.\n2. Упорядочите элементы массива таким образом, чтобы более низкие значения, чем значения опорного элемента, находились слева, а более высокие значения — справа.\n3. Поменяйте местами опорный элемент с первым более высоким значением, чтобы сохранить поворот между нижним и верхним значениями.\n4. Повторяйте шаги 1–3 рекурсивно для подмассивов с левой и правой стороны от сводного элемента, пока подмассив не будет содержать только один элемент.\nСложность\n\n| Лучшее | Средний | Худшее | Пространство (Память) | Стабильный | Преимущество |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n| Ω(n log(n)) | θ(n log(n)) | O(n<sup>2</sup>) | O(журнал n) | Да | Эффективный алгоритм, за исключением почти отсортированных массивов |"
+      },
+      "explanation": {
+        "en": "# QuickSort\n\nQuickSort is a sorting algorithm based on **Divide and Conquer technique** that picks any one element(last, first, middle or random element) which can be chosen as a pivot and partitions the given array around the picked pivot by keeping the pivot in its correct position in the sorted array. The elements less than pivot are kept on the left side and elements greater than pivot are on the right side of the pivot.\n\n## How it works\n1. Choose any value in the array as pivot element.\n2. Order the array elements in such a way that lower values than pivot element are on the the left side, and higher values are on the right side.\n3. Swap the pivot element with first higher value to keep the pivot between the lower and higher values.\n4. Repeat steps 1-3 recursively for the sub-arrays on the left side and right side of pivot element until the sub-array contain only one element.\n\n## Complexity\n\n| Best            | Average             | Worst               | Space (Memory)    | Stable    | Advantage  |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  Ω(n log(n))               | θ(n log(n))       | O(n<sup>2</sup>)       | O(log n)           | Yes       |   Efficient algorithm except for almost sorted arrays        |",
+        "ru": "# Быстрая сортировка\n\nQuickSort — это алгоритм сортировки, основанный на методе **разделяй и властвуй**, который выбирает любой элемент (последний, первый, средний или случайный элемент), который может быть выбран в качестве опорного элемента, и разбивает данный массив вокруг выбранного опорного элемента, сохраняя опорный элемент в правильном положении в отсортированном массиве. Элементы меньше опорной точки сохраняются с левой стороны, а элементы больше опорной — справа от опорной точки.\n\n## Как это работает\n1. Выберите любое значение массива в качестве элемента поворота.\n2. Упорядочите элементы массива таким образом, чтобы более низкие значения, чем значения опорного элемента, находились слева, а более высокие значения — справа.\n3. Поменяйте местами опорный элемент с первым более высоким значением, чтобы сохранить поворот между нижним и верхним значениями.\n4. Повторяйте шаги 1–3 рекурсивно для подмассивов с левой и правой стороны от сводного элемента, пока подмассив не будет содержать только один элемент.\n\n## Сложность\n\n| Лучшее | Средний | Худшее | Пространство (Память) | Стабильный | Преимущество |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  Ω(n log(n)) | θ(n log(n)) | O(n<sup>2</sup>) | O(журнал n) | Да |   Эффективный алгоритм, за исключением почти отсортированных массивов |"
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "sorting",
+        "dsa-sorting"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-sorting-006-heap-sort",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/sorting/6.heapSort/heapSort.js",
+        "documentationPath": "src/javascript/sorting/6.heapSort/heapSort.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/6.heapSort/heapSort.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/6.heapSort/heapSort.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Sorting",
+      "difficulty": "hard",
+      "question": {
+        "en": "How do you solve or implement `Heap sort`?",
+        "ru": "Как решить или реализовать задачу `Heap sort`?"
+      },
+      "answer": {
+        "en": "Level: Hard. Pattern/complexity: TC: O(n log n), SC: O(1). Heap Sort HeapSort is an in-place comparison based sorting algorithm that uses binary heap data structure. The main idea behind this heap sort is to find either the highest value(max heap) or lowest value(min heap) and place it at the end, repeating the process until all the values are sorted. How it works 1. Build a max heap based on given input array. 2. Switch the top root with the last node and then remove it from the heap. 3. Rebuild the max heap again and repeat until there is only one element remaining in the heap. Complexity Best Average Worst Space (Memory) Stable Advantage :-------------: :-----------------: :-----------------: :-------: :-------: :-------- Ω(n log(n)) θ(n log(n)) O(n log(n)) O(1) No Sort efficiently large data sets",
+        "ru": "Уровень: Сложный. Шаблон/сложность: TC: O(n log n), SC: O(1). Heap Sort HeapSort — это алгоритм сортировки на основе сравнения на месте, который использует структуру данных двоичной кучи. Основная идея этой сортировки кучи состоит в том, чтобы найти либо наибольшее значение (максимальная куча), либо наименьшее значение (минимальная куча) и поместить его в конец, повторяя процесс до тех пор, пока все значения не будут отсортированы. Как это работает 1. Создайте максимальную кучу на основе заданного входного массива. 2. Поменяйте местами верхний корень с последним узлом, а затем удалите его из кучи. 3. Снова перестройте максимальную кучу и повторяйте, пока в куче не останется только один элемент. Сложность Наилучший Средний Наихудший Объем (память) Стабильное преимущество :-------------: :-----------------: :-----------------: :-------: :-------: :-------- Ω(n log(n)) θ(n log(n)) O(n log(n)) O(1) Нет Эффективная сортировка больших наборов данных"
+      },
+      "explanation": {
+        "en": "# Heap Sort\nHeapSort is an in-place comparison based sorting algorithm that uses **binary heap** data structure. The main idea behind this heap sort is to find either the highest value(max heap) or lowest value(min heap) and place it at the end, repeating the process until all the values are sorted.\n\n## How it works\n1. Build a max heap based on given input array.\n2. Switch the top root with the last node and then remove it from the heap.\n3. Rebuild the max heap again and repeat until there is only one element remaining in the heap.\n\n## Complexity\n\n| Best            | Average             | Worst               | Space (Memory)    | Stable    | Advantage  |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  Ω(n log(n))               | θ(n log(n))       | O(n log(n))       | O(1)         | No       |   Sort efficiently large data sets        |",
+        "ru": "# Сортировка кучей\nHeapSort — это алгоритм сортировки на основе сравнения на месте, использующий структуру данных **двоичной кучи**. Основная идея этой сортировки кучи состоит в том, чтобы найти либо наибольшее значение (максимальная куча), либо наименьшее значение (минимальная куча) и поместить его в конец, повторяя процесс до тех пор, пока все значения не будут отсортированы.\n\n## Как это работает\n1. Создайте максимальную кучу на основе заданного входного массива.\n2. Поменяйте местами верхний корень с последним узлом, а затем удалите его из кучи.\n3. Снова перестройте максимальную кучу и повторяйте, пока в куче не останется только один элемент.\n\n## Сложность\n\n| Лучшее | Средний | Худшее | Пространство (Память) | Стабильный | Преимущество |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  Ω(n log(n)) | θ(n log(n)) | O(n log(n)) | О(1) | Нет |   Эффективная сортировка больших наборов данных |"
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "sorting",
+        "dsa-sorting"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-sorting-007-radix-sort",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/sorting/7.radixSort/radixSort.js",
+        "documentationPath": "src/javascript/sorting/7.radixSort/radixSort.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/7.radixSort/radixSort.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/7.radixSort/radixSort.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Sorting",
+      "difficulty": "medium",
+      "question": {
+        "en": "How do you solve or implement `Radix sort`?",
+        "ru": "Как решить или реализовать задачу `Radix sort`?"
+      },
+      "answer": {
+        "en": "Level: Medium. Pattern/complexity: TC: O(d(n+k)), SC: O(n+k). Radix Sort RadixSort is a non-comparison(or linear) based sorting algorithm which distributes the elements into buckets based on each digit’s value. How it works Complexity Best Average Worst Space (Memory) Stable Advantage :-------------: :-----------------: :-----------------: :-------: :-------: :-------- Ω(nk) θ(nk) O(nk) O(n+k) Yes Sort efficiently for integers or strings with fixed-size keys",
+        "ru": "Уровень: Средний. Шаблон/сложность: TC: O(d(n+k)), SC: O(n+k). Radix Sort RadixSort — это алгоритм сортировки, основанный на несравнении (или линейном), который распределяет элементы по сегментам на основе значения каждой цифры. Как это работает Сложность Лучшее Среднее Худшее Пространство (память) Стабильное Преимущество :-------------: :-----------------: :-----------------: :-------: :-------: :-------- Ω(nk) θ(nk) O(nk) O(n+k) Да Эффективная сортировка целых чисел или строк с ключами фиксированного размера"
+      },
+      "explanation": {
+        "en": "# Radix Sort\nRadixSort is a non-comparison(or linear) based sorting algorithm which distributes the elements into buckets based on each digit’s value. \n\n## How it works\n\n## Complexity\n\n| Best            | Average             | Worst               | Space (Memory)    | Stable    | Advantage  |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  Ω(nk)               | θ(nk)       | O(nk)       | O(n+k)         | Yes       |   Sort efficiently for integers or strings with fixed-size keys        |",
+        "ru": "# Поразрядная сортировка\nRadixSort — это алгоритм сортировки без сравнения (или линейный), который распределяет элементы по сегментам на основе значения каждой цифры. \n\n## Как это работает\n\n## Сложность\n\n| Лучшее | Средний | Худшее | Пространство (Память) | Стабильный | Преимущество |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  Ом(нк) | θ(нк) | О(нк) | О(п+к) | Да |   Эффективная сортировка целых чисел или строк с ключами фиксированного размера |"
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "sorting",
+        "dsa-sorting"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-sorting-008-max-product-of-three",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/sorting/maxProductOfThree/maxProductOfThree.js",
+        "documentationPath": "src/javascript/algorithms/sorting/maxProductOfThree/maxProductOfThree.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/sorting/maxProductOfThree/maxProductOfThree.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/sorting/maxProductOfThree/maxProductOfThree.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Sorting",
+      "difficulty": "easy",
+      "question": {
+        "en": "How do you solve or implement `Max product of three`?",
+        "ru": "Как решить или реализовать задачу `Max product of three`?"
+      },
+      "answer": {
+        "en": "Level: Easy. Pattern/complexity: Array sorting. Description: Given an array of integers, find the maximal product of any triplet. Examples Example 1: Input: numbers = [-3, 1, 2, -2, 5, 6] Output: 60 Example 2: Input: numbers = [-5, -6, -4, -7, -10] Output: -120 Algorithmic Steps This problem is solved by sorting the array and considering the product of the three largest numbers or the product of the two smallest and the largest number: 1. Sort the array in non-decreasing order. 2. Compute the product of the last three numbers. 3. Compute the product of the first two numbers and the last number. 4. Return the maximum of the two products. Time and Space complexity: - Time complexity: O(n log n) , where n is the number of elements (due to sorting). - Space complexity: O(1) .",
+        "ru": "Уровень: Легко. Шаблон/сложность: сортировка массива. Описание: Учитывая массив целых чисел, найдите максимальное произведение любой тройки. Примеры Пример 1: Входные данные: числа = [-3, 1, 2, -2, 5, 6] Выходные данные: 60 Пример 2: Входные данные: числа = [-5, -6, -4, -7, -10] Выходные данные: -120 Алгоритмические шаги Эта задача решается путем сортировки массива и рассмотрения произведения трех наибольших чисел или произведения двух наименьших и наибольшего чисел: 1. Отсортируйте массив в порядке неубывания. 2. Вычислите произведение последних трех чисел. 3. Вычислите произведение первых двух чисел и последнего числа. 4. Верните максимум из двух товаров. Временная и пространственная сложность: - Временная сложность: O(n log n) , где n — количество элементов (в результате сортировки). - Пространственная сложность: O(1) ."
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven an array of integers, find the maximal product of any triplet.\n\n### Examples\nExample 1:\n\nInput: numbers = [-3, 1, 2, -2, 5, 6]\nOutput: 60\n\nExample 2:\n\nInput: numbers = [-5, -6, -4, -7, -10]\nOutput: -120\n\n**Algorithmic Steps**\nThis problem is solved by sorting the array and considering the product of the three largest numbers or the product of the two smallest and the largest number:\n\n1. Sort the array in non-decreasing order.\n2. Compute the product of the last three numbers.\n3. Compute the product of the first two numbers and the last number.\n4. Return the maximum of the two products.\n\n**Time and Space complexity:**\n- Time complexity: `O(n log n)`, where `n` is the number of elements (due to sorting).\n- Space complexity: `O(1)`.",
+        "ru": "**Описание:**\nУчитывая массив целых чисел, найдите максимальное произведение любой тройки.\n\n### Примеры\nПример 1:\n\nВвод: числа = [-3, 1, 2, -2, 5, 6]\nВыход: 60\n\nПример 2:\n\nВвод: числа = [-5, -6, -4, -7, -10]\nВыход: -120\n\n**Алгоритмические шаги**\nЭта проблема решается путем сортировки массива и рассмотрения произведения трех наибольших чисел или произведения двух наименьших и наибольшего чисел:\n\n1. Отсортируйте массив в порядке неубывания.\n2. Вычислите произведение последних трех чисел.\n3. Вычислите произведение первых двух чисел и последнего числа.\n4. Верните максимум из двух товаров.\n\n**Сложность во времени и пространстве:**\n- Временная сложность: `O(n log n)`, где `n` — количество элементов (из-за сортировки).\n- Космическая сложность: `O(1)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "sorting",
+        "dsa-sorting"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-misc-001-frog-jump",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/misc/1.frogJump/frogJump.js",
+        "documentationPath": "src/javascript/algorithms/misc/1.frogJump/frogJump.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/misc/1.frogJump/frogJump.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/misc/1.frogJump/frogJump.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Misc",
+      "difficulty": "easy",
+      "question": {
+        "en": "How do you solve or implement `Frog jump`?",
+        "ru": "Как решить или реализовать задачу `Frog jump`?"
+      },
+      "answer": {
+        "en": "Level: Easy. Pattern/complexity: Mathematical calculation. Description: Given the starting position X, target position Y, and fixed jump distance D, compute the minimal number of jumps required for a frog to reach or pass position Y from X. Examples Example 1: Input: X = 10, Y = 85, D = 30 Output: 3 Algorithmic Steps This problem is solved using simple arithmetic: 1. Calculate the distance to be covered as Y - X. 2. Divide the distance by D and round up to the nearest integer (using Math.ceil). 3. Return the result as the minimal number of jumps. Time and Space complexity: - Time complexity: O(1) . - Space complexity: O(1) .",
+        "ru": "Уровень: Легко. Схема/сложность: Математический расчет. Описание: Учитывая исходное положение X, целевое положение Y и фиксированное расстояние прыжка D, вычислите минимальное количество прыжков, необходимое лягушке, чтобы достичь или пройти позицию Y из X. Примеры Пример 1: Входные данные: X = 10, Y = 85, D = 30 Выходные данные: 3 алгоритмических шага. Эта задача решается с помощью простой арифметики: 1. Вычислите расстояние, которое необходимо преодолеть, как Y - X. 2. Разделите расстояние на D и округлите до значения ближайшее целое число (с использованием Math.ceil). 3. Вернуть результат как минимальное количество прыжков. Временная и пространственная сложность: - Временная сложность: O(1) . - Пространственная сложность: O(1) ."
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven the starting position X, target position Y, and fixed jump distance D, compute the minimal number of jumps required for a frog to reach or pass position Y from X.\n\n### Examples\nExample 1:\n\nInput: X = 10, Y = 85, D = 30\nOutput: 3\n\n**Algorithmic Steps**\nThis problem is solved using simple arithmetic:\n\n1. Calculate the distance to be covered as Y - X.\n2. Divide the distance by D and round up to the nearest integer (using Math.ceil).\n3. Return the result as the minimal number of jumps.\n\n**Time and Space complexity:**\n- Time complexity: `O(1)`.\n- Space complexity: `O(1)`.",
+        "ru": "**Описание:**\nУчитывая начальную позицию X, целевую позицию Y и фиксированное расстояние прыжка D, вычислите минимальное количество прыжков, необходимое лягушке, чтобы достичь или пройти позицию Y из X.\n\n### Примеры\nПример 1:\n\nВвод: X = 10, Y = 85, D = 30.\nВыход: 3\n\n**Алгоритмические шаги**\nЭта проблема решается с помощью простой арифметики:\n\n1. Рассчитайте расстояние, которое необходимо преодолеть, как Y - X.\n2. Разделите расстояние на D и округлите до ближайшего целого числа (используя Math.ceil).\n3. Вернуть результат как минимальное количество прыжков.\n\n**Сложность во времени и пространстве:**\n- Временная сложность: `O(1)`.\n- Космическая сложность: `O(1)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "misc",
+        "dsa-sorting"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-misc-002-missing-element",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/misc/2.missingElement/missingElement.js",
+        "documentationPath": "src/javascript/algorithms/misc/2.missingElement/missingElement.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/misc/2.missingElement/missingElement.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/misc/2.missingElement/missingElement.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Misc",
+      "difficulty": "easy",
+      "question": {
+        "en": "How do you solve or implement `Missing element`?",
+        "ru": "Как решить или реализовать задачу `Missing element`?"
+      },
+      "answer": {
+        "en": "Level: Easy. Pattern/complexity: Mathematical calculation. Description: Given an array containing n distinct numbers taken from the range 1 to n+1, find the missing number. Examples Example 1: Input: nums = [2, 3, 1, 5] Output: 4 Example 2: Input: nums = [1, 2, 3, 4, 6] Output: 5 Example 3: Input: nums = [] Output: 1 Algorithmic Steps This problem is solved using the sum formula for the first n natural numbers: 1. Calculate the expected sum for numbers from 1 to n+1 using the formula (n+1) (n+2)/2 . 2. Calculate the actual sum of the elements in the array. 3. The missing number is the difference between the expected sum and the actual sum. Time and Space complexity: - Time complexity: O(n) , where n is the length of the array. - Space complexity: O(1) .",
+        "ru": "Уровень: Легко. Схема/сложность: Математический расчет. Описание: Дан массив, содержащий n различных чисел в диапазоне от 1 до n+1. Найдите недостающее число. Примеры Пример 1: Входные данные: nums = [2, 3, 1, 5] Выходные данные: 4 Пример 2: Входные данные: nums = [1, 2, 3, 4, 6] Выходные данные: 5 Пример 3: Входные данные: nums = [] Выходные данные: 1 Алгоритмические шаги Эта задача решается с использованием формулы суммы для первых n натуральных чисел: 1. Вычислите ожидаемую сумму для чисел от 1 до n+1 по формуле (n+1) (n+2)/2 . 2. Вычислите фактическую сумму элементов массива. 3. Недостающее число — это разница между ожидаемой суммой и фактической суммой. Временная и пространственная сложность: - Временная сложность: O(n) , где n — длина массива. - Пространственная сложность: O(1) ."
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven an array containing n distinct numbers taken from the range 1 to n+1, find the missing number.\n\n### Examples\nExample 1:\n\nInput: nums = [2, 3, 1, 5]\nOutput: 4\n\nExample 2:\n\nInput: nums = [1, 2, 3, 4, 6]\nOutput: 5\n\nExample 3:\n\nInput: nums = []\nOutput: 1\n\n**Algorithmic Steps**\nThis problem is solved using the sum formula for the first n natural numbers:\n\n1. Calculate the expected sum for numbers from 1 to n+1 using the formula `(n+1)*(n+2)/2`.\n2. Calculate the actual sum of the elements in the array.\n3. The missing number is the difference between the expected sum and the actual sum.\n\n**Time and Space complexity:**\n- Time complexity: `O(n)`, where `n` is the length of the array.\n- Space complexity: `O(1)`.",
+        "ru": "**Описание:**\nДан массив, содержащий n различных чисел в диапазоне от 1 до n+1. Найдите недостающее число.\n\n### Примеры\nПример 1:\n\nВвод: числа = [2, 3, 1, 5]\nВыход: 4\n\nПример 2:\n\nВвод: числа = [1, 2, 3, 4, 6]\nВыход: 5\n\nПример 3:\n\nВвод: числа = []\nВыход: 1\n\n**Алгоритмические шаги**\nЭта задача решается с помощью формулы суммы первых n натуральных чисел:\n\n1. Рассчитайте ожидаемую сумму для чисел от 1 до n+1 по формуле `(n+1)*(n+2)/2`.\n2. Вычислите фактическую сумму элементов массива.\n3. Недостающее число — это разница между ожидаемой суммой и фактической суммой.\n\n**Сложность во времени и пространстве:**\n- Временная сложность: `O(n)`, где `n` — длина массива.\n- Космическая сложность: `O(1)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "misc",
+        "dsa-sorting"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-misc-003-frog-river-one",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/misc/3.frogRiverOne/frogRiverOne.js",
+        "documentationPath": "src/javascript/algorithms/misc/3.frogRiverOne/frogRiverOne.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/misc/3.frogRiverOne/frogRiverOne.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/misc/3.frogRiverOne/frogRiverOne.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Misc",
+      "difficulty": "easy",
+      "question": {
+        "en": "How do you solve or implement `Frog river one`?",
+        "ru": "Как решить или реализовать задачу `Frog river one`?"
+      },
+      "answer": {
+        "en": "Description:\nGiven a destination position and a list of positions where leaves fall over time, find the earliest time when the frog can jump to the other side of the river by stepping on leaves at every position from 1 to destinationPosition.\nExamples\nExample 1:\n\nInput: destinationPosition = 5, positionsList = [1, 3, 1, 4, 2, 3, 5, 4]\nOutput: 6\n\nExample 2:\n\nInput: destinationPosition = 3, positionsList = [1, 3, 1, 1]\nOutput: -1\n\nExample 3:\n\nInput: destinationPosition = 1, positionsList = [1]\nOutput: 0\n\nExample 4:\n\nInput: destinationPosition = 3, positionsList = [3, 2, 1]\nOutput: 2\n\nExample 5:\n\nInput: destinationPosition = 2, positionsList = [1, 1, 1, 2]\nOutput: 3\n\nAlgorithmic Steps\nThis problem is solved using a set to track unique positions:\n\n1. Initialize an empty set to store positions where leaves have fallen.\n2. Iterate through the positionsList:\n- Add the current position to the set.\n- If the set size equals destinationPosition, return the current time (index).\n3. If the loop ends without covering all positions, return -1.\n\nTime and Space complexity:\n- Time complexity: O(n), where n is the length of positionsList.\n- Space complexity: O(destinationPosition).",
+        "ru": "Описание:\nУчитывая позицию пункта назначения и список позиций, в которых листья падают с течением времени, найдите самый ранний момент, когда лягушка сможет перепрыгнуть на другой берег реки, наступая на листья в каждой позиции от 1 до места назначения.\nПримеры\nПример 1:\n\nВвод: DestinationPosition = 5, PositionList = [1, 3, 1, 4, 2, 3, 5, 4]\nВыход: 6\n\nПример 2:\n\nВвод: DestinationPosition = 3, PositionList = [1, 3, 1, 1]\nВыход: -1\n\nПример 3:\n\nВвод: targetPosition = 1, PositionList = [1]\nВыход: 0\n\nПример 4:\n\nВвод: DestinationPosition = 3, PositionList = [3, 2, 1]\nВыход: 2\n\nПример 5:\n\nВвод: DestinationPosition = 2, PositionList = [1, 1, 1, 2]\nВыход: 3\n\nАлгоритмические шаги\nЭта проблема решается с помощью набора для отслеживания уникальных позиций:\n\n1. Инициализируйте пустой набор для хранения позиций, где упали листья.\n2. Перебрать список позиций:\n- Добавить текущую позицию в набор.\n- Если заданный размер равен DestinationPosition, верните текущее время (индекс).\n3. Если цикл заканчивается, не охватывая все позиции, верните -1.\n\nСложность во времени и пространстве:\n- Временная сложность: O(n), где n — длина позицийList.\n- Космическая сложность: O(destinationPosition)."
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven a destination position and a list of positions where leaves fall over time, find the earliest time when the frog can jump to the other side of the river by stepping on leaves at every position from 1 to destinationPosition.\n\n### Examples\nExample 1:\n\nInput: destinationPosition = 5, positionsList = [1, 3, 1, 4, 2, 3, 5, 4]\nOutput: 6\n\nExample 2:\n\nInput: destinationPosition = 3, positionsList = [1, 3, 1, 1]\nOutput: -1\n\nExample 3:\n\nInput: destinationPosition = 1, positionsList = [1]\nOutput: 0\n\nExample 4:\n\nInput: destinationPosition = 3, positionsList = [3, 2, 1]\nOutput: 2\n\nExample 5:\n\nInput: destinationPosition = 2, positionsList = [1, 1, 1, 2]\nOutput: 3\n\n**Algorithmic Steps**\nThis problem is solved using a set to track unique positions:\n\n1. Initialize an empty set to store positions where leaves have fallen.\n2. Iterate through the positionsList:\n   - Add the current position to the set.\n   - If the set size equals destinationPosition, return the current time (index).\n3. If the loop ends without covering all positions, return -1.\n\n**Time and Space complexity:**\n- Time complexity: `O(n)`, where `n` is the length of positionsList.\n- Space complexity: `O(destinationPosition)`.",
+        "ru": "**Описание:**\nУчитывая позицию пункта назначения и список позиций, в которых листья падают с течением времени, найдите самый ранний момент, когда лягушка сможет перепрыгнуть на другой берег реки, наступая на листья в каждой позиции от 1 до места назначения.\n\n### Примеры\nПример 1:\n\nВвод: DestinationPosition = 5, PositionList = [1, 3, 1, 4, 2, 3, 5, 4]\nВыход: 6\n\nПример 2:\n\nВвод: DestinationPosition = 3, PositionList = [1, 3, 1, 1]\nВыход: -1\n\nПример 3:\n\nВвод: targetPosition = 1, PositionList = [1]\nВыход: 0\n\nПример 4:\n\nВвод: DestinationPosition = 3, PositionList = [3, 2, 1]\nВыход: 2\n\nПример 5:\n\nВвод: DestinationPosition = 2, PositionList = [1, 1, 1, 2]\nВыход: 3\n\n**Алгоритмические шаги**\nЭта проблема решается с помощью набора для отслеживания уникальных позиций:\n\n1. Инициализируйте пустой набор для хранения позиций, где упали листья.\n2. Перебрать список позиций:\n   - Добавить текущую позицию в набор.\n   - Если заданный размер равен DestinationPosition, верните текущее время (индекс).\n3. Если цикл заканчивается, не охватывая все позиции, верните -1.\n\n**Сложность во времени и пространстве:**\n- Временная сложность: `O(n)`, где `n` — длина позицийList.\n- Космическая сложность: `O(destinationPosition)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "misc",
+        "dsa-sorting"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-misc-004-count-divisible",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "path": "README.md",
+        "sourcePath": "src/javascript/algorithms/misc/4.countDivisible/countDivisible.js",
+        "documentationPath": "src/javascript/algorithms/misc/4.countDivisible/countDivisible.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/misc/4.countDivisible/countDivisible.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/misc/4.countDivisible/countDivisible.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Misc",
+      "difficulty": "easy",
+      "question": {
+        "en": "How do you solve or implement `Count divisible`?",
+        "ru": "Как решить или реализовать задачу `Count divisible`?"
+      },
+      "answer": {
+        "en": "Description:\nGiven two integers firstNumber and secondNumber and a divisor, count the number of integers within the range [firstNumber, secondNumber] that are divisible by the divisor.\nExamples\nExample 1:\n\nInput: firstNumber = 6, secondNumber = 11, divisor = 2\nOutput: 3\n\nExample 2:\n\nInput: firstNumber = 0, secondNumber = 0, divisor = 11\nOutput: 1\n\nExample 3:\n\nInput: firstNumber = 10, secondNumber = 10, divisor = 5\nOutput: 1\n\nExample 4:\n\nInput: firstNumber = 10, secondNumber = 10, divisor = 7\nOutput: 0\n\nAlgorithmic Steps\nThis problem is solved using simple arithmetic:\n\n1. Compute the number of divisible numbers up to secondNumber by dividing it by the divisor and taking the floor.\n2. Compute the number of divisible numbers before firstNumber by dividing (firstNumber - 1) by the divisor and taking the floor.\n3. Subtract the two results to get the count of divisible numbers in the range.\n\nTime and Space complexity:\n- Time complexity: O(1).\n- Space complexity: O(1).",
+        "ru": "Описание:\nУчитывая два целых числа firstNumber и secondNumber и делитель, подсчитайте количество целых чисел в диапазоне [firstNumber, SecondNumber], которые делятся на делитель.\nПримеры\nПример 1:\n\nВвод: firstNumber = 6, SecondNumber = 11, делитель = 2.\nВыход: 3\n\nПример 2:\n\nВвод: firstNumber = 0, SecondNumber = 0, делитель = 11.\nВыход: 1\n\nПример 3:\n\nВвод: firstNumber = 10, SecondNumber = 10, делитель = 5.\nВыход: 1\n\nПример 4:\n\nВвод: firstNumber = 10, SecondNumber = 10, делитель = 7.\nВыход: 0\n\nАлгоритмические шаги\nЭта проблема решается с помощью простой арифметики:\n\n1. Вычислите количество делящихся чисел до secondNumber, разделив его на делитель и взяв слово.\n2. Вычислите количество делящихся чисел до firstNumber, разделив (firstNumber - 1) на делитель и взяв слово.\n3. Вычтите два результата, чтобы получить количество делящихся чисел в диапазоне.\n\nСложность во времени и пространстве:\n- Временная сложность: O(1).\n- Космическая сложность: O(1)."
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven two integers `firstNumber` and `secondNumber` and a divisor, count the number of integers within the range [firstNumber, secondNumber] that are divisible by the divisor.\n\n### Examples\nExample 1:\n\nInput: firstNumber = 6, secondNumber = 11, divisor = 2\nOutput: 3\n\nExample 2:\n\nInput: firstNumber = 0, secondNumber = 0, divisor = 11\nOutput: 1\n\nExample 3:\n\nInput: firstNumber = 10, secondNumber = 10, divisor = 5\nOutput: 1\n\nExample 4:\n\nInput: firstNumber = 10, secondNumber = 10, divisor = 7\nOutput: 0\n\n**Algorithmic Steps**\nThis problem is solved using simple arithmetic:\n\n1. Compute the number of divisible numbers up to `secondNumber` by dividing it by the divisor and taking the floor.\n2. Compute the number of divisible numbers before `firstNumber` by dividing (`firstNumber` - 1) by the divisor and taking the floor.\n3. Subtract the two results to get the count of divisible numbers in the range.\n\n**Time and Space complexity:**\n- Time complexity: `O(1)`.\n- Space complexity: `O(1)`.",
+        "ru": "**Описание:**\nУчитывая два целых числа `firstNumber` и `secondNumber` и делитель, подсчитайте количество целых чисел в диапазоне [firstNumber, SecondNumber], которые делятся на делитель.\n\n### Примеры\nПример 1:\n\nВвод: firstNumber = 6, SecondNumber = 11, делитель = 2.\nВыход: 3\n\nПример 2:\n\nВвод: firstNumber = 0, SecondNumber = 0, делитель = 11.\nВыход: 1\n\nПример 3:\n\nВвод: firstNumber = 10, SecondNumber = 10, делитель = 5.\nВыход: 1\n\nПример 4:\n\nВвод: firstNumber = 10, SecondNumber = 10, делитель = 7.\nВыход: 0\n\n**Алгоритмические шаги**\nЭта проблема решается с помощью простой арифметики:\n\n1. Вычислите количество делящихся чисел до `secondNumber`, разделив его на делитель и взяв слово.\n2. Вычислите количество делящихся чисел до `firstNumber`, разделив (`firstNumber` - 1) на делитель и взяв слово.\n3. Вычтите два результата, чтобы получить количество делящихся чисел в диапазоне.\n\n**Сложность во времени и пространстве:**\n- Временная сложность: `O(1)`.\n- Космическая сложность: `O(1)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "misc",
+        "dsa-sorting"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "sudheerj-dsa-sorting-sorting-001-bubble-sort-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/sorting/1.bubbleSort/bubbleSort.js",
+        "documentationPath": "src/javascript/sorting/1.bubbleSort/README.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/1.bubbleSort/bubbleSort.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/1.bubbleSort/bubbleSort.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Sorting",
+      "type": "implement",
+      "difficulty": "easy",
+      "title": {
+        "en": "Bubble sort",
+        "ru": "Пузырьковая сортировка"
+      },
+      "prompt": {
+        "en": "Implement `Bubble sort` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Bubble sort`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "function bubbleSort(array){\n    const len = array.length;\n    let i, j;\n    let swapped;\n    for (i=0; i < len - 1; i++) {\n        swapped = false; // Track if any swaps occur in this iteration\n        for (j=0; j < len-i-1; j++) {\n            if (array[j] > array[j+1]){\n                swap(array, j, j+1);\n                swapped = true; // Mark when there is a swap\n            }\n        }\n        \n        //Early exit if there were no swaps made. That means, the array is already sorted if this condition satisfies\n        if(!swapped) {\n            break;\n        }\n    }\n    return array;\n}\n\nfunction swap(array, firstIndex, secondIndex){\n    const temp = array[firstIndex];\n    array[firstIndex] = array[secondIndex];\n    array[secondIndex] = temp;\n}\n\nconsole.log(bubbleSort([40, 50, 20, 0, -10, 30, 10]));",
+      "expectedAnswer": {
+        "en": "function bubbleSort(array){\n    const len = array.length;\n    let i, j;\n    let swapped;\n    for (i=0; i < len - 1; i++) {\n        swapped = false; // Track if any swaps occur in this iteration\n        for (j=0; j < len-i-1; j++) {\n            if (array[j] > array[j+1]){\n                swap(array, j, j+1);\n                swapped = true; // Mark when there is a swap\n            }\n        }\n        \n        //Early exit if there were no swaps made. That means, the array is already sorted if this condition satisfies\n        if(!swapped) {\n            break;\n        }\n    }\n    return array;\n}\n\nfunction swap(array, firstIndex, secondIndex){\n    const temp = array[firstIndex];\n    array[firstIndex] = array[secondIndex];\n    array[secondIndex] = temp;\n}\n\nconsole.log(bubbleSort([40, 50, 20, 0, -10, 30, 10]));",
+        "ru": "function bubbleSort(array){\n    const len = array.length;\n    let i, j;\n    let swapped;\n    for (i=0; i < len - 1; i++) {\n        swapped = false; // Track if any swaps occur in this iteration\n        for (j=0; j < len-i-1; j++) {\n            if (array[j] > array[j+1]){\n                swap(array, j, j+1);\n                swapped = true; // Mark when there is a swap\n            }\n        }\n        \n        //Early exit if there were no swaps made. That means, the array is already sorted if this condition satisfies\n        if(!swapped) {\n            break;\n        }\n    }\n    return array;\n}\n\nfunction swap(array, firstIndex, secondIndex){\n    const temp = array[firstIndex];\n    array[firstIndex] = array[secondIndex];\n    array[secondIndex] = temp;\n}\n\nconsole.log(bubbleSort([40, 50, 20, 0, -10, 30, 10]));"
+      },
+      "explanation": {
+        "en": "# Bubble Sort\n\nBubble sort, sometimes referred to as **sinking sort**, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.\nThe pass through the list is repeated until no swaps are needed, which indicates that the list is sorted.\n\nIt is named because elements tend to move up into the correct order like bubbles rising to the surface.\n\n##\n\n## Complexity\n\n| Best            | Average             | Worst               | Space (Memory)    | Stable    | Advantage  |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  O(n)               | O(n<sup>2</sup>)       | O(n<sup>2</sup>)       | O(1)         | Yes       |   Simplicity        |",
+        "ru": "# Пузырьковая сортировка\n\nПузырьковая сортировка, иногда называемая **тонущей сортировкой**, представляет собой простой алгоритм сортировки, который многократно проходит по списку, сравнивает соседние элементы и меняет их местами, если они расположены в неправильном порядке.\nПроход по списку повторяется до тех пор, пока перестановки не понадобятся, что указывает на то, что список отсортирован.\n\nОно названо так потому, что элементы имеют тенденцию двигаться вверх в правильном порядке, подобно пузырькам, поднимающимся на поверхность.\n\n##\n\n## Сложность\n\n| Лучшее | Средний | Худшее | Пространство (Память) | Стабильный | Преимущество |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  О(п) | O(n<sup>2</sup>) | O(n<sup>2</sup>) | О(1) | Да |   Простота |"
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "sorting",
+        "dsa-sorting",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-sorting-002-selection-sort-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/sorting/2.selectionSort/selectionSort.js",
+        "documentationPath": "src/javascript/sorting/2.selectionSort/README.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/2.selectionSort/selectionSort.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/2.selectionSort/selectionSort.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Sorting",
+      "type": "implement",
+      "difficulty": "easy",
+      "title": {
+        "en": "Selection sort",
+        "ru": "Сортировка выбором"
+      },
+      "prompt": {
+        "en": "Implement `Selection sort` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Selection sort`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "function selectionSort(arr) {\n    const len = arr.length;\n\n    for (let i = 0; i < len - 1; i++) {\n        let minIndex = i;\n        for (let j = i + 1; j < len; j++) {\n            if (arr[j] < arr[minIndex]) {\n                minIndex = j;\n            }\n        }\n\n        if (minIndex !== i) {\n            swap(arr, minIndex, i);\n        }\n    }\n    return arr;\n}\n\n/* Swap an array */\nfunction swap(array, firstIndex, secondIndex){\n    const temp = array[firstIndex];\n    array[firstIndex] = array[secondIndex];\n    array[secondIndex] = temp;\n}\n\nconsole.log(selectionSort([ 40, 50, 20, 0, -10, 30, 10]));",
+      "expectedAnswer": {
+        "en": "function selectionSort(arr) {\n    const len = arr.length;\n\n    for (let i = 0; i < len - 1; i++) {\n        let minIndex = i;\n        for (let j = i + 1; j < len; j++) {\n            if (arr[j] < arr[minIndex]) {\n                minIndex = j;\n            }\n        }\n\n        if (minIndex !== i) {\n            swap(arr, minIndex, i);\n        }\n    }\n    return arr;\n}\n\n/* Swap an array */\nfunction swap(array, firstIndex, secondIndex){\n    const temp = array[firstIndex];\n    array[firstIndex] = array[secondIndex];\n    array[secondIndex] = temp;\n}\n\nconsole.log(selectionSort([ 40, 50, 20, 0, -10, 30, 10]));",
+        "ru": "function selectionSort(arr) {\n    const len = arr.length;\n\n    for (let i = 0; i < len - 1; i++) {\n        let minIndex = i;\n        for (let j = i + 1; j < len; j++) {\n            if (arr[j] < arr[minIndex]) {\n                minIndex = j;\n            }\n        }\n\n        if (minIndex !== i) {\n            swap(arr, minIndex, i);\n        }\n    }\n    return arr;\n}\n\n/* Swap an array */\nfunction swap(array, firstIndex, secondIndex){\n    const temp = array[firstIndex];\n    array[firstIndex] = array[secondIndex];\n    array[secondIndex] = temp;\n}\n\nconsole.log(selectionSort([ 40, 50, 20, 0, -10, 30, 10]));"
+      },
+      "explanation": {
+        "en": "# Selection Sort\n\nSelection sort is an algorithm that selects the smallest(or minimum) element from an unsorted list in each iteration and move that element at the beginning of the unsorted list.\n\n##\n\n## Complexity\n\n| Best            | Average             | Worst               | Space (Memory)    | Stable    | Advantage  |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  O(n<sup>2</sup>)                | O(n<sup>2</sup>)       | O(n<sup>2</sup>)       |  O(1)         | Yes       |   Works well with small list        |",
+        "ru": "# Сортировка выбором\n\nСортировка выбором — это алгоритм, который выбирает наименьший (или минимальный) элемент из несортированного списка на каждой итерации и перемещает этот элемент в начало несортированного списка.\n\n##\n\n## Сложность\n\n| Лучшее | Средний | Худшее | Пространство (Память) | Стабильный | Преимущество |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  O(n<sup>2</sup>) | O(n<sup>2</sup>) | O(n<sup>2</sup>) |  О(1) | Да |   Хорошо работает с небольшим списком |"
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "sorting",
+        "dsa-sorting",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-sorting-003-insertion-sort-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/sorting/3.insertionSort/insertionSort.js",
+        "documentationPath": "src/javascript/sorting/3.insertionSort/README.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/3.insertionSort/insertionSort.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/3.insertionSort/insertionSort.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Sorting",
+      "type": "implement",
+      "difficulty": "easy",
+      "title": {
+        "en": "Insertion sort",
+        "ru": "Сортировка вставкой"
+      },
+      "prompt": {
+        "en": "Implement `Insertion sort` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Insertion sort`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "function insertionSort(array) {\n    for(let i = 1; i < array.length; i++) {\n        let temp = array[i];\n        for(var j = i-1; j > -1 && array[j] > temp; j--) {\n            array[j+1] = array[j];\n        }\n        array[j+1] = temp;\n    }\n    return array;\n}\n\nlet myArray = [5, 1, 6, 2, 4, 3];\ninsertionSort(myArray);\nconsole.log(myArray);",
+      "expectedAnswer": {
+        "en": "function insertionSort(array) {\n    for(let i = 1; i < array.length; i++) {\n        let temp = array[i];\n        for(var j = i-1; j > -1 && array[j] > temp; j--) {\n            array[j+1] = array[j];\n        }\n        array[j+1] = temp;\n    }\n    return array;\n}\n\nlet myArray = [5, 1, 6, 2, 4, 3];\ninsertionSort(myArray);\nconsole.log(myArray);",
+        "ru": "function insertionSort(array) {\n    for(let i = 1; i < array.length; i++) {\n        let temp = array[i];\n        for(var j = i-1; j > -1 && array[j] > temp; j--) {\n            array[j+1] = array[j];\n        }\n        array[j+1] = temp;\n    }\n    return array;\n}\n\nlet myArray = [5, 1, 6, 2, 4, 3];\ninsertionSort(myArray);\nconsole.log(myArray);"
+      },
+      "explanation": {
+        "en": "# Insertion Sort\n\nInsertion sort is the sorting mechanism where the sorted array is built one item at a time. The array elements are compared with each other sequentially and then arranged simultaneously in some particular order.  It works similarly as we sort cards in our hand in a card game.\n\n## Complexity\n\n| Best            | Average             | Worst               | Space (Memory)    | Stable    | Advantage  |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  O(n)                | O(n<sup>2</sup>)       | O(n<sup>2</sup>)       |  O(1)         | Yes       |  Efficient for data sets that are almost sorted list       |",
+        "ru": "# Сортировка вставками\n\nСортировка вставками — это механизм сортировки, при котором отсортированный массив строится по одному элементу за раз. Элементы массива последовательно сравниваются друг с другом, а затем одновременно располагаются в определенном порядке.  Это работает так же, как мы сортируем карты в руке в карточной игре.\n\n## Сложность\n\n| Лучшее | Средний | Худшее | Пространство (Память) | Стабильный | Преимущество |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  О(п) | O(n<sup>2</sup>) | O(n<sup>2</sup>) |  О(1) | Да |  Эффективно для наборов данных, которые представляют собой почти отсортированный список |"
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "sorting",
+        "dsa-sorting",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-sorting-004-merge-sort-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/sorting/4.mergeSort/mergeSort.js",
+        "documentationPath": "src/javascript/sorting/4.mergeSort/mergeSort.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/4.mergeSort/mergeSort.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/4.mergeSort/mergeSort.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Sorting",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Merge sort",
+        "ru": "Сортировка слиянием"
+      },
+      "prompt": {
+        "en": "Implement `Merge sort` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Merge sort`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "function merge(array1, array2) {\n    let combined = [];\n    let i = 0;\n    let j = 0;\n    while (i < array1.length && j < array2.length) {\n        if (array1[i] < array2[j]) {\n            combined.push(array1[i]);\n            i++;\n        } else {\n            combined.push(array2[j]);\n            j++;\n        }\n    }\n    while (i < array1.length) {\n        combined.push(array1[i]);\n        i++;\n    }\n    while (j < array2.length) {\n        combined.push(array2[j]);\n        j++;\n    }\n    return combined;\n}\n\nfunction mergeSort(array) {\n    if(array.length < 2)  return array;\n    let mid = Math.floor(array.length/2);\n    let leftArray = array.slice(0, mid);\n    let rightArray = array.slice(mid);\n    return merge(mergeSort(leftArray), mergeSort(rightArray));\n}\n\n\nlet originalArray = [2, 1, 4, 3, 6, 5];\nlet sortedArray = mergeSort( originalArray );\nconsole.log( \"\\nSorted Array:\", sortedArray );",
+      "expectedAnswer": {
+        "en": "function merge(array1, array2) {\n    let combined = [];\n    let i = 0;\n    let j = 0;\n    while (i < array1.length && j < array2.length) {\n        if (array1[i] < array2[j]) {\n            combined.push(array1[i]);\n            i++;\n        } else {\n            combined.push(array2[j]);\n            j++;\n        }\n    }\n    while (i < array1.length) {\n        combined.push(array1[i]);\n        i++;\n    }\n    while (j < array2.length) {\n        combined.push(array2[j]);\n        j++;\n    }\n    return combined;\n}\n\nfunction mergeSort(array) {\n    if(array.length < 2)  return array;\n    let mid = Math.floor(array.length/2);\n    let leftArray = array.slice(0, mid);\n    let rightArray = array.slice(mid);\n    return merge(mergeSort(leftArray), mergeSort(rightArray));\n}\n\n\nlet originalArray = [2, 1, 4, 3, 6, 5];\nlet sortedArray = mergeSort( originalArray );\nconsole.log( \"\\nSorted Array:\", sortedArray );",
+        "ru": "function merge(array1, array2) {\n    let combined = [];\n    let i = 0;\n    let j = 0;\n    while (i < array1.length && j < array2.length) {\n        if (array1[i] < array2[j]) {\n            combined.push(array1[i]);\n            i++;\n        } else {\n            combined.push(array2[j]);\n            j++;\n        }\n    }\n    while (i < array1.length) {\n        combined.push(array1[i]);\n        i++;\n    }\n    while (j < array2.length) {\n        combined.push(array2[j]);\n        j++;\n    }\n    return combined;\n}\n\nfunction mergeSort(array) {\n    if(array.length < 2)  return array;\n    let mid = Math.floor(array.length/2);\n    let leftArray = array.slice(0, mid);\n    let rightArray = array.slice(mid);\n    return merge(mergeSort(leftArray), mergeSort(rightArray));\n}\n\n\nlet originalArray = [2, 1, 4, 3, 6, 5];\nlet sortedArray = mergeSort( originalArray );\nconsole.log( \"\\nSorted Array:\", sortedArray );"
+      },
+      "explanation": {
+        "en": "# Merge sort \nMerge sort is based on **divide and conquer technique** in which the list breaking down into several sub-lists until each sublist consists of a single element and merging those sublists in a manner that results into a sorted list.\n\n## How it works\n1. At first, divide the unsorted array into two half-sized sub-arrays.\n2. Continue to divide the sub-arrays until the array has one element.\n3. Merge each sub-array pairs together by keeping the lowest value first.\n4. Repeat step3 until there are no sub-arrays left.\n\n## Complexity\n\n| Best            | Average             | Worst               | Space (Memory)    | Stable    | Advantage  |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  Ω(n log(n))               | θ(n log(n))       | O(n log(n))       | O(n)         | Yes       |   Sort efficiently large data sets        |",
+        "ru": "# Сортировка слиянием \nСортировка слиянием основана на методе **разделяй и властвуй**, при котором список разбивается на несколько подсписков до тех пор, пока каждый подсписок не будет состоять из одного элемента, и эти подсписки объединяются таким образом, чтобы получить отсортированный список.\n\n## Как это работает\n1. Сначала разделите неотсортированный массив на два подмассива половинного размера.\n2. Продолжайте делить подмассивы, пока в массиве не останется один элемент.\n3. Объедините каждую пару подмассивов вместе, сохраняя сначала наименьшее значение.\n4. Повторяйте шаг 3, пока не останется подмассивов.\n\n## Сложность\n\n| Лучшее | Средний | Худшее | Пространство (Память) | Стабильный | Преимущество |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  Ω(n log(n)) | θ(n log(n)) | O(n log(n)) | О(п) | Да |   Эффективная сортировка больших наборов данных |"
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "sorting",
+        "dsa-sorting",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-sorting-005-quick-sort-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/sorting/5.quickSort/quickSort.js",
+        "documentationPath": "src/javascript/sorting/5.quickSort/quickSort.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/5.quickSort/quickSort.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/5.quickSort/quickSort.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Sorting",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Quick sort",
+        "ru": "Быстрая сортировка"
+      },
+      "prompt": {
+        "en": "Implement `Quick sort` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Quick sort`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "function swap(array, firstIndex, secondIndex) {\n    let temp = array[firstIndex];\n    array[firstIndex] = array[secondIndex];\n    array[secondIndex] = temp;\n}\n\nfunction pivot(array, pivotIndex=0, endIndex=array.length-1) {\n    let swapIndex = pivotIndex;\n    for (let i = pivotIndex + 1; i <= endIndex; i++) {\n        if (array[i] < array[pivotIndex]) {\n        swapIndex++;\n        swap(array, swapIndex, i);\n        }  \n    }\n  swap(array, pivotIndex, swapIndex);\n  \n  return swapIndex;\n}\n\nfunction quickSort(array, left=0, right=array.length-1) {\n    if(left < right) {\n        let pivotIndex = pivot(array, left, right);\n        quickSort(array, left, pivotIndex-1);\n        quickSort(array, pivotIndex+1, right);\n    }\n}\n\n\nlet myUnsortedArray = [5, 1, 6, 2, 4, 3, 7];\nquickSort(myUnsortedArray);\nconsole.log(myUnsortedArray);",
+      "expectedAnswer": {
+        "en": "function swap(array, firstIndex, secondIndex) {\n    let temp = array[firstIndex];\n    array[firstIndex] = array[secondIndex];\n    array[secondIndex] = temp;\n}\n\nfunction pivot(array, pivotIndex=0, endIndex=array.length-1) {\n    let swapIndex = pivotIndex;\n    for (let i = pivotIndex + 1; i <= endIndex; i++) {\n        if (array[i] < array[pivotIndex]) {\n        swapIndex++;\n        swap(array, swapIndex, i);\n        }  \n    }\n  swap(array, pivotIndex, swapIndex);\n  \n  return swapIndex;\n}\n\nfunction quickSort(array, left=0, right=array.length-1) {\n    if(left < right) {\n        let pivotIndex = pivot(array, left, right);\n        quickSort(array, left, pivotIndex-1);\n        quickSort(array, pivotIndex+1, right);\n    }\n}\n\n\nlet myUnsortedArray = [5, 1, 6, 2, 4, 3, 7];\nquickSort(myUnsortedArray);\nconsole.log(myUnsortedArray);",
+        "ru": "function swap(array, firstIndex, secondIndex) {\n    let temp = array[firstIndex];\n    array[firstIndex] = array[secondIndex];\n    array[secondIndex] = temp;\n}\n\nfunction pivot(array, pivotIndex=0, endIndex=array.length-1) {\n    let swapIndex = pivotIndex;\n    for (let i = pivotIndex + 1; i <= endIndex; i++) {\n        if (array[i] < array[pivotIndex]) {\n        swapIndex++;\n        swap(array, swapIndex, i);\n        }  \n    }\n  swap(array, pivotIndex, swapIndex);\n  \n  return swapIndex;\n}\n\nfunction quickSort(array, left=0, right=array.length-1) {\n    if(left < right) {\n        let pivotIndex = pivot(array, left, right);\n        quickSort(array, left, pivotIndex-1);\n        quickSort(array, pivotIndex+1, right);\n    }\n}\n\n\nlet myUnsortedArray = [5, 1, 6, 2, 4, 3, 7];\nquickSort(myUnsortedArray);\nconsole.log(myUnsortedArray);"
+      },
+      "explanation": {
+        "en": "# QuickSort\n\nQuickSort is a sorting algorithm based on **Divide and Conquer technique** that picks any one element(last, first, middle or random element) which can be chosen as a pivot and partitions the given array around the picked pivot by keeping the pivot in its correct position in the sorted array. The elements less than pivot are kept on the left side and elements greater than pivot are on the right side of the pivot.\n\n## How it works\n1. Choose any value in the array as pivot element.\n2. Order the array elements in such a way that lower values than pivot element are on the the left side, and higher values are on the right side.\n3. Swap the pivot element with first higher value to keep the pivot between the lower and higher values.\n4. Repeat steps 1-3 recursively for the sub-arrays on the left side and right side of pivot element until the sub-array contain only one element.\n\n## Complexity\n\n| Best            | Average             | Worst               | Space (Memory)    | Stable    | Advantage  |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  Ω(n log(n))               | θ(n log(n))       | O(n<sup>2</sup>)       | O(log n)           | Yes       |   Efficient algorithm except for almost sorted arrays        |",
+        "ru": "# Быстрая сортировка\n\nQuickSort — это алгоритм сортировки, основанный на методе **разделяй и властвуй**, который выбирает любой элемент (последний, первый, средний или случайный элемент), который может быть выбран в качестве опорного элемента, и разбивает данный массив вокруг выбранного опорного элемента, сохраняя опорный элемент в правильном положении в отсортированном массиве. Элементы меньше опорной точки сохраняются с левой стороны, а элементы больше опорной — справа от опорной точки.\n\n## Как это работает\n1. Выберите любое значение массива в качестве элемента поворота.\n2. Упорядочите элементы массива таким образом, чтобы более низкие значения, чем значения опорного элемента, находились слева, а более высокие значения — справа.\n3. Поменяйте местами опорный элемент с первым более высоким значением, чтобы сохранить поворот между нижним и верхним значениями.\n4. Повторяйте шаги 1–3 рекурсивно для подмассивов с левой и правой стороны от сводного элемента, пока подмассив не будет содержать только один элемент.\n\n## Сложность\n\n| Лучшее | Средний | Худшее | Пространство (Память) | Стабильный | Преимущество |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  Ω(n log(n)) | θ(n log(n)) | O(n<sup>2</sup>) | O(журнал n) | Да |   Эффективный алгоритм, за исключением почти отсортированных массивов |"
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "sorting",
+        "dsa-sorting",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-sorting-006-heap-sort-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/sorting/6.heapSort/heapSort.js",
+        "documentationPath": "src/javascript/sorting/6.heapSort/heapSort.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/6.heapSort/heapSort.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/6.heapSort/heapSort.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Sorting",
+      "type": "implement",
+      "difficulty": "hard",
+      "title": {
+        "en": "Heap sort",
+        "ru": "Сортировка кучей"
+      },
+      "prompt": {
+        "en": "Implement `Heap sort` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Heap sort`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "function heapSort(arr) {\n    let size = arr.length;\n\n    for (let i = Math.floor(size/2 - 1); i >= 0; i--) {\n        heapify(arr, size, i);        \n    }\n\n    for (let i = size - 1; i >= 0; i--) {\n        [arr[i], arr[0]] = [arr[0], arr[i]];\n        heapify(arr, i, 0);\n    }\n}\n\nfunction heapify(arr, size, parentIndex) {\n    let largest = parentIndex;\n    let leftChild = 2 * parentIndex + 1;\n    let rightChild = 2 * parentIndex + 2;\n\n    if(leftChild < size && arr[leftChild] > arr[largest]) {\n        largest = leftChild;\n    }\n\n    if(rightChild < size && arr[rightChild] > arr[largest]) {\n        largest = rightChild;\n    }\n\n    if(parentIndex !== largest) {\n        [arr[parentIndex], arr[largest]] = [arr[largest], arr[parentIndex]];\n        heapify(arr, size, largest);\n    }\n}\n\nlet arr = [40, 50, 20, 0, -10, 30, 10];\nheapSort(arr);\nconsole.log(arr);",
+      "expectedAnswer": {
+        "en": "function heapSort(arr) {\n    let size = arr.length;\n\n    for (let i = Math.floor(size/2 - 1); i >= 0; i--) {\n        heapify(arr, size, i);        \n    }\n\n    for (let i = size - 1; i >= 0; i--) {\n        [arr[i], arr[0]] = [arr[0], arr[i]];\n        heapify(arr, i, 0);\n    }\n}\n\nfunction heapify(arr, size, parentIndex) {\n    let largest = parentIndex;\n    let leftChild = 2 * parentIndex + 1;\n    let rightChild = 2 * parentIndex + 2;\n\n    if(leftChild < size && arr[leftChild] > arr[largest]) {\n        largest = leftChild;\n    }\n\n    if(rightChild < size && arr[rightChild] > arr[largest]) {\n        largest = rightChild;\n    }\n\n    if(parentIndex !== largest) {\n        [arr[parentIndex], arr[largest]] = [arr[largest], arr[parentIndex]];\n        heapify(arr, size, largest);\n    }\n}\n\nlet arr = [40, 50, 20, 0, -10, 30, 10];\nheapSort(arr);\nconsole.log(arr);",
+        "ru": "function heapSort(arr) {\n    let size = arr.length;\n\n    for (let i = Math.floor(size/2 - 1); i >= 0; i--) {\n        heapify(arr, size, i);        \n    }\n\n    for (let i = size - 1; i >= 0; i--) {\n        [arr[i], arr[0]] = [arr[0], arr[i]];\n        heapify(arr, i, 0);\n    }\n}\n\nfunction heapify(arr, size, parentIndex) {\n    let largest = parentIndex;\n    let leftChild = 2 * parentIndex + 1;\n    let rightChild = 2 * parentIndex + 2;\n\n    if(leftChild < size && arr[leftChild] > arr[largest]) {\n        largest = leftChild;\n    }\n\n    if(rightChild < size && arr[rightChild] > arr[largest]) {\n        largest = rightChild;\n    }\n\n    if(parentIndex !== largest) {\n        [arr[parentIndex], arr[largest]] = [arr[largest], arr[parentIndex]];\n        heapify(arr, size, largest);\n    }\n}\n\nlet arr = [40, 50, 20, 0, -10, 30, 10];\nheapSort(arr);\nconsole.log(arr);"
+      },
+      "explanation": {
+        "en": "# Heap Sort\nHeapSort is an in-place comparison based sorting algorithm that uses **binary heap** data structure. The main idea behind this heap sort is to find either the highest value(max heap) or lowest value(min heap) and place it at the end, repeating the process until all the values are sorted.\n\n## How it works\n1. Build a max heap based on given input array.\n2. Switch the top root with the last node and then remove it from the heap.\n3. Rebuild the max heap again and repeat until there is only one element remaining in the heap.\n\n## Complexity\n\n| Best            | Average             | Worst               | Space (Memory)    | Stable    | Advantage  |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  Ω(n log(n))               | θ(n log(n))       | O(n log(n))       | O(1)         | No       |   Sort efficiently large data sets        |",
+        "ru": "# Сортировка кучей\nHeapSort — это алгоритм сортировки на основе сравнения на месте, использующий структуру данных **двоичной кучи**. Основная идея этой сортировки кучи состоит в том, чтобы найти либо наибольшее значение (максимальная куча), либо наименьшее значение (минимальная куча) и поместить его в конец, повторяя процесс до тех пор, пока все значения не будут отсортированы.\n\n## Как это работает\n1. Создайте максимальную кучу на основе заданного входного массива.\n2. Поменяйте местами верхний корень с последним узлом, а затем удалите его из кучи.\n3. Снова перестройте максимальную кучу и повторяйте, пока в куче не останется только один элемент.\n\n## Сложность\n\n| Лучшее | Средний | Худшее | Пространство (Память) | Стабильный | Преимущество |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  Ω(n log(n)) | θ(n log(n)) | O(n log(n)) | О(1) | Нет |   Эффективная сортировка больших наборов данных |"
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "sorting",
+        "dsa-sorting",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-sorting-007-radix-sort-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/sorting/7.radixSort/radixSort.js",
+        "documentationPath": "src/javascript/sorting/7.radixSort/radixSort.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/7.radixSort/radixSort.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/sorting/7.radixSort/radixSort.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Sorting",
+      "type": "implement",
+      "difficulty": "medium",
+      "title": {
+        "en": "Radix sort",
+        "ru": "Поразрядная сортировка"
+      },
+      "prompt": {
+        "en": "Implement `Radix sort` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Radix sort`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": null,
+      "expectedAnswer": {
+        "en": "Level: Medium. Pattern/complexity: TC: O(d(n+k)), SC: O(n+k). Radix Sort RadixSort is a non-comparison(or linear) based sorting algorithm which distributes the elements into buckets based on each digit’s value. How it works Complexity Best Average Worst Space (Memory) Stable Advantage :-------------: :-----------------: :-----------------: :-------: :-------: :-------- Ω(nk) θ(nk) O(nk) O(n+k) Yes Sort efficiently for integers or strings with fixed-size keys",
+        "ru": "Уровень: Средний. Шаблон/сложность: TC: O(d(n+k)), SC: O(n+k). Radix Sort RadixSort — это алгоритм сортировки, основанный на несравнении (или линейном), который распределяет элементы по сегментам на основе значения каждой цифры. Как это работает Сложность Лучшее Среднее Худшее Пространство (память) Стабильное Преимущество :-------------: :-----------------: :-----------------: :-------: :-------: :-------- Ω(nk) θ(nk) O(nk) O(n+k) Да Эффективная сортировка целых чисел или строк с ключами фиксированного размера"
+      },
+      "explanation": {
+        "en": "# Radix Sort\nRadixSort is a non-comparison(or linear) based sorting algorithm which distributes the elements into buckets based on each digit’s value. \n\n## How it works\n\n## Complexity\n\n| Best            | Average             | Worst               | Space (Memory)    | Stable    | Advantage  |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  Ω(nk)               | θ(nk)       | O(nk)       | O(n+k)         | Yes       |   Sort efficiently for integers or strings with fixed-size keys        |",
+        "ru": "# Поразрядная сортировка\nRadixSort — это алгоритм сортировки без сравнения (или линейный), который распределяет элементы по сегментам на основе значения каждой цифры. \n\n## Как это работает\n\n## Сложность\n\n| Лучшее | Средний | Худшее | Пространство (Память) | Стабильный | Преимущество |\n| :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |\n|  Ом(нк) | θ(нк) | О(нк) | О(п+к) | Да |   Эффективная сортировка целых чисел или строк с ключами фиксированного размера |"
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "sorting",
+        "dsa-sorting",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsExplanation": true,
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "answer-explanation-overlap-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-sorting-008-max-product-of-three-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/sorting/maxProductOfThree/maxProductOfThree.js",
+        "documentationPath": "src/javascript/algorithms/sorting/maxProductOfThree/maxProductOfThree.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/sorting/maxProductOfThree/maxProductOfThree.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/sorting/maxProductOfThree/maxProductOfThree.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Sorting",
+      "type": "implement",
+      "difficulty": "easy",
+      "title": {
+        "en": "Max product of three",
+        "ru": "Максимальное произведение трех"
+      },
+      "prompt": {
+        "en": "Implement `Max product of three` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Max product of three`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "// TC: O(n log n), SC: O(1)\nfunction maxProductOfThree(numbers) {\n    numbers.sort((a, b) => a - b);\n\n    const n = numbers.length;\n\n    // 1. Product of the three largest numbers\n    const product1 = numbers[n-1] * numbers[n-2] * numbers[n-3];\n    // 2. Product of two smallest (possibly negative) and the largest\n    const product2 = numbers[0] * numbers[1] * numbers[n-1];\n\n    return Math.max(product1, product2);\n}\n\n// Test Case 1: Mixed positives and negatives\nconsole.log(maxProductOfThree([-3, 1, 2, -2, 5, 6])); // ➞ 60 // Best triplet: 2 * 5 * 6 = 60\n\n// Test Case 2: Two negatives and one large positive\nconsole.log(maxProductOfThree([-10, -10, 1, 3, 2])); // ➞ 300 // Best triplet: -10 * -10 * 3 = 300\n\n// Test Case 3: All positive\nconsole.log(maxProductOfThree([1, 2, 3])); // ➞ 6 // Best triplet: 1 * 2 * 3 = 6\n\n// Test Case 4: All negative\nconsole.log(maxProductOfThree([-1, -2, -3, -4])); // ➞ -6 // Best triplet: -1 * -2 * -3 = -6",
+      "expectedAnswer": {
+        "en": "// TC: O(n log n), SC: O(1)\nfunction maxProductOfThree(numbers) {\n    numbers.sort((a, b) => a - b);\n\n    const n = numbers.length;\n\n    // 1. Product of the three largest numbers\n    const product1 = numbers[n-1] * numbers[n-2] * numbers[n-3];\n    // 2. Product of two smallest (possibly negative) and the largest\n    const product2 = numbers[0] * numbers[1] * numbers[n-1];\n\n    return Math.max(product1, product2);\n}\n\n// Test Case 1: Mixed positives and negatives\nconsole.log(maxProductOfThree([-3, 1, 2, -2, 5, 6])); // ➞ 60 // Best triplet: 2 * 5 * 6 = 60\n\n// Test Case 2: Two negatives and one large positive\nconsole.log(maxProductOfThree([-10, -10, 1, 3, 2])); // ➞ 300 // Best triplet: -10 * -10 * 3 = 300\n\n// Test Case 3: All positive\nconsole.log(maxProductOfThree([1, 2, 3])); // ➞ 6 // Best triplet: 1 * 2 * 3 = 6\n\n// Test Case 4: All negative\nconsole.log(maxProductOfThree([-1, -2, -3, -4])); // ➞ -6 // Best triplet: -1 * -2 * -3 = -6",
+        "ru": "// TC: O(n log n), SC: O(1)\nfunction maxProductOfThree(numbers) {\n    numbers.sort((a, b) => a - b);\n\n    const n = numbers.length;\n\n    // 1. Product of the three largest numbers\n    const product1 = numbers[n-1] * numbers[n-2] * numbers[n-3];\n    // 2. Product of two smallest (possibly negative) and the largest\n    const product2 = numbers[0] * numbers[1] * numbers[n-1];\n\n    return Math.max(product1, product2);\n}\n\n// Test Case 1: Mixed positives and negatives\nconsole.log(maxProductOfThree([-3, 1, 2, -2, 5, 6])); // ➞ 60 // Best triplet: 2 * 5 * 6 = 60\n\n// Test Case 2: Two negatives and one large positive\nconsole.log(maxProductOfThree([-10, -10, 1, 3, 2])); // ➞ 300 // Best triplet: -10 * -10 * 3 = 300\n\n// Test Case 3: All positive\nconsole.log(maxProductOfThree([1, 2, 3])); // ➞ 6 // Best triplet: 1 * 2 * 3 = 6\n\n// Test Case 4: All negative\nconsole.log(maxProductOfThree([-1, -2, -3, -4])); // ➞ -6 // Best triplet: -1 * -2 * -3 = -6"
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven an array of integers, find the maximal product of any triplet.\n\n### Examples\nExample 1:\n\nInput: numbers = [-3, 1, 2, -2, 5, 6]\nOutput: 60\n\nExample 2:\n\nInput: numbers = [-5, -6, -4, -7, -10]\nOutput: -120\n\n**Algorithmic Steps**\nThis problem is solved by sorting the array and considering the product of the three largest numbers or the product of the two smallest and the largest number:\n\n1. Sort the array in non-decreasing order.\n2. Compute the product of the last three numbers.\n3. Compute the product of the first two numbers and the last number.\n4. Return the maximum of the two products.\n\n**Time and Space complexity:**\n- Time complexity: `O(n log n)`, where `n` is the number of elements (due to sorting).\n- Space complexity: `O(1)`.",
+        "ru": "**Описание:**\nУчитывая массив целых чисел, найдите максимальное произведение любой тройки.\n\n### Примеры\nПример 1:\n\nВвод: числа = [-3, 1, 2, -2, 5, 6]\nВыход: 60\n\nПример 2:\n\nВвод: числа = [-5, -6, -4, -7, -10]\nВыход: -120\n\n**Алгоритмические шаги**\nЭта проблема решается путем сортировки массива и рассмотрения произведения трех наибольших чисел или произведения двух наименьших и наибольшего чисел:\n\n1. Отсортируйте массив в порядке неубывания.\n2. Вычислите произведение последних трех чисел.\n3. Вычислите произведение первых двух чисел и последнего числа.\n4. Верните максимум из двух товаров.\n\n**Сложность во времени и пространстве:**\n- Временная сложность: `O(n log n)`, где `n` — количество элементов (из-за сортировки).\n- Космическая сложность: `O(1)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "sorting",
+        "dsa-sorting",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-misc-001-frog-jump-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/misc/1.frogJump/frogJump.js",
+        "documentationPath": "src/javascript/algorithms/misc/1.frogJump/frogJump.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/misc/1.frogJump/frogJump.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/misc/1.frogJump/frogJump.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Misc",
+      "type": "implement",
+      "difficulty": "easy",
+      "title": {
+        "en": "Frog jump",
+        "ru": "Прыжок лягушки"
+      },
+      "prompt": {
+        "en": "Implement `Frog jump` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Frog jump`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "function frogJump(X, Y, D) {\n    //Distance needs to be covered by frog\n    const distance = Y - X;\n    //Number of jumps required to cover the distance\n    return Math.ceil(distance/D);\n}\n\nconsole.log(frogJump(10, 85, 30)); // Output: 3",
+      "expectedAnswer": {
+        "en": "function frogJump(X, Y, D) {\n    //Distance needs to be covered by frog\n    const distance = Y - X;\n    //Number of jumps required to cover the distance\n    return Math.ceil(distance/D);\n}\n\nconsole.log(frogJump(10, 85, 30)); // Output: 3",
+        "ru": "функция frogJump(X, Y, D) {\n    //Расстояние, которое должна преодолеть лягушка\n    константное расстояние = Y - X;\n    //Количество прыжков, необходимое для преодоления дистанции\n    вернуть Math.ceil(расстояние/D);\n}\n\nconsole.log(frogJump(10, 85, 30)); // Вывод: 3"
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven the starting position X, target position Y, and fixed jump distance D, compute the minimal number of jumps required for a frog to reach or pass position Y from X.\n\n### Examples\nExample 1:\n\nInput: X = 10, Y = 85, D = 30\nOutput: 3\n\n**Algorithmic Steps**\nThis problem is solved using simple arithmetic:\n\n1. Calculate the distance to be covered as Y - X.\n2. Divide the distance by D and round up to the nearest integer (using Math.ceil).\n3. Return the result as the minimal number of jumps.\n\n**Time and Space complexity:**\n- Time complexity: `O(1)`.\n- Space complexity: `O(1)`.",
+        "ru": "**Описание:**\nУчитывая начальную позицию X, целевую позицию Y и фиксированное расстояние прыжка D, вычислите минимальное количество прыжков, необходимое лягушке, чтобы достичь или пройти позицию Y из X.\n\n### Примеры\nПример 1:\n\nВвод: X = 10, Y = 85, D = 30.\nВыход: 3\n\n**Алгоритмические шаги**\nЭта проблема решается с помощью простой арифметики:\n\n1. Рассчитайте расстояние, которое необходимо преодолеть, как Y - X.\n2. Разделите расстояние на D и округлите до ближайшего целого числа (используя Math.ceil).\n3. Вернуть результат как минимальное количество прыжков.\n\n**Сложность во времени и пространстве:**\n- Временная сложность: `O(1)`.\n- Космическая сложность: `O(1)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "misc",
+        "dsa-sorting",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-misc-002-missing-element-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/misc/2.missingElement/missingElement.js",
+        "documentationPath": "src/javascript/algorithms/misc/2.missingElement/missingElement.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/misc/2.missingElement/missingElement.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/misc/2.missingElement/missingElement.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Misc",
+      "type": "implement",
+      "difficulty": "easy",
+      "title": {
+        "en": "Missing element",
+        "ru": "Отсутствует элемент"
+      },
+      "prompt": {
+        "en": "Implement `Missing element` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Missing element`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "//TC: O(n), SC: O(1)\nfunction missingElement(nums) {\n    const length = nums.length;\n    const actualNumsSum = nums.reduce((sum, num) => sum + num, 0);\n    const expectedNumsSum = (length + 1)* (length+2)/2\n\n    return expectedNumsSum - actualNumsSum;\n}\n\n\n// Example 1\nconst num1 = [2, 3, 1, 5];\nconsole.log(missingElement(num1)); // Output: 4\n\n// Example 2\nconst num2 = [1, 2, 3, 4, 6];\nconsole.log(missingElement(num2)); // Output: 5\n\n// Example 3\nconst num3 = [];\nconsole.log(missingElement(num3)); // Output: 1",
+      "expectedAnswer": {
+        "en": "//TC: O(n), SC: O(1)\nfunction missingElement(nums) {\n    const length = nums.length;\n    const actualNumsSum = nums.reduce((sum, num) => sum + num, 0);\n    const expectedNumsSum = (length + 1)* (length+2)/2\n\n    return expectedNumsSum - actualNumsSum;\n}\n\n\n// Example 1\nconst num1 = [2, 3, 1, 5];\nconsole.log(missingElement(num1)); // Output: 4\n\n// Example 2\nconst num2 = [1, 2, 3, 4, 6];\nconsole.log(missingElement(num2)); // Output: 5\n\n// Example 3\nconst num3 = [];\nconsole.log(missingElement(num3)); // Output: 1",
+        "ru": "//TC: O(n), SC: O(1)\nfunction missingElement(nums) {\n    const length = nums.length;\n    const actualNumsSum = nums.reduce((sum, num) => sum + num, 0);\n    const expectedNumsSum = (length + 1)* (length+2)/2\n\n    return expectedNumsSum - actualNumsSum;\n}\n\n\n// Example 1\nconst num1 = [2, 3, 1, 5];\nconsole.log(missingElement(num1)); // Output: 4\n\n// Example 2\nconst num2 = [1, 2, 3, 4, 6];\nconsole.log(missingElement(num2)); // Output: 5\n\n// Example 3\nconst num3 = [];\nconsole.log(missingElement(num3)); // Output: 1"
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven an array containing n distinct numbers taken from the range 1 to n+1, find the missing number.\n\n### Examples\nExample 1:\n\nInput: nums = [2, 3, 1, 5]\nOutput: 4\n\nExample 2:\n\nInput: nums = [1, 2, 3, 4, 6]\nOutput: 5\n\nExample 3:\n\nInput: nums = []\nOutput: 1\n\n**Algorithmic Steps**\nThis problem is solved using the sum formula for the first n natural numbers:\n\n1. Calculate the expected sum for numbers from 1 to n+1 using the formula `(n+1)*(n+2)/2`.\n2. Calculate the actual sum of the elements in the array.\n3. The missing number is the difference between the expected sum and the actual sum.\n\n**Time and Space complexity:**\n- Time complexity: `O(n)`, where `n` is the length of the array.\n- Space complexity: `O(1)`.",
+        "ru": "**Описание:**\nДан массив, содержащий n различных чисел в диапазоне от 1 до n+1. Найдите недостающее число.\n\n### Примеры\nПример 1:\n\nВвод: числа = [2, 3, 1, 5]\nВыход: 4\n\nПример 2:\n\nВвод: числа = [1, 2, 3, 4, 6]\nВыход: 5\n\nПример 3:\n\nВвод: числа = []\nВыход: 1\n\n**Алгоритмические шаги**\nЭта задача решается с помощью формулы суммы первых n натуральных чисел:\n\n1. Рассчитайте ожидаемую сумму для чисел от 1 до n+1 по формуле `(n+1)*(n+2)/2`.\n2. Вычислите фактическую сумму элементов массива.\n3. Недостающее число — это разница между ожидаемой суммой и фактической суммой.\n\n**Сложность во времени и пространстве:**\n- Временная сложность: `O(n)`, где `n` — длина массива.\n- Космическая сложность: `O(1)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "misc",
+        "dsa-sorting",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-misc-003-frog-river-one-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/misc/3.frogRiverOne/frogRiverOne.js",
+        "documentationPath": "src/javascript/algorithms/misc/3.frogRiverOne/frogRiverOne.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/misc/3.frogRiverOne/frogRiverOne.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/misc/3.frogRiverOne/frogRiverOne.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Misc",
+      "type": "implement",
+      "difficulty": "easy",
+      "title": {
+        "en": "Frog river one",
+        "ru": "Река лягушка одна"
+      },
+      "prompt": {
+        "en": "Implement `Frog river one` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Frog river one`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "function frogRiverOne(destinationPosition, positionsList) {\n    const positions = new Set();\n\n    for(let i = 0; i < positionsList.length; i++) {\n        positions.add(positionsList[i]);\n\n        if(positions.size === destinationPosition) {\n            return i;\n        }\n    }\n\n    return -1;\n}\n\nfunction frogRiverTwo(destinationPosition, positionsList) {\n    const seen = Array(destinationPosition).fill(false);\n    let uncovered = destinationPosition;\n\n    for(let i = 0; i < positionsList.length; i++) {\n        if(!seen[positionsList[i]-1]) {\n            seen[positionsList[i]-1] = true;\n            uncovered--;\n\n            if(uncovered === 0) {\n                return i;\n            }\n        }\n    }\n\n    return -1;\n}\n\n// Example 1: Multiple positions in different times\nconsole.log(frogRiverOne(5, [1, 3, 1, 4, 2, 3, 5, 4])); // Output: 6\nconsole.log(frogRiverTwo(5, [1, 3, 1, 4, 2, 3, 5, 4])); // Output: 6\n\n// Example 2: Missing position, frog can't cross\nconsole.log(frogRiverOne(3, [1, 3, 1, 1])); // Output: -1\nconsole.log(frogRiverTwo(3, [1, 3, 1, 1])); // Output: -1\n\n// Example 3: Immediate success\nconsole.log(frogRiverOne(1, [1])); // Output: 0\nconsole.log(frogRiverTwo(1, [1])); // Output: 0\n\n// Example 4: Leaves fall in reverse order\nconsole.log(frogRiverOne(3, [3, 2, 1])); // Output: 2\nconsole.log(frogRiverTwo(3, [3, 2, 1])); // Output: 2\n\n// Example 5: Repeated positions\nconsole.log(frogRiverOne(2, [1, 1, 1, 2])); // Output: 3\nconsole.log(frogRiverTwo(2, [1, 1, 1, 2])); // Output: 3",
+      "expectedAnswer": {
+        "en": "function frogRiverOne(destinationPosition, positionsList) {\n    const positions = new Set();\n\n    for(let i = 0; i < positionsList.length; i++) {\n        positions.add(positionsList[i]);\n\n        if(positions.size === destinationPosition) {\n            return i;\n        }\n    }\n\n    return -1;\n}\n\nfunction frogRiverTwo(destinationPosition, positionsList) {\n    const seen = Array(destinationPosition).fill(false);\n    let uncovered = destinationPosition;\n\n    for(let i = 0; i < positionsList.length; i++) {\n        if(!seen[positionsList[i]-1]) {\n            seen[positionsList[i]-1] = true;\n            uncovered--;\n\n            if(uncovered === 0) {\n                return i;\n            }\n        }\n    }\n\n    return -1;\n}\n\n// Example 1: Multiple positions in different times\nconsole.log(frogRiverOne(5, [1, 3, 1, 4, 2, 3, 5, 4])); // Output: 6\nconsole.log(frogRiverTwo(5, [1, 3, 1, 4, 2, 3, 5, 4])); // Output: 6\n\n// Example 2: Missing position, frog can't cross\nconsole.log(frogRiverOne(3, [1, 3, 1, 1])); // Output: -1\nconsole.log(frogRiverTwo(3, [1, 3, 1, 1])); // Output: -1\n\n// Example 3: Immediate success\nconsole.log(frogRiverOne(1, [1])); // Output: 0\nconsole.log(frogRiverTwo(1, [1])); // Output: 0\n\n// Example 4: Leaves fall in reverse order\nconsole.log(frogRiverOne(3, [3, 2, 1])); // Output: 2\nconsole.log(frogRiverTwo(3, [3, 2, 1])); // Output: 2\n\n// Example 5: Repeated positions\nconsole.log(frogRiverOne(2, [1, 1, 1, 2])); // Output: 3\nconsole.log(frogRiverTwo(2, [1, 1, 1, 2])); // Output: 3",
+        "ru": "function frogRiverOne(destinationPosition, positionsList) {\n    const positions = new Set();\n\n    for(let i = 0; i < positionsList.length; i++) {\n        positions.add(positionsList[i]);\n\n        if(positions.size === destinationPosition) {\n            return i;\n        }\n    }\n\n    return -1;\n}\n\nfunction frogRiverTwo(destinationPosition, positionsList) {\n    const seen = Array(destinationPosition).fill(false);\n    let uncovered = destinationPosition;\n\n    for(let i = 0; i < positionsList.length; i++) {\n        if(!seen[positionsList[i]-1]) {\n            seen[positionsList[i]-1] = true;\n            uncovered--;\n\n            if(uncovered === 0) {\n                return i;\n            }\n        }\n    }\n\n    return -1;\n}\n\n// Example 1: Multiple positions in different times\nconsole.log(frogRiverOne(5, [1, 3, 1, 4, 2, 3, 5, 4])); // Output: 6\nconsole.log(frogRiverTwo(5, [1, 3, 1, 4, 2, 3, 5, 4])); // Output: 6\n\n// Example 2: Missing position, frog can't cross\nconsole.log(frogRiverOne(3, [1, 3, 1, 1])); // Output: -1\nconsole.log(frogRiverTwo(3, [1, 3, 1, 1])); // Output: -1\n\n// Example 3: Immediate success\nconsole.log(frogRiverOne(1, [1])); // Output: 0\nconsole.log(frogRiverTwo(1, [1])); // Output: 0\n\n// Example 4: Leaves fall in reverse order\nconsole.log(frogRiverOne(3, [3, 2, 1])); // Output: 2\nconsole.log(frogRiverTwo(3, [3, 2, 1])); // Output: 2\n\n// Example 5: Repeated positions\nconsole.log(frogRiverOne(2, [1, 1, 1, 2])); // Output: 3\nconsole.log(frogRiverTwo(2, [1, 1, 1, 2])); // Output: 3"
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven a destination position and a list of positions where leaves fall over time, find the earliest time when the frog can jump to the other side of the river by stepping on leaves at every position from 1 to destinationPosition.\n\n### Examples\nExample 1:\n\nInput: destinationPosition = 5, positionsList = [1, 3, 1, 4, 2, 3, 5, 4]\nOutput: 6\n\nExample 2:\n\nInput: destinationPosition = 3, positionsList = [1, 3, 1, 1]\nOutput: -1\n\nExample 3:\n\nInput: destinationPosition = 1, positionsList = [1]\nOutput: 0\n\nExample 4:\n\nInput: destinationPosition = 3, positionsList = [3, 2, 1]\nOutput: 2\n\nExample 5:\n\nInput: destinationPosition = 2, positionsList = [1, 1, 1, 2]\nOutput: 3\n\n**Algorithmic Steps**\nThis problem is solved using a set to track unique positions:\n\n1. Initialize an empty set to store positions where leaves have fallen.\n2. Iterate through the positionsList:\n   - Add the current position to the set.\n   - If the set size equals destinationPosition, return the current time (index).\n3. If the loop ends without covering all positions, return -1.\n\n**Time and Space complexity:**\n- Time complexity: `O(n)`, where `n` is the length of positionsList.\n- Space complexity: `O(destinationPosition)`.",
+        "ru": "**Описание:**\nУчитывая позицию пункта назначения и список позиций, в которых листья падают с течением времени, найдите самый ранний момент, когда лягушка сможет перепрыгнуть на другой берег реки, наступая на листья в каждой позиции от 1 до места назначения.\n\n### Примеры\nПример 1:\n\nВвод: DestinationPosition = 5, PositionList = [1, 3, 1, 4, 2, 3, 5, 4]\nВыход: 6\n\nПример 2:\n\nВвод: DestinationPosition = 3, PositionList = [1, 3, 1, 1]\nВыход: -1\n\nПример 3:\n\nВвод: targetPosition = 1, PositionList = [1]\nВыход: 0\n\nПример 4:\n\nВвод: DestinationPosition = 3, PositionList = [3, 2, 1]\nВыход: 2\n\nПример 5:\n\nВвод: DestinationPosition = 2, PositionList = [1, 1, 1, 2]\nВыход: 3\n\n**Алгоритмические шаги**\nЭта проблема решается с помощью набора для отслеживания уникальных позиций:\n\n1. Инициализируйте пустой набор для хранения позиций, где упали листья.\n2. Перебрать список позиций:\n   - Добавить текущую позицию в набор.\n   - Если заданный размер равен DestinationPosition, верните текущее время (индекс).\n3. Если цикл заканчивается, не охватывая все позиции, верните -1.\n\n**Сложность во времени и пространстве:**\n- Временная сложность: `O(n)`, где `n` — длина позицийList.\n- Космическая сложность: `O(destinationPosition)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "misc",
+        "dsa-sorting",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "needsAnswerReview": true,
+        "reviewReasons": [
+          "answer-too-long-en",
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    },
+    {
+      "id": "sudheerj-dsa-sorting-misc-004-count-divisible-task",
+      "source": {
+        "repo": "sudheerj/datastructures-algorithms",
+        "sourcePath": "src/javascript/algorithms/misc/4.countDivisible/countDivisible.js",
+        "documentationPath": "src/javascript/algorithms/misc/4.countDivisible/countDivisible.md",
+        "sourceUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/misc/4.countDivisible/countDivisible.js",
+        "documentationUrl": "https://github.com/sudheerj/datastructures-algorithms/blob/master/src/javascript/algorithms/misc/4.countDivisible/countDivisible.md"
+      },
+      "topicId": "dsa-sorting",
+      "subtopic": "Misc",
+      "type": "implement",
+      "difficulty": "easy",
+      "title": {
+        "en": "Count divisible",
+        "ru": "Граф делится"
+      },
+      "prompt": {
+        "en": "Implement `Count divisible` using the imported SudheerJ reference as the expected solution.",
+        "ru": "Реализуйте `Count divisible`, используя импортированную ссылку SudheerJ в качестве ожидаемого решения."
+      },
+      "code": "function countDivisible(firstNumber, secondNumber, divisor) {\n    const countDivisibleUntilSecondNum = Math.floor(secondNumber/divisor);\n    const countDivisibleBeforeFirstNum = Math.floor((firstNumber-1)/divisor);\n\n    return countDivisibleUntilSecondNum - countDivisibleBeforeFirstNum;\n}\n\nconsole.log(countDivisible(6, 11, 2)); // Output: 3\nconsole.log(countDivisible(0, 0, 11)); // Output: 1 (0 is divisible by 11)\nconsole.log(countDivisible(10, 10, 5)); // Output: 1 (10 is divisible by 5)\nconsole.log(countDivisible(10, 10, 7)); // Output: 0 (10 is not divisible by 7)",
+      "expectedAnswer": {
+        "en": "function countDivisible(firstNumber, secondNumber, divisor) {\n    const countDivisibleUntilSecondNum = Math.floor(secondNumber/divisor);\n    const countDivisibleBeforeFirstNum = Math.floor((firstNumber-1)/divisor);\n\n    return countDivisibleUntilSecondNum - countDivisibleBeforeFirstNum;\n}\n\nconsole.log(countDivisible(6, 11, 2)); // Output: 3\nconsole.log(countDivisible(0, 0, 11)); // Output: 1 (0 is divisible by 11)\nconsole.log(countDivisible(10, 10, 5)); // Output: 1 (10 is divisible by 5)\nconsole.log(countDivisible(10, 10, 7)); // Output: 0 (10 is not divisible by 7)",
+        "ru": "function countDivisible(firstNumber, secondNumber, divisor) {\n    const countDivisibleUntilSecondNum = Math.floor(secondNumber/divisor);\n    const countDivisibleBeforeFirstNum = Math.floor((firstNumber-1)/divisor);\n\n    return countDivisibleUntilSecondNum - countDivisibleBeforeFirstNum;\n}\n\nconsole.log(countDivisible(6, 11, 2)); // Output: 3\nconsole.log(countDivisible(0, 0, 11)); // Output: 1 (0 is divisible by 11)\nconsole.log(countDivisible(10, 10, 5)); // Output: 1 (10 is divisible by 5)\nconsole.log(countDivisible(10, 10, 7)); // Output: 0 (10 is not divisible by 7)"
+      },
+      "explanation": {
+        "en": "**Description:**\nGiven two integers `firstNumber` and `secondNumber` and a divisor, count the number of integers within the range [firstNumber, secondNumber] that are divisible by the divisor.\n\n### Examples\nExample 1:\n\nInput: firstNumber = 6, secondNumber = 11, divisor = 2\nOutput: 3\n\nExample 2:\n\nInput: firstNumber = 0, secondNumber = 0, divisor = 11\nOutput: 1\n\nExample 3:\n\nInput: firstNumber = 10, secondNumber = 10, divisor = 5\nOutput: 1\n\nExample 4:\n\nInput: firstNumber = 10, secondNumber = 10, divisor = 7\nOutput: 0\n\n**Algorithmic Steps**\nThis problem is solved using simple arithmetic:\n\n1. Compute the number of divisible numbers up to `secondNumber` by dividing it by the divisor and taking the floor.\n2. Compute the number of divisible numbers before `firstNumber` by dividing (`firstNumber` - 1) by the divisor and taking the floor.\n3. Subtract the two results to get the count of divisible numbers in the range.\n\n**Time and Space complexity:**\n- Time complexity: `O(1)`.\n- Space complexity: `O(1)`.",
+        "ru": "**Описание:**\nУчитывая два целых числа `firstNumber` и `secondNumber` и делитель, подсчитайте количество целых чисел в диапазоне [firstNumber, SecondNumber], которые делятся на делитель.\n\n### Примеры\nПример 1:\n\nВвод: firstNumber = 6, SecondNumber = 11, делитель = 2.\nВыход: 3\n\nПример 2:\n\nВвод: firstNumber = 0, SecondNumber = 0, делитель = 11.\nВыход: 1\n\nПример 3:\n\nВвод: firstNumber = 10, SecondNumber = 10, делитель = 5.\nВыход: 1\n\nПример 4:\n\nВвод: firstNumber = 10, SecondNumber = 10, делитель = 7.\nВыход: 0\n\n**Алгоритмические шаги**\nЭта проблема решается с помощью простой арифметики:\n\n1. Вычислите количество делящихся чисел до `secondNumber`, разделив его на делитель и взяв слово.\n2. Вычислите количество делящихся чисел до `firstNumber`, разделив (`firstNumber` - 1) на делитель и взяв слово.\n3. Вычтите два результата, чтобы получить количество делящихся чисел в диапазоне.\n\n**Сложность во времени и пространстве:**\n- Временная сложность: `O(1)`.\n- Космическая сложность: `O(1)`."
+      },
+      "tags": [
+        "sudheerj",
+        "dsa",
+        "sorting",
+        "misc",
+        "dsa-sorting",
+        "coding-exercise"
+      ],
+      "curation": {
+        "needsCodeExample": true,
+        "needsTypedContent": true,
+        "needsTranslationReview": true,
+        "reviewReasons": [
+          "code-example-useful",
+          "raw-markdown-or-code-in-string-fields",
+          "ru-translation-review"
+        ]
+      }
+    }
+  ]
+}
