@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight, Moon, Sun, X } from "lucide-react";
-import type { ReactNode, TouchEvent } from "react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import type { ReactNode } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { cards, Language, localText, StudyItem, topics } from "./data";
 import type { ContentBlock } from "./data";
 
@@ -10,6 +10,7 @@ type ProgressMap = Record<string, { status: Status }>;
 type ErrorReport = { cardId: string; resolved: boolean };
 type StudySession = { items: StudyItem[]; index: number; title: string } | null;
 type FlippedMap = Record<string, boolean>;
+type SlideDirection = "previous" | "next" | null;
 
 const DECK_SIZE = 20;
 
@@ -33,7 +34,6 @@ const uiText = {
     random: "Рандом",
     review: "Повторить",
     stats: "Статистика",
-    swipe: "Свайп",
     theme: "Тема",
     total: "Всего",
   },
@@ -56,7 +56,6 @@ const uiText = {
     random: "Random",
     review: "Review",
     stats: "Stats",
-    swipe: "Swipe",
     theme: "Theme",
     total: "Total",
   },
@@ -472,12 +471,7 @@ export function App() {
   const [sliderIndex, setSliderIndex] = useState(0);
   const [visibleItems, setVisibleItems] = useState<StudyItem[]>([]);
   const [session, setSession] = useState<StudySession>(null);
-  const [swipeHintToken, setSwipeHintToken] = useState(0);
-  const [isMobileViewport, setIsMobileViewport] = useState(false);
-  const touchStartX = useRef<number | null>(null);
-  const suppressNextClick = useRef(false);
-  const swipeHintTimer = useRef<number | null>(null);
-  const swipeHintCount = useRef(0);
+  const [slideDirection, setSlideDirection] = useState<SlideDirection>(null);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -492,15 +486,6 @@ export function App() {
   useEffect(() => {
     localStorage.setItem("interview-trainer-progress-v2", JSON.stringify(progress));
   }, [progress]);
-
-  useEffect(() => {
-    const media = window.matchMedia("(max-width: 719px)");
-    const updateViewport = () => setIsMobileViewport(media.matches);
-
-    updateViewport();
-    media.addEventListener("change", updateViewport);
-    return () => media.removeEventListener("change", updateViewport);
-  }, []);
 
   useEffect(() => {
     let ignored = false;
@@ -568,36 +553,6 @@ export function App() {
     setFlipped({});
   }, [topicId]);
 
-  useEffect(() => {
-    if (swipeHintTimer.current) {
-      window.clearTimeout(swipeHintTimer.current);
-      swipeHintTimer.current = null;
-    }
-
-    if (!isMobileViewport || !activeItem || swipeHintCount.current >= 3 || session) return;
-
-    const scheduleNextHint = () => {
-      const delays = [10_000, 60_000, 120_000];
-      const delay = delays[swipeHintCount.current];
-      if (!delay) return;
-
-      swipeHintTimer.current = window.setTimeout(() => {
-        swipeHintCount.current += 1;
-        setSwipeHintToken((value) => value + 1);
-        scheduleNextHint();
-      }, delay);
-    };
-
-    scheduleNextHint();
-
-    return () => {
-      if (swipeHintTimer.current) {
-        window.clearTimeout(swipeHintTimer.current);
-        swipeHintTimer.current = null;
-      }
-    };
-  }, [activeItem?.id, isMobileViewport, session]);
-
   function updateStatus(item: StudyItem, nextStatus: Status) {
     setProgress((current) => {
       return {
@@ -626,11 +581,13 @@ export function App() {
 
   function showPreviousCard() {
     if (!visibleItems.length) return;
+    setSlideDirection("previous");
     setSliderIndex((current) => (wrapIndex(current, visibleItems.length) === 0 ? visibleItems.length - 1 : current - 1));
   }
 
   function showNextCard() {
     if (!visibleItems.length) return;
+    setSlideDirection("next");
     if (centerIndex === visibleItems.length - 1) {
       setVisibleItems(buildDeck(filtered, new Set(visibleItems.map((item) => item.id))));
       setSliderIndex(0);
@@ -638,37 +595,6 @@ export function App() {
       return;
     }
     setSliderIndex((current) => current + 1);
-  }
-
-  function moveToPreviousCard() {
-    showPreviousCard();
-    setSwipeHintToken(0);
-  }
-
-  function moveToNextCard() {
-    showNextCard();
-    setSwipeHintToken(0);
-  }
-
-  function handleTouchStart(event: TouchEvent) {
-    touchStartX.current = event.touches[0]?.clientX ?? null;
-  }
-
-  function handleTouchEnd(event: TouchEvent) {
-    if (touchStartX.current === null) return;
-    const endX = event.changedTouches[0]?.clientX ?? touchStartX.current;
-    const deltaX = endX - touchStartX.current;
-    touchStartX.current = null;
-    if (Math.abs(deltaX) < 48) return;
-    suppressNextClick.current = true;
-    if (deltaX > 0) {
-      moveToPreviousCard();
-    } else {
-      moveToNextCard();
-    }
-    window.setTimeout(() => {
-      suppressNextClick.current = false;
-    }, 0);
   }
 
   function startSession(items: StudyItem[], title: string, random = false) {
@@ -684,7 +610,7 @@ export function App() {
     setSession((current) => (current ? { ...current, index: Math.min(current.items.length - 1, current.index + 1) } : current));
   }
 
-  function renderStudyCard(item: StudyItem, className: string, key: string, allowSwipe = false, readOnly = false) {
+  function renderStudyCard(item: StudyItem, className: string, key: string, readOnly = false) {
     const flipKey = item.id;
     const itemStatus = getStatus(item, progress);
     const isFlipped = Boolean(flipped[flipKey]);
@@ -692,16 +618,15 @@ export function App() {
     const codeBlocks = itemCodeContent(item);
     const currentStatusLabel = statusLabels[language][itemStatus];
     const currentTopicLabel = topicCardLabel(item.topicId, item.topicTitle, language);
-
-    const shouldHintSwipe = isMobileViewport && className.includes("slider-center") && swipeHintToken > 0;
+    const textLength = Math.max(itemTitle(item, language).length, itemAnswer(item, language).length);
+    const densityClass = textLength > 520 ? " is-dense-text" : textLength > 220 ? " is-balanced-text" : " is-open-text";
 
     return (
       <article
-        className={`${className} question-card${isFlipped ? " is-flipped" : ""}${shouldHintSwipe ? ` is-swipe-hint is-swipe-hint-${swipeHintToken % 2}` : ""}`}
+        className={`${className} question-card${densityClass}${isFlipped ? " is-flipped" : ""}`}
         key={key}
         onClick={() => {
           if (readOnly) return;
-          if (suppressNextClick.current) return;
           flipCard(flipKey);
         }}
         onKeyDown={(event) => {
@@ -711,8 +636,6 @@ export function App() {
             flipCard(flipKey);
           }
         }}
-        onTouchStart={allowSwipe ? handleTouchStart : undefined}
-        onTouchEnd={allowSwipe ? handleTouchEnd : undefined}
         role={readOnly ? "presentation" : "button"}
         tabIndex={readOnly ? -1 : 0}
       >
@@ -751,7 +674,6 @@ export function App() {
               </button>
             </span>
             <span className="tag-row">
-              <span>{t(language, "question")}</span>
               <span>{item.dataset === "javascript" ? "JS" : "DSA"}</span>
               <span>{currentTopicLabel}</span>
               <span>{currentStatusLabel}</span>
@@ -799,7 +721,6 @@ export function App() {
               </button>
             </span>
             <span className="tag-row">
-              <span>{t(language, "answer")}</span>
               <span>{item.dataset === "javascript" ? "JS" : "DSA"}</span>
               <span>{currentTopicLabel}</span>
               <span>{currentStatusLabel}</span>
@@ -862,18 +783,18 @@ export function App() {
       <section className="card-slider" aria-label={t(language, "cards")}>
         {activeItem ? (
           <>
-            <div className="slider-track">
+            <div className={`slider-track${slideDirection ? ` is-moving-${slideDirection}` : ""}`} onAnimationEnd={() => setSlideDirection(null)}>
               {sliderItems.map(({ item, position }) => {
                 if (!item) return <span className={`slider-card slider-${position} is-empty`} key={position} />;
                 const isCenter = position === "center";
-                const card = renderStudyCard(item, `slider-card slider-${position}`, `${position}-${item.id}`, isCenter, !isCenter);
+                const card = renderStudyCard(item, `slider-card slider-${position}`, `${position}-${item.id}`, !isCenter);
                 if (isCenter) return card;
                 return (
                   <span
                     className="side-card-hitbox"
                     key={`${position}-${item.id}`}
                     onClick={() => {
-                      position === "left" ? moveToPreviousCard() : moveToNextCard();
+                      position === "left" ? showPreviousCard() : showNextCard();
                     }}
                   >
                     {card}
@@ -881,11 +802,14 @@ export function App() {
                 );
               })}
             </div>
-            {isMobileViewport ? (
-              <p className="swipe-hint" aria-hidden="true">
-                {t(language, "swipe")}
-              </p>
-            ) : null}
+            <div className="slider-controls main-slider-controls">
+              <button className="secondary-action icon-action" onClick={showPreviousCard} aria-label={t(language, "previousCards")}>
+                <ChevronLeft size={18} />
+              </button>
+              <button className="secondary-action icon-action" onClick={showNextCard} aria-label={t(language, "nextCards")}>
+                <ChevronRight size={18} />
+              </button>
+            </div>
           </>
         ) : (
           <div className="empty-state">{t(language, "empty")}</div>

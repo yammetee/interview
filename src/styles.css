@@ -179,47 +179,13 @@ button:not(:disabled) {
 .card-slider {
   position: relative;
   display: grid;
-  grid-template-rows: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 10px;
   flex: 1 1 auto;
   min-height: 0;
   align-content: stretch;
   overflow: hidden;
   justify-items: center;
-}
-
-.swipe-hint {
-  position: absolute;
-  display: none;
-  left: 50%;
-  bottom: 8px;
-  margin: 0;
-  transform: translateX(-50%);
-  color: var(--muted);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  opacity: 0.42;
-  text-transform: uppercase;
-  pointer-events: none;
-}
-
-.swipe-hint::before,
-.swipe-hint::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 18px;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.5;
-}
-
-.swipe-hint::before {
-  right: calc(100% + 8px);
-}
-
-.swipe-hint::after {
-  left: calc(100% + 8px);
 }
 
 .slider-track {
@@ -239,6 +205,10 @@ button:not(:disabled) {
 .slider-card {
   align-self: center;
   width: 100%;
+  transition:
+    transform 260ms ease,
+    opacity 260ms ease,
+    filter 260ms ease;
 }
 
 .slider-left {
@@ -271,6 +241,15 @@ button:not(:disabled) {
   font-weight: 800;
 }
 
+.main-slider-controls {
+  min-height: 38px;
+}
+
+.main-slider-controls .icon-action {
+  width: 42px;
+  min-height: 34px;
+}
+
 .icon-action {
   width: 38px;
   padding: 0;
@@ -294,7 +273,6 @@ button:disabled {
   cursor: pointer;
   outline: none;
   perspective: 1200px;
-  touch-action: pan-y;
   user-select: none;
 }
 
@@ -310,16 +288,24 @@ button:disabled {
   will-change: transform;
 }
 
+.slider-track.is-moving-next .slider-center {
+  animation: slide-center-from-right 280ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.slider-track.is-moving-previous .slider-center {
+  animation: slide-center-from-left 280ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.slider-track.is-moving-next .slider-left {
+  animation: slide-side-to-left 280ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.slider-track.is-moving-previous .slider-right {
+  animation: slide-side-to-right 280ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
 .question-card.is-flipped .question-card-inner {
   transform: rotateY(180deg);
-}
-
-.question-card.is-swipe-hint:not(.is-flipped) .question-card-inner {
-  animation: swipe-nudge 680ms ease both;
-}
-
-.question-card.is-swipe-hint.is-flipped .question-card-inner {
-  animation: swipe-nudge-flipped 680ms ease both;
 }
 
 .card-face {
@@ -392,21 +378,31 @@ button:disabled {
 .card-face strong {
   display: block;
   overflow: hidden;
-  padding-top: 44px;
-  padding-right: 148px;
-  font-size: 0.94rem;
-  line-height: 1.35;
+  width: 100%;
+  padding-top: 64px;
+  padding-right: 0;
+  font-size: 0.96rem;
+  line-height: 1.42;
   letter-spacing: 0;
   overflow-wrap: anywhere;
 }
 
-.slider-center .card-face strong {
-  font-size: 1.03rem;
+.question-card.is-open-text .card-face strong {
+  font-size: 1.04rem;
+}
+
+.question-card.is-balanced-text .card-face strong {
+  font-size: 0.96rem;
+}
+
+.question-card.is-dense-text .card-face strong {
+  font-size: 0.88rem;
+  line-height: 1.5;
 }
 
 .back-content {
   min-height: 0;
-  padding-top: 44px;
+  padding-top: 64px;
   overflow: auto;
 }
 
@@ -732,12 +728,9 @@ pre {
 
   .card-slider {
     flex: 1 1 auto;
-    grid-template-rows: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: 8px;
     min-height: 0;
-  }
-
-  .swipe-hint {
-    display: block;
   }
 
   .slider-track {
@@ -775,39 +768,63 @@ pre {
   }
 
   .question-card .card-face strong {
-    font-size: 1.08rem;
+    font-size: 0.98rem;
     -webkit-line-clamp: 8;
   }
-}
 
-@keyframes swipe-nudge {
-  0%,
-  100% {
-    transform: translateX(0);
+  .question-card.is-open-text .card-face strong {
+    font-size: 1.04rem;
   }
-  24% {
-    transform: translateX(-10px) rotateZ(-0.35deg);
+
+  .question-card.is-balanced-text .card-face strong {
+    font-size: 0.96rem;
   }
-  52% {
-    transform: translateX(10px) rotateZ(0.35deg);
-  }
-  76% {
-    transform: translateX(-4px) rotateZ(-0.15deg);
+
+  .question-card.is-dense-text .card-face strong {
+    font-size: 0.86rem;
   }
 }
 
-@keyframes swipe-nudge-flipped {
-  0%,
-  100% {
-    transform: rotateY(180deg) translateX(0);
+@keyframes slide-center-from-right {
+  from {
+    opacity: 0.62;
+    transform: translateX(28px) scale(0.985);
   }
-  24% {
-    transform: rotateY(180deg) translateX(-10px) rotateZ(-0.35deg);
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
   }
-  52% {
-    transform: rotateY(180deg) translateX(10px) rotateZ(0.35deg);
+}
+
+@keyframes slide-center-from-left {
+  from {
+    opacity: 0.62;
+    transform: translateX(-28px) scale(0.985);
   }
-  76% {
-    transform: rotateY(180deg) translateX(-4px) rotateZ(-0.15deg);
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slide-side-to-left {
+  from {
+    opacity: 0.3;
+    transform: translateX(18px) scale(0.72);
+  }
+  to {
+    opacity: 0.42;
+    transform: translateX(0) scale(0.76);
+  }
+}
+
+@keyframes slide-side-to-right {
+  from {
+    opacity: 0.3;
+    transform: translateX(-18px) scale(0.72);
+  }
+  to {
+    opacity: 0.42;
+    transform: translateX(0) scale(0.76);
   }
 }
